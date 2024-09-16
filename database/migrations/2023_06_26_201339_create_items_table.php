@@ -13,11 +13,16 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id')->unsigned()->index();
-            $table->string('name', 100)->index();
+            $table->bigInteger('user_id')->unsigned()->nullable()->index();
+            $table->string('name', 100)->nullable()->index();
             $table->string('type', 100)->nullable();
             $table->string('detail', 500)->nullable();
             $table->timestamps();
+            $table->enum('priority',['high','medium','low','remove']);
+            $table->enum('category',['toilet', 'bath', 'idea', 'feedback', 'outside', 'interior','bedroom','kidsroom','storage','other','living','dining']);
+            $table->string('image_url')->nullable();
+            $table->string('request_message',255)->nullable();
+            $table->integer('card_number')->nullable();
         });
     }
 

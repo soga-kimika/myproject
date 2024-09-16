@@ -1,54 +1,86 @@
-@extends('adminlte::page')
+    @extends('adminlte::page')
 
-@section('title', '商品一覧')
+    @section('title', $pageTitle)
 
-@section('content_header')
-    <h1>商品一覧</h1>
-@stop
+    @section('content')
+        @include('partials.errors')
+        
+        @include('partials.form', [
+            'actionUrl' => route('items.store', $type),
+            'submitButtonText' => '登録',
+            'showRemoveOption' => $showRemoveOption,
+        ])
 
-@section('content')
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">商品一覧</h3>
-                    <div class="card-tools">
-                        <div class="input-group input-group-sm">
-                            <div class="input-group-append">
-                                <a href="{{ url('items/add') }}" class="btn btn-default">商品登録</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body table-responsive p-0">
-                    <table class="table table-hover text-nowrap">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>名前</th>
-                                <th>種別</th>
-                                <th>詳細</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($items as $item)
-                                <tr>
-                                    <td>{{ $item->id }}</td>
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->type }}</td>
-                                    <td>{{ $item->detail }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-@stop
+        <!-- 最初のカード -->
+        @include('partials.table', [
+            'title' => $title1,
+            'items' => $items1,
+        ])
 
-@section('css')
-@stop
+    
+    @stop
 
-@section('js')
-@stop
+    @section('css')
+        <!-- Custom CSS if needed -->
+        <style>
+        .fa-star{
+            color: gold;
+        }
+        .fa-star-half-alt{
+            color: gold;    
+        }
+        .fa-times{
+            color: red;
+        }
+
+        
+        .card-header:first-child{
+
+            background-color:#dc3545;
+          
+        }
+        
+        
+        
+        .custom-table thead th {
+            font-size: 0.85rem; /* ヘッドのフォントサイズを小さくする */
+            padding: 5px;
+            background-color:#3f6791 ;
+  
+        
+            
+        }
+
+        .custom-table tbody td {
+            max-width: 150px; /* セルの最大幅を設定 */
+            white-space: nowrap; /* テキストが折り返されないようにする */
+            overflow: hidden; /* オーバーフローする部分を隠す */
+            text-overflow: ellipsis; /* テキストが溢れる部分を「...」で省略 */  
+        }
+
+        .custom-table img {
+            max-width: 100px; /* 画像の最大幅を設定 */
+            height: auto; /* 高さは自動で調整 */
+}
+/* .custom-table th, .custom-table td {
+        vertical-align: middle;
+    }
+
+    .col-priority {
+        width: 150px; /* Adjust as needed */
+    }
+/* 
+    .col-request {
+        width: 60%; /* Make the request column wide */
+    } */
+
+    /* .col-actions {
+        width: 200px; /* Adjust as needed to fit both buttons */
+    } */ */
+</style>
+
+    @stop
+
+    @section('js')
+    
+    @stop
