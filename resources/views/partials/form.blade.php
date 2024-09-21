@@ -8,10 +8,10 @@
                 <div class="card-body table-responsive p-0">
                     <table class="table table-hover text-nowrap custom-table">
                         <thead>
-                            <tr>
+                            <tr>    
                                 <th class="col-priority">優先度</th>
-                                <th class="col-request">リクエスト</th>
-                                <th class="col-edit">編集ボタン</th>
+                                <th class="col-request">要望</th>
+                                <th class="col-edit">編集</th>
                                 <th class="col-image">画像</th>
                             </tr>
                         </thead>
@@ -65,8 +65,8 @@
                         <thead>
                             <tr>
                                 <th class="col-priority">優先度</th>
-                                <th class="col-request">リクエスト</th>
-                                <th class="col-edit">編集ボタン</th>
+                                <th class="col-request">要望</th>
+                                <th class="col-edit">編集</th>
                                 <th class="col-image">画像</th>
                             </tr>
                         </thead>
