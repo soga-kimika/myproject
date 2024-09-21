@@ -1,4 +1,3 @@
-<!-- モーダルのHTML -->
 <div class="modal fade" id="imageModal{{ $id }}" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel{{ $id }}" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">

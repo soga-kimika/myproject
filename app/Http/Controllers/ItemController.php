@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Route as LaravelRoute;
+
 
 class ItemController extends Controller
 {
@@ -28,8 +28,6 @@ class ItemController extends Controller
 
         // アクションURLの設定
         $actionUrl = route('items.store', ['type' => $type]);
-    
-
 
         // ビューに渡すデータを整形
         return view($isForm ? 'item.form' : 'item.index', [
@@ -43,7 +41,6 @@ class ItemController extends Controller
             'showRemoveOption' => $showRemoveOption,
             'actionUrl' => $actionUrl,
             'cardTitleMapping' => $this->getCardTitleMapping()
-
         ]);
     }
 

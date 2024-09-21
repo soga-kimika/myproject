@@ -1,114 +1,48 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">{{ $title1 }}</h3>
+<form action="{{ $actionUrl }}" method="POST" enctype="multipart/form-data">
+    @csrf
+
+    <div class="form-group row border-bottom pb-2 mb-3">
+        <div class="col-md-6 d-flex align-items-center">
+            <label class="me-2 mb-0">優先度：</label>
+            <div class="d-flex align-items-center">
+                <div class="form-check me-3">
+                    <input type="radio" class="form-check-input" name="priority" value="high" id="priority-high">
+                    <label class="form-check-label" for="priority-high">高 <i class="fa fa-star"></i></label>
                 </div>
-                <div class="card-body table-responsive p-0">
-                    <table class="table table-hover text-nowrap custom-table">
-                        <thead>
-                            <tr>    
-                                <th class="col-priority">優先度</th>
-                                <th class="col-request">要望</th>
-                                <th class="col-edit">編集</th>
-                                <th class="col-image">画像</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($items1 as $item1) 
-                                <tr>
-                                    <td>{{ $item1->name }}</td>
-                                    <td>
-                                        @switch($item1->priority)
-                                            @case('high')
-                                                <i class="fa fa-star"></i>
-                                                @break
-                                            @case('medium')
-                                                <i class="fa fa-star-half-alt"></i>
-                                                @break
-                                            @case('low')
-                                                <i class="far fa-star"></i>
-                                                @break
-                                            @case('remove')
-                                                <i class="fa fa-times"></i>
-                                                @break
-                                            @default
-                                                不明
-                                        @endswitch
-                                    </td>
-                                    <td>{{ $item1->request_message }}</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#editModal{{ $item1->id }}">編集</a>
-                                        @if($item1->image_url)
-                                            <a href="#" class="btn btn-info" data-toggle="modal" data-target="#imageModal{{ $item1->id }}">
-                                                <i class="fas fa-image"></i>
-                                            </a>
-                                        @endif
-                                    </td>
-                                    @include('partials.image_modal', ['id' => $item1->id, 'imageUrl' => $item1->image_url])
-                                    @include('partials.edit_modal', ['item' => $item1])
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+
+                <div class="form-check me-3">
+                    <input type="radio" class="form-check-input" name="priority" value="medium" id="priority-medium">
+                    <label class="form-check-label" for="priority-medium">中 <i class="fa fa-star-half-alt"></i></label>
                 </div>
+
+                <div class="form-check me-3">
+                    <input type="radio" class="form-check-input" name="priority" value="low" id="priority-low">
+                    <label class="form-check-label" for="priority-low">低 <i class="far fa-star"></i></label>
+                </div>
+
+                @if (!$showRemoveOption)
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="priority" value="remove" id="priority-remove">
+                        <label class="form-check-label" for="priority-remove">不要 <i class="fa fa-times"></i></label>
+                    </div>
+                @endif
+            </div>
+            <div class="me-3"></div>
+            <label class="me-2 mb-0">カテゴリー：</label> 
+            <div class="d-flex align-items-center">
+                @foreach ($titles as $title)
+                    <div class="form-check me-3">
+                        <input type="radio" class="form-check-input" name="category" value="{{ $title['id'] }}" id="category-{{ $title['id'] }}">
+                        <label class="form-check-label" for="category-{{ $title['id'] }}">{{ $title['title'] }}</label>
+                    </div>
+                @endforeach
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card mt-4 mt-md-0">
-                <div class="card-header">
-                    <h3 class="card-title">{{ $title2 }}</h3>
-                </div>
-                <div class="card-body table-responsive p-0">
-                    <table class="table table-hover text-nowrap custom-table">
-                        <thead>
-                            <tr>
-                                <th class="col-priority">優先度</th>
-                                <th class="col-request">要望</th>
-                                <th class="col-edit">編集</th>
-                                <th class="col-image">画像</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($items2 as $item2)
-                                <tr>
-                                    <td>{{ $item2->name }}</td>
-                                    <td>
-                                        @switch($item2->priority)
-                                            @case('high')
-                                                <i class="fa fa-star"></i>
-                                                @break
-                                            @case('medium')
-                                                <i class="fa fa-star-half-alt"></i>
-                                                @break
-                                            @case('low')
-                                                <i class="far fa-star"></i>
-                                                @break
-                                            @case('remove')
-                                                <i class="fa fa-times"></i>
-                                                @break
-                                            @default
-                                                不明
-                                        @endswitch
-                                    </td>
-                                    <td>{{ $item2->request_message }}</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#editModal{{ $item2->id }}">編集</a>
-                                        @if($item2->image_url)
-                                            <a href="#" class="btn btn-info" data-toggle="modal" data-target="#imageModal{{ $item2->id }}">
-                                                <i class="fas fa-image"></i>
-                                            </a>
-                                        @endif
-                                    </td>
-                                    @include('partials.image_modal', ['id' => $item2->id, 'imageUrl' => $item2->image_url])
-                                    @include('partials.edit_modal', ['item' => $item2])
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+        <input type="file" name="imageUpload" id="imageUpload"  accept="image/*">
     </div>
-</div>
+
+    <div class="form-group d-flex align-items-center">
+        <input type="text" name="request_message" id="request_message" class="form-control form-control-sm me-2" placeholder="要望を記入してください" style="width: 70%;" required>
+        <button type="submit" class="btn btn-primary">{{ $submitButtonText }}</button>
+    </div>
+</form> 

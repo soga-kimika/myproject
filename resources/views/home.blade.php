@@ -8,9 +8,9 @@
 
 @section('content')
 
-    <!-- カードの表示 -->
+    
     <div class="row">
-        <!-- フォーイーチの分 -->
+       
         <div class="col-md-4 mb-3">
             <div class="card">
                 <div class="card-header">
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <!-- フォイーチエンド -->
+        
     </div>
 @stop
 

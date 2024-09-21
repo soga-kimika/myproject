@@ -8,16 +8,35 @@
                 <div class="card-body table-responsive p-0">
                     <table class="table table-hover text-nowrap custom-table">
                         <thead>
-                            <tr>
+                            <tr>    
                                 <th class="col-priority">優先度</th>
                                 <th class="col-request">要望</th>
-                                <th class="col-actions">編集・画像</th>
+                                <th class="col-edit">編集</th>
+                                <th class="col-image">画像</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($items1 as $item1)
+                            @foreach($items1 as $item1) 
                                 <tr>
                                     <td>{{ $item1->name }}</td>
+                                    <td>
+                                        @switch($item1->priority)
+                                            @case('high')
+                                                <i class="fa fa-star"></i>
+                                                @break
+                                            @case('medium')
+                                                <i class="fa fa-star-half-alt"></i>
+                                                @break
+                                            @case('low')
+                                                <i class="far fa-star"></i>
+                                                @break
+                                            @case('remove')
+                                                <i class="fa fa-times"></i>
+                                                @break
+                                            @default
+                                                不明
+                                        @endswitch
+                                    </td>
                                     <td>{{ $item1->request_message }}</td>
                                     <td>
                                         <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#editModal{{ $item1->id }}">編集</a>
@@ -27,8 +46,8 @@
                                             </a>
                                         @endif
                                     </td>
-                                    @include('partials.image_modal', ['id' => $item1->id, 'imageUrl' => $item1->image_url])
-                                    @include('partials.edit_modal', ['item' => $item1])
+                                   @include('partials.image_modal', ['id' => $item1->id, 'imageUrl' => $item1->image_url])
+                                    {{-- @include('partials.edit_modal', ['item' => $item1]) --}}
                                 </tr>
                             @endforeach
                         </tbody>
@@ -47,13 +66,32 @@
                             <tr>
                                 <th class="col-priority">優先度</th>
                                 <th class="col-request">要望</th>
-                                <th class="col-actions">編集・画像</th>
+                                <th class="col-edit">編集</th>
+                                <th class="col-image">画像</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($items2 as $item2)
                                 <tr>
                                     <td>{{ $item2->name }}</td>
+                                    <td>
+                                        @switch($item2->priority)
+                                            @case('high')
+                                                <i class="fa fa-star"></i>
+                                                @break
+                                            @case('medium')
+                                                <i class="fa fa-star-half-alt"></i>
+                                                @break
+                                            @case('low')
+                                                <i class="far fa-star"></i>
+                                                @break
+                                            @case('remove')
+                                                <i class="fa fa-times"></i>
+                                                @break
+                                            @default
+                                                不明
+                                        @endswitch
+                                    </td>
                                     <td>{{ $item2->request_message }}</td>
                                     <td>
                                         <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#editModal{{ $item2->id }}">編集</a>
@@ -63,8 +101,8 @@
                                             </a>
                                         @endif
                                     </td>
-                                    @include('partials.image_modal', ['id' => $item2->id, 'imageUrl' => $item2->image_url])
-                                    @include('partials.edit_modal', ['item' => $item2])
+                                    {{-- @include('partials.image_modal', ['id' => $item2->id, 'imageUrl' => $item2->image_url])
+                                    @include('partials.edit_modal', ['item' => $item2]) --}}
                                 </tr>
                             @endforeach
                         </tbody>

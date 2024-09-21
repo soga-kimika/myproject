@@ -11,7 +11,7 @@
                 <label>データを削除しますか？</label>
             </div>
             <div class="modal-footer">
-                <!-- 修正点: 削除のための正しいルートを指定 -->
+                
                 <form method="POST" action="{{ route('items.destroy',  ['type' => $type, 'itemId' => $item->id]) }}">
                     @csrf
                     @method('DELETE')
