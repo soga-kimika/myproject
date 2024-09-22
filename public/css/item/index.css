@@ -19,7 +19,7 @@
 
 
 .custom-table thead th {
-    font-size: 0.85rem; /* ヘッドのフォントサイズを小さくする */
+    font-size: 0.85rem;
     padding: 5px;
     background-color:#3f6791 ;
 
@@ -28,29 +28,30 @@
 }
 
 .custom-table tbody td {
-    max-width: 150px; /* セルの最大幅を設定 */
-    white-space: nowrap; /* テキストが折り返されないようにする */
-    overflow: hidden; /* オーバーフローする部分を隠す */
-    text-overflow: ellipsis; /* テキストが溢れる部分を「...」で省略 */  
+    max-width: 150px; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
 }
 
 .custom-table img {
-    max-width: 100px; /* 画像の最大幅を設定 */
-    height: auto; /* 高さは自動で調整 */
+    max-width: 100px; 
+    height: auto; 
 }
 .custom-table th, .custom-table td {
 vertical-align: middle;
 }
 
 .col-priority {
-width: 150px; /* Adjust as needed */
+width: 150px; 
 } 
 
 .col-request {
-width: 60%; /* Make the request column wide */
+width: 60%;
 }
 
 .col-actions {
 width: 200px; 
 
 }
+
