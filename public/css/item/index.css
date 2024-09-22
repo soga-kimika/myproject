@@ -1,4 +1,12 @@
 
+.btn-primary {
+    margin-left: 10px; /* 余白のサイズを調整 */
+}
+
+
+
+
+/* 優先度のラジオボタンのアイコン */
 .fa-star{
     color: gold;
 }
@@ -10,28 +18,41 @@
 }
 
 
+
+/* カード */
 .card-header:first-child{
 
     background-color:#dc3545;
   
 }
 
-
+.card-title{
+    font-weight: bold;
+}
 
 .custom-table thead th {
     font-size: 0.85rem;
     padding: 5px;
     background-color:#3f6791 ;
-
-
-    
 }
 
-.custom-table tbody td {
-    max-width: 150px; 
-    white-space: nowrap; 
-    overflow: hidden; 
-    text-overflow: ellipsis; 
+.table {
+    width: 100%;
+    table-layout: fixed; /* テーブルのレイアウトを固定 */
+}
+
+.table th {
+    width: 150px; /* 各ヘッダーの幅を指定 */
+    background-color: white; /* 背景色 */
+    position: sticky; /* スティッキー効果 */
+    top: 0; /* 上部に固定 */
+    z-index: 10; /* 他の要素より前に表示 */
+}
+
+.table td {
+    overflow: hidden; /* 内容が溢れた場合は隠す */
+    text-overflow: ellipsis; /* 溢れた内容に省略記号を表示 */
+    white-space: nowrap; /* テキストを1行に */
 }
 
 .custom-table img {
