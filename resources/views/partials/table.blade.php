@@ -12,7 +12,8 @@
                                 <tr>
                                     <th class="col-priority">優先度</th>
                                     <th class="col-request">要望</th>
-                                    <th class="col-edit">編集・画像</th>
+                                    <th class="col-edit">編集</th>
+                                    <th class="col-image">画像</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -38,11 +39,13 @@
                                             @endswitch
                                         </td>
                                         {{-- アイテム１に格納されている要望を表示 --}}
-                                        <td class="text-start">{{ $item1->request_message }}</td> 
+                                        <td>{{ $item1->request_message }}</td> 
                                         {{-- 編集ボタン--}}
-                                        <td class="d-flex" style="gap: 10px;">
-                                            <a href="#" class="btn btn-primary me-2" data-toggle="modal" data-target="#editModal{{ $item1->id }}">編集</a>
+                                        <td>
+                                            <a href="#" class="btn btn-primary btn-edit" data-toggle="modal" data-target="#editModal{{ $item1->id }}">編集</a>
                                             {{-- フォームで画像を投稿していれば、画像のアイコンを表示 --}}
+                                        </td>
+                                        <td>
                                             @if($item1->image_url)
                                                 <a href="#" class="btn btn-info" data-toggle="modal" data-target="#imageModal{{ $item1->id }}">
                                                     <i class="fas fa-image"></i>
@@ -72,7 +75,8 @@
                                 <tr>
                                     <th class="col-priority">優先度</th>
                                     <th class="col-request">要望</th>
-                                    <th class="col-edit">編集・画像</th>
+                                    <th class="col-edit">編集</th>
+                                    <th class="col-image">画像</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -100,8 +104,10 @@
                                              {{-- アイテム１に格納されている要望を表示 --}}
                                             <td>{{ $item2->request_message }}</td>
                                             {{-- 編集ボタン --}}
-                                            <td class="d-flex" style="gap: 10px;">
-                                                <a href="#" class="btn btn-primary me-10" data-toggle="modal" data-target="#editModal{{ $item2->id }}">編集</a>
+                                            <td>
+                                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#editModal{{ $item2->id }}">編集</a>
+                                            </td>   
+                                            <td >
                                                 {{-- フォームで画像を投稿していれば、画像のアイコンを表示 --}}
                                                 @if($item2->image_url)
                                                     <a href="#" class="btn btn-info" data-toggle="modal" data-target="#imageModal{{ $item2->id }}">
