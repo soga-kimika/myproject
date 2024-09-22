@@ -94,6 +94,7 @@ class ItemController extends Controller
     {
         return Item::where('type', $type)
                     ->where('category', $category)
+                    ->orderByRaw("FIELD(priority, 'high', 'medium', 'low', 'remove') asc")
                     ->get();
     }
     

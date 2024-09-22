@@ -1,8 +1,9 @@
 <div class="container">
     <div class="col-md-12 mx-auto"> 
+        {{-- 送信先のアクションURLはコントローラーで提示 --}}
         <form action="{{ $actionUrl }}" method="POST" enctype="multipart/form-data">
             @csrf
-
+            {{-- 入力フォーム --}}
             <div class="border-bottom pb-2 mb-3 mt-4">
                 <div class="col-md-12 d-flex mb-3">
                     <label class="mb-0">優先度：</label>
@@ -19,6 +20,7 @@
                             <input type="radio" class="form-check-input" name="priority" value="low" id="priority-low">
                             <label class="form-check-label" for="priority-low">低 <i class="far fa-star"></i></label>
                         </div>
+                        {{-- アイディアのページだけ不要のラジオボタンを表示 --}}
                         @if ($showRemoveOption)
                             <div class="form-check">
                                 <input type="radio" class="form-check-input" name="priority" value="remove" id="priority-remove">
@@ -29,6 +31,7 @@
                     <div class="me-3"></div>
                     <label class="me-2 mb-0">カテゴリー：</label>
                     <div class="d-flex align-items-center">
+                        {{-- ページタイトルから、カテゴリーを取得し、カテゴリーごとにカードに表示できるように紐づけ --}}
                         @foreach ($titles as $title)
                         <div class="form-check me-3">
                             <input type="radio" class="form-check-input" name="category" value="{{ $title['category'] }}" id="category-{{ $title['id'] }}">

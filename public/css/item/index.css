@@ -1,11 +1,15 @@
+/* 入力フォーム */
 
-.btn-primary {
-    margin-left: 10px; /* 余白のサイズを調整 */
+/* ラジオボタン */
+.form-check {
+    margin-right: 10px; 
 }
-
-
-
-
+.form-check:last-child {
+    margin-right: 30px; 
+}
+.btn-primary {
+    margin-left: 10px; 
+}
 /* 優先度のラジオボタンのアイコン */
 .fa-star{
     color: gold;
@@ -16,63 +20,48 @@
 .fa-times{
     color: red;
 }
-
-
-
-/* カード */
+/* カード （テーブル）*/
+/* カードタイトル */
 .card-header:first-child{
-
     background-color:#dc3545;
-  
 }
-
 .card-title{
     font-weight: bold;
 }
-
+/* ヘッダー */
 .custom-table thead th {
     font-size: 0.85rem;
     padding: 5px;
     background-color:#3f6791 ;
 }
 
+.custom-table th, .custom-table td {
+    vertical-align: middle;
+    }
+/* レコード */
 .table {
     width: 100%;
-    table-layout: fixed; /* テーブルのレイアウトを固定 */
+    table-layout: fixed; 
 }
-
-.table th {
-    width: 150px; /* 各ヘッダーの幅を指定 */
-    background-color: white; /* 背景色 */
-    position: sticky; /* スティッキー効果 */
-    top: 0; /* 上部に固定 */
-    z-index: 10; /* 他の要素より前に表示 */
-}
-
 .table td {
-    overflow: hidden; /* 内容が溢れた場合は隠す */
-    text-overflow: ellipsis; /* 溢れた内容に省略記号を表示 */
-    white-space: nowrap; /* テキストを1行に */
+    white-space: normal; 
+    line-height: 1.5; 
 }
-
+.col-priority {
+    width: 80px; 
+    text-align: center; 
+} 
+.col-request {
+    width: 60%; 
+    text-align: left; 
+    padding-left: 20px; 
+}
+.col-edit {
+    width: 150px;
+    text-align: center; 
+}
+/* 画像アイコン */
 .custom-table img {
     max-width: 100px; 
     height: auto; 
 }
-.custom-table th, .custom-table td {
-vertical-align: middle;
-}
-
-.col-priority {
-width: 150px; 
-} 
-
-.col-request {
-width: 60%;
-}
-
-.col-actions {
-width: 200px; 
-
-}
-
