@@ -1,10 +1,10 @@
 {{-- アイテム1の削除モーダル --}}
 
-    <div class="modal fade" id="deleteModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{ $item->id }}" aria-hidden="true">
+    <div class="modal fade" id="deleteImageModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteImageModalLabel{{ $item->id }}" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="deleteModalLabel{{ $item->id }}">削除確認画面</h4>
+                    <h4 class="modal-title" id="deleteImageModalLabel{{ $item->id }}">削除確認画面</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -27,11 +27,11 @@
 
 {{-- アイテム2の削除モーダル
 @foreach($items2 as $item2)
-    <div class="modal fade" id="deleteModal{{ $item2->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{ $item2->id }}" aria-hidden="true">
+    <div class="modal fade" id="deleteImageModal{{ $item2->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteImageModalLabel{{ $item2->id }}" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="deleteModalLabel{{ $item2->id }}">削除確認画面</h4>
+                    <h4 class="modal-title" id="deleteImageModalLabel{{ $item2->id }}">削除確認画面</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

@@ -1,4 +1,4 @@
-@foreach($items1 as $item)
+
     <div class="modal fade" id="imageModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel{{ $item->id }}" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
@@ -16,11 +16,11 @@
                     @endif
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ $item->id }}">削除</button>
-                    @include('partials.delete_modal', ['id' => $item->id])
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteImageModal{{ $item->id }}">削除</button>
+                    @include('partials.delete_image_modal', ['id' => $item->id])
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
                 </div>
             </div>
         </div>
     </div>
-@endforeach
+

@@ -40,11 +40,11 @@
                                         </td>
                                         {{-- アイテム１に格納されている要望を表示 --}}
                                         <td>{{ $item1->request_message }}</td> 
-                                        {{-- 編集ボタン--}}
+                                        {{-- 編集ボタン　モーダルトリガー　--}}
                                         <td>
                                             <a href="#" class="btn btn-primary btn-edit" data-toggle="modal" data-target="#editModal{{ $item1->id }}" data-request="{{ $item1->request_message }}" data-priority="{{ $item1->priority }}">編集</a>
 
-                                            {{-- フォームで画像を投稿していれば、画像のアイコンを表示 --}}
+                                            {{-- フォームで画像を投稿していれば、画像のアイコンを表示 トリガー--}}
                                         </td>
                                         <td>
                                             @if($item1->image_url)
@@ -54,9 +54,9 @@
                                             @endif
                                         </td>
                                         {{-- 画像を表示するモーダル --}}
-                                        @include('partials.image_modal', ['id' => $item1->id, 'imageUrl' => $item1->image_url])
+                                        @include('partials.image_modal', ['id' => $item1->id, 'item' => $item1,'imageUrl' => $item1->image_url])
                                         {{-- 編集を表示するモーダル --}}
-                                        @include('partials.edit_modal', ['item' => $item1])
+                                        @include('partials.edit_modal', ['item' => $item1,])
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -104,12 +104,12 @@
                                         </td>
                                              {{-- アイテム１に格納されている要望を表示 --}}
                                             <td>{{ $item2->request_message }}</td>
-                                            {{-- 編集ボタン --}}
+                                            {{-- 編集ボタン モーダルトリガー--}}
                                             <td>
                                                 <a href="#" class="btn btn-primary btn-edit" data-toggle="modal" data-target="#editModal{{ $item2->id }}">編集</a>
                                             </td>   
                                             <td >
-                                                {{-- フォームで画像を投稿していれば、画像のアイコンを表示 --}}
+                                                {{-- フォームで画像を投稿していれば、画像のアイコンを表示　画像モーダルトリガー --}}
                                                 @if($item2->image_url)
                                                     <a href="#" class="btn btn-info" data-toggle="modal" data-target="#imageModal{{ $item2->id }}">
                                                         <i class="fas fa-image"></i>
@@ -117,7 +117,7 @@
                                                 @endif
                                         </td>
                                          {{-- 画像を表示するモーダル --}}
-                                        @include('partials.image_modal', ['id' => $item2->id, 'imageUrl' => $item2->image_url])
+                                        @include('partials.image_modal', ['id' => $item2->id, 'item' => $item2,'imageUrl' => $item2->image_url])
                                          {{-- 編集を表示するモーダル --}}
                                         @include('partials.edit_modal', ['item' => $item2])
                                     </tr>

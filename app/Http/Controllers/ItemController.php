@@ -10,23 +10,28 @@ class ItemController extends Controller
 {
     // $type（bathroom-areasなど）を引数で渡して、$type（bathroom-areasなど）ごとに、ページ内容を表示
     public function show($type)
-    {   
+    {
         // ページタイトルを、タイプごとに取得
         $pageTitle = $this->getPageTitleByType($type);
         // カードのタイトルとカテゴリーをタイプから取得
         $cardTitlesAndCategories = $this->getCardTitlesAndCategoriesByType($type);
-        
-    
+
+        // フィードバックを除外したカードタイトルのとき
+        $cardTitlesWithoutFeedback = array_filter($cardTitlesAndCategories, function ($titles) {
+            return $titles['title'] !== 'フィードバック';
+        });
+
+
         // カテゴリー１から、カード1用のアイテムを取得
         $items1 = $this->getItemsByCategory($type, $cardTitlesAndCategories[0]['category']);
         // カテゴリー２からカード2用のアイテムを取得
         $items2 = $this->getItemsByCategory($type, $cardTitlesAndCategories[1]['category']);
-        
+
         // アイディアのページであれば、優先度のラジオボタン「不要」を表示するため、アイディアのページかチェック
         $showRemoveOption = ($type === 'requests-exclusions');
         // フォームのアクションメソッドに入るものを、タイプ別に設定
         $actionUrl = route('items.store', ['type' => $type]);
-    
+
         return view('item.index', [
             'pageTitle' => $pageTitle,
             'title1' => $cardTitlesAndCategories[0]['title'],
@@ -37,10 +42,11 @@ class ItemController extends Controller
             'titles' => $cardTitlesAndCategories,
             'showRemoveOption' => $showRemoveOption,
             'actionUrl' => $actionUrl,
-            
+            'filteredTitles' => $cardTitlesWithoutFeedback,
+
         ]);
     }
-    
+
 
     // ページタイトルをタイプごとに取得
     private function getPageTitleByType($type)
@@ -87,17 +93,17 @@ class ItemController extends Controller
         ];
         return $titles[$type];
     }
-    
+
 
     // タイプと、カテゴリーに基づいてアイテムを取得
     private function getItemsByCategory($type, $category)
     {
         return Item::where('type', $type)
-                    ->where('category', $category)
-                    ->orderByRaw("FIELD(priority, 'high', 'medium', 'low', 'remove') asc")
-                    ->get();
+            ->where('category', $category)
+            ->orderByRaw("FIELD(priority, 'high', 'medium', 'low', 'remove') asc")
+            ->get();
     }
-    
+
     // フォームに入力された内容を登録
     public function store(Request $request, $type)
     {
@@ -108,13 +114,13 @@ class ItemController extends Controller
             'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
             'request_message' => 'required|string|max:255',
         ]);
-    
+
         // アイテム（優先度、カテゴリー名、要望）の作成
         $item = new Item();
         $item->priority = $request->input('priority');
         $item->category = $request->input('category');
         $item->request_message = $request->input('request_message');
-        
+
         // カードナンバーを設定
         $titlesAndCategories = $this->getCardTitlesAndCategoriesByType($type);
         foreach ($titlesAndCategories as $titleCategory) {
@@ -123,20 +129,20 @@ class ItemController extends Controller
                 break;
             }
         }
-    
+
         // 画像の保存処理
         if ($request->hasFile('imageUpload')) {
             $image = $request->file('imageUpload');
             $imagePath = $image->store('images', 'public');
             $item->image_url = $imagePath;
         }
-       
+
         $item->type = $type;
         // 保存
         $item->save();
         return redirect()->route('items.show', ['type' => $type]);
     }
-    
+
 
     // 更新
     public function update(Request $request, $type, $itemId)
