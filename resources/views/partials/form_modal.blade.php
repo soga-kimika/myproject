@@ -24,7 +24,8 @@
                 {{-- @endif --}}
             </div>
             <div class="form-group d-flex align-items-center col-md-12">
-                <input type="text" name="edit_request_message" id="request_message" class="form-control form-control-lg me-2" placeholder="要望を記入してください" required style="flex: 1;">
+                <input type="text" name="edit_request_message" id="edit_request_message" class="form-control form-control-lg me-2" placeholder="要望を記入してください" 
+                required style="flex: 1;" >
                 <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none"> 
                 <button type="submit" class="btn btn-primary ms-2">{{ $submitButtonText }}</button>
             </div>

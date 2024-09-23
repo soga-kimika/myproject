@@ -43,7 +43,6 @@
                                         {{-- 編集ボタン　モーダルトリガー　--}}
                                         <td>
                                             <a href="#" class="btn btn-primary btn-edit" data-toggle="modal" data-target="#editModal{{ $item1->id }}" data-request="{{ $item1->request_message }}" data-priority="{{ $item1->priority }}">編集</a>
-
                                             {{-- フォームで画像を投稿していれば、画像のアイコンを表示 トリガー--}}
                                         </td>
                                         <td>
@@ -102,12 +101,12 @@
                                                     不明    
                                             @endswitch
                                         </td>
-                                             {{-- アイテム１に格納されている要望を表示 --}}
+                                             {{-- アイテム２に格納されている要望を表示 --}}
                                             <td>{{ $item2->request_message }}</td>
                                             {{-- 編集ボタン モーダルトリガー--}}
                                             <td>
-                                                <a href="#" class="btn btn-primary btn-edit" data-toggle="modal" data-target="#editModal{{ $item2->id }}">編集</a>
-                                            </td>   
+                                            <a href="#" class="btn btn-primary btn-edit" data-toggle="modal" data-target="#editModal{{ $item2->id }}" data-request="{{ $item2->request_message }}" data-priority="{{ $item2->priority }}">編集</a>
+                                        </td>   
                                             <td >
                                                 {{-- フォームで画像を投稿していれば、画像のアイコンを表示　画像モーダルトリガー --}}
                                                 @if($item2->image_url)

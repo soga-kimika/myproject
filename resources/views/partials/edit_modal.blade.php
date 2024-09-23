@@ -1,5 +1,5 @@
 {{-- アイテム1のモーダル --}}
-@foreach($items1 as $item)
+
     <div class="modal fade" id="editModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel{{ $item->id }}" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -25,10 +25,10 @@
             </div>
         </div>
     </div>
-@endforeach
+
 
 {{-- アイテム2のモーダル --}}
-@foreach($items2 as $item2)
+{{-- 
     <div class="modal fade" id="editModal{{ $item2->id }}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel{{ $item2->id }}" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -53,5 +53,5 @@
                 </form>
             </div>
         </div>
-    </div>
-@endforeach
+    </div> --}}
+
