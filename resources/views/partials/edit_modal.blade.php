@@ -14,7 +14,7 @@
                     @csrf
                     @method('PUT')
                     <div class="modal-body">
-                        @include('partials.form', ['actionUrl' => route('items.update', ['type' => $type, 'itemId' => $item->id]), 'submitButtonText' => '更新'])
+                        @include('partials.form_modal', ['actionUrl' => route('items.update', ['type' => $type, 'itemId' => $item->id]), 'submitButtonText' => '更新'])
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">更新</button>

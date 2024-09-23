@@ -42,7 +42,7 @@
                 </div>
                 <div class="form-group d-flex align-items-center col-md-12">
                     <input type="text" name="request_message" id="request_message" class="form-control form-control-lg me-2" placeholder="要望を記入してください" required style="flex: 1;">
-                    <label for="imageUpload" class="btn btn-primary me-2 form-check-label" style="cursor: pointer;">
+                    <label for="imageUpload" class="btn btn-primary me-2 form-check-label btn-select" style="cursor: pointer;">
                         画像を選択 <i class="fas fa-upload"></i> 
                     </label>
                     <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none"> 

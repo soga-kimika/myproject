@@ -32,4 +32,15 @@
 @stop
 
 @section('js')
+<script>
+$(document).on('click', '.btn-edit', function() {
+    const requestMessage = $(this).data('request');
+    const priority = $(this).data('priority');
+
+    $('#edit_request_message').val(requestMessage);
+    $('input[name="edit_priority"]').prop('checked', false);
+    $(`input[name="edit_priority"][value="${priority}"]`).prop('checked', true);
+});
+</script>
+
 @stop

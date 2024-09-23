@@ -1,8 +1,9 @@
-<div class="modal fade" id="deleteModal{{ $id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{ $id }}" aria-hidden="true">
+@foreach($items1 as $item)
+   <div class="modal fade" id="deleteModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{ $item->id }}" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="deleteModalLabel{{ $id }}">削除確認画面</h4>
+                <h4 class="modal-title" id="deleteModalLabel{{ $item->id }}">削除確認画面</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -11,7 +12,6 @@
                 <label>データを削除しますか？</label>
             </div>
             <div class="modal-footer">
-                
                 <form method="POST" action="{{ route('items.destroy',  ['type' => $type, 'itemId' => $item->id]) }}">
                     @csrf
                     @method('DELETE')
@@ -22,3 +22,4 @@
         </div>
     </div>
 </div>
+@endforeach

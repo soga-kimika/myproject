@@ -145,16 +145,18 @@ class ItemController extends Controller
 
         // バリデーション
         $request->validate([
-            'priority' => 'required|in:high,medium,low',
-            'category' => 'required|in:toilet,bath,idea,feedback,outside,interior,bedroom,kidsroom,storage,other,living,dining',
+            'priority' => 'nullable|in:high,medium,low',
             'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
             'request_message' => 'nullable|string|max:255',
         ]);
 
-        // アイテムの更新
-        $item->priority = $request->input('priority');
-        $item->category = $request->input('category');
-        $item->request_message = $request->input('request_message');
+        // アイテムの更新（編集モーダルで入力された内容にて更新）
+        if ($request->has('edit_priority')) {
+            $item->priority = $request->input('edit_priority');
+        }
+        if ($request->has('edit_request_message')) {
+            $item->request_message = $request->input('edit_request_message');
+        }
 
         // 画像の保存処理
         if ($request->hasFile('imageUpload')) {
