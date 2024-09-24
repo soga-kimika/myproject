@@ -3,11 +3,20 @@
     background-color: transparent;
     border: 2px solid ;
 }
-
 .btn:hover{
     background-color: rgb(255, 255, 255); 
     font-weight: bold;
+    color: white;
 }
+
+.btn:active{
+    background-color: white;
+}
+.btn:focus{
+    background-color: white;
+}
+
+
 /* ラジオボタン */
 .form-check {
     margin-right: 10px; 
@@ -101,6 +110,8 @@
 }
 
 
+
+
 /* 編集ボタン */
 .btn-edit{
     margin-left: 22px;
@@ -147,6 +158,9 @@ btn-default{
 .btn-store{
     color: rgb(31, 222, 146);
 }
+.btn-store:hover    {
+    color: rgb(31, 222, 146);
+}
 
 
 /* クライアント */
@@ -155,3 +169,7 @@ btn-default{
     margin-right: 10px;
 }
 
+
+.client-form{
+    background-color: white;
+}

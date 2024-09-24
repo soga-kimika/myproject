@@ -20,16 +20,16 @@
 
     <!-- Full Width Column -->
     <div class="container-fluid">
-        <div class="container">
+        <div class="container ">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <h1>施主情報</h1>
+                <h1>プロフィール</h1>
             </section>
 
             <!-- Main content -->
             <section class="content">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 client-form  ">
                         <form id="xxxForm" method="post" action="{{route('client.store')}}">
                             @csrf <!-- CSRFトークンの追加 -->
 
@@ -249,13 +249,9 @@
 @stop
 
 @section('css')
-    <!-- Custom CSS if needed -->
-    <style>
-        .form-inline .form-group {
-            margin-right: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('/css/item/index.css') }}">
 @stop
+
 
 @section('js')
     <!-- Custom JS if needed -->

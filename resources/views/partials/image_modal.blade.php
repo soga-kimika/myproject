@@ -18,7 +18,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteImageModal{{ $item->id }}">削除</button>
                     @include('partials.delete_image_modal', ['id' => $item->id])
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
                 </div>
             </div>
         </div>
