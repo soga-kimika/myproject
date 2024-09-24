@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomePlanningController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ItemController;
 /*
@@ -15,10 +14,11 @@ use App\Http\Controllers\ItemController;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
-
+Auth::routes();
 Route::prefix('client')->group(function () {
     // 施主情報画面表示
     Route::get('index', [ClientController::class, 'index'])->name('client.index');

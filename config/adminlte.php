@@ -291,14 +291,16 @@ return [
 [
    
         [
-                    'text' => '施主情報',
+                    'text' => 'プロフィール',
                     'url'  => 'client/index',
                     'icon' => 'far fa-address-card',
+                    'classes' => 'text-yellow text-bold text-center',
         ],
         [
                     'text' => 'アイディア',
                     'url'  => 'HomePlanning/requests-exclusions',
-                    'icon' => 'fas fa-lightbulb' 
+                    'icon' => 'fas fa-lightbulb',
+                    'classes' => 'text-danger text-uppercase',
                 
         ],
             
@@ -342,15 +344,31 @@ return [
         // AdminLTEデフォルト
         
         // Navbar items:
+        // [
+        //     'type'         => 'navbar-search',
+        //     'text'         => 'search',
+        //     'topnav_right' => true,
+        // ],
+       
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
+            'text'    => 'account_settings',
+            'icon' => 'fas fa-fw fa-user',
             'topnav_right' => true,
+            'submenu' => [
+                [
+                    'text' => 'Change Password',
+                    'url'  => 'password/reset',
+                    'icon' => 'fas fa-fw fa-lock',
+                ],
+                [
+                    'text' => 'Logout',
+                    'url'  => '/',
+                    'icon' => 'fas fa-sign-out-alt',
+                ],
+            ],
         ],
-        [
-            'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
-        ],
+
+    ],
         
 
         // AdminLTEデフォルト
@@ -384,24 +402,18 @@ return [
         //     'icon' => 'fas fa-fw fa-lock',
         // ],
         // ['header' => 'プロフィール'],
-        [
-            'text'    => 'account_settings',
-            'icon' => 'fas fa-fw fa-user',
-            'submenu' => [
-             [
-                    'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-             ],
-            [
-                   
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-                
-             ],
-            ]
-            ],
+        // [
+        //     'text'    => 'account_settings',
+        //     'icon' => 'fas fa-fw fa-user',
+        //     'submenu' => [
+        //      [
+        //             'text' => 'profile',
+        //     'url'  => 'password/reset',
+        //     'icon' => 'fas fa-fw fa-user',
+        //      ],
+        // ['header' => 'アカウント設定'],
+            // ]
+            // ],
         //                 [
         //                     'text' => 'level_two',
         //                     'url'  => '#',
@@ -445,7 +457,7 @@ return [
         //     'url'        => '#',
         // ],
         
-    ],
+
 
     /*
     |--------------------------------------------------------------------------
