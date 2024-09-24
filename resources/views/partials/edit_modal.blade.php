@@ -16,7 +16,7 @@
                         @include('partials.form_modal', ['actionUrl' => route('items.update', ['type' => $type, 'itemId' => $item->id]), 'submitButtonText' => '更新'])
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">更新</button>
+                        <button type="submit" class="btn btn-update">更新</button>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ $item->id }}">削除</button>
                         @include('partials.delete_modal', ['id' => $item->id])
                         <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>

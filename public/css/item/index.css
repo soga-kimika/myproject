@@ -1,5 +1,13 @@
-/* 入力フォーム */
+/* ボタン全体 */
+.btn {
+    background-color: transparent;
+    border: 2px solid ;
+}
 
+.btn:hover{
+    background-color: rgb(255, 255, 255); 
+    font-weight: bold;
+}
 /* ラジオボタン */
 .form-check {
     margin-right: 10px; 
@@ -26,17 +34,21 @@
 }
 /* カードタイトル */
 .card-header:first-child{
-    background-color:#dc3545;
+    border: 2px solid; 
+    color:  rgb(71, 70, 70);
+    background-color: rgb(71, 70, 70);
 }
 .card-title{
     font-weight: bold;
+    color: white;
 }
 /* ヘッダー */
 .custom-table thead th {
     font-size: 0.85rem;
     padding: 5px;
-    background-color:#3f6791 ;
+    
 }
+
 
 .custom-table th, .custom-table td {
     vertical-align: middle;
@@ -68,21 +80,71 @@
     width: 60px;
     text-align: center; 
     padding-right: 20px;
-
-   
 }
 /* 画像アイコン */
 .custom-table img {
     max-width: 100px; 
     height: auto; 
-   
 }
+
+
+
+
+
+/* 画像ボタン */
+.btn-info{
+    color: #17a2b8;
+    border: 2px solid; 
+}
+
+.btn-info:hover{
+    color: #17a2b8;
+}
+
 
 /* 編集ボタン */
 .btn-edit{
     margin-left: 22px;
+    border: 2px solid  gray;
+    color: gray;
 }
 
+.btn-edit:hover {
+    color:  gray;
 
+}
+/* 削除ボタン */
 
+.btn-danger{
+    color: red;
+}
+.btn-danger:hover{
+    color:  red;
+}
 
+/* 閉じるボタン */
+btn-default{
+    color: gray;
+}
+
+/* 更新ボタン */
+.btn-update{
+    color: gray;
+}
+
+.btn-update:hover{
+    color: gray;
+}
+
+/* 画像投稿ボタン */
+.btn-select{
+    color: gray;
+}
+
+.btn-select:hover{
+    color: gray;
+}
+   /* 登録ボタン */ 
+.btn-store{
+    color: gray;
+}

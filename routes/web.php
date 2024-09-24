@@ -39,18 +39,12 @@ Route::prefix('HomePlanning')->group(function () {
     Route::prefix('{type}')->group(function () {
         // 一覧表示（GET）
         Route::get('/', [ItemController::class, 'show'])->name('items.show');
-
         // 新規作成（POST）
         Route::post('/', [ItemController::class, 'store'])->name('items.store');
-
         // 更新（PUT）
         Route::put('/{itemId}', [ItemController::class, 'update'])->name('items.update');
-
         // 削除
         Route::delete('/{itemId}', [ItemController::class, 'destroy'])->name('items.destroy');
     });
-
-    // web.php
-
     Route::get('/items/{type}/{cardTitle}', [ItemController::class, 'showItemsByTitle'])->name('items.showByTitle');
 });

@@ -55,9 +55,9 @@ class ItemController extends Controller
             'bathroom-areas' => 'トイレ・バスルーム',
             'requests-exclusions' => 'アイディア・フィードバック',
             'exterior-interior-landscaping' => 'エクステリア・インテリア',
-            'rooms' => 'プラベートルーム',
-            'storage' => 'ストレージ・その他',
-            'living-dining' => 'リビング・ダイニング',
+            'rooms' => 'プラベート',
+            'storages' => 'ストレージ・フリースペース',
+            'living-dining' => 'リビング・ダイニング・キッチン',
         ];
         return $titles[$type];
     }
@@ -68,27 +68,27 @@ class ItemController extends Controller
         $titles = [
             'bathroom-areas' => [
                 ['id' => 1, 'title' => 'トイレ', 'category' => 'toilet'],
-                ['id' => 2, 'title' => 'お風呂', 'category' => 'bath'],
+                ['id' => 2, 'title' => 'バスルーム', 'category' => 'bath'],
             ],
             'requests-exclusions' => [
                 ['id' => 1, 'title' => 'アイディア', 'category' => 'idea'],
                 ['id' => 2, 'title' => 'フィードバック', 'category' => 'feedback'],
             ],
             'exterior-interior-landscaping' => [
-                ['id' => 1, 'title' => '外構・外装', 'category' => 'outside'],
-                ['id' => 2, 'title' => '内装', 'category' => 'interior'],
+                ['id' => 1, 'title' => 'エクステリア', 'category' => 'outside'],
+                ['id' => 2, 'title' => 'インテリア', 'category' => 'interior'],
             ],
             'rooms' => [
-                ['id' => 1, 'title' => '寝室', 'category' => 'bedroom'],
-                ['id' => 2, 'title' => '子供部屋', 'category' => 'kidsroom'],
-            ],
-            'storage' => [
-                ['id' => 1, 'title' => '収納', 'category' => 'storage'],
-                ['id' => 2, 'title' => 'その他', 'category' => 'other'],
+                ['id' => 1, 'title' => 'ベッドルーム', 'category' => 'bedroom'],
+                ['id' => 2, 'title' => 'キッズルーム', 'category' => 'kidsroom'],
+            ],  
+            'storages' => [
+                ['id' => 1, 'title' => 'ストレージ', 'category' => 'storage'],
+                ['id' => 2, 'title' => 'フリースペース', 'category' => 'other'],
             ],
             'living-dining' => [
                 ['id' => 1, 'title' => 'リビング', 'category' => 'living'],
-                ['id' => 2, 'title' => 'ダイニング', 'category' => 'dining'],
+                ['id' => 2, 'title' => 'ダイニング・キッチン', 'category' => 'dining'],
             ],
         ];
         return $titles[$type];
@@ -110,7 +110,7 @@ class ItemController extends Controller
         // バリデーション（入力のルール）
         $request->validate([
             'priority' => 'required|in:high,medium,low,remove',
-            'category' => 'required|in:toilet,bath,idea,feedback,outside,interior,bedroom,kidsroom,storage,other,living,dining',
+            'category' => 'required|in:toilet,bath,idea,feedback,outside,interior,bedroom,kidsroom,storages,other,living,dining',
             'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
             'request_message' => 'required|string|max:255',
         ]);

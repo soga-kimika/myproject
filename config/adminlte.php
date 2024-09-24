@@ -131,7 +131,7 @@ return [
 
     'usermenu_enabled' => true,
     'usermenu_header' => false,
-    'usermenu_header_class' => 'bg-primary',
+    'usermenu_header_class' => 'bg-light',
     'usermenu_image' => false,
     'usermenu_desc' => false,
     'usermenu_profile_url' => false,
@@ -153,7 +153,7 @@ return [
     'layout_fixed_sidebar' => null,
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
-    'layout_dark_mode' => null,
+    'layout_dark_mode' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -190,9 +190,9 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-light-dark elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
+    'classes_topnav' => 'navbar-light navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -290,52 +290,55 @@ return [
     'menu' =>
 [
    
-        [
-                    'text' => 'プロフィール',
-                    'url'  => 'client/index',
-                    'icon' => 'far fa-address-card',
-                    'classes' => 'text-yellow text-bold text-center',
-        ],
-        [
-                    'text' => 'アイディア',
-                    'url'  => 'HomePlanning/requests-exclusions',
-                    'icon' => 'fas fa-lightbulb',
-                    'classes' => 'text-danger text-uppercase',
-                
-        ],
-            
-        
-       
-        [
-            'text' => 'デザイン',
-            'url'  => 'HomePlanning/exterior-interior-landscaping',
-            'icon' => 'fas fa-palette' 
-        ],
-
-        [
-            'text' => '居住空間',
-            'url'  => 'HomePlanning/living-dining',
-            'icon' => 'fas fa-couch' 
-        ],
-
-        [
-            'text' => '水回り',
-            'url'  => 'HomePlanning/bathroom-areas',
-            'icon' => 'fas fa-sink' 
-        ],
-
-        [
-            'text' => 'プライベートルーム',
-            'url'  => 'HomePlanning/rooms',
-            'icon' => 'fas fa-bed' 
-        ],
-
-        [
-            'text' => '収納・その他',
-            'url'  => 'HomePlanning/storage',
-            'icon' => 'fas fa-box' 
-        ],
-        
+    [
+        'text' => 'プロフィール',
+        'url'  => 'client/index',
+        'icon' => 'far fa-address-card',
+        'classes' => 'text-white text-bold text-center', 
+        'icon_color' => 'red', 
+    ],
+    [
+        'text' => 'アイディア',
+        'url'  => 'HomePlanning/requests-exclusions',
+        'icon' => 'fas fa-lightbulb',
+        'icon_color' => 'yellow', 
+        'classes' => 'text-bold', 
+    ],
+    [
+        'text' => 'デザイン',
+        'url'  => 'HomePlanning/exterior-interior-landscaping',
+        'icon' => 'fas fa-palette',
+        'icon_color' => 'lightblue', 
+        'classes' => 'text-bold ', 
+    ],
+    [
+        'text' => 'LDK',
+        'url'  => 'HomePlanning/living-dining',
+        'icon' => 'fas fa-couch',
+        'icon_color' => 'olive', 
+        'classes' => 'text-bold', 
+    ],
+    [
+        'text' => '水回り',
+        'url'  => 'HomePlanning/bathroom-areas',
+        'icon' => 'fas fa-sink',
+        'icon_color' => 'blue', 
+        'classes' => 'text-bold', 
+    ],
+    [
+        'text' => 'プライベートルーム',
+        'url'  => 'HomePlanning/rooms',
+        'icon' => 'fas fa-bed',
+        'icon_color' => 'purple', 
+        'classes' => 'text-bold ', 
+    ],
+    [
+        'text' => 'ライフスタイル',
+        'url'  => 'HomePlanning/storages',
+        'icon' => 'fas fa-box',
+        'icon_color' => 'orange', 
+        'classes' => 'text-bold ', 
+    ],
 
 
 
