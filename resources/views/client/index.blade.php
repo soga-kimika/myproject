@@ -3,9 +3,8 @@
 @section('title', 'マイホームNOTE')
 
 @section('content')
-    <!-- エラー表示 -->
     <div class="row">
-        <div class="col-md-12">
+        <div class="card col-md-12">
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -17,23 +16,22 @@
             @endif
         </div>
     </div>
-
-    <!-- Full Width Column -->
     <div class="container-fluid">
         <div class="container">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>施主情報</h1>
+            <form id="xxxForm" method="post" action="{{route('client.store')}}">
+            <section class="content-header d-flex">
+                <h1>プロフィール</h1>
+                    <a href="{{route('client.edit') }}" class="btn  btn-edit  ">編集</a> </button>
             </section>
-
-            <!-- Main content -->
             <section class="content">
                 <div class="row">
                     <div class="col-md-12">
-                        <form id="xxxForm" method="post" action="{{route('client.store')}}">
-                            @csrf <!-- CSRFトークンの追加 -->
-
+                        
+                       
+                            @csrf 
                             <table class="table table-bordered text-sm">
+                                
+    
                                 <colgroup>
                                     <col width="15%"/>
                                     <col width="35%"/>
@@ -62,7 +60,6 @@
                                         </div>
                                     </td>
                                 </tr>
-                                
                                 <tr>
                                     <th class="bg-summer-sky">土地予算</th>
                                     <td>
@@ -151,30 +148,21 @@
                                     </td>
                                 </tr>
                             </table>
-                            <div class="text-center mt-4">
-                                <a href="{{route('client.edit') }}" class="btn bg-green "></a>
-                                <i class="fa fa-thumbs-up"></i> 編集</button>
-                            </div>
-
+                          
                         </form>
                     </div>
                 </div>
             </section>
-            <!-- /.content -->
+ 
         </div>
-        <!-- /.container -->
+     
     </div>
 @stop
 
 @section('css')
-    <!-- Custom CSS if needed -->
-    <style>
-        .form-inline .form-group {
-            margin-right: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('/css/item/index.css') }}">
 @stop
 
 @section('js')
-    <!-- Custom JS if needed -->
+
 @stop

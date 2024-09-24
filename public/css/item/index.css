@@ -147,3 +147,11 @@ btn-default{
 .btn-store{
     color: rgb(31, 222, 146);
 }
+
+
+/* クライアント */
+
+.form-inline .form-group {
+    margin-right: 10px;
+}
+
