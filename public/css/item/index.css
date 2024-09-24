@@ -49,7 +49,6 @@
     
 }
 
-
 .custom-table th, .custom-table td {
     vertical-align: middle;
     padding-left: 0;
@@ -105,12 +104,12 @@
 /* 編集ボタン */
 .btn-edit{
     margin-left: 22px;
-    border: 2px solid  gray;
-    color: gray;
+    border: 2px solid  orange;
+    color: orange;
 }
 
 .btn-edit:hover {
-    color:  gray;
+    color: orange;
 
 }
 /* 削除ボタン */
@@ -129,22 +128,22 @@ btn-default{
 
 /* 更新ボタン */
 .btn-update{
-    color: gray;
+    color: rgb(80, 183, 183);
 }
 
 .btn-update:hover{
-    color: gray;
+    color: rgb(80, 183, 183);
 }
 
 /* 画像投稿ボタン */
 .btn-select{
-    color: gray;
+    color: rgb(35, 168, 182);
 }
 
 .btn-select:hover{
-    color: gray;
+    color: rgb(35, 168, 182);
 }
    /* 登録ボタン */ 
 .btn-store{
-    color: gray;
+    color: rgb(66, 201, 46);
 }

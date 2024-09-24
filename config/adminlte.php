@@ -294,7 +294,7 @@ return [
         'text' => 'プロフィール',
         'url'  => 'client/index',
         'icon' => 'far fa-address-card',
-        'classes' => 'text-white text-bold text-center', 
+        'classes' => 'text-bold', 
         'icon_color' => 'red', 
     ],
     [
