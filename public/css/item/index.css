@@ -18,10 +18,10 @@
 
 /* 優先度のラジオボタンのアイコン */
 .fa-star{
-    color: gold;
+    color: gold
 }
 .fa-star-half-alt{
-    color: gold;    
+    color: gold
 }
 .fa-times{
     color: red;
@@ -104,12 +104,12 @@
 /* 編集ボタン */
 .btn-edit{
     margin-left: 22px;
-    border: 2px solid  orange;
-    color: orange;
+    border: 2px solid   purple;
+    color:  purple;
 }
 
 .btn-edit:hover {
-    color: orange;
+    color:  purple;
 
 }
 /* 削除ボタン */
@@ -137,13 +137,13 @@ btn-default{
 
 /* 画像投稿ボタン */
 .btn-select{
-    color: rgb(35, 168, 182);
+    color: orange;
 }
 
 .btn-select:hover{
-    color: rgb(35, 168, 182);
+    color: orange;
 }
    /* 登録ボタン */ 
 .btn-store{
-    color: rgb(66, 201, 46);
+    color: rgb(31, 222, 146);
 }
