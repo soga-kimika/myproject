@@ -16,10 +16,9 @@ namespace App\Http\Controllers;
             $pageTitle = $this->getPageTitleByType($type);
             // カードのタイトルとカテゴリーをタイプから取得
             $cardTitlesAndCategories = $this->getCardTitlesAndCategoriesByType($type);
-
-            // フィードバックを除外したカードタイトルのとき
-            $cardTitlesWithoutFeedback = array_filter($cardTitlesAndCategories, function ($titles) {
-                return $titles['title'] !== 'フィードバック';
+            // ナッシングを除外したカードタイトルのとき
+            $cardTitlesWithoutNothing = array_filter($cardTitlesAndCategories, function ($titles) {
+                return $titles['title'] !== 'ナッシング';
             });
 
 
@@ -41,7 +40,7 @@ namespace App\Http\Controllers;
                 'type' => $type,
                 'titles' => $cardTitlesAndCategories,
                 'actionUrl' => $actionUrl,
-                'filteredTitles' => $cardTitlesWithoutFeedback,
+                'filteredTitles' => $cardTitlesWithoutNothing,
 
             ]);
         }

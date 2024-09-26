@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('detail', 500)->nullable();
             $table->timestamps();
             $table->enum('priority',['high','medium','low','remove']);
-            $table->enum('category',['toilet', 'bath', 'idea', 'feedback', 'outside', 'interior','bedroom','kidsroom','storage','other','living','dining']);
+            $table->enum('category',['toilet', 'bath', 'idea', 'nothing', 'outside', 'interior','bedroom','kidsroom','storage','other','living','dining']);
             $table->string('image_url')->nullable();
             $table->string('request_message',255)->nullable();
             $table->integer('card_number')->nullable();
