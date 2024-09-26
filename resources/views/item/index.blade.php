@@ -13,7 +13,6 @@
         @include('partials.form', [
             'actionUrl' => route('items.store', $type),
             'submitButtonText' => '登録',
-            'showRemoveOption' => $showRemoveOption,
         ])  
         @include('partials.table', [
             'title1' => $title1,

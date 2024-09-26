@@ -333,7 +333,7 @@ return [
             'classes' => 'text-bold ',
         ],
         [
-            'text' => 'ライフスタイル',
+            'text' => 'ストレージ',
             'url'  => 'HomePlanning/storages',
             'icon' => 'fas fa-box',
             'icon_color' => 'orange',

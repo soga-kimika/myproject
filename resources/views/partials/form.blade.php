@@ -21,7 +21,7 @@
                             <label class="form-check-label" for="priority-low">低 <i class="far fa-star"></i></label>
                         </div>
                         {{-- アイディアのページだけ不要のラジオボタンを表示 --}}
-                        @if ($showRemoveOption)
+                        @if($type ==='ideas')
                             <div class="form-check">
                                 <input type="radio" class="form-check-input" name="priority" value="remove" id="priority-remove">
                                 <label class="form-check-label" for="priority-remove">不要 <i class="fa fa-times"></i></label>

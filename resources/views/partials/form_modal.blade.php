@@ -1,7 +1,7 @@
 <div class="container">
-    <div class="col-md-12 mx-auto"> 
+    <form action="{{ $actionUrl }}" method="POST" enctype="multipart/form-data">
         {{-- 送信先のアクションURLはコントローラーで提示 --}}
-        <form action="{{ $actionUrl }}" method="POST" enctype="multipart/form-data">
+        <div class="col-md-12 mx-auto"> 
             @csrf
             {{-- 入力フォーム --}}
             <div class="col-md-12 d-flex mb-3">
@@ -20,6 +20,12 @@
                             <input type="radio" class="form-check-input" name="edit_priority" value="low" id="priority-low">
                             <label class="form-check-label" for="priority-low">低 <i class="far fa-star"></i></label>
                         </div>
+                       @if($type ==='ideas')
+                        <div class="form-check me-3">
+                            <input type="radio" class="form-check-input" name="edit_priority" value="remove" id="priority-remove">
+                            <label class="form-check-label" for="priority-remove">不要<i class="far fa-times"></i></label>
+                        </div>
+                        @endif
                     </div>
                 {{-- @endif --}}
             </div>

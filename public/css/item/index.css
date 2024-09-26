@@ -36,7 +36,7 @@
     color: red;
 }
 
-/* 画像投稿ボタン */
+/* ファイル選択ボタン */
 .btn-select{
     margin-left: 10px;
     margin-right: 10px;
@@ -57,11 +57,14 @@
     padding: 5px;
     
 }
-
-.custom-table th, .custom-table td {
+.custom-table td {
     vertical-align: middle;
     padding-left: 0;
-    }
+}
+.custom-table th {
+        vertical-align: middle;
+        padding-left: 0;
+}
 /* レコード */
 .table {
     width: 100%;
@@ -72,8 +75,7 @@
     line-height: 1.5; 
 }
 .col-priority {
-    width: 70px; 
-    text-align: center; 
+    width: 70px;
 } 
 .col-request {
     width: 60%; 
@@ -87,13 +89,19 @@
 .col-image{
     width: 60px;
     text-align: center; 
-    padding-right: 2px;
+    margin-left: 20px;
+}
+
+.th-col-priority{
+
+    padding-right: 20px;
 }
 /* 画像アイコン */
 .custom-table img {
     max-width: 100px; 
     height: auto; 
 }
+
 
 /* 画像ボタン */
 .btn-info{
@@ -169,7 +177,40 @@ btn-default{
 }
 
 
-.i{
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-  }
+/* カードのアイコン */
+  .fa-toilet {
+    color: rgb(110, 155, 245); /* トイレアイコンの色 */
+}
+.fa-bath {
+    color: rgb(132, 219, 88); /* アイデアアイコンの色 */
+}
+.fa-lightbulb {
+    color: rgba(234, 223, 17, 0.923); /* アイデアアイコンの色 */
+}
+.fa-trash {
+    color: rgb(170, 159, 159); /* アイデアアイコンの色 */
+}
+.fa-tree {
+    color: rgb(48, 184, 48); /* アイデアアイコンの色 */
+}
+.fa-chair {
+    color: rgb(232, 62, 107); /* アイデアアイコンの色 */
+}
+.fa-bed {
+    color: rgb(204, 121, 204); /* アイデアアイコンの色 */
+}
+.fa-child {
+    color: rgb(235, 55, 85); /* アイデアアイコンの色 */
+}
+.fa-box {
+    color: orange; /* アイデアアイコンの色 */
+}
+.fa-tools {
+    color: rgb(173, 156, 156); /* アイデアアイコンの色 */
+}
+.fa-couch {
+    color: rgb(129, 220, 49); /* アイデアアイコンの色 */
+}
+.fa-utensils {
+    color: rgb(235, 214, 95); /* アイデアアイコンの色 */
+}

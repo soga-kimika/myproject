@@ -4,7 +4,7 @@
                 <div class="card">
                     <div class="card-header">
                         {{-- カードタイトルは、$typeを引数に、getCardTitlesAndCategoriesByType関数で取得したタイトル --}}
-                        <h3 class="card-title">{{ $title1 }}</h3>
+                        <h3 class="card-title">{!! $icon1 !!} {{ $title1 }}</h3>
                     </div>
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover text-nowrap custom-table">
@@ -20,7 +20,7 @@
                                 {{-- 入力フォームで選択した優先度のアイコンを表示 --}}
                                 @foreach($items1 as $item1)
                                     <tr>
-                                        <td class="col-priority">
+                                        <td class="col-priority btn-priority">
                                             @switch($item1->priority)
                                                 @case('high')
                                                     <i class="fa fa-star"></i>
@@ -36,7 +36,7 @@
                                                     @break
                                                 @default
                                                     不明
-                                            @endswitch
+                                            @endswitch  
                                         </td>
                                         {{-- アイテム１に格納されている要望を表示 --}}
                                         <td>{{ $item1->request_message }}</td> 
@@ -70,7 +70,7 @@
                 <div class="card mt-4 mt-md-0">
                     <div class="card-header">
                          {{-- カードタイトルは、$typeを引数に、getCardTitlesAndCategoriesByType関数で取得したタイトル --}}
-                        <h3 class="card-title">{{ $title2 }}</h3>
+                         <h3 class="card-title">{!! $icon2 !!} {{ $title2 }}</h3>
                     </div>
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover text-nowrap custom-table">
