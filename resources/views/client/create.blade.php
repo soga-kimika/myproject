@@ -47,7 +47,7 @@
                                         <div class="form-inline">
                                             <div class="form-group">
                                                 <label for="adult_count">大人：</label>
-                                                <select name="adult_count" id="adult_count" class="form-control input-sm">
+                                                <select name="adult_count" id="adult_count" class="form-control input-sm" required >
                                                     <option value="">選択してください</option>
                                                     <option value="1" >1人</option>
                                                     <option value="2" >2人</option>
@@ -58,7 +58,7 @@
                                             </div>
                                             <div class="form-group ml-2">
                                                 <label for="child_count">子供：</label>
-                                                <select name="child_count" id="child_count" class="form-control input-sm">
+                                                <select name="child_count" id="child_count" class="form-control input-sm"required>
                                                     <option value="">選択してください</option>
                                                     <option value="0" >０人</option>
                                                     <option value="1" >1人</option>
@@ -70,7 +70,7 @@
                                             </div>
                                                  <div class="form-group ml-2">
                                                 <label for="pet">ペット：</label>
-                                                <select name="pet" id="pet" class="form-control input-sm">
+                                                <select name="pet" id="pet" class="form-control input-sm"required>
                                                     <option value="">選択してください</option>
                                                     <option value="yes"  >飼っている</option>
                                                     <option value="no" >飼っていない</option>
@@ -85,25 +85,25 @@
                                     <td>
                                         <div class="form-inline">
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" class="form-check-input" name="land_budget_exists" id="land-budget-yes" value="exists" >
+                                                <input type="radio" class="form-check-input" name="land_budget_exists" id="land-budget-yes" value="exists"required >
                                                 <label class="form-check-label" for="land-budget-yes">有</label>
-                                                <input type="radio" class="form-check-input" name="land_budget_exists" id="land-budget-no" value="not-exists">
+                                                <input type="radio" class="form-check-input" name="land_budget_exists" id="land-budget-no" value="not-exists"required>
                                                 <label class="form-check-label" for="land-budget-no">無</label>
                                             </div>
-                                            <input type="text" name="land_budget" class="form-control input-sm ml-2" style="width:100px;" placeholder="500"/> 万円
+                                            <input type="text" name="land_budget" class="form-control input-sm ml-2" style="width:100px;" placeholder="500"required> 万円
                                         </div>
                                     </td>
                                     <th class="bg-summer-sky">建物予算</th>
                                     <td>
                                         <div class="form-inline">
-                                        <input type="text" name="building_budget" class="form-control input-sm ml-2" style="width:100px;" placeholder="3000" /> 万円
+                                        <input type="text" name="building_budget" class="form-control input-sm ml-2" style="width:100px;" placeholder="3000"required> 万円
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <th class="bg-summer-sky">土地の坪数</th>
                                     <td>
-                                        <select name="land_area" class="form-control input-sm">
+                                        <select name="land_area" class="form-control input-sm"required>
                                             <option value="">選択してください</option>
                                             <option value="20" >20坪前後</option>
                                             <option value="30" >30坪前後</option>
@@ -118,7 +118,7 @@
                                     </td>
                                     <th class="bg-summer-sky">建物の坪数</th>
                                     <td>
-                                        <select name="building_area" class="form-control input-sm">
+                                        <select name="building_area" class="form-control input-sm"required>
                                             <option value="">選択してください</option>
                                             <option value="20" >20坪前後</option>
                                             <option value="30" >30坪前後</option>
@@ -136,7 +136,7 @@
                                 <tr>
                                     <th class="bg-summer-sky">階数</th>
                                     <td>
-                                        <select name="floors" class="form-control input-sm">
+                                        <select name="floors" class="form-control input-sm"required>
                                             <option value="">選択してください</option>
                                             <option value="1" >1階建</option>
                                             <option value="2" >2階建</option>
@@ -147,7 +147,7 @@
                                     </td>
                                     <th class="bg-summer-sky">間取り</th>
                                     <td>
-                                        <select name="layout" class="form-control input-sm">
+                                        <select name="layout" class="form-control input-sm"required>
                                             <option value="">選択してください</option>
                                             <option value="2LDK" >2LDK</option>
                                             <option value="3LDK" >3LDK</option>
@@ -165,7 +165,7 @@
                                         <div class="form-inline">
                                             <div class="form-group">
                                                 <label for="regularCars">普通車の台数：</label>
-                                                <select id="regularCars" name="regularCars" class="form-control input-sm">
+                                                <select id="regularCars" name="regularCars" class="form-control input-sm"required>
                                                     <option value="">選択してください</option>
                                                     <option value="0" >0台</option>
                                                     <option value="1" >1台</option>
@@ -175,7 +175,7 @@
                                             </div>
                                             <div class="form-group ml-2">
                                                 <label for="compactCars">軽自動車の台数：</label>
-                                                <select id="compactCars" name="compactCars" class="form-control input-sm">
+                                                <select id="compactCars" name="compactCars" class="form-control input-sm"required>
                                                     <option value="">選択してください</option>
                                                     <option value="0" >0台</option>
                                                     <option value="1" >1台</option>
@@ -185,7 +185,7 @@
                                             </div>
                                             <div class="form-group ml-2">
                                                 <label for="motorcycles">バイクの台数：</label>
-                                                <select id="motorcycles" name="motorcycles" class="form-control input-sm">
+                                                <select id="motorcycles" name="motorcycles" class="form-control input-sm"required>
                                                     <option value="">選択してください</option>
                                                     <option value="0" >0台</option>
                                                     <option value="1" >1台</option>
@@ -195,7 +195,7 @@
                                             </div>
                                             <div class="form-group ml-2">
                                                 <label for="bicycles">自転車の台数：</label>
-                                                <select id="bicycles" name="bicycles" class="form-control input-sm">
+                                                <select id="bicycles" name="bicycles" class="form-control input-sm"required>
                                                     <option value="">選択してください</option>
                                                     <option value="0" >0台</option>
                                                     <option value="1" >1台</option>
@@ -212,18 +212,18 @@
                                     <th class="bg-summer-sky">建築エリア</th>
                                     <td>
                                         <div class="form-inline">
-                                        <input type="text" name="construction_area" class="form-control input-sm" placeholder="城北" />エリア
+                                        <input type="text" name="construction_area" class="form-control input-sm" placeholder="城北"required>エリア
                                     </td>
                                     <th class="bg-summer-sky">建築希望日</th>
                                     <td>
-                                        <input type="date" id="date" name="date" class="form-control input-sm">
+                                        <input type="date" id="date" name="date" class="form-control input-sm"required>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <th class="bg-summer-sky">今の家で不満に思っていること</th>
                                     <td colspan="3">
-                                        <textarea name="current_home_issues" class="form-control input-sm" placeholder="今のお家の不便なこと・不満なことを記入してください" rows="10" ></textarea>
+                                        <textarea name="current_home_issues" class="form-control input-sm" placeholder="今のお家の不便なこと・不満なことを記入してください" rows="10"required ></textarea>
                                     </td>
                                 </tr>
                             </table>
