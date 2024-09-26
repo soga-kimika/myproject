@@ -214,7 +214,7 @@ return [
     'sidebar_collapse_remember' => false,
     'sidebar_collapse_remember_no_transition' => true,
     'sidebar_scrollbar_theme' => 'os-theme-light',
-    'sidebar_scrollbar_auto_hide' => 'l',   
+    'sidebar_scrollbar_auto_hide' => 'l',
     'sidebar_nav_accordion' => true,
     'sidebar_nav_animation_speed' => 300,
 
@@ -288,71 +288,71 @@ return [
     */
 
     'menu' =>
-[
-   
     [
-        'text' => 'プロフィール',
-        'url'  => 'client/index',
-        'icon' => 'far fa-address-card',
-        'classes' => 'text-bold', 
-        'icon_color' => 'red', 
-    ],
-    [
-        'text' => 'アイディア',
-        'url'  => 'HomePlanning/ideas',
-        'icon' => 'fas fa-lightbulb',
-        'icon_color' => 'yellow', 
-        'classes' => 'text-bold', 
-    ],
-    [
-        'text' => 'デザイン',
-        'url'  => 'HomePlanning/designs',
-        'icon' => 'fas fa-palette',
-        'icon_color' => 'lightblue', 
-        'classes' => 'text-bold ', 
-    ],
-    [
-        'text' => 'LDK',
-        'url'  => 'HomePlanning/ldk',
-        'icon' => 'fas fa-couch',
-        'icon_color' => 'olive', 
-        'classes' => 'text-bold', 
-    ],
-    [
-        'text' => 'バスルーム',
-        'url'  => 'HomePlanning/bathrooms',
-        'icon' => 'fas fa-sink',
-        'icon_color' => 'blue', 
-        'classes' => 'text-bold', 
-    ],
-    [
-        'text' => 'プライベートルーム',
-        'url'  => 'HomePlanning/rooms',
-        'icon' => 'fas fa-bed',
-        'icon_color' => 'purple', 
-        'classes' => 'text-bold ', 
-    ],
-    [
-        'text' => 'ライフスタイル',
-        'url'  => 'HomePlanning/storages',
-        'icon' => 'fas fa-box',
-        'icon_color' => 'orange', 
-        'classes' => 'text-bold ', 
-    ],
+
+        [
+            'text' => 'プロフィール',
+            'url'  => 'client/index',
+            'icon' => 'far fa-address-card',
+            'classes' => 'text-bold',
+            'icon_color' => 'red',
+        ],
+        [
+            'text' => 'アイディア',
+            'url'  => 'HomePlanning/ideas',
+            'icon' => 'fas fa-lightbulb',
+            'icon_color' => 'yellow',
+            'classes' => 'text-bold',
+        ],
+        [
+            'text' => 'デザイン',
+            'url'  => 'HomePlanning/designs',
+            'icon' => 'fas fa-palette',
+            'icon_color' => 'lightblue',
+            'classes' => 'text-bold ',
+        ],
+        [
+            'text' => 'LDK',
+            'url'  => 'HomePlanning/ldk',
+            'icon' => 'fas fa-couch',
+            'icon_color' => 'olive',
+            'classes' => 'text-bold',
+        ],
+        [
+            'text' => 'バスルーム',
+            'url'  => 'HomePlanning/bathrooms',
+            'icon' => 'fas fa-sink',
+            'icon_color' => 'blue',
+            'classes' => 'text-bold',
+        ],
+        [
+            'text' => 'プライベートルーム',
+            'url'  => 'HomePlanning/rooms',
+            'icon' => 'fas fa-bed',
+            'icon_color' => 'purple',
+            'classes' => 'text-bold ',
+        ],
+        [
+            'text' => 'ライフスタイル',
+            'url'  => 'HomePlanning/storages',
+            'icon' => 'fas fa-box',
+            'icon_color' => 'orange',
+            'classes' => 'text-bold ',
+        ],
 
 
 
-        
+
 
         // AdminLTEデフォルト
-        
+
         // Navbar items:
         // [
         //     'type'         => 'navbar-search',
         //     'text'         => 'search',
         //     'topnav_right' => true,
         // ],
-       
+
         [
             'text'    => 'account_settings',
             'icon' => 'fas fa-fw fa-user',
@@ -372,94 +372,94 @@ return [
         ],
 
     ],
-        
 
-        // AdminLTEデフォルト
-        
-        // Sidebar items:
-        // [
-        //     'type' => 'sidebar-menu-search',
-        //     'text' => 'search',
-        // ],
-        // [
-        //     'text' => 'blog',
-        //     'url'  => 'admin/blog',
-        //     'can'  => 'manage-blog',
-        // ],
-        // [
-        //     'text'        => 'pages',
-        //     'url'         => 'admin/pages',
-        //     'icon'        => 'far fa-fw fa-file',
-        //     'label'       => 4,
-        //     'label_color' => 'success',
-        // ],
-        // ['header' => 'account_settings'],
-        // [
-        //     'text' => 'profile',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-user',
-        // ],
-        // [
-        //     'text' => 'change_password',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-lock',
-        // ],
-        // ['header' => 'プロフィール'],
-        // [
-        //     'text'    => 'account_settings',
-        //     'icon' => 'fas fa-fw fa-user',
-        //     'submenu' => [
-        //      [
-        //             'text' => 'profile',
-        //     'url'  => 'password/reset',
-        //     'icon' => 'fas fa-fw fa-user',
-        //      ],
-        // ['header' => 'アカウント設定'],
-            // ]
-            // ],
-        //                 [
-        //                     'text' => 'level_two',
-        //                     'url'  => '#',
-        //                 ],
-        //                 [
-        //                     'text'    => 'level_two',
-        //                     'url'     => '#',
-        //                     'submenu' => [
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                     ],
-        //                 ],
-        //             ],
-        //         ],
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //     ],
-        // ],
-        // ['header' => 'labels'],
-        // [
-        //     'text'       => 'important',
-        //     'icon_color' => 'red',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'warning',
-        //     'icon_color' => 'yellow',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'information',
-        //     'icon_color' => 'cyan',
-        //     'url'        => '#',
-        // ],
-        
+
+    // AdminLTEデフォルト
+
+    // Sidebar items:
+    // [
+    //     'type' => 'sidebar-menu-search',
+    //     'text' => 'search',
+    // ],
+    // [
+    //     'text' => 'blog',
+    //     'url'  => 'admin/blog',
+    //     'can'  => 'manage-blog',
+    // ],
+    // [
+    //     'text'        => 'pages',
+    //     'url'         => 'admin/pages',
+    //     'icon'        => 'far fa-fw fa-file',
+    //     'label'       => 4,
+    //     'label_color' => 'success',
+    // ],
+    // ['header' => 'account_settings'],
+    // [
+    //     'text' => 'profile',
+    //     'url'  => 'admin/settings',
+    //     'icon' => 'fas fa-fw fa-user',
+    // ],
+    // [
+    //     'text' => 'change_password',
+    //     'url'  => 'admin/settings',
+    //     'icon' => 'fas fa-fw fa-lock',
+    // ],
+    // ['header' => 'プロフィール'],
+    // [
+    //     'text'    => 'account_settings',
+    //     'icon' => 'fas fa-fw fa-user',
+    //     'submenu' => [
+    //      [
+    //             'text' => 'profile',
+    //     'url'  => 'password/reset',
+    //     'icon' => 'fas fa-fw fa-user',
+    //      ],
+    // ['header' => 'アカウント設定'],
+    // ]
+    // ],
+    //                 [
+    //                     'text' => 'level_two',
+    //                     'url'  => '#',
+    //                 ],
+    //                 [
+    //                     'text'    => 'level_two',
+    //                     'url'     => '#',
+    //                     'submenu' => [
+    //                         [
+    //                             'text' => 'level_three',
+    //                             'url'  => '#',
+    //                         ],
+    //                         [
+    //                             'text' => 'level_three',
+    //                             'url'  => '#',
+    //                         ],
+    //                     ],
+    //                 ],
+    //             ],
+    //         ],
+    //         [
+    //             'text' => 'level_one',
+    //             'url'  => '#',
+    //         ],
+    //     ],
+    // ],
+    // ['header' => 'labels'],
+    // [
+    //     'text'       => 'important',
+    //     'icon_color' => 'red',
+    //     'url'        => '#',
+    // ],
+    // [
+    //     'text'       => 'warning',
+    //     'icon_color' => 'yellow',
+    //     'url'        => '#',
+    // ],
+    // [
+    //     'text'       => 'information',
+    //     'icon_color' => 'cyan',
+    //     'url'        => '#',
+    // ],
+
 
 
     /*

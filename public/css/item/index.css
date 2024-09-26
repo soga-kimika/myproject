@@ -80,14 +80,14 @@
     text-align: left; 
 }
 .col-edit {
-    width: 100px; 
-    text-align: center; 
+    width: 60px; 
+    text-align: right; 
 }
 
 .col-image{
     width: 60px;
     text-align: center; 
-    padding-right: 20px;
+    padding-right: 2px;
 }
 /* 画像アイコン */
 .custom-table img {
@@ -95,26 +95,20 @@
     height: auto; 
 }
 
-
-
-
-
 /* 画像ボタン */
 .btn-info{
     color: #17a2b8;
     border: 2px solid; 
+    margin-left: 10px;
 }
 
 .btn-info:hover{
     color: #17a2b8;
 }
 
-
-
-
 /* 編集ボタン */
 .btn-edit{
-    margin-left: 22px;
+    margin-left: 20px;
     border: 2px solid   purple;
     color:  purple;
 }
@@ -173,3 +167,9 @@ btn-default{
 .client-form{
     background-color: white;
 }
+
+
+.i{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
