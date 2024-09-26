@@ -9,7 +9,7 @@
                     <label class="mb-0">優先度：</label>
                     <div class="d-flex">
                         <div class="form-check me-3">
-                            <input type="radio" class="form-check-input" name="priority" value="high" id="priority-high">
+                            <input type="radio" class="form-check-input" name="priority" value="high" id="priority-high" checked>
                             <label class="form-check-label" for="priority-high">高 <i class="fa fa-star"></i></label>
                         </div>
                         <div class="form-check me-3">
@@ -34,7 +34,7 @@
                         {{-- ページタイトルから、カテゴリーを取得し、カテゴリーごとにカードに表示できるように紐づけ --}}
                         @foreach ($titles as $title)
                         <div class="form-check me-3">
-                            <input type="radio" class="form-check-input" name="category" value="{{ $title['category'] }}" id="category-{{ $title['id'] }}">
+                            <input type="radio" class="form-check-input" name="category" value="{{ $title['category'] }}" id="category-{{ $title['id'] }}" {{ $title['id'] == 1 ? 'checked' : '' }}>
                             <label class="form-check-label" for="category-{{ $title['id'] }}">{{ $title['title'] }}</label>
                         </div>
                         @endforeach
