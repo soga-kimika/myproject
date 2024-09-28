@@ -3,7 +3,7 @@
 @section('title', 'マイホームNOTE')
 
 @section('content')
-    <!-- エラー表示 -->
+    {{-- エラー表示 --}}
     <div class="row">
         <div class="col-md-12">
             @if ($errors->any())
@@ -17,22 +17,19 @@
             @endif
         </div>
     </div>
-
-    <!-- Full Width Column -->
     <div class="container-fluid">
         <div class="container ">
-            <!-- Content Header (Page header) -->
+            {{-- ヘッダー --}}
             <section class="content-header">
                 <h1>プロフィール</h1>
             </section>
 
-            <!-- Main content -->
+            {{-- メイン --}}
             <section class="content">
                 <div class="row">
                     <div class="col-md-12 client-form  ">
                         <form id="xxxForm" method="post" action="{{route('client.store')}}">
-                            @csrf <!-- CSRFトークンの追加 -->
-
+                            @csrf 
                             <table class="table table-bordered text-sm">
                                 <colgroup>
                                     <col width="15%"/>
@@ -242,9 +239,7 @@
                     </div>
                 </div>
             </section>
-            <!-- /.content -->
         </div>
-        <!-- /.container -->
     </div>
 @stop
 
@@ -254,5 +249,4 @@
 
 
 @section('js')
-    <!-- Custom JS if needed -->
 @stop

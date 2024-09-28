@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-
 use Illuminate\Http\Request;
 use App\Models\Client;
 
@@ -57,7 +55,7 @@ class ClientController extends Controller
         'bicycles' =>'required|string',
         'construction_area' =>'required|string',
         'date' =>'required|date',
-        'current_home_issues' =>'required|string',
+        'current_home_issues' =>'string',
         ]);
 
         Client::create($request->all());

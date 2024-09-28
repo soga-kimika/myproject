@@ -18,20 +18,17 @@
         </div>
     </div>
 
-    <!-- Full Width Column -->
     <div class="container-fluid">
         <div class="container">
-            <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>プロフィール</h1>
             </section>
 
-            <!-- Main content -->
             <section class="content">
                 <div class="row">
                     <div class="col-md-12 client-form ">
                         <form method="post" action="{{ route('client.store') }}">
-                            @csrf <!-- CSRFトークンの追加 -->
+                            @csrf 
 
                             <table class="table table-bordered text-sm">
                                 <colgroup>
@@ -168,7 +165,7 @@
                                                 <label for="regularCars">普通車の台数：</label>
                                                 <select id="regularCars" name="regularCars" class="form-control input-sm" required>
                                                     <option value="">選択してください</option>
-                                                    <option value=0 {{ old('regularCars') ===0 ? 'selected' : '' }}>0台</option>
+                                                    <option value= 0 {{ old('regularCars') === 0 ? 'selected' : '' }}>0台</option>
                                                     <option value="1台" {{ old('regularCars') == '1台' ? 'selected' : '' }}>1台</option>
                                                     <option value="2台" {{ old('regularCars') == '2台' ? 'selected' : '' }}>2台</option>
                                                     <option value="3台" {{ old('regularCars') == '3台' ? 'selected' : '' }}>3台以上</option>
@@ -188,7 +185,7 @@
                                                 <label for="motorcycles">バイクの台数：</label>
                                                 <select id="motorcycles" name="motorcycles" class="form-control input-sm" required>
                                                     <option value="">選択してください</option>
-                                                    <option value=0 {{ old('motorcycles') ===0 ? 'selected' : '' }}>0台</option>
+                                                    <option value= 0 {{ old('motorcycles') === 0 ? 'selected' : '' }}>0台</option>
                                                     <option value="1" {{ old('motorcycles') == 1 ? 'selected' : '' }}>1台</option>
                                                     <option value="2" {{ old('motorcycles') == 2 ? 'selected' : '' }}>2台</option>
                                                     <option value="3" {{ old('motorcycles') == 3 ? 'selected' : '' }}>3台以上</option>
@@ -198,7 +195,7 @@
                                                 <label for="bicycles">自転車の台数：</label>
                                                 <select id="bicycles" name="bicycles" class="form-control input-sm" required>
                                                     <option value="">選択してください</option>
-                                                    <option value=0 {{ old('bicycles') ===0 ? 'selected' : '' }}>0台</option>
+                                                    <option value= 0 {{ old('bicycles') === 0 ? 'selected' : '' }}>0台</option>
                                                     <option value="1" {{ old('bicycles') == 1 ? 'selected' : '' }}>1台</option>
                                                     <option value="2" {{ old('bicycles') == 2 ? 'selected' : '' }}>2台</option>
                                                     <option value="3" {{ old('bicycles') == 3 ? 'selected' : '' }}>3台以上</option>
@@ -236,9 +233,7 @@
                     </div>
                 </div>
             </section>
-            <!-- /.content -->
         </div>
-        <!-- /.container -->
     </div>
 @stop
 
@@ -247,5 +242,4 @@
 @stop
 
 @section('js')
-    <!-- Custom JS if needed -->
 @stop

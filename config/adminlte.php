@@ -251,7 +251,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'client/create',
+    'dashboard_url' => 'home',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -337,6 +337,13 @@ return [
             'url'  => 'HomePlanning/storages',
             'icon' => 'fas fa-box',
             'icon_color' => 'orange',
+            'classes' => 'text-bold ',
+        ],
+        [
+            'text' => 'ギャラリー',
+            'url'  => 'gallery',
+            'icon' => 'fas fa-image',
+            'icon_color' => 'gray',
             'classes' => 'text-bold ',
         ],
 

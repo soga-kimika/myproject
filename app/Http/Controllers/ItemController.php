@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class ItemController extends Controller
 {
     // $type（bathroom-areasなど）を引数で渡して、$type（bathroom-areasなど）ごとに、ページ内容を表示
-    public function show($type)
+    public function index($type)
     {
         // ページタイトルを、タイプごとに取得
         $pageTitle = $this->getPageTitleByType($type);
