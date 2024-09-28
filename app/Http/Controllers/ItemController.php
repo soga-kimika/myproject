@@ -142,19 +142,19 @@ class ItemController extends Controller
     public function update(Request $request, $type, $itemId)
     {
         $item = Item::findOrFail($itemId);
-        
+
         // バリデーション
         $request->validate([
-            'edit_priority' => 'nullable|in:high,medium,low',
+            'priority' => 'nullable|in:high,medium,low',
             'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
-            'edit_request_message' => 'nullable|string|max:255',
+            'request_message' => 'nullable|string|max:255',
         ]);
         // アイテムの更新（編集モーダルで入力された内容にて更新）
-        if ($request->has('edit_priority')) {
-            $item->priority = $request->input('edit_priority');
+        if ($request->has('priority')) {
+            $item->priority = $request->input('priority');
         }
-        if ($request->has('edit_request_message')) {
-            $item->request_message = $request->input('edit_request_message');
+        if ($request->has('request_message')) {
+            $item->request_message = $request->input('request_message');
         }
 
         // 画像の保存処理
@@ -193,16 +193,36 @@ class ItemController extends Controller
 
     // 画像の削除
     public function deleteImage($type, $itemId)
-{
-    $item = Item::findOrFail($itemId);
-    if ($item->image_url && Storage::exists('public/' . $item->image_url)) {
-        Storage::delete('public/' . $item->image_url);
-        // 画像URLをリセット
-        $item->image_url = null; 
-        $item->save();
+    {
+        $item = Item::findOrFail($itemId);
+        if ($item->image_url && Storage::exists('public/' . $item->image_url)) {
+            Storage::delete('public/' . $item->image_url);
+            // 画像URLをリセット
+            $item->image_url = null;
+            $item->save();
+        }
+
+        return redirect()->route('items.show', ['type' => $type]);
     }
 
-    return redirect()->route('items.show', ['type' => $type]);
-}
 
+
+    // 画像の保存
+    public function storeImage(Request $request,$type, $itemId)
+    {
+
+        // バリデーション（入力のルール）
+        $request->validate([
+            'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
+        ]);
+        $item = new Item();
+
+        if ($request->hasFile('imageUpload')) {
+            $image = $request->file('imageUpload');
+            $imagePath = $image->url('images', 'public');
+            $item->image_url = $imagePath;
+        }
+
+        return redirect()->route('items.show', ['type' => $type]);
+    }
 }

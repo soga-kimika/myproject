@@ -6,15 +6,15 @@
                 <label class="mb-0">優先度：</label>
                 <div class="d-flex">
                     <div class="form-check me-3">
-                        <input type="radio" class="form-check-input" name="edit_priority" value="high" id="priority-high" {{ $item->priority == 'high' ? 'checked' : '' }}>
+                        <input type="radio" class="form-check-input" name="priority" value="high" id="priority-high" {{ $item->priority == 'high' ? 'checked' : '' }}>
                         <label class="form-check-label" for="priority-high">高 <i class="fa fa-star"></i></label>
                     </div>
                     <div class="form-check me-3">
-                        <input type="radio" class="form-check-input" name="edit_priority" value="medium" id="priority-medium" {{ $item->priority == 'medium' ? 'checked' : '' }}>
+                        <input type="radio" class="form-check-input" name="priority" value="medium" id="priority-medium" {{ $item->priority == 'medium' ? 'checked' : '' }}>
                         <label class="form-check-label" for="priority-medium">中 <i class="fa fa-star-half-alt"></i></label>
                     </div>
                     <div class="form-check me-3">
-                        <input type="radio" class="form-check-input" name="edit_priority" value="low" id="priority-low" {{ $item->priority == 'low' ? 'checked' : '' }}>
+                        <input type="radio" class="form-check-input" name="priority" value="low" id="priority-low" {{ $item->priority == 'low' ? 'checked' : '' }}>
                         <label class="form-check-label" for="priority-low">低 <i class="far fa-star"></i></label>
                     </div>
                 </div>
