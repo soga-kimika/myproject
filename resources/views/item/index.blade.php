@@ -9,6 +9,8 @@
 @section('content')
     @include('partials.errors')
 
+    @include('partials.form')
+
     <div class="container">
         @include('partials.table', [
             'title1' => $title1,

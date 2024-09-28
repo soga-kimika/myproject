@@ -45,6 +45,8 @@ Route::prefix('HomePlanning')->group(function () {
         Route::put('/{itemId}', [ItemController::class, 'update'])->name('items.update');
         // 削除
         Route::delete('/{itemId}', [ItemController::class, 'destroy'])->name('items.destroy');
+        Route::get('/{cardTitle}', [ItemController::class, 'showItemsByTitle'])->name('items.showByTitle');
+        // 画像削除
+        Route::post('/{itemId}/image', [ItemController::class, 'deleteImage'])->name('items.deleteImage');
     });
-    Route::get('/items/{type}/{cardTitle}', [ItemController::class, 'showItemsByTitle'])->name('items.showByTitle');
 });

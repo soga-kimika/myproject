@@ -169,6 +169,8 @@ class ItemController extends Controller
             $item->image_url = $imagePath;
         }
 
+
+
         $item->save();
 
         return redirect()->route('items.show', ['type' => $type]);
@@ -188,4 +190,19 @@ class ItemController extends Controller
 
         return redirect()->route('items.show', ['type' => $type])->with('success', 'アイテムが削除されました。');
     }
+
+    // 画像の削除
+    public function deleteImage($type, $itemId)
+{
+    $item = Item::findOrFail($itemId);
+    if ($item->image_url && Storage::exists('public/' . $item->image_url)) {
+        Storage::delete('public/' . $item->image_url);
+        // 画像URLをリセット
+        $item->image_url = null; 
+        $item->save();
+    }
+
+    return redirect()->route('items.show', ['type' => $type]);
+}
+
 }
