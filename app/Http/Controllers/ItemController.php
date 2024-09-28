@@ -149,9 +149,9 @@ namespace App\Http\Controllers;
 
             // バリデーション
             $request->validate([
-                'priority' => 'nullable|in:high,medium,low',
+                'edit_priority' => 'nullable|in:high,medium,low',
                 'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
-                'request_message' => 'nullable|string|max:255',
+                'edit_request_message' => 'nullable|string|max:255',
             ]);
 
             // アイテムの更新（編集モーダルで入力された内容にて更新）

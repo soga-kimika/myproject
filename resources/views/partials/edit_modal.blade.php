@@ -13,14 +13,14 @@
                     @csrf
                     @method('PUT')
                     <div class="modal-body">
-                        @include('partials.form_modal', ['actionUrl' => route('items.update', ['type' => $type, 'itemId' => $item->id]), 'submitButtonText' => '更新'])
+                        @include('partials.form_modal', ['actionUrl' => route('items.update', ['type' => $type, 'itemId' => $item->id])])
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-update"><i class="fas fa-check"></i></button>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ $item->id }}"><i class="fa fa-trash-alt"></i></button>
                         @include('partials.delete_modal', ['id' => $item->id])
                         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-undo-alt"></i></button>
-                    </div>
+                        </div>
                 </form>
             </div>
         </div>
