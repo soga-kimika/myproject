@@ -11,8 +11,6 @@
 
     <div class="container">
         @include('partials.form', [
-            'actionUrl' => route('items.store', $type),
-            'submitButtonText' => '登録',
         ])  
         @include('partials.table', [
             'title1' => $title1,

@@ -9,7 +9,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="{{ route('items.update', ['type' => $type, 'itemId' => $item->id]) }}">
+                <form method="POST" action="{{ route('items.update', ['type' => $type, 'itemId' => $item->id]) }} "enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="modal-body">

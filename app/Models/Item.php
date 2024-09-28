@@ -16,6 +16,9 @@ class Item extends Model
         'name',
         'type',
         'detail',
+        'priority',
+        'request_message',
+        'image_url',    
     ];
 
     /**
@@ -23,14 +26,12 @@ class Item extends Model
      *
      * @var array<int, string>
      */
-    protected $hidden = [
-    ];
+    protected $hidden = [];
 
     /**
      * The attributes that should be cast.
      *
      * @var array<string, string>
      */
-    protected $casts = [
-    ];
+    protected $casts = [];
 }

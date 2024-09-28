@@ -1,7 +1,7 @@
 <div class="container">
     <div class="col-md-12 mx-auto"> 
         {{-- 送信先のアクションURLはコントローラーで提示 --}}
-        <form action="{{ $actionUrl }}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('items.store', ['type' => $type])}}" method="POST" enctype="multipart/form-data">
             @csrf
             {{-- 入力フォーム --}}
             <div class="border-bottom pb-2 mb-3 mt-4">
@@ -46,7 +46,7 @@
                         画像を選択 <i class="fas fa-upload"></i> 
                     </label>
                     <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none"> 
-                    <button type="submit" class="btn btn-store ms-2">{{ $submitButtonText }}</button>
+                    <button type="submit" class="btn btn-store ms-2">登録</button>
                 </div>
             </div>
         </form>
