@@ -139,6 +139,7 @@
                                     <td>
                                         <i>{{$client->date}}</i>
                                      </td>
+                                     <div id="countdown" style="font-size: 2rem; margin-top: 20px;"></div>
                                 </tr>
                                 
                                 <tr>
@@ -151,7 +152,7 @@
                           
                         </form>
                     </div>
-                </div>
+                </div>  
             </section>
  
         </div>

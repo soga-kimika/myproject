@@ -7,7 +7,7 @@
 @stop
 @section('content')
 
-<h1>Countdown <span>to</span> Sweet Home</h1>
+<h1>Countdown <span class="title-span">to</span> Sweet Home</h1>
     <div class="countdown-container">
         <div class="countdown-elm">
           <p class="time-text" id="days">0</p>
@@ -61,8 +61,9 @@ h1 {
   text-align: center; 
 }
 
-span{
-    color: grey;
+span.title-span{
+    font-size: 3rem;
+   
 }
 
 .countdown-container {

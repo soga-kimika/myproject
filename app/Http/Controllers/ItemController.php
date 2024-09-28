@@ -134,7 +134,7 @@ class ItemController extends Controller
         $item->type = $type;
         // 保存
         $item->save();
-        return redirect()->route('items.show', ['type' => $type]);
+        return redirect()->route('items.index', ['type' => $type]);
     }
 
 
@@ -186,7 +186,7 @@ class ItemController extends Controller
         // アイテムを保存
         $item->save();
 
-        return redirect()->route('items.show', ['type' => $type]);
+        return redirect()->route('items.index', ['type' => $type]);
     }
 
 
@@ -202,7 +202,7 @@ class ItemController extends Controller
 
         $item->delete();
 
-        return redirect()->route('items.show', ['type' => $type])->with('success', 'アイテムが削除されました。');
+        return redirect()->route('items.index', ['type' => $type])->with('success', 'アイテムが削除されました。');
     }
 
     // 画像の削除
@@ -216,7 +216,7 @@ class ItemController extends Controller
             $item->save();
         }
 
-        return redirect()->route('items.show', ['type' => $type]);
+        return redirect()->route('items.index', ['type' => $type]);
     }
 
 
