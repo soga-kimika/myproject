@@ -37,17 +37,6 @@
 @section('js')
 
 <script>
-    $(document).on('show.bs.modal', '.modal', function(event) {
-        const button = $(event.relatedTarget); // 編集ボタンを取得
-        const requestMessage = button.data('request'); // データ属性からリクエストメッセージを取得
-        const priority = button.data('priority'); // データ属性から優先度を取得
-    
-        // フォームの値を設定
-        $('input[name="edit_request_message"]').val(requestMessage); // リクエストメッセージを設定
-        $('input[name="edit_priority"]').prop('checked', false); // すべてのラジオボタンをリセット
-        $(`input[name="edit_priority"][value="${priority}"]`).prop('checked', true); // 選択した優先度をチェック
-    });
-    </script>
     
 
 @stop
