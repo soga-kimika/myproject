@@ -16,9 +16,9 @@
                     @endif
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteImageModal{{ $item->id }}">削除</button>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteImageModal{{ $item->id }}"><i class="fa fa-trash-alt"></i></button>
                     @include('partials.delete_image_modal', ['id' => $item->id])
-                    <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-undo-alt"></i></button>
                 </div>
             </div>
         </div>

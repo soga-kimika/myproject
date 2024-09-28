@@ -13,9 +13,9 @@
             <div class="modal-footer">
                 <form method="POST" action="{{ route('items.deleteImage', ['type' => $type, 'itemId' => $item->id]) }}">
                     @csrf
-                    <button type="submit" class="btn btn-danger">削除</button>
+                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash-alt"></i></button>
                 </form>
-                <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-undo-alt"></i></button>
             </div>
         </div>
     </div>

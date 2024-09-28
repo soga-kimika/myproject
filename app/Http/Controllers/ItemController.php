@@ -149,32 +149,46 @@ class ItemController extends Controller
             'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
             'request_message' => 'nullable|string|max:255',
         ]);
-        // アイテムの更新（編集モーダルで入力された内容にて更新）
+
+        // アイテムの更新
         if ($request->has('priority')) {
             $item->priority = $request->input('priority');
         }
+        // 要望の更新
         if ($request->has('request_message')) {
             $item->request_message = $request->input('request_message');
         }
 
-        // 画像の保存処理
+        // 画像の処理
         if ($request->hasFile('imageUpload')) {
-            // 古い画像の削除
-            if ($item->image_url && Storage::exists('public/' . $item->image_url)) {
-                Storage::delete('public/' . $item->image_url);
-            }
+            // 既存の画像がある場合
+            if ($item->image_url) {
+                // 画像更新のリクエストがあった場合
+                if ($request->hasFile('imageUpload')) {
+                    // 古い画像の削除
+                    if (Storage::exists('public/' . $item->image_url)) {
+                        Storage::delete('public/' . $item->image_url);
+                    }
 
-            $image = $request->file('imageUpload');
-            $imagePath = $image->store('images', 'public');
-            $item->image_url = $imagePath;
+                    // 新しい画像を保存
+                    $image = $request->file('imageUpload'); 
+                    $imagePath = $image->store('images', 'public');
+                    $item->image_url = $imagePath;
+                }
+            } else {
+                // 既存の画像がない場合で、画像のリクエストがあった場合
+                $image = $request->file('imageUpload');
+                $imagePath = $image->store('images', 'public');
+                $item->image_url = $imagePath;
+            }
         }
 
-
-
+        // アイテムを保存
         $item->save();
 
         return redirect()->route('items.show', ['type' => $type]);
     }
+
 
     // 削除
     public function destroy($type, $itemId)
@@ -207,22 +221,4 @@ class ItemController extends Controller
 
 
 
-    // 画像の保存
-    public function storeImage(Request $request,$type, $itemId)
-    {
-
-        // バリデーション（入力のルール）
-        $request->validate([
-            'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
-        ]);
-        $item = new Item();
-
-        if ($request->hasFile('imageUpload')) {
-            $image = $request->file('imageUpload');
-            $imagePath = $image->url('images', 'public');
-            $item->image_url = $imagePath;
-        }
-
-        return redirect()->route('items.show', ['type' => $type]);
-    }
 }
