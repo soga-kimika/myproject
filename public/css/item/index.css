@@ -257,6 +257,7 @@ btn-default{
 .container-fluid-client{
     max-width: 500px; 
     margin: 0 auto; 
+    background-color:#dee2e6;
 }
 
 
@@ -267,7 +268,7 @@ btn-default{
 }
 
 .form-group-1{
-    background-color: white;    ;
+    background-color: white; 
 }
 
 .form-control {
@@ -281,3 +282,4 @@ btn-default{
    
     
 }
+
