@@ -1,3 +1,4 @@
+
 <div class="container">
     <div class="col-md-12 mx-auto"> 
         {{-- 送信先のアクションURLはコントローラーで提示 --}}

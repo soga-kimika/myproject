@@ -1,3 +1,10 @@
+/* ヘッダーの色 */
+.content-header{
+    text-align: center;
+    color:  white;
+    background-color: rgb(71, 70, 70);
+}
+
 /* ボタン全体 */
 .btn {
     background-color: transparent;
@@ -15,7 +22,6 @@
 .btn:focus{
     border: 2px solid blue;
 }
-
 
 /* ラジオボタン */
 .form-check {
@@ -44,7 +50,6 @@
 /* カードタイトル */
 .card-header:first-child{
     border: 2px solid; 
-    color:  rgb(71, 70, 70);
     background-color: rgb(71, 70, 70);
 }
 .card-title{
@@ -185,9 +190,9 @@ btn-default{
     color: rgb(132, 219, 88); /* アイデアアイコンの色 */
 }
 .fa-lightbulb {
-    color: rgba(234, 223, 17, 0.923); /* アイデアアイコンの色 */
+    color: #ffc107;
 }
-.fa-trash {
+.fa-trash { 
     color: rgb(170, 159, 159); /* アイデアアイコンの色 */
 }
 .fa-tree {
@@ -197,21 +202,27 @@ btn-default{
     color: rgb(232, 62, 107); /* アイデアアイコンの色 */
 }
 .fa-bed {
-    color: rgb(204, 121, 204); /* アイデアアイコンの色 */
+    color: #6f42c1;
 }
 .fa-child {
-    color: rgb(235, 55, 85); /* アイデアアイコンの色 */
+    color: rgb(235, 55, 85); 
 }
 .fa-box {
-    color: orange; /* アイデアアイコンの色 */
+    color: #fd7e14;
 }
 .fa-tools {
     color: rgb(173, 156, 156); /* アイデアアイコンの色 */
 }
 .fa-couch {
-    color: rgb(129, 220, 49); /* アイデアアイコンの色 */
+    color: #3d9970 ;
 }
 .fa-utensils {
     color: rgb(235, 214, 95); /* アイデアアイコンの色 */
+}
+.fa-sink{
+    color: #007bff !important;
+}
+.fa-palette  {
+    color: #3c8dbc !important;
 }
 

@@ -3,7 +3,7 @@
 @section('title', $pageTitle)
 
 @section('content_header')
-    <h1>{{ $pageTitle }}</h1>
+<h1>{!! $pageIcon !!}{!! $pageTitle !!} </h1>
 @stop
 
 @section('content')

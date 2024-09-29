@@ -13,7 +13,9 @@ class ItemController extends Controller
     public function index($type)
     {
         // ページタイトルを、タイプごとに取得
-        $pageTitle = $this->getPageTitleByType($type);
+        $pageInfo = $this->getPageTitleByType($type);
+        $pageTitle = $pageInfo['title']; // タイトルを取得
+        $pageIcon = $pageInfo['icon']; // アイコンを取得
         // カードのタイトルとカテゴリーをタイプから取得
         $cardTitlesAndCategories = $this->getCardTitlesAndCategoriesByType($type);
         // ナッシングを除外したカードタイトルのとき
@@ -28,6 +30,7 @@ class ItemController extends Controller
 
         return view('item.index', [
             'pageTitle' => $pageTitle,
+            'pageIcon' => $pageIcon,
             'title1' => $cardTitlesAndCategories[0]['title'],
             'title2' => $cardTitlesAndCategories[1]['title'],
             'icon1' => $cardTitlesAndCategories[0]['icon'],
@@ -40,21 +43,21 @@ class ItemController extends Controller
 
         ]);
     }
-
-
     // ページタイトルをタイプごとに取得
     private function getPageTitleByType($type)
     {
         $titles = [
-            'bathrooms' => 'トイレ・バスルーム',
-            'ideas' => 'ウィッシュリスト・ナッシング',
-            'designs' => 'エクステリア・インテリア',
-            'rooms' => 'プラベート',
-            'storages' => 'ストレージ・カスタマイズ',
-            'ldk' => 'リビング・ダイニング・キッチン',
+            'bathrooms' => ['title' => 'バスルーム', 'icon' => '<i class="fas fa-sink"></i>'],
+            'ideas' => ['title' => 'アイディア', 'icon' => '<i class="fas fa-lightbulb"></i>'],
+            'designs' => ['title' => 'デザイン', 'icon' => '<i class="fas fa-palette"></i>'],
+            'rooms' => ['title' => 'プラベートルーム', 'icon' => '<i class="fas fa-bed"></i>'],
+            'storages' => ['title' => 'ストレージ', 'icon' => '<i class="fas fa-box"></i>'],
+            'ldk' => ['title' => 'LDK', 'icon' => '<i class="fas fa-couch"></i>'],
         ];
+
         return $titles[$type];
     }
+
 
     // タイプから、カードタイトルとカテゴリーを取得
     private function getCardTitlesAndCategoriesByType($type)
@@ -171,7 +174,7 @@ class ItemController extends Controller
                     }
 
                     // 新しい画像を保存
-                    $image = $request->file('imageUpload'); 
+                    $image = $request->file('imageUpload');
                     $imagePath = $image->store('images', 'public');
                     $item->image_url = $imagePath;
                 }
@@ -218,7 +221,4 @@ class ItemController extends Controller
 
         return redirect()->route('items.index', ['type' => $type]);
     }
-
-
-
 }

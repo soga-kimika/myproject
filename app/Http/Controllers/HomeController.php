@@ -4,17 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Home;
+use App\Models\Client;
 
 
 class HomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return view('home.index'); // ビューのパスを確認
+        // クライアント情報を取得
+        $client = Client::first();
+
+        return view('home.index', compact('client'));
     }
+
 
     /**
      * Show the form for creating a new resource.

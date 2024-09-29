@@ -4,7 +4,7 @@
                 <div class="card">
                     <div class="card-header">
                         {{-- カードタイトルは、$typeを引数に、getCardTitlesAndCategoriesByType関数で取得したタイトル --}}
-                        <h3 class="card-title">{!! $icon1 !!} {{ $title1 }}</h3>
+                        <h3 class="card-title"> {!! $icon1 !!}{{ $title1 }}</h3>
                     </div>
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover text-nowrap custom-table">
@@ -70,7 +70,7 @@
                 <div class="card mt-4 mt-md-0">
                     <div class="card-header">
                          {{-- カードタイトルは、$typeを引数に、getCardTitlesAndCategoriesByType関数で取得したタイトル --}}
-                         <h3 class="card-title">{!! $icon2 !!} {{ $title2 }}</h3>
+                         <h3 class="card-title">{!! $icon2 !!} {{ $title2 }} </h3>
                     </div>
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover text-nowrap custom-table">

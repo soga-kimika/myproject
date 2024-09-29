@@ -26,19 +26,15 @@
             <section class="content">
                 <div class="row">
                     <div class="col-md-12">
-                        
-                       
                             @csrf 
                             <table class="table table-bordered text-sm">
                                 
-    
                                 <colgroup>
                                     <col width="15%"/>
                                     <col width="35%"/>
                                     <col width="15%"/>
                                     <col width="35%"/>
                                 </colgroup>
-                                
                                 <tr>
                                     <th class="bg-summer-sky">家族構成</th>
                                     <td colspan="3">
@@ -50,12 +46,10 @@
                                             <div class="form-group ml-2">
                                                 <label for="child_count">子供：</label> 
                                                 <i>{{$client->child_count}}</i>
-                                           
                                             </div>
                                                 <div class="form-group ml-2">
                                                 <label for="pet">ペット：</label>
                                                 <i>{{$client->pet}}</i>
-                                              
                                             </div>
                                         </div>
                                     </td>
@@ -63,7 +57,6 @@
                                 <tr>
                                     <th class="bg-summer-sky">土地予算</th>
                                     <td>
-                             
                                 <div class="form-check form-check-inline">
                                     @if ($client->land_budget_exists == 'exists')
                                         <span>有</span>
@@ -85,14 +78,12 @@
                                     <th class="bg-summer-sky">土地の坪数</th>
                                     <td>
                                     <i>{{$client->land_area}}</i>
-                                           
                                     </td>
                                     <th class="bg-summer-sky">建物の坪数</th>
                                     <td>
                                         <i>{{$client->building_area}}</i>
                                     </td>
                                 </tr>
-                                
                                 <tr>
                                     <th class="bg-summer-sky">階数</th>
                                     <td>
@@ -103,7 +94,6 @@
                                     <i>{{$client->layout}}</i>
                                     </td>
                                 </tr>
-                                
                                 <tr>
                                     <th class="bg-summer-sky">駐車スペース</th>
                                     <td colspan="3">
@@ -128,20 +118,18 @@
                                         </div>
                                     </td>
                                 </tr>
-                                
                                 <tr>
                                     <th class="bg-summer-sky">建築エリア</th>
                                     <td>
                                         <div class="form-inline">
                                         <i>{{$client->construction_area}}</i>
                                      </td>
-                                    <th class="bg-summer-sky">建築希望日</th>
+                                    <th class="bg-summer-sky" >建築希望日</th>
                                     <td>
-                                        <i>{{$client->date}}</i>
+                                       
+                                        <i id="target-date">{{ $client->date }}</i>
                                      </td>
-                                     <div id="countdown" style="font-size: 2rem; margin-top: 20px;"></div>
                                 </tr>
-                                
                                 <tr>
                                     <th class="bg-summer-sky">今の家で不満に思っていること</th>
                                     <td colspan="3">
@@ -149,7 +137,6 @@
                                     </td>
                                 </tr>
                             </table>
-                          
                         </form>
                     </div>
                 </div>  

@@ -11,7 +11,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //施主情報をデータベースから取って、表示
+        //施主情報をデータベースから取って、表示    
         $client = Client::first();
 
         if ($client !== null) {
