@@ -66,9 +66,9 @@ class ItemController extends Controller
             'bathrooms' => [
                 ['id' => 1, 'title' => ' トイレ', 'category' => 'toilet', 'icon' => '<i class="fas fa-toilet"></i>'],
                 ['id' => 2, 'title' => 'バスルーム', 'category' => 'bath', 'icon' => '<i class="fas fa-bath"></i>'],
-            ],
+            ],  
             'ideas' => [
-                ['id' => 1, 'title' => 'ウィッシュリスト', 'category' => 'idea', 'icon' => '<i class="fas fa-lightbulb"></i>'],
+                ['id' => 1, 'title' => 'ウィッシュリスト', 'category' => 'idea', 'icon' => '<i class="fas fa-check"></i>'],
                 ['id' => 2, 'title' => 'ナッシング', 'category' => 'nothing', 'icon' => '<i class="fas fa-trash"></i>'],
             ],
             'designs' => [
@@ -76,15 +76,15 @@ class ItemController extends Controller
                 ['id' => 2, 'title' => 'インテリア', 'category' => 'interior', 'icon' => '<i class="fas fa-chair"></i>'],
             ],
             'rooms' => [
-                ['id' => 1, 'title' => 'ベッドルーム', 'category' => 'bedroom', 'icon' => '<i class="fas fa-bed"></i>'],
+                ['id' => 1, 'title' => 'ベッドルーム', 'category' => 'bedroom', 'icon' => '<i class="fas fa-user-friends"></i>'],
                 ['id' => 2, 'title' => 'キッズルーム', 'category' => 'kidsroom', 'icon' => '<i class="fas fa-child"></i>'],
             ],
             'storages' => [
-                ['id' => 1, 'title' => 'ストレージ', 'category' => 'storage', 'icon' => '<i class="fas fa-box"></i>'],
+                ['id' => 1, 'title' => 'ストレージ', 'category' => 'storage', 'icon' => '<i class="fas fa-boxes"></i>'],
                 ['id' => 2, 'title' => 'カスタマイズ', 'category' => 'other', 'icon' => '<i class="fas fa-tools"></i>'],
             ],
             'ldk' => [
-                ['id' => 1, 'title' => 'リビング', 'category' => 'living', 'icon' => '<i class="fas fa-couch"></i>'],
+                ['id' => 1, 'title' => 'リビング', 'category' => 'living', 'icon' => '<i class="fas fa-tv"></i>'],
                 ['id' => 2, 'title' => 'ダイニング・キッチン', 'category' => 'dining', 'icon' => '<i class="fas fa-utensils"></i>'],
             ],
         ];
