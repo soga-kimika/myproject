@@ -19,10 +19,6 @@
     </div>
     <div class="container-fluid">
         <div class="container ">
-            {{-- ヘッダー --}}
-            <section class="content-header">
-                <h1>プロフィール</h1>
-            </section>
 
             {{-- メイン --}}
             <section class="content">

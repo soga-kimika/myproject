@@ -5,6 +5,10 @@
     background-color: rgb(71, 70, 70);
 }
 
+h1{
+    font-weight: bold;
+}
+
 /* ボタン全体 */
 .btn {
     background-color: transparent;
@@ -231,7 +235,7 @@ btn-default{
     color: #3c8dbc !important;
 }
 
-.fa-check{
+.fa-check-title{
     color: rgb(235, 55, 85); 
 }
 
@@ -244,3 +248,7 @@ btn-default{
 }
 
 
+.container-fluid{
+    max-width: 800px; 
+    margin: 0 auto; 
+}
