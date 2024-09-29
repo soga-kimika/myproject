@@ -3,11 +3,17 @@
     text-align: center;
     color:  white;
     background-color: rgb(71, 70, 70);
-    margin-bottom: 50px;
-    border-bottom: 5px solid rgb(118, 132, 148);  
     font-weight: bold;
-    line-height: 100px; 
-    font-size: 2.5rem;  
+    line-height: 110px; 
+    font-size: 2.5rem; 
+}
+.mt-4{
+    margin-top: 5px;
+}
+
+.pb-2{
+    border-top: 1px solid #dee2e6;
+    padding-top: 15px;
 }
 
 /* ボタン全体 */
@@ -54,11 +60,11 @@
 }
 /* カードタイトル */
 .card-header:first-child{
-    background-color: rgb(103, 100, 100);
+    background-color: rgb(118, 132, 148);  
 }
 .card-title{
     font-weight: bold;
-    color: white;
+    color: rgb(71, 70, 70);
 }
 /* ヘッダー */
 .custom-table thead th {
