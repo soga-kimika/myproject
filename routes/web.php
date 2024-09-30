@@ -23,8 +23,7 @@
         Route::prefix('/home')->group(function () {
             // ダッシュボード表示
             Route::get('', [HomeController::class, 'index'])->name('home.index');
-            // プロフィール登録画面遷移
-            Route::get('show', [HomeController::class, 'show'])->name('home.show');
+    
         });
 
         Auth::routes();

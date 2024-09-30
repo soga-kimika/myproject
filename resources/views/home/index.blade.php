@@ -2,34 +2,54 @@
 
 @section('title', 'home')
 
-@section('content_header')
+@section('content_header')                                                              
 
 
-@stop
+@stop   
 
 @section('content')
-
-<div id="target-date" style="display:none;">{{ $client->date }}</div> 
-<div class="countdown-container">
-    <div class="countdown-elm">
-      <h1>Countdown <span>to</span> My Home</h1>  
-      <h3><span>Desired Construction Date：</span>{{ $client->date }}</h3>
-      <div class="countdown-display">
-        <span>Days Left</span>
-        <p class="time-text" id="days" >0</p>
-        <span>days</span>
-    </div>
-        
-    </div>
+<section class="content">
+        <div id="target-date" style="display:none;">{{ $client->date }}</div> 
+            <div class="countdown-container">
+                <div class="countdown-elm">
+                     <h1>Countdown <span>to</span> My Home</h1>  
+                         <h3><span>Desired Construction Date：</span>{{ $client->date }}</h3>
+                            <div class="countdown-display">
+                                 <span>Days Left</span>
+                                 <p class="time-text" id="days" >0</p>
+                                <span>days</span>
+                            </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 ">
+                    <div class="card mt-4">
+                        <div class="card-body home-card-body">
+                            <i class="far fa-address-card home-icon-fa-address-card"></i>
+                            <h2>プロフィール</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mt-4">
+                        <div class="card-body home-card-body">
+                            
+                            <i class="far fas fa-image home-icon-fa-image"></i>
+                            <h1>ギャラリー</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
 </div>
 
 @stop
 
 @section('css')
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
-    .content {
+    .countdown-container {
         background: radial-gradient(at 40% 20%, rgb(232, 12, 12) 0px, transparent 50%),
         radial-gradient(at 40% 20%, hsla(28, 100%, 74%, 1) 0px, transparent 50%),
         radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 1) 0px, transparent 50%),
@@ -40,9 +60,10 @@
         
         background-position: center center;
         align-items: center;
-        margin: 0;
+        margin-top: 20px;
         width: 100%; 
         color: rgb(88, 82, 82);
+        padding-bottom: 20px;
     }
 
     h1 {
@@ -99,6 +120,23 @@
       text-align: right;
     }
     
+    .home-icon-fa-address-card  {
+        font-size: 200px;
+    }
+
+    .home-icon-fa-image  {
+        font-size: 200px;
+    }
+
+    .home-card-body{
+        display: flex;
+        text-align: center;
+        margin-top: 20x;
+background:hsla(173,64%,44%,1);
+radial-gradient(at 92% 34%, hsla(273,7%,60%,1) 0px, transparent 50%),
+radial-gradient(at 0% 100%, hsla(241,100%,17%,1) 0px, transparent 50%),
+radial-gradient(at 96% 42%, hsla(202,100%,17%,1) 0px, transparent 50%);
+    }
 </style>
 @stop
 

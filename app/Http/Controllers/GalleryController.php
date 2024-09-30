@@ -13,7 +13,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        return view('gallery.index');
+        return view('galleries.index');
     }
     /**
      * Store a newly created resource in storage.
@@ -32,7 +32,7 @@ class GalleryController extends Controller
         $gallery->image_url = $imagePath;
 
         $gallery->save();
-        return redirect()->route('gallery.index');
+        return redirect()->route('galleries.index');
     }
 
     /**
@@ -47,7 +47,7 @@ class GalleryController extends Controller
         Storage::disk('public')->delete($gallery->image_url);
         $gallery->delete();
 
-        return redirect()->route('gallery.index');
+        return redirect()->route('galleries.index');
 
     }
 }
