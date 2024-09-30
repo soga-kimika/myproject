@@ -18,6 +18,7 @@ class Client extends Model
         'adult_count',
         'child_count',
         'pet',
+        'land_budget_exists',
         'land_budget',
         'building_budget',
         'land_area',

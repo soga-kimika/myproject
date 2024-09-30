@@ -10,10 +10,10 @@
                         <table class="table table-hover text-nowrap custom-table">
                             <thead>
                                 <tr>
-                                    <th class="col-priority">優先度</th>
-                                    <th class="col-request">要望</th>
-                                    <th class="col-edit">編集</th>
-                                    <th class="col-image">画像</th>
+                                    <th class="col-priority"></th>
+                                    <th class="col-request"></th>
+                                    <th class="col-edit"></th>
+                                    <th class="col-image"></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -46,9 +46,10 @@
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                             
-                                            {{-- フォームで画像を投稿していれば、画像のアイコンを表示 トリガー--}}
+                                            
                                         </td>
                                         <td>
+                                            {{-- フォームで画像を投稿していれば、画像のアイコンを表示 トリガー--}}
                                             @if($item1->image_url)
                                                 <a href="#" class="btn btn-info" data-toggle="modal" data-target="#imageModal{{ $item1->id }}">
                                                     <i class="fas fa-image"></i>
@@ -76,10 +77,10 @@
                         <table class="table table-hover text-nowrap custom-table">
                             <thead>
                                 <tr>
-                                    <th class="col-priority">優先度</th>
-                                    <th class="col-request">要望</th>
-                                    <th class="col-edit">編集</th>
-                                    <th class="col-image">画像</th>
+                                    <th class="col-priority"></th>
+                                    <th class="col-request"></th>
+                                    <th class="col-edit"></th>
+                                    <th class="col-image"></th>
                                 </tr>
                             </thead>
                             <tbody>

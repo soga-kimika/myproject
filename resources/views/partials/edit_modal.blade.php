@@ -1,4 +1,3 @@
-{{-- アイテム1のモーダル --}}
 
     <div class="modal fade" id="editModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel{{ $item->id }}" aria-hidden="true">
         <div class="modal-dialog modal-lg">

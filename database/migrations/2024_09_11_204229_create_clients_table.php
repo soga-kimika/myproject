@@ -18,10 +18,11 @@ return new class extends Migration
             $table->integer('adult_count');
             $table->integer('child_count');
             $table->text('pet');
+            $table->text('land_budget_exists');
+            $table->string('building_area');
             $table->string('land_budget');
             $table->string('building_budget');
             $table->string('land_area');
-            $table->string('building_area');
             $table->string('floors');
             $table->string('layout');
             $table->string('regularCars');
@@ -31,9 +32,7 @@ return new class extends Migration
             $table->string('construction_area');
             $table->date('date');
             $table->string('current_home_issues');
-
-
-                });
+        });
     }
 
     /**

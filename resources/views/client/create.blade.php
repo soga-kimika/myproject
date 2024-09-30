@@ -60,6 +60,36 @@
                     </div>
 
                     <div class="form-group">
+                        <label class="bg-summer-sky">土地</label>
+                        <div class="form-inline">
+                            <label for="land_budget_exists">所有地　</label>
+                            <select name="land_budget_exists" id="land_budget_exists" class="form-control" required>
+                                <option value="" disabled selected>選択してください</option>
+                                <option value="yes" {{ old('land_budget_exists') == 'yes' ? 'selected' : '' }}>所有地あり</option>
+                                <option value="no" {{ old('land_budget_exists') == 'no' ? 'selected' : '' }}>所有地なし</option>
+                            </select>
+                            <div class="form-inline mt-2">
+                                </select>
+                            </div>
+                        </div>
+                    </div>                                 
+                    <div class="form-inline mt-2">
+                        <label>予算　　</label>
+                        <input type="text" name="land_budget" class="form-control mr-3" placeholder="5000万円" id="land_budget_input">
+                    </div>
+                        <div class="form-inline mt-2">
+                            <label for="land_area">坪数　　</label>
+                            <select name="land_area" class="form-control" required>
+                                <option value="" disabled selected>選択してください</option>
+                                @foreach(range(20, 100, 10) as $area)
+                                    <option value="{{ $area }}" {{ old('land_area') == $area ? 'selected' : '' }}>{{ $area }}坪前後</option>
+                                @endforeach
+                                <option value="100">100坪以上</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label class="bg-summer-sky">建物</label>
                         <div class="form-inline">
                             <label>予算　　</label>
@@ -96,33 +126,7 @@
                             </select>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label class="bg-summer-sky">土地</label>
-                        <div class="form-inline">
-                            <label for="land_area">所有地　</label>
-                            <select name="land_budget_exists" id="land_budget_exists" class="form-control" required>
-                                <option value="" disabled selected>選択してください</option>
-                                <option value="yes" {{ old('land-budget-yes') == 'yes' ? 'selected' : '' }}>所有地あり</option>
-                                <option value="no" {{ old('land-budget-no') == 'no' ? 'selected' : '' }}>所有地なし</option>
-                            </select>
-                        </div>
-                        <div class="form-inline mt-2">
-                            <label>予算　　</label>
-                            <input type="text" name="land_budget" class="form-control mr-3" placeholder="5000万円" required>
-                        </div>
-                        <div class="form-inline mt-2">
-                            <label for="land_area">坪数　　</label>
-                            <select name="land_area" class="form-control" required>
-                                <option value="" disabled selected>選択してください</option>
-                                @foreach(range(20, 100, 10) as $area)
-                                    <option value="{{ $area }}" {{ old('land_area') == $area ? 'selected' : '' }}>{{ $area }}坪前後</option>
-                                @endforeach
-                                <option value="100">100坪以上</option>
-                            </select>
-                        </div>
-                    </div>
-                    <label class="bg-summer-sky">駐車スペース</label>
+                    <label class="bg-summer-sky">駐車場</label>
                     <div class="form-inline mt-2">
                         <label for="regularCars">普通車　</label>
                         <select id="regularCars" name="regularCars" class="form-control mr-3" required>
@@ -158,14 +162,16 @@
                         <select id="bicycles" name="bicycles" class="form-control" required>
                             <option value="" disabled selected>選択してください</option>
                             @foreach(range(0, 3) as $i)
-                                <option value="{{ $i }}" {{ old('bicycles') === (string)$i ? 'selected' : '' }}>{{ $i }}台</option>
+                                <option value="{{ $i }}" {{ old('bicycles') == (string)$i ? 'selected' : '' }}>{{ $i }}台</option>
                             @endforeach
                             <option value="3">3台以上</option>
                         </select>
                     </div>
+                    
+
                 </div>
                     <div class="form-group col-md-7">
-                        <label class="bg-summer-sky">希望エリア</label>
+                        <label class="bg-summer-sky">建築希望地</label>
                         <input type="text" name="construction_area" class="form-control" placeholder="例: 城北、北久米" value="{{ old('construction_area') }}" required>
                     </div>
 
@@ -176,7 +182,7 @@
 
                     <div class="form-group">
                         <label class="bg-summer-sky">今の家で不満に思っていること</label>
-                        <textarea name="current_home_issues" class="form-control" placeholder="不満なことを記入" rows="4" required>{{ old('current_home_issues') }}</textarea>
+                        <textarea name="current_home_issues" class="form-control" placeholder="不満なことを記入" rows="4" >{{ old('current_home_issues') }}</textarea>
                     </div>
 
                     <div class="text-center mt-4">
@@ -193,5 +199,29 @@
 @stop
 
 @section('js')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const landBudgetExists = document.getElementById('land_budget_exists');
+        const landBudgetInput = document.getElementById('land_budget_input');
+        const landBudgetPlaceholder = document.getElementById('land_budget_placeholder');
+
+        function toggleLandBudgetInput() {
+            if (landBudgetExists.value === 'yes') {
+                landBudgetInput.value = ''; // 予算をクリア
+                landBudgetInput.setAttribute('disabled', true); // 無効化
+                landBudgetInput.style.backgroundColor = '#e9ecef'; // 色を変える 
+                 landBudgetInput.placeholder = ''; // プレースホルダーを消す
+            } else {
+                landBudgetInput.removeAttribute('disabled'); // 有効化
+                landBudgetInput.style.backgroundColor = ''; // 元の色に戻す
+                landBudgetInput.placeholder = '5000万円'; // プレースホルダーを元に戻す
+            }
+        }
+
+        landBudgetExists.addEventListener('change', toggleLandBudgetInput);
+        toggleLandBudgetInput(); // 初期状態を設定
+    });
+</script>
+
 
 @stop
