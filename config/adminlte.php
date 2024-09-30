@@ -340,8 +340,8 @@ return [
             'classes' => 'text-bold ',
         ],
         [
-            'text' => 'ギャラリー',
-            'url'  => 'gallery',
+            'text' => 'フォトギャラリー',
+            'url'  => 'gallery/index',
             'icon' => 'fas fa-image',
             'icon_color' => 'gray',
             'classes' => 'text-bold ',

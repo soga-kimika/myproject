@@ -22,24 +22,26 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 ">
+                <div class="col-md-6">
                     <div class="card mt-4">
-                        <div class="card-body home-card-body">
-                            <i class="far fa-address-card home-icon-fa-address-card"></i>
-                            <h2>プロフィール</h2>
+                        <div class="card-body home-card-body t">
+                            <a href="{{ route('client.index') }}">
+                                <i class="far fa-address-card home-icon-fa-address-card"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card mt-4">
-                        <div class="card-body home-card-body">
-                            
-                            <i class="far fas fa-image home-icon-fa-image"></i>
-                            <h1>ギャラリー</h1>
+                        <div class="card-body home-card-body ">
+                            <a href="{{ route('galleries.index') }}">
+                                <i class="far fas fa-image home-icon-fa-image"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
+            
 </div>
 
 @stop

@@ -61,7 +61,7 @@
 
         Route::prefix('gallery')->group(function () {
             // ギャラリーページ一覧表示
-            Route::get('/', [GalleryController::class, 'index'])->name('galleries.index');
+            Route::get('/index', [GalleryController::class, 'index'])->name('galleries.index');
             // 画像登録
             Route::post('/upload', [GalleryController::class, 'store'])->name('galleries.store');
             // 画像削除

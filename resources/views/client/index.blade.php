@@ -9,7 +9,8 @@
 </a>
 </div>
         
-<h1 class="content-header-client"   ><i class="far fa-address-card"></i>プロフィール</h1>
+<h1 class="content-header-client"   >
+    <i class="far fa-address-card"></i>プロフィール</h1>
 @stop
 
 @section('content')
