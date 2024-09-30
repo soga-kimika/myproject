@@ -17,10 +17,10 @@
         </div>
     </div>
 
-    <div class="container-fluid container-fluid-client">
+  
         <div class="container">
             <section class="content-header">
-                <h1>プロフィール</h1>
+                <h1 >プロフィール</h1>
             </section>
 
             <section class="content">
@@ -191,7 +191,7 @@
                 </form>
             </section>
         </div>
-    </div>
+  
 @stop
 
 @section('css')

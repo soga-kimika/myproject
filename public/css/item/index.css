@@ -275,3 +275,14 @@ btn-default{
     
 }
 
+/* プロフィール編輯ボタン */
+
+.btn-edit-client{
+    text-align: right;
+}
+
+/* クライアントのタイトル */
+.content-header .content-header-client{
+    margin-top: -40px;
+    margin-bottom: 30px;
+}

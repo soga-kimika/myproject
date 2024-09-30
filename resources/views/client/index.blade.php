@@ -3,14 +3,17 @@
 @section('title', 'マイホームNOTE')
 
 @section('content_header')
-
-
+<div class="btn-edit-client">
+<a href="#" class="btn btn-edit btn-edit-client" data-toggle="modal" data-target="#client-editModal">
+    プロフィール編集
+</a>
+</div>
         
-<h1><i class="far fa-address-card"></i>プロフィール</h1>
+<h1 class="content-header-client"   ><i class="far fa-address-card"></i>プロフィール</h1>
 @stop
 
 @section('content')
-    <div class="container-fluid">
+
         <div class="row">
             <div class="col-md-12">
                 @if ($errors->any())
@@ -28,9 +31,7 @@
         <section class="content">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="#" class="btn btn-edit" data-toggle="modal" data-target="#client-editModal">
-                        プロフィール編集
-                    </a>
+                   
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <div class="card mb-3">
@@ -158,7 +159,7 @@
                 </div>
             </div>
         </section>
-    </div>
+  
 @stop
 
 @section('css')
