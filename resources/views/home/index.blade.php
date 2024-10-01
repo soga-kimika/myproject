@@ -48,7 +48,7 @@
                     </a>
                 </div>
                 <div class="col-auto">
-                    <a href="{{ route('client.index') }}" title="フォトギャラリー">
+                    <a href="{{ route('galleries.index') }}" title="フォトギャラリー">
                         <i class="far fas fa-image home-icon"></i>
                     </a>
                 </div>
