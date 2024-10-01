@@ -1,6 +1,6 @@
+{{-- 編集モーダルの中身--}}
 <div class="container">
     <div class="col-md-12 mx-auto"> 
-        {{-- 入力フォーム --}}
         <div class="col-md-12 d-flex mb-3">
                 <label class="mb-0">優先度：</label>
                 <div class="d-flex">
@@ -26,8 +26,10 @@
                 </div>
         </div>
         <div class="form-group d-flex align-items-center col-md-12">
+            {{-- 要望入力欄 --}}
             <input type="text" name="request_message" id="edit_request_message" class="form-control form-control-lg me-2" placeholder="要望を記入してください" 
             value="{{ $item->request_message }}" required style="flex: 1;">
+            {{-- 画像選択ボタン --}}
             <label for="imageUpload" class="btn me-2 form-check-label btn-select" style="cursor: pointer;">
                 画像を選択 <i class="fas fa-upload"></i> 
             </label>

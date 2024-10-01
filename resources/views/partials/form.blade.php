@@ -1,4 +1,4 @@
-
+{{-- 入力フォーム --}}
 <div class="container">
     <div class="col-md-12 mx-auto"> 
         {{-- 送信先のアクションURLはコントローラーで提示 --}}
@@ -41,12 +41,15 @@
                         @endforeach
                     </div>
                 </div>
+                {{-- 要望欄 --}}
                 <div class="form-group d-flex align-items-center col-md-12">
                     <input type="text" name="request_message" id="request_message" class="form-control form-control-lg me-2" placeholder="要望を記入してください" required style="flex: 1;">
+                    {{-- 画像選択ボタン --}}
                     <label for="imageUpload" class="btn me-2 form-check-label btn-select" style="cursor: pointer;">
                         画像を選択 <i class="fas fa-upload"></i> 
                     </label>
-                    <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none"> 
+                    <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none">
+                    {{-- 登録ボタン  --}}
                     <button type="submit" class="btn btn-store ms-2">登録</button>
                 </div>
             </div>

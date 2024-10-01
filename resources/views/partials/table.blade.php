@@ -1,3 +1,4 @@
+    {{-- カード --}}
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -119,9 +120,9 @@
                                                     </a>
                                                 @endif
                                         </td>
-                                         {{-- 画像を表示するモーダル --}}
+                                         {{-- 画像を表示するモーダル読み込み --}}
                                         @include('partials.image_modal', ['id' => $item2->id, 'item' => $item2,'imageUrl' => $item2->image_url])
-                                         {{-- 編集を表示するモーダル --}}
+                                         {{-- 編集を表示するモーダル読み込み --}}
                                         @include('partials.edit_modal', ['item' => $item2])
                                     </tr>
                                 @endforeach

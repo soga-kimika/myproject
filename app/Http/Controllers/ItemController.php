@@ -7,22 +7,21 @@ use Illuminate\Http\Request;
 use App\Models\Item;
 use Illuminate\Support\Facades\Storage;
 
+// $type（bathroom-areasなど）を引数で渡して、$type（bathroom-areasなど）ごとに、
+// ページ内容を表示
+   
 class ItemController extends Controller
 {
-    // $type（bathroom-areasなど）を引数で渡して、$type（bathroom-areasなど）ごとに、ページ内容を表示
-    public function index($type)
+     public function index($type)
     {
-        // ページタイトルを、タイプごとに取得
+        // ページタイトル・アイコンを、タイプごとに取得し、$pageInfoにまとめて格納
         $pageInfo = $this->getPageTitleByType($type);
-        $pageTitle = $pageInfo['title']; // タイトルを取得
-        $pageIcon = $pageInfo['icon']; // アイコンを取得
+        // タイトルを取得
+        $pageTitle = $pageInfo['title']; 
+        // アイコンを取得
+        $pageIcon = $pageInfo['icon']; 
         // カードのタイトルとカテゴリーをタイプから取得
         $cardTitlesAndCategories = $this->getCardTitlesAndCategoriesByType($type);
-        // ナッシングを除外したカードタイトルのとき
-        $cardTitlesWithoutNothing = array_filter($cardTitlesAndCategories, function ($titles) {
-            return $titles['title'] !== 'ナッシング';
-        });
-
         // カテゴリー１から、カード1用のアイテムを取得
         $items1 = $this->getItemsByCategory($type, $cardTitlesAndCategories[0]['category']);
         // カテゴリー２からカード2用のアイテムを取得
@@ -39,10 +38,10 @@ class ItemController extends Controller
             'items2' => $items2,
             'type' => $type,
             'titles' => $cardTitlesAndCategories,
-            'filteredTitles' => $cardTitlesWithoutNothing,
-
         ]);
     }
+
+
     // ページタイトルをタイプごとに取得
     private function getPageTitleByType($type)
     {
@@ -54,12 +53,11 @@ class ItemController extends Controller
             'storages' => ['title' => 'ストレージ', 'icon' => '<i class="fas fa-box"></i>'],
             'ldk' => ['title' => 'LDK', 'icon' => '<i class="fas fa-couch"></i>'],
         ];
-
         return $titles[$type];
     }
 
 
-    // タイプから、カードタイトルとカテゴリーを取得
+    // カードタイトルとカテゴリーをタイプごとに取得
     private function getCardTitlesAndCategoriesByType($type)
     {
         $titles = [
@@ -97,14 +95,16 @@ class ItemController extends Controller
     {
         return Item::where('type', $type)
             ->where('category', $category)
+            // 優先度の高い順番に表示
             ->orderByRaw("FIELD(priority, 'high', 'medium', 'low', 'remove') asc")
             ->get();
     }
 
+
     // フォームに入力された内容を登録
     public function store(Request $request, $type)
     {
-        // バリデーション（入力のルール）
+        // バリデーション
         $request->validate([
             'priority' => 'required|in:high,medium,low,remove',
             'category' => 'required|in:toilet,bath,idea,nothing,outside,interior,bedroom,kidsroom,storages,other,living,dining',
@@ -118,7 +118,8 @@ class ItemController extends Controller
         $item->category = $request->input('category');
         $item->request_message = $request->input('request_message');
 
-        // カードナンバーを設定
+        // getCardTitlesAndCategoriesByTypeこれで取得した、IDをもとに、
+        // カードナンバーを設定し、カード１には、ID１を、カード２にはID２のものが表示されるように振り分け
         $titlesAndCategories = $this->getCardTitlesAndCategoriesByType($type);
         foreach ($titlesAndCategories as $titleCategory) {
             if ($titleCategory['category'] === $request->input('category')) {
@@ -126,14 +127,12 @@ class ItemController extends Controller
                 break;
             }
         }
-
         // 画像の保存処理
         if ($request->hasFile('imageUpload')) {
             $image = $request->file('imageUpload');
             $imagePath = $image->store('images', 'public');
             $item->image_url = $imagePath;
         }
-
         $item->type = $type;
         // 保存
         $item->save();
@@ -145,7 +144,6 @@ class ItemController extends Controller
     public function update(Request $request, $type, $itemId)
     {
         $item = Item::findOrFail($itemId);
-
         // バリデーション
         $request->validate([
             'priority' => 'nullable|in:high,medium,low',
@@ -172,7 +170,6 @@ class ItemController extends Controller
                     if (Storage::exists('public/' . $item->image_url)) {
                         Storage::delete('public/' . $item->image_url);
                     }
-
                     // 新しい画像を保存
                     $image = $request->file('imageUpload');
                     $imagePath = $image->store('images', 'public');
@@ -193,7 +190,7 @@ class ItemController extends Controller
     }
 
 
-    // 削除
+    // レコードの削除
     public function destroy($type, $itemId)
     {
         $item = Item::findOrFail($itemId);
@@ -202,13 +199,11 @@ class ItemController extends Controller
         if ($item->image_url && Storage::exists('public/' . $item->image_url)) {
             Storage::delete('public/' . $item->image_url);
         }
-
         $item->delete();
-
         return redirect()->route('items.index', ['type' => $type])->with('success', 'アイテムが削除されました。');
     }
 
-    // 画像の削除
+    // 画像のみ削除
     public function deleteImage($type, $itemId)
     {
         $item = Item::findOrFail($itemId);
@@ -218,7 +213,6 @@ class ItemController extends Controller
             $item->image_url = null;
             $item->save();
         }
-
         return redirect()->route('items.index', ['type' => $type]);
     }
 }
