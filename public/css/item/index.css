@@ -43,9 +43,11 @@ btn-default{
 /* 画像投稿ボタン */
 .btn-select{
     color: orange;
+    cursor: pointer;
 }
 .btn-select:hover{
     color: orange;
+    
 }
   /* 登録ボタン */ 
   .btn-store{
@@ -201,12 +203,18 @@ transform: translateY(-5px) scale(1.1);
 .btn-edit-client{
     text-align: right;
 }
-
+/* アイコン */
+.content .col-6 .client-icon{
+    color: black;
+}
 
 /* HomePlanning/{type}：入力フォーム */
 .pb-2{
     border-top: 1px solid #dee2e6;
     padding-top: 15px;
+}
+.form-control-lg{
+    flex: 1;
 }
 /* ラジオボタン */
 .form-check {
@@ -315,7 +323,7 @@ transform: translateY(-5px) scale(1.1);
 }
 /* トイレアイコン */
   .fa-toilet {
-    color: rgb(242, 135, 205); 
+    color: rgb(173, 96, 147); 
 }
 /* バスルームアイコン */
 .fa-bath {
@@ -327,7 +335,7 @@ transform: translateY(-5px) scale(1.1);
 }
 /*　キッズルームアイコン */
 .fa-child {
-    color: rgb(235, 55, 85); 
+    color: rgb(231, 79, 104); 
 }
 /* カスタマイズアイコン */
 .fa-tools {

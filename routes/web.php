@@ -38,8 +38,6 @@
             Route::get('edit', [ClientController::class, 'edit'])->name('client.edit');
             // プロフィール更新
             Route::put('update', [ClientController::class, 'update'])->name('client.update');
-            // プロフィール削除
-            Route::delete('destroy', [ClientController::class, 'destroy'])->name('client.destroy');
         });
 
         Route::prefix('HomePlanning')->group(function () {

@@ -83,7 +83,7 @@ class ClientController extends Controller
 }
 
     
-    // 編輯
+    // 編集
     /**
          * Show the form for editing the specified resource.
          */

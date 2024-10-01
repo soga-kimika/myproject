@@ -40,10 +40,10 @@
                                     <h5 class="form-title p-2">住む予定の人数</h5>
                                     <div class="row">
                                         <div class="col-6">
-                                            <p><i class="fas fa-user"></i> 大人： <strong>{{ $client->adult_count }}人</strong></p>
+                                            <p><i class="fas fa-user client-icon"></i> 大人： <strong>{{ $client->adult_count }}人</strong></p>
                                         </div>
                                         <div class="col-6">
-                                            <p><i class="fas fa-child"></i> 子供： <strong>{{ $client->child_count }}人</strong></p>
+                                            <p><i class="fas fa-child client-icon"></i> 子供： <strong>{{ $client->child_count }}人</strong></p>
                                         </div>
                                     </div>
                                     <div class="row">

@@ -74,7 +74,7 @@ class ItemController extends Controller
                 ['id' => 2, 'title' => 'インテリア', 'category' => 'interior', 'icon' => '<i class="fas fa-chair"></i>'],
             ],
             'rooms' => [
-                ['id' => 1, 'title' => 'ベッドルーム', 'category' => 'bedroom', 'icon' => '<i class="fas fa-user"></i>'],
+                ['id' => 1, 'title' => 'ベッドルーム', 'category' => 'bedroom', 'icon' => '<i class="fas fa-user-friends"></i>'],
                 ['id' => 2, 'title' => 'キッズルーム', 'category' => 'kidsroom', 'icon' => '<i class="fas fa-child"></i>'],
             ],
             'storages' => [
