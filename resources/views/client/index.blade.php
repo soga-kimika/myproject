@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'マイホームNOTE')
+@section('title', 'プロフィール')
 
 @section('content_header')
 <div class="btn-edit-client">
@@ -37,7 +37,7 @@
                         <div class="col-md-6">
                             <div class="card mb-3">
                                 <div class="card-body">
-                                    <h5 class="bg-summer-sky p-2">住む予定の人数</h5>
+                                    <h5 class="form-title p-2">住む予定の人数</h5>
                                     <div class="row">
                                         <div class="col-6">
                                             <p><i class="fas fa-user"></i> 大人： <strong>{{ $client->adult_count }}人</strong></p>
@@ -58,7 +58,7 @@
                         <div class="col-md-6">
                             <div class="card mb-3">
                                 <div class="card-body">
-                                    <h5 class="bg-summer-sky p-2">土地</h5>
+                                    <h5 class="form-title p-2">土地</h5>
                                     <div class="row">
                                         <div class="col-6">
                                             <p><i class="fas fa-money-bill-wave"></i> 所有地： <strong>{{ $client->land_budget_exists == 'yes' ? '所有地あり' : '所有地なし' }}</strong></p>
@@ -81,7 +81,7 @@
                         <div class="col-md-6">
                             <div class="card mb-3">
                                 <div class="card-body">
-                                    <h5 class="bg-summer-sky p-2">建物</h5>
+                                    <h5 class="form-title p-2">建物</h5>
                                     <div class="row">
                                         <div class="col-6">
                                             <p><i class="fas fa-building"></i> 建物予算： <strong>{{ $client->building_budget }}</strong></p>
@@ -105,7 +105,7 @@
                         <div class="col-md-6">
                             <div class="card mb-3">
                                 <div class="card-body">
-                                    <h5 class="bg-summer-sky p-2">駐車場</h5>
+                                    <h5 class="form-title p-2">駐車場</h5>
                                     <div class="row">
                                         <div class="col-6">
                                             <p><i class="fas fa-car"></i> 普通車： <strong>{{ $client->regularCars }}台</strong></p>
@@ -131,7 +131,7 @@
                         <div class="col-md-6">
                             <div class="card mb-3">
                                 <div class="card-body">
-                                    <h5 class="bg-summer-sky p-2">建築希望地</h5>
+                                    <h5 class="form-title p-2">建築希望地</h5>
                                     <p><strong>{{ $client->construction_area }}</strong></p>
                                 </div>
                             </div>
@@ -140,7 +140,7 @@
                         <div class="col-md-6">
                             <div class="card mb-3">
                                 <div class="card-body">
-                                    <h5 class="bg-summer-sky p-2">建築希望日</h5>
+                                    <h5 class="form-title p-2">建築希望日</h5>
                                     <p><strong>{{ $client->date }}</strong></p>
                                 </div>
                             </div>
@@ -151,7 +151,7 @@
                         <div class="col-md-12">
                             <div class="card mb-3">
                                 <div class="card-body">
-                                    <h5 class="bg-summer-sky p-2">今の家で不満に思っていること</h5>
+                                    <h5 class="form-title p-2">今の家で不満に思っていること</h5>
                                     <p><strong>{{ $client->current_home_issues }}</strong></p>
                                 </div>
                             </div>
@@ -164,34 +164,6 @@
 @stop
 
 @section('css')
-<style>
-.bg-summer-sky{
-    text-align: center;
-    font-weight: bold;
-    color: rgb(71, 70, 70);
-}
-
-.col-md-6{
-    text-align: center;
-}
-
-.content-header h1{
-    text-align: center;
-    color:  rgb(71, 70, 70);
-    font-weight: bold;
-    line-height: 110px; 
-    font-size: 2.5rem; 
-
-}
-
-.btn-edit-client{
-    text-align: right;
-}
-
-
-
-
-</style>
 <link rel="stylesheet" href="{{ asset('/css/item/index.css') }}">
 @stop
 @section('js')

@@ -343,7 +343,7 @@ return [
             'text' => 'フォトギャラリー',
             'url'  => 'gallery/index',
             'icon' => 'fas fa-image',
-            'icon_color' => 'gray',
+            'icon_color' => '#a04d69',
             'classes' => 'text-bold ',
         ],
 

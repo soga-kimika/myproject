@@ -14,7 +14,7 @@
                         @method('PUT')
 
                         <div class="form-group">
-                            <label class="bg-summer-sky">住む予定の人数</label>
+                            <label class="form-title">住む予定の人数</label>
                             <div class="form-inline">
                                 <label for="adult_count" class="mr-2">大人</label>
                                 <select name="adult_count" id="adult_count" class="form-control mr-3" required>
@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="bg-summer-sky">土地</label>
+                            <label class="form-title">土地</label>
                             <div class="form-inline">
                                 <label for="land_budget_exists">所有地</label>
                                 <select name="land_budget_exists" id="land_budget_exists" class="form-control" required>
@@ -72,7 +72,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="bg-summer-sky">建物</label>
+                            <label class="form-title">建物</label>
                             <div class="form-inline">
                                 <label>予算</label>
                                 <input type="text" name="building_budget" class="form-control mr-3" placeholder="3000万円" value="{{ old('building_budget', $client->building_budget) }}" required>
@@ -110,7 +110,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="bg-summer-sky">駐車場</label>
+                            <label class="form-title">駐車場</label>
                             <div class="form-inline mt-2">
                                 <label for="regularCars">普通車</label>
                                 <select id="regularCars" name="regularCars" class="form-control mr-3" required>
@@ -134,12 +134,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="bg-summer-sky">建築希望日</label>
+                            <label class="form-title">建築希望日</label>
                             <input type="date" name="date" class="form-control" value="{{ old('date', $client->date) }}" required>
                         </div>
 
                         <div class="form-group">
-                            <label class="bg-summer-sky">今の家で不満に思っていること</label>
+                            <label class="form-title">今の家で不満に思っていること</label>
                             <textarea name="current_home_issues" class="form-control" placeholder="不満なことを記入" rows="4" >{{ old('current_home_issues',$client->current_home_issues) }}</textarea>
                         </div>
 

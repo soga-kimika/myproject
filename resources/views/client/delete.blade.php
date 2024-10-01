@@ -30,7 +30,7 @@
                             @csrf 
 
                             <div class="form-group d-flex">
-                                <label class="bg-summer-sky mr-3">家族構成</label>
+                                <label class="form-title mr-3">家族構成</label>
                                 <div class="flex-grow-1">
                                     <div class="form-row">
                                         <div class="form-group col-md-3">
@@ -66,7 +66,7 @@
                             </div>
 
                             <div class="form-group d-flex">
-                                <label class="bg-summer-sky mr-3">土地・建物</label>
+                                <label class="form-title mr-3">土地・建物</label>
                                 <div class="flex-grow-1">
                                     <div class="form-row">
                                         <div class="form-group col-md-3">
@@ -104,7 +104,7 @@
                             </div>
 
                             <div class="form-group d-flex">
-                                <label class="bg-summer-sky mr-3">予算</label>
+                                <label class="form-title mr-3">予算</label>
                                 <div class="flex-grow-1">
                                     <div class="form-row">
                                         <div class="col-md-3">
@@ -120,7 +120,7 @@
                             </div>
 
                             <div class="form-group d-flex">
-                                <label class="bg-summer-sky mr-3">駐車スペース</label>
+                                <label class="form-title mr-3">駐車スペース</label>
                                 <div class="flex-grow-1">
                                     <div class="form-row">
                                         <div class="form-group col-md-3">
@@ -168,17 +168,17 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="bg-summer-sky">建築エリア</label>
+                                <label class="form-title">建築エリア</label>
                                 <input type="text" name="construction_area" class="form-control input-sm" placeholder="城北" value="{{ old('construction_area') }}" required>
                             </div>
 
                             <div class="form-group">
-                                <label class="bg-summer-sky">建築希望日</label>
+                                <label class="form-title">建築希望日</label>
                                 <input type="date" id="date" name="date" class="form-control input-sm" value="{{ old('date') }}" required>
                             </div>
 
                             <div class="form-group">
-                                <label class="bg-summer-sky">今の家で不満に思っていること</label>
+                                <label class="form-title">今の家で不満に思っていること</label>
                                 <textarea name="current_home_issues" class="form-control input-sm" placeholder="今のお家の不便なこと・不満なことを記入してください" rows="10" required>{{ old('current_home_issues') }}</textarea>
                             </div>
 
@@ -198,5 +198,5 @@
 @stop
 
 @section('js')
-    <!-- Custom JS if needed -->
+
 @stop

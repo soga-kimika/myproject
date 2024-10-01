@@ -1,9 +1,8 @@
 @extends('adminlte::page')
 
-@section('title', 'home')
+@section('title', 'マイホームNOTE')
 
 @section('content_header')                                                              
-
 
 @stop   
 
@@ -72,99 +71,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('/css/item/index.css') }}">
-<style>
-   
-    .countdown-container {
-        background: radial-gradient(at 40% 20%, rgb(232, 12, 12) 0px, transparent 50%),
-        radial-gradient(at 40% 20%, hsla(28, 100%, 74%, 1) 0px, transparent 50%),
-        radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 1) 0px, transparent 50%),
-        radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 1) 0px, transparent 50%),
-        radial-gradient(at 80% 50%, hsla(340, 100%, 76%, 1) 0px, transparent 50%),
-        radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 1) 0px, transparent 50%),
-        radial-gradient(at 80% 100%, hsla(242, 100%, 70%, 1) 0px, transparent 50%);
-        
-        background-position: center center;
-        margin-top: 20px;
-        width: 100%; 
-        color: rgb(88, 82, 82);
-        padding-bottom: 20px;
-    }
 
-    h1 {
-        font-weight: normal;
-        font-size: 3rem;
-        margin-top: 20px;
-        text-align: center; 
-    }
-
-    span.title-span {
-        font-size: 2rem;
-    }
-
-    .countdown-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%; 
-    }
-
-    .time-text {
-        font-weight: bold;
-        font-size: 10rem;
-        line-height: 1;
-        margin: 1rem 2rem;
-        margin: 0 5px;
-        color: rgb(61, 57, 57);
-    }
-
-    .countdown-elm {
-        text-align: center;
-    }
-
-    .countdown-elm span {
-        font-size: 1rem;
-    }
-
-    .countdown-elm h1 span{
-      font-size: 3rem;
-    }
-
-    .countdown-display {
-      display: flex; 
-      align-items: center; 
-      justify-content: center;"
-    }
-
-    .countdown-display span{
-      font-size: 2rem;
-      margin-top: 60px;
-    }
-
-    h3{
-      text-align: right;
-    }
-
-    /* ホーム   ページのアイコンの大きさ */
-    
-    .home-icon {
-    font-size: 50px; /* アイコンのサイズ */
-    margin: 10px; /* アイコン間の余白 */
-    transition: color 0.3s, transform 0.3s; /* ホバー時のアニメーション */
-}
-
-.home-icon:hover {
-    transform: translateY(-5px) scale(1.1); /* 少し前に出てサイズを大きくする */
-}
-
-   /* タイトルアイコン */
-   .fa-address-card{
-    color:#dc3545;
-}
-
-.fa-image{
-    color: #6c757d;
-}
-</style>
 @stop
 
 @section('js')

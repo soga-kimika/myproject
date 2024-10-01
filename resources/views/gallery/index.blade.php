@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'フォトギャラリー')
 
 @section('content_header')
-<h1><i class="far fa-address-card"></i>フォトギャラリー</h1>
+<h1><i class="far fa-image"></i>フォトギャラリー</h1>
 @stop
 
 @section('content')

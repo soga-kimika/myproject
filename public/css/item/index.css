@@ -1,20 +1,12 @@
-/* ヘッダーの色 */
+/* ヘッダー共通 */
 .content-header h1{
     text-align: center;
     color:  rgb(71, 70, 70);
     font-weight: bold;
     line-height: 100px; 
     font-size: 2.5rem; 
-
 }
-
-
-.pb-2{
-    border-top: 1px solid #dee2e6;
-    padding-top: 15px;
-}
-
-/* ボタン全体 */
+/* ボタン共通*/
 .btn {
     background-color: transparent;
     border: 2px solid ;
@@ -24,14 +16,198 @@
     font-weight: bold;
     color: white;
 }
-
 .btn:active{
     background-color: white;
 }
 .btn:focus{
     border: 2px solid blue;
 }
+/* 削除ボタン */
+.btn-danger{
+    color: rgb(227, 51, 51);
+}
+.btn-danger:hover{
+    color:  rgb(227, 51, 51);
+}
+/* 閉じるボタン */
+btn-default{
+    color: gray;
+}
+/* 更新ボタン */
+.btn-update{
+    color: rgb(80, 183, 183);
+}
+.btn-update:hover{
+    color: rgb(80, 183, 183);
+}
+/* 画像投稿ボタン */
+.btn-select{
+    color: orange;
+}
+.btn-select:hover{
+    color: orange;
+}
+  /* 登録ボタン */ 
+  .btn-store{
+    color: rgb(16, 185, 117);
+}
+.btn-store:hover    {
+    color: rgb(31, 222, 146);
+}
+/* ファイル選択ボタン */
+.btn-select{
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
+/* アイコン共通 */
+.fas{
+    padding-right: 5px;
+}
+/* アイディアアイコン */
+.fa-lightbulb {
+    color: #ffc107;
+}
+/* LDKアイコン */
+.fa-couch {
+    color: #3d9970 ;
+}
+/* プライベートルームアイコン */
+.fa-bed {
+    color: #6f42c1;
+}
+/* ストレージアイコン */
+.fa-box {
+    color: #fd7e14;
+}
+/* バスルームアイコン */
+.fa-sink{
+    color: #5b9be0 !important;
+}
+/* デザインアイコン */
+.fa-palette  {
+    color: #e464be !important;
+}
+
+/* ストレージアイコン */
+.fa-boxes{
+    color: rgb(132, 89, 36); 
+}
+/* ギャラリーアイコン */
+.fa-image{
+    color: rgb(109, 72, 72);
+}
+/* プロフィールアイコン */
+.fa-address-card{
+    color:#dc3545;
+}
+
+/* home */
+/* カウントダウン全体 */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    background: radial-gradient(at 40% 20%, rgb(232, 12, 12) 0px, transparent 50%),
+    radial-gradient(at 40% 20%, hsla(28, 100%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, hsla(340, 100%, 76%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(242, 100%, 70%, 1) 0px, transparent 50%);
+    margin-top: 20px;
+    color: rgb(88, 82, 82);
+    padding-bottom: 20px;
+}
+.countdown-elm {
+    text-align: center;
+}
+.countdown-elm span {
+    font-size: 1rem;
+}
+.countdown-elm h1 span{
+  font-size: 3rem;
+}
+
+/* カウントダウンタイトル*/
+h1 {
+    font-weight: normal;
+    font-size: 3rem;
+    margin-top: 20px;
+    text-align: center; 
+}
+span.title-span {
+    font-size: 2rem;
+}
+/* 建築希望日 */
+h3{
+    text-align: right;
+  }  
+/* カウントダウン日付全体 */
+.countdown-display {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+  }
+  /* カウントダウンテキスト */
+.time-text {
+    font-weight: bold;
+    font-size: 10rem;
+    line-height: 1;
+    margin: 1rem 2rem;
+    margin: 0 5px;
+    color: rgb(61, 57, 57);
+}
+.countdown-display span{
+  font-size: 2rem;
+  margin-top: 60px;
+}
+/* 画面遷移各種アイコン */
+.home-icon {
+font-size: 50px; 
+margin: 10px; 
+transition: color 0.3s, transform 0.3s; 
+}
+.home-icon:hover {
+transform: translateY(-5px) scale(1.1);
+}
+
+
+/* client/create */
+/* 全体 */
+.form-inline .form-group {
+    margin-right: 10px;
+}
+/* ヘッダー */
+.content-header h1{
+    text-align: center;
+    color:  rgb(71, 70, 70);
+    font-weight: bold;
+    line-height: 110px; 
+    font-size: 2.5rem; 
+}
+/* 入力欄 */
+.client-form{
+    background-color: white;
+}
+.form-title{
+    text-align: center;
+    font-weight: bold;
+    color: rgb(71, 70, 70);
+}
+.col-md-6{
+    text-align: center;
+}
+/* 編輯ボタン */
+.btn-edit-client{
+    text-align: right;
+}
+
+
+/* HomePlanning/{type}：入力フォーム */
+.pb-2{
+    border-top: 1px solid #dee2e6;
+    padding-top: 15px;
+}
 /* ラジオボタン */
 .form-check {
     margin-right: 10px; 
@@ -39,8 +215,6 @@
 .form-check:last-child {
     margin-right: 30px; 
 }
-
-/* 優先度のラジオボタンのアイコン */
 .fa-star{
     color: gold
 }
@@ -50,12 +224,6 @@
 .fa-times{
     color: red;
 }
-
-/* ファイル選択ボタン */
-.btn-select{
-    margin-left: 10px;
-    margin-right: 10px;
-}
 /* カードタイトル */
 .card-header:first-child{
     background-color:#f8f9fa;
@@ -64,11 +232,10 @@
     font-weight: bold;
     color: rgb(71, 70, 70);
 }
-/* ヘッダー */
+/* カードヘッダー */
 .custom-table thead th {
     font-size: 0.85rem;
     padding: 5px;
-    
 }
 .custom-table td {
     vertical-align: middle;
@@ -78,7 +245,7 @@
         vertical-align: middle;
         padding-left: 0;
 }
-/* レコード */
+/* カードレコード */
 .table {
     width: 100%;
     table-layout: fixed; 
@@ -87,6 +254,7 @@
     white-space: normal; 
     line-height: 1.5; 
 }
+/* カードレコードの要素全体（ファーストレコード） */
 .col-priority {
     width: 70px;
 } 
@@ -98,192 +266,105 @@
     width: 60px; 
     text-align: right; 
 }
-
 .col-image{
     width: 60px;
     text-align: center; 
     margin-left: 20px;
 }
-
 .th-col-priority{
-
     padding-right: 20px;
 }
-/* 画像アイコン */
-.custom-table img {
+/* カード編集アイコン */
+.btn-edit{
+    margin-left: 20px;
+    border: 2px solid rgb(86, 80, 80);
+    color: rgb(86, 80, 80);
+}
+.btn-edit:hover {
+    color: rgb(86, 80, 80);
+}
+/*カード画像アイコン */
+.btn-info{
+    color: #c55178;
+    border: 2px solid; 
+    margin-left: 10px;
     max-width: 100px; 
     height: auto; 
 }
-
-
-/* 画像ボタン */
-.btn-info{
-    color: #17a2b8;
-    border: 2px solid; 
-    margin-left: 10px;
-}
-
 .btn-info:hover{
-    color: #17a2b8;
+    color: #c55178;
 }
 
-/* 編集ボタン */
-.btn-edit{
-    margin-left: 20px;
-    border: 2px solid  rgb(107, 94, 94);
-    color: rgb(107, 94, 94);
-}
-
-.btn-edit:hover {
-    color: rgb(107, 94, 94);
-
-}
-/* 削除ボタン */
-
-.btn-danger{
-    color: red;
-}
-.btn-danger:hover{
-    color:  red;
-}
-
-/* 閉じるボタン */
-btn-default{
-    color: gray;
-}
-
-/* 更新ボタン */
-.btn-update{
-    color: rgb(80, 183, 183);
-}
-
-.btn-update:hover{
-    color: rgb(80, 183, 183);
-}
-
-/* 画像投稿ボタン */
-.btn-select{
-    color: orange;
-}
-
-.btn-select:hover{
-    color: orange;
-}
-   /* 登録ボタン */ 
-.btn-store{
-    color: rgb(31, 222, 146);
-}
-.btn-store:hover    {
-    color: rgb(31, 222, 146);
-}
-
-
-/* クライアント */
-
-.form-inline .form-group {
-    margin-right: 10px;
-}
-
-
-.client-form{
-    background-color: white;
-}
-
-.fas{
-    padding-right: 5px;
-}
-/* カードのアイコン */
-  .fa-toilet {
-    color: rgb(242, 135, 205); 
-}
-.fa-bath {
-    color: rgb(88, 219, 188);
-}
-.fa-lightbulb {
-    color: #ffc107;
-}
-.fa-trash { 
-    color: rgb(170, 159, 159); 
-}
-.fa-tree {
-    color: rgb(48, 184, 48); 
-}
-.fa-chair {
-    color: rgb(232, 62, 107); 
-}
-.fa-bed {
-    color: #6f42c1;
-}
-.fa-child {
-    color: rgb(235, 55, 85); 
-}
-.fa-box {
-    color: #fd7e14;
-}
-.fa-tools {
-    color: rgb(173, 156, 156); 
-}
-.fa-couch {
-    color: #3d9970 ;
-}
-.fa-tv {
-    color: brown ;
-}
-.fa-utensils {
-    color: rgb(235, 214, 95);
-}
-.fa-sink{
-    color: #007bff !important;
-}
-.fa-palette  {
-    color: #3c8dbc !important;
-}
-
+/* カードアイコン */
+/* ウィッシュリストアイコン */
 .fa-check-title{
     color: rgb(235, 55, 85); 
 }
-
+/* ナッシングアイコン */
+.fa-trash { 
+    color: rgb(170, 159, 159); 
+}
+/* エクステリアアイコン */
+.fa-tree {
+    color: rgb(48, 184, 48); 
+}
+/* インテリアアイコン */
+.fa-chair {
+    color: rgb(232, 62, 107); 
+}
+/* トイレアイコン */
+  .fa-toilet {
+    color: rgb(242, 135, 205); 
+}
+/* バスルームアイコン */
+.fa-bath {
+    color: rgb(88, 219, 188);
+}
+/* ベッドルームアイコン */
 .fa-user{
-    color: rgb(235, 220, 55); 
+    color: rgb(18, 244, 168); 
+}
+/*　キッズルームアイコン */
+.fa-child {
+    color: rgb(235, 55, 85); 
+}
+/* カスタマイズアイコン */
+.fa-tools {
+    color: rgb(173, 156, 156); 
+}
+/* リビングアイコン */
+.fa-tv {
+    color: brown ;
+}
+/* ダイニングアイコン */
+.fa-utensils {
+    color: rgb(235, 214, 95);
 }
 
-.fa-boxes{
-    color: rgb(132, 89, 36); 
+/* client/create */
+/* 入力フォーム全体 */
+.form-inline{
+    font-size: 14px;
 }
-
-
-
-
-.bg-summer-sky{
+/* ヘッダータイトル */
+.content-header .content-header-client{
+    margin-top: -40px;
+    margin-bottom: 30px;
+}
+/* プルダウンメニュー */
+.form-control {
+    width: 100%; 
+}
+/* プルダウンメニュータイトル */
+.form-title{
     color: rgb(86, 80, 80);
     font-size: 23px;
     text-align: center;
 }
 
-.form-group-1{
-    background-color: white; 
-}
-
-.form-control {
-    width: 100%; 
-
-}
-
-.form-inline{
-    font-size: 14px;
-   
-    
-}
-
+/* client/index */
 /* プロフィール編輯ボタン */
-
 .btn-edit-client{
     text-align: right;
-}
-
-/* クライアントのタイトル */
-.content-header .content-header-client{
-    margin-top: -40px;
-    margin-bottom: 30px;
 }
 
