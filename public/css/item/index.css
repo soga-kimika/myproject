@@ -88,7 +88,7 @@ btn-default{
 }
 /* デザインアイコン */
 .fa-palette  {
-    color: #e464be !important;
+    color: #e46491 !important;
 }
 
 /* ストレージアイコン */
@@ -315,7 +315,7 @@ transform: translateY(-5px) scale(1.1);
 }
 /* エクステリアアイコン */
 .fa-tree {
-    color: rgb(48, 184, 48); 
+    color: rgb(107, 211, 135); 
 }
 /* インテリアアイコン */
 .fa-chair {
@@ -327,11 +327,11 @@ transform: translateY(-5px) scale(1.1);
 }
 /* バスルームアイコン */
 .fa-bath {
-    color: rgb(88, 219, 188);
+    color: rgba(152, 216, 50, 0.896);
 }
 /* ベッドルームアイコン */
-.fa-user{
-    color: rgb(18, 244, 168); 
+.fa-user-friends{
+    color: rgba(10, 167, 235, 0.881); 
 }
 /*　キッズルームアイコン */
 .fa-child {

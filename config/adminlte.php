@@ -362,7 +362,7 @@ return [
 
         [
             'text'    => 'account_settings',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-fw fa-user-cog',
             'topnav_right' => true,
             'submenu' => [
                 [
