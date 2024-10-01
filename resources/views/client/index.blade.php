@@ -188,9 +188,7 @@
     text-align: right;
 }
 
-.fa-address-card{
-    color: #dc3545;
-}
+
 
 
 </style>

@@ -9,7 +9,52 @@
 
 @section('content')
 <section class="content">
-        <div id="target-date" style="display:none;">{{ $client->date }}</div> 
+  
+            </div>
+            <div class="row justify-content-center text-center">
+                <div class="col-auto">
+                    <a href="{{ route('client.index') }}" title="プロフィール">
+                        <i class="far fa-address-card home-icon"></i>
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a href="{{ route('items.index', 'ideas') }}" title="アイディア">
+                        <i class="fas fa-lightbulb home-icon"></i>
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a href="{{ route('items.index', 'designs') }}" title="デザイン">
+                        <i class="fas fa-palette home-icon"></i>
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a href="{{ route('items.index', 'ldk') }}" title="LDK">
+                        <i class="fas fa-couch home-icon"></i>
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a href="{{ route('items.index', 'bathrooms') }}" title="バスルーム">
+                        <i class="fas fa-sink home-icon"></i>
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a href="{{ route('items.index', 'rooms') }}" title="プライベートルーム">
+                        <i class="fas fa-bed home-icon"></i>
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a href="{{ route('items.index', 'storages') }}" title="ストレージ">
+                        <i class="fas fa-box home-icon"></i>
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a href="{{ route('client.index') }}" title="フォトギャラリー">
+                        <i class="far fas fa-image home-icon"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div id="target-date" style="display:none;">{{ $client->date }}</div> 
             <div class="countdown-container">
                 <div class="countdown-elm">
                      <h1>Countdown <span>to</span> My Home</h1>  
@@ -20,37 +65,15 @@
                                 <span>days</span>
                             </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card mt-4">
-                        <div class="card-body home-card-body t">
-                            <a href="{{ route('client.index') }}">
-                                <i class="far fa-address-card home-icon-fa-address-card"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card mt-4">
-                        <div class="card-body home-card-body ">
-                            <a href="{{ route('galleries.index') }}">
-                                <i class="far fas fa-image home-icon-fa-image"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
             
 </div>
 
 @stop
 
 @section('css')
-
+<link rel="stylesheet" href="{{ asset('/css/item/index.css') }}">
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
-
+   
     .countdown-container {
         background: radial-gradient(at 40% 20%, rgb(232, 12, 12) 0px, transparent 50%),
         radial-gradient(at 40% 20%, hsla(28, 100%, 74%, 1) 0px, transparent 50%),
@@ -61,7 +84,6 @@
         radial-gradient(at 80% 100%, hsla(242, 100%, 70%, 1) 0px, transparent 50%);
         
         background-position: center center;
-        align-items: center;
         margin-top: 20px;
         width: 100%; 
         color: rgb(88, 82, 82);
@@ -70,13 +92,13 @@
 
     h1 {
         font-weight: normal;
-        font-size: 4rem;
-        margin-top: 5rem;
+        font-size: 3rem;
+        margin-top: 20px;
         text-align: center; 
     }
 
     span.title-span {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .countdown-container {
@@ -121,24 +143,27 @@
     h3{
       text-align: right;
     }
+
+    /* ホーム   ページのアイコンの大きさ */
     
-    .home-icon-fa-address-card  {
-        font-size: 200px;
-    }
+    .home-icon {
+    font-size: 50px; /* アイコンのサイズ */
+    margin: 10px; /* アイコン間の余白 */
+    transition: color 0.3s, transform 0.3s; /* ホバー時のアニメーション */
+}
 
-    .home-icon-fa-image  {
-        font-size: 200px;
-    }
+.home-icon:hover {
+    transform: translateY(-5px) scale(1.1); /* 少し前に出てサイズを大きくする */
+}
 
-    .home-card-body{
-        display: flex;
-        text-align: center;
-        margin-top: 20x;
-background:hsla(173,64%,44%,1);
-radial-gradient(at 92% 34%, hsla(273,7%,60%,1) 0px, transparent 50%),
-radial-gradient(at 0% 100%, hsla(241,100%,17%,1) 0px, transparent 50%),
-radial-gradient(at 96% 42%, hsla(202,100%,17%,1) 0px, transparent 50%);
-    }
+   /* タイトルアイコン */
+   .fa-address-card{
+    color:#dc3545;
+}
+
+.fa-image{
+    color: #6c757d;
+}
 </style>
 @stop
 
