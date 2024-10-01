@@ -61,10 +61,10 @@
                                     <h5 class="form-title p-2">土地</h5>
                                     <div class="row">
                                         <div class="col-6">
-                                            <p><i class="fas fa-money-bill-wave"></i> 所有地： <strong>{{ $client->land_budget_exists == 'yes' ? '所有地あり' : '所有地なし' }}</strong></p>
+                                            <p><i class="fas fa-map"></i> 所有地： <strong>{{ $client->land_budget_exists == 'yes' ? '所有地あり' : '所有地なし' }}</strong></p>
                                         </div>
                                         <div class="col-6">
-                                            <p><i class="fas fa-money-bill-wave"></i> 土地予算： <strong>{{ $client->land_budget }}</strong></p>
+                                            <p><i class="fas fa-yen-sign"></i> 土地予算： <strong>{{ $client->land_budget }}</strong></p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -84,10 +84,10 @@
                                     <h5 class="form-title p-2">建物</h5>
                                     <div class="row">
                                         <div class="col-6">
-                                            <p><i class="fas fa-building"></i> 建物予算： <strong>{{ $client->building_budget }}</strong></p>
+                                            <p><i class="fas fa-yen-sign"></i> 建物予算： <strong>{{ $client->building_budget }}</strong></p>
                                         </div>
                                         <div class="col-6">
-                                            <p><i class="fas fa-home-lg"></i> 建物の坪数： <strong>{{ $client->building_area }}坪</strong></p>
+                                            <p><i class="fas fa-home"></i> 建物の坪数： <strong>{{ $client->building_area }}坪</strong></p>
                                         </div>
                                     </div>
                                     <div class="row">
