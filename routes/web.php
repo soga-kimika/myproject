@@ -29,15 +29,15 @@
         Auth::routes();
         Route::prefix('client')->group(function () {
             // プロフィール画面表示
-            Route::get('index', [ClientController::class, 'index'])->name('client.index');
+            Route::get('index', [ClientController::class, 'index'])->name('clients.index');
             // プロフィール「登録」画面表示
-            Route::get('create', [ClientController::class, 'create'])->name('client.create');
+            Route::get('create', [ClientController::class, 'create'])->name('clients.create');
             // プロフィール登録
-            Route::post('store', [ClientController::class, 'store'])->name('client.store');
+            Route::post('store', [ClientController::class, 'store'])->name('clients.store');
             // プロフィール「編集」画面表示
-            Route::get('edit', [ClientController::class, 'edit'])->name('client.edit');
+            Route::get('edit', [ClientController::class, 'edit'])->name('clients.edit');
             // プロフィール更新
-            Route::put('update', [ClientController::class, 'update'])->name('client.update');
+            Route::put('update', [ClientController::class, 'update'])->name('clients.update');
         });
 
         Route::prefix('HomePlanning')->group(function () {

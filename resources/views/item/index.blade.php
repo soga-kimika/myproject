@@ -48,6 +48,24 @@
             const modalImage = document.getElementById('modalImage');
             modalImage.src = imageSrc;
         }
+        document.addEventListener('DOMContentLoaded', () => {
+    // ページが読み込まれたときに状態を復元
+    const checkboxes = document.querySelectorAll('.check-consulted');
+    checkboxes.forEach(checkbox => {
+        const id = checkbox.dataset.id;
+        const checked = localStorage.getItem(`checkbox-${id}`) === 'true';
+        checkbox.checked = checked;
+    });
+
+    // チェックボックスの状態が変わったときに保存
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const id = checkbox.dataset.id;
+            localStorage.setItem(`checkbox-${id}`, checkbox.checked);
+        });
+    });
+});
+
     </script>
     @stop
     

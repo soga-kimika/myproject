@@ -1,4 +1,5 @@
 
+    {{-- 編集モーダル --}}
     <div class="modal fade" id="client-editModal" tabindex="-1" role="dialog" aria-labelledby="client-editModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -9,7 +10,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="{{ route('client.update' )}}">
+                    <form method="post" action="{{ route('clients.update' )}}">
                         @csrf
                         @method('PUT')
 
@@ -167,19 +168,19 @@
 
         function toggleLandBudgetInput() {
             if (landBudgetExists.value === 'yes') {
-                landBudgetInput.value = ''; // 予算をクリア
-                landBudgetInput.setAttribute('disabled', true); // 無効化
-                landBudgetInput.style.backgroundColor = '#e9ecef'; // 色を変える 
-                 landBudgetInput.placeholder = ''; // プレースホルダーを消す
+                landBudgetInput.value = ''; 
+                landBudgetInput.setAttribute('disabled', true); 
+                landBudgetInput.style.backgroundColor = '#e9ecef'; 
+                 landBudgetInput.placeholder = ''; 
             } else {
-                landBudgetInput.removeAttribute('disabled'); // 有効化
-                landBudgetInput.style.backgroundColor = ''; // 元の色に戻す
-                landBudgetInput.placeholder = '5000万円'; // プレースホルダーを元に戻す
+                landBudgetInput.removeAttribute('disabled'); 
+                landBudgetInput.style.backgroundColor = ''; 
+                landBudgetInput.placeholder = '5000万円'; 
             }
         }
 
         landBudgetExists.addEventListener('change', toggleLandBudgetInput);
-        toggleLandBudgetInput(); // 初期状態を設定
+        toggleLandBudgetInput(); 
     });
 
 </script>

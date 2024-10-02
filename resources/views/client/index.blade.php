@@ -4,6 +4,7 @@
 
 @section('content_header')
 <div class="btn-edit-client">
+    {{-- 編集モーダルトリガー --}}
 <a href="#" class="btn btn-edit btn-edit-client" data-toggle="modal" data-target="#client-editModal">
     プロフィール編集
 </a>

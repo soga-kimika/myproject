@@ -24,7 +24,7 @@
             </section>
 
             <section class="content">
-                <form method="post" action="{{ route('client.store') }}">
+                <form method="post" action="{{ route('clients.store') }}">
                     @csrf 
 
                     <div class="form-group">
