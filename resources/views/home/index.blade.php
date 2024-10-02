@@ -10,7 +10,7 @@
 <section class="content">
     <div class="row justify-content-center text-center">
         <div class="col-auto">
-            <a href="{{ route('client.index') }}" title="プロフィール">
+            <a href="{{ route('clients.index') }}" title="プロフィール">
                 <i class="far fa-address-card home-icon"></i>
             </a>
         </div>
