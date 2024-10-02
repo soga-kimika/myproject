@@ -45,9 +45,24 @@ btn-default{
     color: orange;
     cursor: pointer;
 }
+/* 選択したファイル名表示ボタン */
+.file-name {
+    font-weight: bold;
+    color: #2ad8c6; 
+    background-color: #e9ecef; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    margin-left: 250px; 
+    width: 200px; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    display: inline-block; 
+    margin-top: -10px;
+}
 .btn-select:hover{
     color: orange;
-    
+   
 }
   /* 登録ボタン */ 
   .btn-store{
@@ -369,11 +384,5 @@ transform: translateY(-5px) scale(1.1);
     color: rgb(86, 80, 80);
     font-size: 23px;
     text-align: center;
-}
-
-/* client/index */
-/* プロフィール編輯ボタン */
-.btn-edit-client{
-    text-align: right;
 }
 

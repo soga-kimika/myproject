@@ -37,8 +37,17 @@
     @stop
 
     @section('js')
-
     <script>
-        
-
+        function displayFileName() {
+            const input = document.getElementById('imageUpload');
+            const fileName = document.getElementById('fileName');
+            fileName.textContent = input.files[0] ? input.files[0].name : '';
+        }
+    
+        function showImage(imageSrc) {
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+        }
+    </script>
     @stop
+    

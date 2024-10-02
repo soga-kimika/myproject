@@ -9,13 +9,16 @@
 @section('content')
 <div class="container">
     <div class="form-group d-flex align-items-center col-md-12">
+        {{-- 画像投稿ボタン --}}
         <label for="imageUpload" class="btn me-2 form-check-label btn-select">
             画像を選択 <i class="fas fa-upload"></i>
         </label>
+        {{-- ファイル名表示 --}}
         <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none" onchange="displayFileName()">
-        <span id="fileName" class="ms-2"></span>
+        <span id="fileName" class="ms-2 file-name"></span>
+        {{-- 登録ボタン --}}
         <button type="submit" class="btn btn-store ms-2">登録</button>
-    </div>
+    </div>  
     <div class="row" id="gallery">
         <div class="col-md-4 mb-4">
             <div class="card">
