@@ -111,7 +111,7 @@
                                             <p><i class="fas fa-car"></i> 普通車： <strong>{{ $client->regularCars }}台</strong></p>
                                         </div>
                                         <div class="col-6">
-                                            <p><i class="fas fa-car-side"></i> 軽自動車： <strong>{{ $client->miniCars }}台</strong></p>
+                                            <p><i class="fas fa-car-side"></i> 軽自動車： <strong>{{ $client->compactCars }}台</strong></p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -175,19 +175,19 @@
 
         function toggleLandBudgetInput() {
             if (landBudgetExists.value === 'yes') {
-                landBudgetInput.value = ''; // 予算をクリア
-                landBudgetInput.setAttribute('disabled', true); // 無効化
-                landBudgetInput.style.backgroundColor = '#e9ecef'; // 色を変える 
-                 landBudgetInput.placeholder = ''; // プレースホルダーを消す
+                landBudgetInput.value = ''; 
+                landBudgetInput.setAttribute('disabled', true); 
+                landBudgetInput.style.backgroundColor = '#e9ecef'; 
+                 landBudgetInput.placeholder = ''; 
             } else {
-                landBudgetInput.removeAttribute('disabled'); // 有効化
-                landBudgetInput.style.backgroundColor = ''; // 元の色に戻す
-                landBudgetInput.placeholder = '5000万円'; // プレースホルダーを元に戻す
+                landBudgetInput.removeAttribute('disabled'); 
+                landBudgetInput.style.backgroundColor = ''; 
+                landBudgetInput.placeholder = '5000万円';
             }
         }
 
         landBudgetExists.addEventListener('change', toggleLandBudgetInput);
-        toggleLandBudgetInput(); // 初期状態を設定
+        toggleLandBudgetInput(); 
     });
 
 </script>

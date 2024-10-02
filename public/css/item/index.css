@@ -59,7 +59,6 @@ btn-default{
     text-overflow: ellipsis; 
     display: inline-block; 
     margin-top: -7px;
-
 }
 .btn-select:hover{
     color: orange;
@@ -193,6 +192,7 @@ transform: translateY(-5px) scale(1.1);
 
 /* client/create */
 /* 全体 */
+
 .form-inline .form-group {
     margin-right: 10px;
 }
