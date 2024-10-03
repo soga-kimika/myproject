@@ -38,18 +38,14 @@
 
     @section('js')
     <script>
+        // ファイル名の表示（ファイル名カスタムのため設定が必要）
         function displayFileName() {
             const input = document.getElementById('imageUpload');
             const fileName = document.getElementById('fileName');
             fileName.textContent = input.files[0] ? input.files[0].name : '';
         }
-    
-        function showImage(imageSrc) {
-            const modalImage = document.getElementById('modalImage');
-            modalImage.src = imageSrc;
-        }
         document.addEventListener('DOMContentLoaded', () => {
-    // ページが読み込まれたときに状態を復元
+    // チェックボックスの状態を保持
     const checkboxes = document.querySelectorAll('.check-consulted');
     checkboxes.forEach(checkbox => {
         const id = checkbox.dataset.id;
@@ -65,16 +61,6 @@
         });
     });
 });
-function openModal(item) {
-    const modalFileNameDisplay = document.getElementById('modalFileName');
-    const fileInput = document.getElementById('imageUpload');
-
-    modalFileNameDisplay.textContent = item.image_url ? item.image_url.split('/').pop() : '';
-    document.getElementById('edit_request_message').value = item.request_message || '';
-
-    // モーダルを開く
-    $('#editModal' + item.id).modal('show');
-}   
 
     </script>
     @stop

@@ -9,17 +9,17 @@ use Illuminate\Support\Facades\Storage;
 
 // $type（bathroom-areasなど）を引数で渡して、$type（bathroom-areasなど）ごとに、
 // ページ内容を表示
-   
+
 class ItemController extends Controller
 {
-     public function index($type)
+    public function index($type)
     {
         // ページタイトル・アイコンを、タイプごとに取得し、$pageInfoにまとめて格納
         $pageInfo = $this->getPageTitleByType($type);
         // タイトルを取得
-        $pageTitle = $pageInfo['title']; 
+        $pageTitle = $pageInfo['title'];
         // アイコンを取得
-        $pageIcon = $pageInfo['icon']; 
+        $pageIcon = $pageInfo['icon'];
         // カードのタイトルとカテゴリーをタイプから取得
         $cardTitlesAndCategories = $this->getCardTitlesAndCategoriesByType($type);
         // カテゴリー１から、カード1用のアイテムを取得
@@ -64,7 +64,7 @@ class ItemController extends Controller
             'bathrooms' => [
                 ['id' => 1, 'title' => ' トイレ', 'category' => 'toilet', 'icon' => '<i class="fas fa-toilet"></i>'],
                 ['id' => 2, 'title' => 'バスルーム', 'category' => 'bath', 'icon' => '<i class="fas fa-bath"></i>'],
-            ],  
+            ],
             'ideas' => [
                 ['id' => 1, 'title' => 'ウィッシュリスト', 'category' => 'idea', 'icon' => '<i class="fas fa-check fa-check-title"></i>'],
                 ['id' => 2, 'title' => 'ナッシング', 'category' => 'nothing', 'icon' => '<i class="fas fa-trash"></i>'],
@@ -109,7 +109,7 @@ class ItemController extends Controller
             'category' => 'required|in:toilet,bath,idea,nothing,outside,interior,bedroom,kidsroom,storages,other,living,dining',
             'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
             'request_message' => 'required|string|max:255',
-            
+
         ]);
 
         // アイテム（優先度、カテゴリー名、要望）の作成
@@ -135,7 +135,7 @@ class ItemController extends Controller
             $item->image_url = $imagePath;
             // ファイル名を取得し、ファイル名を重複しないように、日付をファイル名に入れてファイル名を保存
             $fileName =   $image->getClientOriginalName() . '_' . time();
-            $item->image_name = $fileName;  
+            $item->image_name = $fileName;
         }
         $item->type = $type;
         // 保存
@@ -154,7 +154,7 @@ class ItemController extends Controller
             'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
             'request_message' => 'nullable|string|max:255',
         ]);
-
+    
         // アイテムの更新
         if ($request->has('priority')) {
             $item->priority = $request->input('priority');
@@ -163,35 +163,35 @@ class ItemController extends Controller
         if ($request->has('request_message')) {
             $item->request_message = $request->input('request_message');
         }
-
+    
         // 画像の処理
         if ($request->hasFile('imageUpload')) {
-            // 既存の画像がある場合
+            // 古い画像がある場合
             if ($item->image_url) {
-                // 画像更新のリクエストがあった場合
-                if ($request->hasFile('imageUpload')) {
-                    // 古い画像の削除
-                    if (Storage::exists('public/' . $item->image_url)) {
-                        Storage::delete('public/' . $item->image_url);
-                    }
-                    // 新しい画像を保存
-                    $image = $request->file('imageUpload');
-                    $imagePath = $image->store('images', 'public');
-                    $item->image_url = $imagePath;
+                // 古い画像の削除
+                if (Storage::exists('public/' . $item->image_url)) {
+                    Storage::delete('public/' . $item->image_url);
                 }
-            } else {
-                // 既存の画像がない場合で、画像のリクエストがあった場合
-                $image = $request->file('imageUpload');
-                $imagePath = $image->store('images', 'public');
-                $item->image_url = $imagePath;
+                // 古い画像の名前も削除
+                $item->image_name = null; // もしくは新しい画像名に更新
             }
+    
+            // 新しい画像のパスを生成し、パスを保存
+            $image = $request->file('imageUpload');
+            $imagePath = $image->store('images', 'public');
+            $item->image_url = $imagePath;
+    
+            // ファイル名を取得し、ファイル名を重複しないように、日付をファイル名に入れてファイル名を保存
+            $fileName = $image->getClientOriginalName() . '_' . time();
+            $item->image_name = $fileName; // 新しい画像名を設定
         }
-
+    
         // アイテムを保存
         $item->save();
-
+    
         return redirect()->route('items.index', ['type' => $type]);
     }
+    
 
 
     // レコードの削除
