@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('image_url')->nullable();
             $table->string('request_message',255)->nullable();
             $table->integer('card_number')->nullable();
+            $table->string('image_name')->nullable();
         });
     }
 

@@ -18,7 +18,9 @@ class Item extends Model
         'detail',
         'priority',
         'request_message',
-        'image_url',    
+        'image_url',
+        'image_name',
+
     ];
 
     /**

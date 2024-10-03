@@ -100,7 +100,6 @@ class ItemController extends Controller
             ->get();
     }
 
-
     // フォームに入力された内容を登録
     public function store(Request $request, $type)
     {
@@ -110,6 +109,7 @@ class ItemController extends Controller
             'category' => 'required|in:toilet,bath,idea,nothing,outside,interior,bedroom,kidsroom,storages,other,living,dining',
             'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
             'request_message' => 'required|string|max:255',
+            
         ]);
 
         // アイテム（優先度、カテゴリー名、要望）の作成
@@ -129,9 +129,13 @@ class ItemController extends Controller
         }
         // 画像の保存処理
         if ($request->hasFile('imageUpload')) {
+            // 画像のパスを生成し、パスを保存
             $image = $request->file('imageUpload');
             $imagePath = $image->store('images', 'public');
             $item->image_url = $imagePath;
+            // ファイル名を取得し、ファイル名を重複しないように、日付をファイル名に入れてファイル名を保存
+            $fileName =   $image->getClientOriginalName() . '_' . time();
+            $item->image_name = $fileName;  
         }
         $item->type = $type;
         // 保存
@@ -211,6 +215,7 @@ class ItemController extends Controller
             Storage::delete('public/' . $item->image_url);
             // 画像URLをリセット
             $item->image_url = null;
+            $item->image_name = null;
             $item->save();
         }
         return redirect()->route('items.index', ['type' => $type]);

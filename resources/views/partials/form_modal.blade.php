@@ -26,9 +26,11 @@
                 </div>
                 <div class="d-flex align-items-center">
                     {{-- ファイル名表示 --}}
+                    <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none">
+                    <span id="modalFileName" class="ms-2 file-name">
+                        {{ old('imageUpload', $item->image_name ? basename($item->image_name) : '画像はありません') }}
+                    </span>
                     
-                    <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none" onchange="displayFileName()">
-                    <span id="modalFileName" class="ms-2 file-name"></span>
                         </div>
         </div>
         <div class="form-group d-flex align-items-center col-md-12">

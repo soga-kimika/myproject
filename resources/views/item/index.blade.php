@@ -76,30 +76,6 @@ function openModal(item) {
     $('#editModal' + item.id).modal('show');
 }   
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    // ページが読み込まれたときに、既存のアイテムからファイル名を表示
-    const items = @json($items1);
-    items.forEach(item => {
-        const modalFileNameDisplay = document.getElementById('modalFileName');
-        modalFileNameDisplay.textContent = item.image_url ? item.image_url.split('/').pop() : '';
-    });
-});
-
-document.querySelectorAll('.btn-edit').forEach(button => {
-    button.addEventListener('click', (event) => {
-        const item = {
-            id: event.currentTarget.dataset.id,
-            request_message: event.currentTarget.dataset.request,
-            image_url: event.currentTarget.dataset.imageUrl,
-            priority: event.currentTarget.dataset.priority,
-        };
-        openModal(item);
-    });
-});
-
-
-
     </script>
     @stop
     
