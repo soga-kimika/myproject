@@ -22,11 +22,11 @@
                         <button type="submit" class="btn btn-update"><i class="fas fa-check"></i></button>
                     </form>
                     {{-- 削除ボタン --}}
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ $item->id }}"><i class="fa fa-trash-alt"></i></button>
+                        <button type="button" class="btn btn-dangers" data-toggle="modal" data-target="#deleteModal{{ $item->id }}"><i class="fa fa-trash-alt"></i></button>
                         {{-- 削除モーダル読み込み --}}
                         @include('partials.delete_modal', ['id' => $item->id])
                         {{-- 閉じるボタン --}}
-                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-undo-alt"></i></button>
+                        <button type="button" class="btn btn-defaults" data-dismiss="modal"><i class="fa fa-undo-alt"></i></button>
                     </div>                
             </div>
         </div>

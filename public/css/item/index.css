@@ -1,9 +1,9 @@
     /* 問題 */
 
-    /* ラジオボタンとテキストをラベルタグで紐づけているが、テキストを押してもラジオボタンが選択されません。 */
+    /* モーダル内の、ラジオボタンとテキストをラベルタグで紐づけているが、テキストを押してもラジオボタンが選択されません。 */
+    /* フォーカスのCSSが、選択していないラジオボタンと、ファイルボタンに効きません */
     /* 編集モーダルが開きません */
-    /* 画像のアップデートができません */
-    /* ファイル名表示ボタンを編集モーダルにも追加 */
+    /* 画像の更新ができません */
 
     /* ヘッダー共通 */
     .content-header h1{
@@ -15,29 +15,50 @@
     }
     /* ボタン共通*/
     .btn {
-        background-color: transparent;
         border: 2px solid ;
     }
     .btn:hover{
         background-color: rgb(255, 255, 255); 
         font-weight: bold;
-        color: white;
     }
     .btn:active{
         background-color: white;
+        border-color: white;
     }
-    .btn:focus{
-        border: 2px solid blue;
+    .btn:focus {
+        outline: none;
+        border: 2px solid blue; 
     }
+    .check-consulted:focus{
+        outline: none;
+        border: 2px solid blue;   
+    }
+    /* ラジオボタン */
+    .form-check-input:focus {
+        outline: none; 
+        border: 2px solid blue; 
+        box-shadow: 0 0 5px blue; 
+    }
+    .btn-select:focus {
+    outline: none; 
+    background-color: lightblue; 
+    color: white; 
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); 
+}
+
     /* 削除ボタン */
-    .btn-danger{
+    .btn-dangers{
         color: rgb(227, 51, 51);
+        background-color: #fff;
     }
-    .btn-danger:hover{
+    .btn-dangers:hover{
         color:  rgb(227, 51, 51);
     }
     /* 閉じるボタン */
-    btn-default{
+    .btn-defaults{
+        color: gray;
+    }
+    .btn-defaults:hover{
         color: gray;
     }
     /* 更新ボタン */
@@ -99,29 +120,7 @@ input[type="checkbox"]:checked::after {
     content: "✔"; 
     position: absolute;
     top: -3px; 
-    color: yellow; 
     font-size: 16px; 
-}
-/* ラジオボタンカスタマイズ */
-input[type="radio"] {
-    appearance: none; 
-    width: 12px;
-    height: 12px;
-    border: 1px solid #3b98bd; 
-    border-radius: 50%; 
-    outline: none; 
-    cursor: pointer; 
-}
-input[type="radio"]:checked {
-    border-color: #3b98bd;
-}
-input[type="radio"]:checked::before {
-    content: "";
-    display: block;
-    width: 10px; 
-    height: 10px; 
-    background-color: #3b98bd;
-    border-radius: 50%; 
 }
 
 
@@ -355,14 +354,15 @@ input[type="radio"]:checked::before {
         color: rgb(86, 80, 80);
     }
     /*カード画像アイコン */
-    .btn-info{
-        color: rgb(146, 87, 50);
+    .btn-infos{
         border: 2px solid; 
         height: auto; 
+        border-color:#2ad8c6; 
+        color:#2ad8c6; 
     }
-    .btn-info:hover{
-        color: rgb(146, 87, 50);
-        border-color:rgb(146, 87, 50);
+    .btn-infos:hover{
+        color:#2ad8c6; 
+        border-color:#2ad8c6; 
     }
     
 

@@ -19,10 +19,10 @@
                         @csrf
                         @method('DELETE')
                         {{-- 削除ボタン --}}
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash-alt"></i></button>
+                        <button type="submit" class="btn btn-dangers"><i class="fa fa-trash-alt"></i></button>
                     </form>
                     {{-- 閉じるボタン --}}
-                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-undo-alt"></i></button>
+                    <button type="button" class="btn btn-defaults" data-dismiss="modal"><i class="fa fa-undo-alt"></i></button>
                 </div>
             </div>
         </div>

@@ -1,7 +1,6 @@
 {{-- 入力フォーム --}}
 <div class="container">
     <div class="col-md-12 mx-auto"> 
-        {{-- 送信先のアクションURLはコントローラーで提示 --}}
         <form action="{{route('items.store', ['type' => $type])}}" method="POST" enctype="multipart/form-data">
             @csrf
             {{-- 入力フォーム --}}
@@ -11,15 +10,15 @@
                     <div class="d-flex">
                         <div class="form-check me-3">
                             <input type="radio" class="form-check-input" name="priority" value="high" id="priority-high" checked>
-                            <label class="form-check-label" for="priority-high">高 <i class="fa fa-star"></i></label>
+                            <label class="form-check-label radio" for="priority-high">高 <i class="fa fa-star"></i></label>
                         </div>
                         <div class="form-check me-3">
-                            <input type="radio" class="form-check-input" name="priority" value="medium" id="priority-medium">
-                            <label class="form-check-label" for="priority-medium">中 <i class="fa fa-star-half-alt"></i></label>
+                            <input type="radio" class="form-check-input" name="priority" value="medium" id="priority-medium" >
+                            <label class="form-check-label radio" for="priority-medium">中 <i class="fa fa-star-half-alt" ></i></label>
                         </div>
                         <div class="form-check me-3">
                             <input type="radio" class="form-check-input" name="priority" value="low" id="priority-low">
-                            <label class="form-check-label" for="priority-low">低 <i class="far fa-star"></i></label>
+                            <label class="form-check-label radio" for="priority-low">低 <i class="far fa-star"></i></label>
                         </div>
                         {{-- アイディアのページだけ不要のラジオボタンを表示 --}}
                         @if($type ==='ideas')

@@ -24,6 +24,12 @@
                     </div>
                 @endif
                 </div>
+                <div class="d-flex align-items-center">
+                    {{-- ファイル名表示 --}}
+                    
+                    <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none" onchange="displayFileName()">
+                    <span id="modalFileName" class="ms-2 file-name"></span>
+                        </div>
         </div>
         <div class="form-group d-flex align-items-center col-md-12">
             {{-- 要望入力欄 --}}
