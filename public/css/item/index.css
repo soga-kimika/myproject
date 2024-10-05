@@ -393,12 +393,12 @@ input[type="checkbox"]:checked::after {
     .btn-infos{
         border: 2px solid; 
         height: auto; 
-        border-color:#2ad8c6; 
-        color:#2ad8c6; 
+        border-color:#09a696; 
+        color:#09a696; 
     }
     .btn-infos:hover{
-        color:#2ad8c6; 
-        border-color:#2ad8c6; 
+        color:#09a696; 
+        border-color:#09a696; 
     }
     
 
