@@ -3,26 +3,36 @@
 @section('title', 'プロフィール編集')
 
 @section('content_header')
-<h1 class="content-header-client-edit">
-    <i class="far fa-address-card"></i>プロフィール編集
-</h1>
+
 @stop
 
 @section('content')
-@include('partials.errors')
+@include('partials.errors') 
+    {{-- 編集モーダルトリガー --}}
+    <div>
+    <a href="#" class="btn btn-edit btn-edit-client" data-toggle="modal" data-target="#client-editModal">
+        プロフィール編集
+    </a> 
+</div>
 
-                <form method="post" action="{{ route('clients.update') }}">
+<div class="modal fade" id="client-editModal" tabindex="-1" role="dialog" aria-labelledby="client-editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="client-editModalLabel">プロフィール編集</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="{{ route('clients.update')}}">
                     @csrf
                     @method('PUT')
-                             @include('partials.errors')
 
                     <div class="container">
                         <section class="content client-content">
-
                             <div class="row">
                                 <div class="col-md-12">
-
-
                             <div class="card mb-3">
                                 <div class="card-header">
                                     <h5 class="form-title">住む予定の人数</h5>
@@ -235,6 +245,11 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('/css/item/index.css') }}">
+<style>
+    #client-editModal .modal-dialog {
+    max-width: 800px; 
+}
+</style>
 @stop
 
 @section('js')
@@ -260,4 +275,3 @@
         toggleLandBudgetInput(); 
     });
 </script>
-@stop
