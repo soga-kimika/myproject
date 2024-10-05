@@ -19,8 +19,8 @@
                         {{-- アイディアのページだけ不要のラジオボタンを表示 --}}
                         @if($type ==='ideas')
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" name="priority" value="remove" id="edit_priority-remove"{{ old('priority', $item->priority) == 'remove' ? 'checked' : '' }}>
-                            <label class="form-check-label" for="edit_priority-remove">不要 <i class="fa fa-times"></i></label>
+                            <input type="radio" class="form-check-input" name="priority" value="remove" id="edit_priority-remove{{ $item->id }}"{{ old('priority', $item->priority) == 'remove' ? 'checked' : '' }}>
+                            <label class="form-check-label" for="edit_priority-remove{{ $item->id }}">不要 <i class="fa fa-times"></i></label>
                         </div>
                     @endif
                     </div>

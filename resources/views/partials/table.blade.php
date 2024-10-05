@@ -111,7 +111,7 @@
                                         </td>
                                         <td class="col-checkbox">
                                             {{-- チェックボタン --}}
-                                            <input type="checkbox" class="check-consulted " data-id="{{ $item1->id }}" style="margin-left: 8px;">
+                                            <input type="checkbox" class="check-consulted " data-id="{{ $item2->id }}" style="margin-left: 8px;">
                                             </td>
                                          {{-- 画像を表示するモーダル読み込み --}}
                                         @include('partials.image_modal', ['id' => $item2->id, 'item' => $item2,'imageUrl' => $item2->image_url])

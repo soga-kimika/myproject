@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <section class="content">
+        <section class="content client-content">
             <div class="row">
                 <div class="col-md-12">
                    

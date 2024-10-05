@@ -265,6 +265,11 @@ input[type="checkbox"]:checked::after {
         color: black;
     }
 
+    /* client/edit*/
+    .client-content{
+        width: 500px;
+    }
+
     /* HomePlanning/{type}：入力フォーム */
     .pb-2{
         border-top: 1px solid #dee2e6;

@@ -150,7 +150,7 @@ class ItemController extends Controller
         $item = Item::findOrFail($itemId);
         // バリデーション
         $request->validate([
-            'priority' => 'nullable|in:high,medium,low',
+            'priority' => 'nullable|in:high,medium,low,remove',
             'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
             'request_message' => 'nullable|string|max:255',
         ]);

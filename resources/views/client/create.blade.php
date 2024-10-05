@@ -23,7 +23,7 @@
                 <h1 >プロフィール</h1>
             </section>
 
-            <section class="content">
+            <section class="content client-content">
                 <form method="post" action="{{ route('clients.store') }}">
                     @csrf 
 
