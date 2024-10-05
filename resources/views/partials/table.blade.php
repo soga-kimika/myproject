@@ -105,7 +105,7 @@
                                                 {{-- フォームで画像を投稿していれば、画像のアイコンを表示　画像モーダルトリガー --}}
                                                 @if($item2->image_url)
                                                     <a href="#" class="btn btn-infos" data-toggle="modal" data-target="#imageModal{{ $item2->id }}">
-                                                        <i class="fas fa-image"></i>
+                                                        <i class="fas fa-image item-fa-image-icon"></i>
                                                     </a>
                                                 @endif
                                         </td>
