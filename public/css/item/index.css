@@ -1,472 +1,475 @@
 
-    /* プロフィールの編集モーダルが開きません */
-    /* パスワードリセット画面があっているかがわかりません */
+        /* プロフィールの編集モーダルが開きません */
+        /* パスワードリセット画面があっているかがわかりません */
+        
     
- 
 
-    /* ヘッダー共通 */
-    .content-header h1{
-        text-align: center;
-        color:  rgb(71, 70, 70);    
-        font-weight: bold;
-        line-height: 100px; 
-        font-size: 2.5rem; 
-    }
-    /* ボタン共通*/
-    .btn {
-        border: 2px solid ;
-    }
-    .btn:hover{
-        background-color: rgb(255, 255, 255); 
-        font-weight: bold;
-    }
-    .btn:active{
-        background-color: white;
-        border-color: white;
-    }
-    .btn:focus {
-        outline: none;
-        border: 2px solid blue; 
-    }
-    .check-consulted:focus{
-        outline: none;
-        border: 2px solid blue;   
-    }
-    .btn-select:focus {
-    outline: none; 
-    background-color: lightblue; 
-    color: white; 
-    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); 
-}
-
-    /* 削除ボタン */
-    .btn-dangers{
-        color: rgb(227, 51, 51);
-        background-color: #fff;
-    }
-    .btn-dangers:hover{
-        color:  rgb(227, 51, 51);
-    }
-    /* 閉じるボタン */
-    .btn-defaults{
-        color: gray;
-    }
-    .btn-defaults:hover{
-        color: gray;
-    }
-    /* 更新ボタン */
-    .btn-update{
-        color: rgb(80, 183, 183);
-    }
-    .btn-update:hover{
-        color: rgb(80, 183, 183);
-    }
-    /* 画像投稿ボタン */
-    .btn-select{
-        color: orange;
-        cursor: pointer;
-    }
-    /* 選択したファイル名表示ボタン */
-    .file-name {
-        font-weight: bold;
-        color: #2ad8c6; 
-        background-color: #e9ecef; 
-        padding: 3px 3px; 
-        border-radius: 5px; 
-        margin-right: 0; 
-        width: 200px; 
-        white-space: nowrap; 
-        overflow: hidden; 
-        text-overflow: ellipsis; 
-        display: inline-block; 
-        margin-top: -7px;
-    }
-    .btn-select:hover{
-        color: orange;
-    
-    }
-    /* 登録ボタン */ 
-    .btn-store{
-        color: rgb(16, 185, 117);
-    }
-    .btn-store:hover    {
-        color: rgb(31, 222, 146);
-    }
-    /* ファイル選択ボタン */
-    .btn-select{
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-/* チェックボタン */
-input[type="checkbox"] {
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 2px solid#3b98bd;   
-    border-radius: 4px; 
-    outline: none;  
-    cursor: pointer; 
-    position: relative; 
-}
-/* チェックマークアイコンの作成 */
-input[type="checkbox"]:checked::after {
-    content: "✔"; 
-    position: absolute;
-    top: -3px; 
-    font-size: 16px; 
-}
-
-
-    /* アイコン共通 */
-    .fas{
-        padding-right: 5px;
-    }
-    /* アイディアアイコン */
-    .fa-lightbulb {
-        color: #ffc107;
-    }
-    /* LDKアイコン */
-    .fa-couch {
-        color: #3d9970 ;
-    }
-    /* プライベートルームアイコン */
-    .fa-bed {
-        color: #6f42c1;
-    }
-    /* ストレージアイコン */
-    .fa-box {
-        color: #fd7e14;
-    }
-    /* バスルームアイコン */
-    .fa-sink{
-        color: #5b9be0 !important;
-    }
-    /* デザインアイコン */
-    .fa-palette  {
-        color: #e46491 !important;
-    }
-
-    /* ストレージアイコン */
-    .fa-boxes{
-        color: rgb(132, 89, 36); 
-    }
-    /* ギャラリーアイコン */
-    .fa-image{
-        color: #09c7d9; 
-    }
-    /* プロフィールアイコン */
-    .fa-address-card{
-        color:#dc3545;
-    }
-
-    /* home */
-    /* カウントダウン全体 */
-    .countdown-container {
-        display: flex;
-        justify-content: center;
-        background: radial-gradient(at 40% 20%, rgb(232, 12, 12) 0px, transparent 50%),
-        radial-gradient(at 40% 20%, hsla(28, 100%, 74%, 1) 0px, transparent 50%),
-        radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 1) 0px, transparent 50%),
-        radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 1) 0px, transparent 50%),
-        radial-gradient(at 80% 50%, hsla(340, 100%, 76%, 1) 0px, transparent 50%),
-        radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 1) 0px, transparent 50%),
-        radial-gradient(at 80% 100%, hsla(242, 100%, 70%, 1) 0px, transparent 50%);
-        margin-top: 20px;
-        color: rgb(88, 82, 82);
-        padding-bottom: 20px;
-    }
-    .countdown-elm {
-        text-align: center;
-    }
-    .countdown-elm span {
-        font-size: 1rem;
-    }
-    .countdown-elm h1 span{
-    font-size: 3rem;
-    }
-
-    /* カウントダウンタイトル*/
-    h1 {
-        font-weight: normal;
-        font-size: 3rem;
-        margin-top: 20px;
-        text-align: center; 
-    }
-    span.title-span {
-        font-size: 2rem;
-    }
-    /* 建築希望日 */
-    h3{
-        text-align: right;
-    }  
-    /* カウントダウン日付全体 */
-    .countdown-display {
-        display: flex; 
-        align-items: center; 
-        justify-content: center;
-    }
-    /* カウントダウンテキスト */
-    .time-text {
-        font-weight: bold;
-        font-size: 10rem;
-        line-height: 1;
-        margin: 1rem 2rem;
-        margin: 0 5px;
-        color: rgb(61, 57, 57);
-    }
-    .countdown-display span{
-    font-size: 2rem;
-    margin-top: 60px;
-    }
-
-    /* 画面遷移各種アイコン */
-    .home-icon {
-    font-size: 50px; 
-    margin: 10px; 
-    transition: color 0.3s, transform 0.3s; 
-    }
-    .home-icon:hover {
-    transform: translateY(-5px) scale(1.1);
-    }
-
-
-
-    /* client/create/edit */
-
-    .form-inline .form-group {
-        margin-right: 10px;
-    }
-    /* ヘッダー */
-    .content-header h1{
-        text-align: center;
-        color:  rgb(71, 70, 70);
-        font-weight: bold;
-        line-height: 110px; 
-        font-size: 2.5rem; 
-    }
-    /* 入力欄 */
-    .client-form{
-        background-color: white;
-    }
-    .form-title{
-        text-align: center;
-        font-weight: bold;
-        color: rgb(71, 70, 70);
-    }
-    .col-md-6{
-        text-align: center;
-    }
-    /* 編輯ボタン */
-    .btn-edit-client{
-        text-align: right;
-    }
-    /* アイコン */
-    .content .col-6 .client-icon{
-        color: black;
-    }
-    .client-content{
-        width: 600px;
-        margin: 0 auto; 
-    }
-    .client-form-inline {
-        display: flex;
-        width: 100%; 
-    }
-    /* カードラベル */
-    .client-form-inline label {
-        width: 100px;
-        margin-right: 10px;
-    }
-    /* プルダウンメニュー */
-    .client-form-inline select {
-        flex-grow: 1; 
-        min-width: 0;
-    }
-    /* テキスト欄 */
-    .client-form-inline input {
-        flex-grow: 2; 
-        min-width: 0; 
-    }
-    .form-control {
-        text-align: right;
-    }
-    
-    .form-control::placeholder {
-        text-align: right;
-    }
-    
-    .client-card-body{
-        padding: 3rem;
-    }
-
-       /* client/index */
-     /* ヘッダータイトル */
-     .content-header .content-header-client{
-        margin-top: -40px;
-        margin-bottom: 30px;
-    }
-
-
-
-    /* HomePlanning/{type}：入力フォーム */
-    .pb-2{
-        border-top: 1px solid #dee2e6;
-        padding-top: 15px;
-    }
-    .form-control-lg{
-        flex: 1;
-    }
-    /* ラジオボタン */
-    .form-check {
-        margin-right: 10px; 
-    }
-    .form-check:last-child {
-        margin-right: 30px; 
-    }
-    .fa-star{
-        color: gold
-    }
-    .fa-star-half-alt{
-        color: gold
-    }
-    .fa-times{
-        color: red;
-    }
-    /* カードタイトル */
-    .card-header:first-child{
-        background-color:#f8f9fa;
+        /* ヘッダー共通 */
+        .content-header h1{
+            text-align: center;
+            color:  rgb(71, 70, 70);    
+            font-weight: bold;
+            line-height: 100px; 
+            font-size: 2.5rem; 
         }
-    .card-title{
-        font-weight: bold;
-        color: rgb(71, 70, 70);
+        /* ボタン共通*/
+        .btn {
+            border: 2px solid ;
+        }
+        .btn:hover{
+            background-color: rgb(255, 255, 255); 
+            font-weight: bold;
+        }
+        .btn:active{
+            background-color: white;
+            border-color: white;
+        }
+        .btn:focus {
+            outline: none;
+            border: 2px solid blue; 
+        }
+        .check-consulted:focus{
+            outline: none;
+            border: 2px solid blue;   
+        }
+        .btn-select:focus {
+        outline: none; 
+        background-color: lightblue; 
+        color: white; 
+        box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); 
     }
-    /* カードレコード */
-    .custom-table td {
-        vertical-align: middle;
-        padding-left: 0;
-    }   
-    .table {
-        width: 100%;
-        table-layout: fixed; 
-    }
-    .table td {
-        text-align: start;
-        padding-left: 5px;
-        padding-right: 9px;
-    }
-    /* 各カラムの幅を指定 */
-    .col-priority {
-    width: 50px; 
-    text-align: center;
-    }
-    /* リクエストメッセージのカラム幅 */
-    .col-request {
-    width: calc(100% - 194px); 
-    word-wrap: break-word; 
-    white-space: normal; 
-    overflow: hidden; 
-}
-    /* 編集ボタンのアイコンのカラム幅*/
-    .col-edit{
-    width: 57px; 
-    text-align: right;
-    }
-    /* イメージ画像のカラム幅*/
-    .col-image{
-    width: 57px; 
-    text-align: right;
-    }   
-    /* チェックボックスのカラム幅*/
-    .col-checkbox {
-    width: 40px; 
-    text-align: right;
-    } /* カード編集アイコン */
-    .btn-edit{
-        border: 2px solid rgb(86, 80, 80);
-        color: rgb(86, 80, 80);
-        height: auto; 
-    }
-    .btn-edit:hover {
-        color: rgb(86, 80, 80);
-    }
-    /*カード画像アイコン */
-    .btn-infos{
-        border: 2px solid; 
-        height: auto; 
-        border-color:#09a696; 
-        color:#09a696; 
-    }
-    .btn-infos:hover{
-        color:#09a696; 
-        border-color:#09a696; 
-    }
-    
 
-    /* カードアイコン */
-    /* ウィッシュリストアイコン */
-    .fa-check-title{
-        color: rgb(235, 55, 85); 
+        /* 削除ボタン */
+        .btn-dangers{
+            color: rgb(227, 51, 51);
+            background-color: #fff;
+        }
+        .btn-dangers:hover{
+            color:  rgb(227, 51, 51);
+        }
+        /* 閉じるボタン */
+        .btn-defaults{
+            color: gray;
+        }
+        .btn-defaults:hover{
+            color: gray;
+        }
+        /* 更新ボタン */
+        .btn-update{
+            color: rgb(80, 183, 183);
+        }
+        .btn-update:hover{
+            color: rgb(80, 183, 183);
+        }
+        /* 画像投稿ボタン */
+        .btn-select{
+            color: orange;
+            cursor: pointer;
+        }
+        /* 選択したファイル名表示ボタン */
+        .file-name {
+            font-weight: bold;
+            color: #2ad8c6; 
+            background-color: #e9ecef; 
+            padding: 3px 3px; 
+            border-radius: 5px; 
+            margin-right: 0; 
+            width: 200px; 
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            display: inline-block; 
+            margin-top: -7px;
+        }
+        .btn-select:hover{
+            color: orange;
+        
+        }
+        /* 登録ボタン */ 
+        .btn-store{
+            color: rgb(16, 185, 117);
+        }
+        .btn-store:hover    {
+            color: rgb(31, 222, 146);
+        }
+        /* ファイル選択ボタン */
+        .btn-select{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    /* チェックボタン */
+    input[type="checkbox"] {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 2px solid#3b98bd;   
+        border-radius: 4px; 
+        outline: none;  
+        cursor: pointer; 
+        position: relative; 
     }
-    /* ナッシングアイコン */
-    .fa-trash { 
-        color: rgb(170, 159, 159); 
-    }
-    /* エクステリアアイコン */
-    .fa-tree {
-        color: rgb(107, 211, 135); 
-    }
-    /* インテリアアイコン */
-    .fa-chair {
-        color: rgb(232, 62, 107); 
-    }
-    /* トイレアイコン */
-    .fa-toilet {
-        color: rgb(173, 96, 147); 
-    }
-    /* バスルームアイコン */
-    .fa-bath {
-        color: rgba(152, 216, 50, 0.896);
-    }
-    /* ベッドルームアイコン */
-    .fa-user-friends{
-        color: rgba(10, 167, 235, 0.881); 
-    }
-    /*　キッズルームアイコン */
-    .fa-child {
-        color: rgb(231, 79, 104); 
-    }
-    /* カスタマイズアイコン */
-    .fa-tools {
-        color: rgb(173, 156, 156); 
-    }
-    /* リビングアイコン */
-    .fa-tv {
-        color: brown ;
-    }
-    /* ダイニングアイコン */
-    .fa-utensils {
-        color: rgb(235, 214, 95);
+    /* チェックマークアイコンの作成 */
+    input[type="checkbox"]:checked::after {
+        content: "✔"; 
+        position: absolute;
+        top: -3px; 
+        font-size: 16px; 
     }
 
 
-  
-    /* 入力フォーム全体 */
-    .form-inline{
-        font-size: 14px;
-    }
-   
-    /* プルダウンメニュー */
-    .form-control {
-        width: 100%; 
-    }
-    /* プルダウンメニュータイトル */
-    .form-title{
-        color: rgb(86, 80, 80);
-        font-size: 23px;
+        /* アイコン共通 */
+        .fas{
+            padding-right: 5px;
+        }
+        /* アイディアアイコン */
+        .fa-lightbulb {
+            color: #ffc107;
+        }
+        /* LDKアイコン */
+        .fa-couch {
+            color: #3d9970 ;
+        }
+        /* プライベートルームアイコン */
+        .fa-bed {
+            color: #6f42c1;
+        }
+        /* ストレージアイコン */
+        .fa-box {
+            color: #fd7e14;
+        }
+        /* バスルームアイコン */
+        .fa-sink{
+            color: #5b9be0 !important;
+        }
+        /* デザインアイコン */
+        .fa-palette  {
+            color: #e46491 !important;
+        }
+
+        /* ストレージアイコン */
+        .fa-boxes{
+            color: rgb(132, 89, 36); 
+        }
+        /* ギャラリーアイコン */
+        .fa-image{
+            color: #09c7d9; 
+        }
+        /* プロフィールアイコン */
+        .fa-address-card{
+            color:#dc3545;
+        }
+
+        /* home */
+        /* カウントダウン全体 */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            background: radial-gradient(at 40% 20%, rgb(232, 12, 12) 0px, transparent 50%),
+            radial-gradient(at 40% 20%, hsla(28, 100%, 74%, 1) 0px, transparent 50%),
+            radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 1) 0px, transparent 50%),
+            radial-gradient(at 80% 50%, hsla(340, 100%, 76%, 1) 0px, transparent 50%),
+            radial-gradient(at 0% 100%, hsla(22, 100%, 77%, 1) 0px, transparent 50%),
+            radial-gradient(at 80% 100%, hsla(242, 100%, 70%, 1) 0px, transparent 50%);
+            margin-top: 20px;
+            color: rgb(88, 82, 82);
+            padding-bottom: 20px;
+        }
+        .countdown-elm {
+            text-align: center;
+        }
+        .countdown-elm span {
+            font-size: 1rem;
+        }
+        .countdown-elm h1 span{
+        font-size: 3rem;
+        }
+
+        /* カウントダウンタイトル*/
+        h1 {
+            font-weight: normal;
+            font-size: 3rem;
+            margin-top: 20px;
+            text-align: center; 
+        }
+        span.title-span {
+            font-size: 2rem;
+        }
+        /* 建築希望日 */
+        h3{
+            text-align: right;
+        }  
+        /* カウントダウン日付全体 */
+        .countdown-display {
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+        }
+        /* カウントダウンテキスト */
+        .time-text {
+            font-weight: bold;
+            font-size: 10rem;
+            line-height: 1;
+            margin: 1rem 2rem;
+            margin: 0 5px;
+            color: rgb(61, 57, 57);
+        }
+        .countdown-display span{
+        font-size: 2rem;
+        margin-top: 60px;
+        }
+
+        /* 画面遷移各種アイコン */
+        .home-icon {
+        font-size: 50px; 
+        margin: 10px; 
+        transition: color 0.3s, transform 0.3s; 
+        }
+        .home-icon:hover {
+        transform: translateY(-5px) scale(1.1);
+        }
+
+
+
+        /* client/create/edit */
+
+        .form-inline .form-group {
+            margin-right: 10px;
+        }
+        /* ヘッダー */
+        .content-header h1{
+            text-align: center;
+            color:  rgb(71, 70, 70);
+            font-weight: bold;
+            line-height: 110px; 
+            font-size: 2.5rem; 
+        }
+        /* 入力欄 */
+        .client-form{
+            background-color: white;
+        }
+        .form-title{
+            text-align: center;
+            font-weight: bold;
+            color: rgb(71, 70, 70);
+        }
+        .col-md-6{
+            text-align: center;
+        }
+        /* 編輯ボタン */
+        .btn-edit-client{
+            text-align: right;
+        }
+        /* アイコン */
+        .content .col-6 .client-icon{
+            color: black;
+        }
+        .client-content{
+            width: 600px;
+            margin: 0 auto; 
+        }
+        .client-form-inline {
+            display: flex;
+            width: 100%; 
+        }
+        /* カードラベル */
+        .client-form-inline label {
+            width: 100px;
+            margin-right: 10px;
+        }
+        /* プルダウンメニュー */
+        .client-form-inline select {
+            flex-grow: 1; 
+            min-width: 0;
+        }
+        /* テキスト欄 */
+        .client-form-inline input {
+            flex-grow: 2; 
+            min-width: 0; 
+        }
+        .form-control {
+            text-align: right;
+        }
+        
+        .form-control::placeholder {
+            text-align: right;
+        }
+        
+        .client-card-body{
+            padding: 3rem;
+        }
+
+        /* client/index */
+        /* ヘッダータイトル */
+        .content-header .content-header-client{
+            margin-top: -40px;
+            margin-bottom: 30px;
+        }
+
+
+
+        /* HomePlanning/{type}：入力フォーム */
+        .pb-2{
+            border-top: 1px solid #dee2e6;
+            padding-top: 15px;
+        }
+        .form-control-lg{
+            flex: 1;
+        }
+        /* ラジオボタン */
+        .form-check {
+            margin-right: 10px; 
+        }
+        .form-check:last-child {
+            margin-right: 30px; 
+        }
+        .fa-star{
+            color: gold
+        }
+        .fa-star-half-alt{
+            color: gold
+        }
+        .fa-times{
+            color: red;
+        }
+        /* カードタイトル */
+        .card-header:first-child{
+            background-color:#f8f9fa;
+            }
+        .card-title{
+            font-weight: bold;
+            color: rgb(71, 70, 70);
+        }
+        /* カードレコード */
+        .custom-table td {
+            vertical-align: middle;
+            padding-left: 0;
+        }   
+        .table {
+            width: 100%;
+            table-layout: fixed; 
+        }
+        .table td {
+            text-align: start;
+            padding-left: 5px;
+            padding-right: 9px;
+        }
+        /* 各カラムの幅を指定 */
+        .col-priority {
+        width: 50px; 
         text-align: center;
-        margin-bottom: 0;
+        }
+        /* リクエストメッセージのカラム幅 */
+        .col-request {
+        width: calc(100% - 194px); 
+        word-wrap: break-word; 
+        white-space: normal; 
+        overflow: hidden; 
     }
+        /* 編集ボタンのアイコンのカラム幅*/
+        .col-edit{
+        width: 57px; 
+        text-align: right;
+        }
+        /* イメージ画像のカラム幅*/
+        .col-image{
+        width: 57px; 
+        text-align: right;
+        }   
+        /* チェックボックスのカラム幅*/
+        .col-checkbox {
+        width: 40px; 
+        text-align: right;
+        } /* カード編集アイコン */
+        .btn-edit{
+            border: 2px solid rgb(86, 80, 80);
+            color: rgb(86, 80, 80);
+            height: auto; 
+        }
+        .btn-edit:hover {
+            color: rgb(86, 80, 80);
+        }
+        /*カード画像アイコン */
+        .btn-infos{
+            border: 2px solid; 
+            height: auto; 
+            border-color:#09a696; 
+            color:#09a696; 
+        }
+        .btn-infos:hover{
+            color:#09a696; 
+            border-color:#09a696; 
+        }
+        .col-image .btn-infos .item-fa-image{
+            color:#09a696; 
+        }
+        
+
+        /* カードアイコン */
+        /* ウィッシュリストアイコン */
+        .fa-check-title{
+            color: rgb(235, 55, 85); 
+        }
+        /* ナッシングアイコン */
+        .fa-trash { 
+            color: rgb(170, 159, 159); 
+        }
+        /* エクステリアアイコン */
+        .fa-tree {
+            color: rgb(107, 211, 135); 
+        }
+        /* インテリアアイコン */
+        .fa-chair {
+            color: rgb(232, 62, 107); 
+        }
+        /* トイレアイコン */
+        .fa-toilet {
+            color: rgb(21, 163, 134); 
+        }
+        /* バスルームアイコン */
+        .fa-bath {
+            color: rgba(152, 216, 50, 0.896);
+        }
+        /* ベッドルームアイコン */
+        .fa-user-friends{
+            color: rgba(10, 167, 235, 0.881); 
+        }
+        /*　キッズルームアイコン */
+        .fa-child {
+            color: rgb(231, 79, 104); 
+        }
+        /* カスタマイズアイコン */
+        .fa-tools {
+            color: rgb(173, 156, 156); 
+        }
+        /* リビングアイコン */
+        .fa-tv {
+            color: brown ;
+        }
+        /* ダイニングアイコン */
+        .fa-utensils {
+            color: rgb(235, 214, 95);
+        }
+
+
+    
+        /* 入力フォーム全体 */
+        .form-inline{
+            font-size: 14px;
+        }
+    
+        /* プルダウンメニュー */
+        .form-control {
+            width: 100%; 
+        }
+        /* プルダウンメニュータイトル */
+        .form-title{
+            color: rgb(86, 80, 80);
+            font-size: 23px;
+            text-align: center;
+            margin-bottom: 0;
+        }
 
 
 
- 
+    
