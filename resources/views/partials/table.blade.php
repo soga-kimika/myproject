@@ -37,8 +37,8 @@
                                         <td class="col-request" >{{ $item1->request_message }}</td> 
                                         {{-- 編集ボタン　モーダルトリガー　--}}
                                         <td class="col-edit">
-                                            <a href="#" class="btn btn-edit" data-toggle="modal" data-target="#editModal{{ $item1->id }}" data-request="{{ $item1->request_message }}" data-priority="{{ $item1->priority }}"data-image-url="{{ $item1->image_url }}">
-                                                <i class="fas fa-edit"></i>
+                                            <a href="#" class="btn btn-edit" data-toggle="modal" data-target="#item-editModal{{ $item1->id }}" data-request="{{ $item1->request_message }}" data-priority="{{ $item1->priority }}"data-image-name="{{ $item1->image_name }}" 
+                                                data-image-url="{{ $item1->image_url }}"><i class="fas fa-edit"></i></a>
                                             </a>
                                         </td>
                                         <td class="col-image">
@@ -98,7 +98,8 @@
                                             <td class="col-request">{{ $item2->request_message }}</td>
                                             {{-- 編集ボタン モーダルトリガー--}}
                                             <td class="col-edit">
-                                            <a href="#" class="btn btn-edit" data-toggle="modal" data-target="#editModal{{ $item2->id }}" data-request="{{ $item2->request_message }}" data-priority="{{ $item2->priority }}"><i class="fas fa-edit"></i></a>
+                                            <a href="#" class="btn btn-edit" data-toggle="modal" data-target="#item-editModal{{ $item2->id }}" data-request="{{ $item2->request_message }}" data-priority="{{ $item2->priority }}"data-image-name="{{ $item2->image_name }}" 
+                                                data-image-url="{{ $item2->image_url }}"><i class="fas fa-edit"></i></a>
                                             </td>   
                                             <td class="col-image">
                                                 {{-- フォームで画像を投稿していれば、画像のアイコンを表示　画像モーダルトリガー --}}

@@ -172,8 +172,8 @@ class ItemController extends Controller
                 if (Storage::exists('public/' . $item->image_url)) {
                     Storage::delete('public/' . $item->image_url);
                 }
-                // 古い画像の名前も削除
-                $item->image_name = null; // もしくは新しい画像名に更新
+                // 古い画像の名前を削除
+                $item->image_name = null; 
             }
     
             // 新しい画像のパスを生成し、パスを保存
@@ -220,4 +220,6 @@ class ItemController extends Controller
         }
         return redirect()->route('items.index', ['type' => $type]);
     }
+
+    
 }

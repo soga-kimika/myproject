@@ -21,7 +21,7 @@ class ClientController extends Controller
             return view('client.index', compact('client'));
         } else {
             // レコードかった場合、登録画面に遷移
-            return redirect()->route('client.create');
+            return redirect()->route('clients.create');
         }
 
 
@@ -81,7 +81,7 @@ class ClientController extends Controller
 
         Client::create($clients);
 
-        return redirect()->route('client.index');
+        return redirect()->route('clients.index');
     }
 
 
@@ -126,6 +126,6 @@ class ClientController extends Controller
 
         $client->update($request->all());
 
-        return redirect()->route('client.index');
+        return redirect()->route('clients.index');
     }
 }
