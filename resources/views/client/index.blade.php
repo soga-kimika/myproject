@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <section class="content client-content">
+        <section class="content">
             <div class="row">
                 <div class="col-md-12">
                    
@@ -141,7 +141,7 @@
                         <div class="col-md-6">
                             <div class="card mb-3">
                                 <div class="card-body">
-                                    <h5 class="form-title p-2">建築希望日</h5>
+                                    <h5 class="form-title p-2">完成希望日</h5>
                                     <p><strong>{{ $client->date }}</strong></p>
                                 </div>
                             </div>

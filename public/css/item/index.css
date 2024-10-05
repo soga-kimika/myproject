@@ -230,8 +230,8 @@ input[type="checkbox"]:checked::after {
     }
 
 
-    /* client/create */
-    /* 全体 */
+
+    /* client/create/edit */
 
     .form-inline .form-group {
         margin-right: 10px;
@@ -264,10 +264,39 @@ input[type="checkbox"]:checked::after {
     .content .col-6 .client-icon{
         color: black;
     }
-
-    /* client/edit*/
     .client-content{
-        width: 500px;
+        width: 600px;
+        margin: 0 auto; 
+    }
+    .client-form-inline {
+        display: flex;
+        width: 100%; 
+    }
+    /* カードラベル */
+    .client-form-inline label {
+        width: 100px;
+        margin-right: 10px;
+    }
+    /* プルダウンメニュー */
+    .client-form-inline select {
+        flex-grow: 1; 
+        min-width: 0;
+    }
+    /* テキスト欄 */
+    .client-form-inline input {
+        flex-grow: 2; 
+        min-width: 0; 
+    }
+    .form-control {
+        text-align: right;
+    }
+    
+    .form-control::placeholder {
+        text-align: right;
+    }
+    
+    .card-body{
+        padding: 3rem;
     }
 
     /* HomePlanning/{type}：入力フォーム */
@@ -410,16 +439,13 @@ input[type="checkbox"]:checked::after {
         color: rgb(235, 214, 95);
     }
 
-    /* client/create */
+
+  
     /* 入力フォーム全体 */
     .form-inline{
         font-size: 14px;
     }
-    /* ヘッダータイトル */
-    .content-header .content-header-client{
-        margin-top: -40px;
-        margin-bottom: 30px;
-    }
+   
     /* プルダウンメニュー */
     .form-control {
         width: 100%; 
@@ -429,5 +455,17 @@ input[type="checkbox"]:checked::after {
         color: rgb(86, 80, 80);
         font-size: 23px;
         text-align: center;
+        margin-bottom: 0;
+    }
+
+    /* client/create */
+  
+
+
+    /* client/index */
+     /* ヘッダータイトル */
+     .content-header .content-header-client{
+        margin-top: -40px;
+        margin-bottom: 30px;
     }
 
