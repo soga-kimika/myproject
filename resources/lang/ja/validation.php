@@ -10,6 +10,7 @@ return [
         'child_count' =>'「子供の人数」',
         'pet' =>'「ペット」',
         'land_budget' =>'「土地の予算」',
+        'land_budget-exists' =>'「土地の予算」',
         'building_budget' =>'「建物の予算」',
         'land_area' =>'「土地の坪数」',
         'building_area' =>'「建物の坪数」',
@@ -27,5 +28,6 @@ return [
     'min' => [
         'string' => ':attribute は少なくとも :min 文字でなければなりません。',
     ],
-    // 他のエラーメッセージも必要に応じて追加してください。
+    
+    
 ];

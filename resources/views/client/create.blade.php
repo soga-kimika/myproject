@@ -9,11 +9,10 @@
 @stop
 
 @section('content')
-
+@include('partials.errors')
 <div class="row">
     
     <div class="col-md-12">
-        @include('partials.errors')
 
 <section class="content client-content">
     <form method="post" action="{{ route('clients.store') }}">
@@ -191,7 +190,7 @@
                     </div>
                     <div class="client-card-body text-center">
                         <div class="form-group">
-                            <input type="text" name="construction_area" class="form-control " placeholder="家を建てる希望の場所・エリアを入力" required>
+                            <input type="text" name="construction_area" class="form-control " placeholder="家を建てる希望の場所・エリアを入力" >
                         </div>
                     </div>
                 </div>
@@ -202,7 +201,7 @@
                     </div>
                     <div class="client-card-body">
                         <div class="form-group">
-                            <input type="date" name="date" class="form-control" required>
+                            <input type="date" name="date" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -213,7 +212,7 @@
                     </div>
                     <div class="client-card-body text-center">
                         <div class="form-group">
-                            <textarea name="current_home_issues" class="form-control" rows="6" placeholder="不満に思っていることを入力" required></textarea>
+                            <textarea name="current_home_issues" class="form-control" rows="6" placeholder="不満に思っていることを入力" ></textarea>
                         </div>
                     </div>
                 </div>
@@ -235,29 +234,36 @@
 @stop
 @section('js')
 <script>
- document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
         const landBudgetExists = document.getElementById('land_budget_exists');
         const landBudgetInput = document.getElementById('land_budget_input');
-        const landBudgetPlaceholder = document.getElementById('land_budget_placeholder');
-
+    
         function toggleLandBudgetInput() {
             if (landBudgetExists.value === 'yes') {
                 landBudgetInput.value = ''; 
                 landBudgetInput.setAttribute('disabled', true); 
                 landBudgetInput.style.backgroundColor = '#e9ecef'; 
-                 landBudgetInput.placeholder = ''; 
+                landBudgetInput.placeholder = ''; 
             } else {
                 landBudgetInput.removeAttribute('disabled'); 
                 landBudgetInput.style.backgroundColor = ''; 
                 landBudgetInput.placeholder = '5000万円';
             }
         }
-
+    
         landBudgetExists.addEventListener('change', toggleLandBudgetInput);
         toggleLandBudgetInput(); 
+    
+        // モーダル表示時にリセット
+        $('#profileModal').on('show.bs.modal', function () {
+            // ここでフィールドを初期化またはリセットすることができます
+            landBudgetInput.value = ''; 
+            landBudgetInput.removeAttribute('disabled'); 
+            landBudgetInput.style.backgroundColor = ''; 
+            landBudgetInput.placeholder = '5000万円';
+        });
     });
-
-</script>
-
+    </script>
+    
 
 @stop
