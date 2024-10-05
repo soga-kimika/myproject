@@ -13,17 +13,7 @@
 <div class="row">
     
     <div class="col-md-12">
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-    </div>
-</div>
+        @include('partials.errors')
 
 <section class="content client-content">
     <form method="post" action="{{ route('clients.store') }}">
@@ -57,7 +47,7 @@
                                     <option value="5">5人以上</option>
                                 </select>
                             </div>
-                            <div class="client-form-inline  mt-2">
+                            <div class="client-form-inline  mt-2">  
                                 <label for="pet" class="mr-2">ペット</label>
                                 <select name="pet" id="pet" class="form-control  mr-3" required>
                                     <option value="" disabled selected>選択してください</option>

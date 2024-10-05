@@ -295,9 +295,18 @@ input[type="checkbox"]:checked::after {
         text-align: right;
     }
     
-    .card-body{
+    .client-card-body{
         padding: 3rem;
     }
+
+       /* client/index */
+     /* ヘッダータイトル */
+     .content-header .content-header-client{
+        margin-top: -40px;
+        margin-bottom: 30px;
+    }
+
+
 
     /* HomePlanning/{type}：入力フォーム */
     .pb-2{
@@ -458,14 +467,6 @@ input[type="checkbox"]:checked::after {
         margin-bottom: 0;
     }
 
-    /* client/create */
-  
 
 
-    /* client/index */
-     /* ヘッダータイトル */
-     .content-header .content-header-client{
-        margin-top: -40px;
-        margin-bottom: 30px;
-    }
-
+ 
