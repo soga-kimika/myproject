@@ -40,6 +40,8 @@
                 <label for="edit_imageUpload{{ $item->id }}" class="btn me-2 form-check-label btn-select">
                     画像を選択 <i class="fas fa-upload"></i> 
                 </label>
+                 {{-- 更新ボタン --}}
+                <button type="submit" class="btn btn-update"><i class="fas fa-check"></i></button>
             </div>
         </div>
     </div>
