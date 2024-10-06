@@ -1,22 +1,5 @@
-@extends('adminlte::page')
-
-@section('title', 'プロフィール編集')
-
-@section('content_header')
-
-@stop
-
-@section('content')
-@include('partials.errors') 
-    {{-- 編集モーダルトリガー --}}
-    <div>
-    <a href="#" class="btn btn-edit btn-edit-client" data-toggle="modal" data-target="#client-editModal">
-        プロフィール編集
-    </a> 
-</div>
-
 <div class="modal fade" id="client-editModal" tabindex="-1" role="dialog" aria-labelledby="client-editModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="client-editModalLabel">プロフィール編集</h5>
@@ -241,37 +224,3 @@
     </div>
 </div>
 
-@stop
-
-@section('css')
-<link rel="stylesheet" href="{{ asset('/css/item/index.css') }}">
-<style>
-    #client-editModal .modal-dialog {
-    max-width: 800px; 
-}
-</style>
-@stop
-
-@section('js')
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const landBudgetExists = document.getElementById('land_budget_exists');
-        const landBudgetInput = document.getElementById('land_budget_input');
-
-        function toggleLandBudgetInput() {
-            if (landBudgetExists.value === 'yes') {
-                landBudgetInput.value = ''; 
-                landBudgetInput.setAttribute('disabled', true); 
-                landBudgetInput.style.backgroundColor = '#e9ecef'; 
-                landBudgetInput.placeholder = ''; 
-            } else {
-                landBudgetInput.removeAttribute('disabled'); 
-                landBudgetInput.style.backgroundColor = ''; 
-                landBudgetInput.placeholder = '5000万円';
-            }
-        }
-
-        landBudgetExists.addEventListener('change', toggleLandBudgetInput);
-        toggleLandBudgetInput(); 
-    });
-</script>

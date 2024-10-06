@@ -12,28 +12,16 @@
         
 <h1 class="content-header-client"   >
     <i class="far fa-address-card"></i>プロフィール</h1>
+    @include('client.edit')
+
 @stop
 
 @section('content')
-
-        <div class="row">
-            <div class="col-md-12">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-            </div>
-        </div>
+@include('partials.errors') 
 
         <section class="content">
             <div class="row">
                 <div class="col-md-12">
-                   
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <div class="card mb-3">
@@ -53,9 +41,8 @@
                                 </div>
                             </div>
                         </div>
-                            </div>
-                        </div>
-
+                    </div>
+                </div>
                         <div class="col-md-6">
                             <div class="card mb-3">
                                 <div class="card-body">
@@ -161,7 +148,7 @@
                 </div>
             </div>
         </section>
-  
+       
 @stop
 
 @section('css')
