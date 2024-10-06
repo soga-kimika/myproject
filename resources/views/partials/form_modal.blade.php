@@ -41,7 +41,7 @@
                     画像を選択 <i class="fas fa-upload"></i> 
                 </label>
                  {{-- 更新ボタン --}}
-                <button type="submit" class="btn btn-update"><i class="fas fa-check"></i></button>
+                <button type="submit" class="btn btn-update">保存</i></button>
             </div>
         </div>
     </div>

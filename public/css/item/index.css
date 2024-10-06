@@ -424,11 +424,11 @@
         }
         /* トイレアイコン */
         .fa-toilet {
-            color: rgb(21, 163, 134); 
+            color: rgb(119, 115, 238); 
         }
         /* バスルームアイコン */
         .fa-bath {
-            color: rgba(152, 216, 50, 0.896);
+            color: rgba(17, 128, 155, 0.896);
         }
         /* ベッドルームアイコン */
         .fa-user-friends{
@@ -450,8 +450,6 @@
         .fa-utensils {
             color: rgb(235, 214, 95);
         }
-
-
     
         /* 入力フォーム全体 */
         .form-inline{
@@ -460,19 +458,16 @@
         .item-form-control{
             border: 1px solid #ced4da;
         }
-    
         /* プルダウンメニュー */
         .form-control {
             width: 100%; 
         }
         /* プルダウンメニュータイトル */
         .form-title{
-            color: rgb(86, 80, 80);
+            color: rgb(95, 37, 37);
             font-size: 23px;
             text-align: center;
             margin-bottom: 0;
         }
-
-
 
     

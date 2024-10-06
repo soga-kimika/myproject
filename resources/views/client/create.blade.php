@@ -218,7 +218,7 @@
                 </div>
 
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary">保存</button>
+                    <button type="submit" class="btn btn-store ms-2">登録</button>
                 </div>
             </div>
         </div>

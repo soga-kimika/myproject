@@ -6,13 +6,13 @@
 <div class="btn-edit-client">
     {{-- 編集モーダルトリガー --}}
 <a href="#" class="btn btn-edit btn-edit-client" data-toggle="modal" data-target="#client-editModal">
-    プロフィール編集
+    プロフィール編集 <i class="fas fa-edit"></i>
 </a>
 </div>
         
 <h1 class="content-header-client"   >
     <i class="far fa-address-card"></i>プロフィール</h1>
-    @include('client.edit')
+@include('client.edit')
 
 @stop
 

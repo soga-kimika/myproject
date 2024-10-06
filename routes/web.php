@@ -34,8 +34,6 @@
             Route::get('create', [ClientController::class, 'create'])->name('clients.create');
             // プロフィール登録
             Route::post('store', [ClientController::class, 'store'])->name('clients.store');
-            // プロフィール「編集」画面表示
-            Route::get('edit', [ClientController::class, 'edit'])->name('clients.edit');
             // プロフィール更新
             Route::put('update', [ClientController::class, 'update'])->name('clients.update');
         });
