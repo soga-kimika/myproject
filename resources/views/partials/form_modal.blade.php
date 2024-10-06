@@ -34,7 +34,7 @@
             </div>
             <div class="form-group d-flex align-items-center col-md-12">
                 {{-- 要望入力欄 --}}
-                <input type="text" name="request_message" id="edit_request_message" class="form-control form-control-lg me-2" placeholder="要望を記入してください" 
+                <input type="text" name="request_message" id="edit_request_message" class="item-form-control form-control-lg me-2" placeholder="要望を記入してください" 
                 value="{{ old('request_message', $item->request_message) }}" required >
                 {{-- 画像選択ボタン --}}
                 <label for="edit_imageUpload{{ $item->id }}" class="btn me-2 form-check-label btn-select">

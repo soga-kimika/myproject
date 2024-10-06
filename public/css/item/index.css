@@ -457,6 +457,9 @@
         .form-inline{
             font-size: 14px;
         }
+        .item-form-control{
+            border: 1px solid #ced4da;
+        }
     
         /* プルダウンメニュー */
         .form-control {
