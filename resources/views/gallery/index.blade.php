@@ -15,10 +15,10 @@
                 @csrf
                 {{-- 入力フォーム --}}
                 <div class="border-bottom pb-2 mb-3 mt-4">
-                    <div class="col-md-12 d-flex mb-3">
-                        <div class="d-flex align-items-center">
+                    <div class="col-md-12 d-flex mb-3 justify-content-center">
+                        <div class="d-flex align-items-center pr-2">
                             <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none" onchange="displayFileName()" required>
-                            <span id="fileName" class="ms-2 file-name"></span>
+                            <span id="fileName" class="ms-2 gallery-file-name"></span>
                             <label for="imageUpload" class="btn me-2 form-check-label btn-select">
                                 画像を選択 <i class="fas fa-upload"></i> 
                             </label>

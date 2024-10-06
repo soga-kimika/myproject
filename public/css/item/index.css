@@ -254,7 +254,7 @@
         .col-md-6{
             text-align: center;
         }
-        /* 編輯ボタン */
+        /* 編集ボタン */
         .btn-edit-client{
             text-align: right;
         }
@@ -446,7 +446,7 @@
         }
         /* ダイニングアイコン */
         .fa-utensils {
-            color: rgb(235, 214, 95);
+            color:  #2e1a5f; 
         }
     
         /* 入力フォーム全体 */
@@ -473,11 +473,29 @@
         cursor: pointer; 
         height: 150px;
     }
-.gallery-card-body{
+    /* 削除ボタン */
+    .gallery-card-body{
     padding: 0;
     
-}
-.gallery-card-icon{
+    }
+    /* 削除ボタン */
+    .gallery-card-icon{
     width: 100%;
     border: none;
-}
+    } 
+    /* ファイル名表示ボタン */
+       .gallery-file-name {
+        font-weight: bold;
+        color: #2e1a5f; 
+        background-color: #e9ecef; 
+        padding: 3px 3px; 
+        border-radius: 5px; 
+        margin-right: 0; 
+        width: 400px; 
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        display: inline-block; 
+        margin-top: -7px;
+       
+    }
