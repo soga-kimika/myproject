@@ -154,7 +154,7 @@ class ItemController extends Controller
             'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
             'request_message' => 'nullable|string|max:255',
         ]);
-    
+
         // アイテムの更新
         if ($request->has('priority')) {
             $item->priority = $request->input('priority');
@@ -163,7 +163,7 @@ class ItemController extends Controller
         if ($request->has('request_message')) {
             $item->request_message = $request->input('request_message');
         }
-    
+
         // 画像の処理
         if ($request->hasFile('imageUpload')) {
             // 古い画像がある場合
@@ -173,25 +173,25 @@ class ItemController extends Controller
                     Storage::delete('public/' . $item->image_url);
                 }
                 // 古い画像の名前を削除
-                $item->image_name = null; 
+                $item->image_name = null;
             }
-    
+
             // 新しい画像のパスを生成し、パスを保存
             $image = $request->file('imageUpload');
             $imagePath = $image->store('images', 'public');
             $item->image_url = $imagePath;
-    
+
             // ファイル名を取得し、ファイル名を重複しないように、日付をファイル名に入れてファイル名を保存
             $fileName = $image->getClientOriginalName() . '_' . time();
             $item->image_name = $fileName; // 新しい画像名を設定
         }
-    
+
         // アイテムを保存
         $item->save();
-    
+
         return redirect()->route('items.index', ['type' => $type]);
     }
-    
+
 
 
     // レコードの削除
@@ -220,6 +220,4 @@ class ItemController extends Controller
         }
         return redirect()->route('items.index', ['type' => $type]);
     }
-
-    
 }

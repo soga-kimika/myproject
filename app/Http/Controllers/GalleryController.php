@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\Gallery;
 use Illuminate\Support\Facades\Storage;
@@ -30,6 +31,9 @@ class GalleryController extends Controller
         $image = $request->file('imageUpload');
         $imagePath = $image->store('image', 'public');
         $gallery->image_url = $imagePath;
+        // ファイル名を取得し、ファイル名を重複しないように、日付をファイル名に入れてファイル名を保存
+        $fileName =   $image->getClientOriginalName() . '_' . time();
+        $gallery->image_name = $fileName;
 
         $gallery->save();
         return redirect()->route('galleries.index');
@@ -42,14 +46,11 @@ class GalleryController extends Controller
     public function destroy(request $request, $galleryId)
     {
 
-       
+
         $gallery = Gallery::findOrFail($galleryId);
         Storage::disk('public')->delete($gallery->image_url);
         $gallery->delete();
 
         return redirect()->route('galleries.index');
-
     }
 }
-
-

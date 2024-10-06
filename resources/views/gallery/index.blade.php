@@ -7,9 +7,34 @@
 @stop
 
 @section('content')
-<div class="container">
+    {{-- 入力フォーム --}}
+    <div class="container">
+        <div class="col-md-12 mx-auto"> 
+            <form action="{{route('galleries.store')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                {{-- 入力フォーム --}}
+                <div class="border-bottom pb-2 mb-3 mt-4">
+                    <div class="col-md-12 d-flex mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="d-flex align-items-center">
+                                    {{-- ファイル名表示 --}}
+                                    <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none" onchange="displayFileName('imageUpload', 'fileName')">
+                                    <span id="fileName" class="ms-2 file-name"></span>
+                                </div>
+                                    {{-- 画像選択ボタン --}}
+                                    <label for="imageUpload" class="btn me-2 form-check-label btn-select" >
+                                        画像を選択 <i class="fas fa-upload"></i> 
+                                    </label>
+                                    {{-- 登録ボタン  --}}
+                                    <button type="submit" class="btn btn-store ms-2">登録</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
-
 
 <!-- モーダル -->
 <div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="phptpModalLabel" aria-hidden="true">
