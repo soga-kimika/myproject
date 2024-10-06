@@ -14,7 +14,8 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        return view('gallery.index');
+        $galleries = Gallery::all();
+        return view('gallery.index', compact('galleries'));
     }
     /**
      * Store a newly created resource in storage.
@@ -24,7 +25,7 @@ class GalleryController extends Controller
     {
         //バリデーションルール
         $request->validate([
-            'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
+            'imageUpload' => 'required|image|mimes:jpeg,png,jpg|max:4096',
         ]);
 
         $gallery = new Gallery();
@@ -43,10 +44,8 @@ class GalleryController extends Controller
      * Remove the specified resource from storage.
      *  //写真の削除
      */
-    public function destroy(request $request, $galleryId)
+    public function destroy($galleryId)
     {
-
-
         $gallery = Gallery::findOrFail($galleryId);
         Storage::disk('public')->delete($gallery->image_url);
         $gallery->delete();

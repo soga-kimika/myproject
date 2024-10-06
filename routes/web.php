@@ -57,10 +57,10 @@
 
         Route::prefix('gallery')->group(function () {
             // ギャラリーページ一覧表示
-            Route::get('/index', [GalleryController::class, 'index'])->name('galleries.index');
+            Route::get('/', [GalleryController::class, 'index'])->name('galleries.index');
             // 登録
             Route::post('/upload', [GalleryController::class, 'store'])->name('galleries.store');
             // 削除
-            Route::delete('/{photoId}', [GalleryController::class, 'destroy'])->name('galleries.destroy');
+            Route::delete('/{galleryId}', [GalleryController::class, 'destroy'])->name('galleries.destroy');
         });
 

@@ -7,50 +7,51 @@
 @stop
 
 @section('content')
+@include('partials.errors') 
     {{-- 入力フォーム --}}
     <div class="container">
         <div class="col-md-12 mx-auto"> 
-            <form action="{{route('galleries.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('galleries.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 {{-- 入力フォーム --}}
                 <div class="border-bottom pb-2 mb-3 mt-4">
                     <div class="col-md-12 d-flex mb-3">
-                            <div class="d-flex align-items-center">
-                                <div class="d-flex align-items-center">
-                                    {{-- ファイル名表示 --}}
-                                    <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none" onchange="displayFileName('imageUpload', 'fileName')">
-                                    <span id="fileName" class="ms-2 file-name"></span>
-                                </div>
-                                    {{-- 画像選択ボタン --}}
-                                    <label for="imageUpload" class="btn me-2 form-check-label btn-select" >
-                                        画像を選択 <i class="fas fa-upload"></i> 
-                                    </label>
-                                    {{-- 登録ボタン  --}}
-                                    <button type="submit" class="btn btn-store ms-2">登録</button>
-                            </div>
+                        <div class="d-flex align-items-center">
+                            <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none" onchange="displayFileName()" required>
+                            <span id="fileName" class="ms-2 file-name"></span>
+                            <label for="imageUpload" class="btn me-2 form-check-label btn-select">
+                                画像を選択 <i class="fas fa-upload"></i> 
+                            </label>
+                            <button type="submit" class="btn btn-store ms-2">登録</button>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
-    </div>
-</div>
 
-<!-- モーダル -->
-<div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="phptpModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="photoModalLabel">画像</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <img id="modalImage" src="" class="img-fluid" alt="Large Image">
-            </div>
+        {{-- 登録した写真の表示 --}}
+        <div class="row mt-4">
+            @if ($galleries->isEmpty())
+                <div class="col-md-12 text-center">
+                    <p>まだ画像が登録されていません</p>
+                </div>
+            @else
+                @foreach ($galleries as $gallery)
+                    <div class="col-lg-2 mb-4">
+                        <div class="card">
+                            <img src="{{ asset('storage/' . $gallery->image_url) }}" class="card-img-top" alt="{{ $gallery->image_name }}" onclick="showImage('{{ asset('storage/' . $gallery->image_url) }}')" style="cursor: pointer; height: 150px;">
+                            <div class="card-body text-center">
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#deleteGalleryModal{{ $gallery->id }}">削除</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    @include('gallery.delete', ['image_url' => $gallery->image_url])
+
+                @endforeach
+            @endif
         </div>
     </div>
-</div>
-
 @stop
 
 @section('css')
@@ -64,10 +65,12 @@
         const fileName = document.getElementById('fileName');
         fileName.textContent = input.files[0] ? input.files[0].name : '';
     }
-
+    
     function showImage(imageSrc) {
         const modalImage = document.getElementById('modalImage');
         modalImage.src = imageSrc;
+        const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+        imageModal.show();
     }
 </script>
 @stop

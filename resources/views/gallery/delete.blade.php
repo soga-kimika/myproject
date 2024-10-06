@@ -1,19 +1,28 @@
-@extends('adminlte::page')
-
-@section('title', 'Dashboard')
-
-@section('content_header')
-    <h1>Dashboard</h1>
-@stop
-
-@section('content')
-    <p>Welcome to this beautiful admin panel.</p>
-@stop
-
-@section('css')
-<link rel="stylesheet" href="{{ asset('/css/item/index.css') }}">
-@stop
-
-@section('js')
-    <script> console.log('Hi!'); </script>
-@stop
+{{-- 削除モーダル --}}
+<div class="modal fade" id="deleteGalleryModal{{ $gallery->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteGalleryModalLabel{{ $gallery->id }}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            {{-- モーダルヘッダー --}}
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteGalleryModalLabel{{ $gallery->id }}">削除確認</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {{-- モーダルの中身 --}}
+            <div class="modal-body">
+                <p>この画像を削除しますか？</p>
+            </div>
+            {{-- モーダルフッター --}}
+            <div class="modal-footer">
+                <form action="{{ route('galleries.destroy', [$gallery->id]) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash-alt"></i> 削除</button>
+                </form>
+                {{-- 閉じるボタン --}}
+                <button type="button" class="btn btn-defaults" data-dismiss="modal"><i class="fa fa-undo-alt"></i> キャンセル</button>
+            </div>
+        </div>
+    </div>
+</div>

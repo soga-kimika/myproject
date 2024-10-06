@@ -341,7 +341,7 @@ return [
         ],
         [
             'text' => 'フォトギャラリー',
-            'url'  => 'gallery/index',
+            'url'  => 'gallery/',
             'icon' => 'fas fa-image',
             'icon_color' => '#a04d69',
             'classes' => 'text-bold ',
