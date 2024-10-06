@@ -33,7 +33,7 @@
                                     @foreach(range(1, 5) as $i)
                                         <option value="{{ $i }}" {{ old('adult_count') == $i ? 'selected' : '' }}>{{ $i }}人</option>
                                     @endforeach
-                                    <option value="5">5人以上</option>
+                                    <option value="6">6人以上</option>
                                 </select>
                             </div>
                             <div class="client-form-inline mt-2">
@@ -43,7 +43,7 @@
                                     @foreach(range(0, 5) as $i)
                                         <option value="{{ $i }}" {{ old('child_count') === (string)$i ? 'selected' : '' }}>{{ $i }}人</option>
                                     @endforeach
-                                    <option value="5">5人以上</option>
+                                    <option value="6">6人以上</option>
                                 </select>
                             </div>
                             <div class="client-form-inline  mt-2">  
@@ -80,7 +80,7 @@
                                 <label for="land_area">坪数</label>
                                 <select name="land_area" class="form-control  mr-3" required>
                                     <option value="" disabled selected>選択してください</option>
-                                    @foreach(range(20, 100, 10) as $area)
+                                    @foreach(range(20, 90, 10) as $area)
                                         <option value="{{ $area }}" {{ old('land_area') == $area ? 'selected' : '' }}>{{ $area }}坪前後</option>
                                     @endforeach
                                     <option value="100">100坪以上</option>
@@ -104,7 +104,7 @@
                                 <label for="building_area">坪数</label>
                                 <select name="building_area" class="form-control mr-3" required>
                                     <option value="" disabled selected>選択してください</option>
-                                    @foreach(range(20, 100, 10) as $area)
+                                    @foreach(range(20, 90, 10) as $area)
                                         <option value="{{ $area }}" {{ old('building_area') == $area ? 'selected' : '' }}>{{ $area }}坪前後</option>
                                     @endforeach
                                     <option value="100">100坪以上</option>
@@ -117,7 +117,7 @@
                                     @foreach(range(1, 5) as $floor)
                                         <option value="{{ $floor }}" {{ old('floors') == $floor ? 'selected' : '' }}>{{ $floor }}階建</option>
                                     @endforeach
-                                    <option value="5">5階建以上</option>
+                                    <option value="6">6階建以上</option>
                                 </select>
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
@@ -127,7 +127,7 @@
                                     @foreach(range(1, 5) as $layout)
                                         <option value="{{ $layout }}" {{ old('layout') == $layout ? 'selected' : '' }}>{{ $layout }}LDK</option>
                                     @endforeach
-                                    <option value="5">5LDK以上</option>
+                                    <option value="6">6LDK以上</option>
                                 </select>
                             </div>
                         </div>
@@ -147,7 +147,7 @@
                                     @foreach(range(0, 3) as $i)
                                         <option value="{{ $i }}" {{ old('regularCars') === (string)$i ? 'selected' : '' }}>{{ $i }}台</option>
                                     @endforeach
-                                    <option value="3">3台以上</option>
+                                    <option value="4">4台以上</option>
                                 </select>
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
@@ -157,7 +157,7 @@
                                     @foreach(range(0, 3) as $i)
                                         <option value="{{ $i }}" {{ old('compactCars') === (string)$i ? 'selected' : '' }}>{{ $i }}台</option>
                                     @endforeach
-                                    <option value="3">3台以上</option>
+                                    <option value="4">4台以上</option>
                                 </select>
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
@@ -167,7 +167,7 @@
                                     @foreach(range(0, 3) as $i)
                                         <option value="{{ $i }}" {{ old('motorcycles') === (string)$i ? 'selected' : '' }}>{{ $i }}台</option>
                                     @endforeach
-                                    <option value="3">3台以上</option>
+                                    <option value="4">4台以上</option>
                                 </select>
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
@@ -177,7 +177,7 @@
                                     @foreach(range(0, 3) as $i)
                                         <option value="{{ $i }}" {{ old('bicycles') === (string)$i ? 'selected' : '' }}>{{ $i }}台</option>
                                     @endforeach
-                                    <option value="3">3台以上</option>
+                                    <option value="4">4台以上</option>
                                 </select>
                             </div>
                         </div>
@@ -190,7 +190,7 @@
                     </div>
                     <div class="client-card-body text-center">
                         <div class="form-group">
-                            <input type="text" name="construction_area" class="form-control " placeholder="家を建てる希望の場所・エリアを入力" >
+                            <input type="text" name="construction_area" class="form-control " placeholder="例）城北エリア　北久米方面" >
                         </div>
                     </div>
                 </div>

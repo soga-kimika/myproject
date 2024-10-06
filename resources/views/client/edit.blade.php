@@ -29,7 +29,7 @@
                                                 @foreach(range(1, 5) as $i)
                                                     <option value="{{ $i }}" {{ old('adult_count', $client->adult_count) == $i ? 'selected' : '' }}>{{ $i }}人</option>
                                                 @endforeach
-                                                <option value="5" {{ old('adult_count', $client->adult_count) == 5 ? 'selected' : '' }}>5人以上</option>
+                                                <option value="6" {{ old('adult_count', $client->adult_count) == 6 ? 'selected' : '' }}>6人以上</option>
                                             </select>
                                         </div>
                                         <div class="client-form-inline mt-2">
@@ -39,7 +39,7 @@
                                                 @foreach(range(0, 5) as $i)
                                                     <option value="{{ $i }}" {{ old('child_count', $client->child_count) === (string)$i ? 'selected' : '' }}>{{ $i }}人</option>
                                                 @endforeach
-                                                <option value="5" {{ old('child_count', $client->child_count) == 5 ? 'selected' : '' }}>5人以上</option>
+                                                <option value="6" {{ old('child_count', $client->child_count) == 6 ? 'selected' : '' }}>6人以上</option>
                                             </select>
                                         </div>
                                         <div class="client-form-inline mt-2">
@@ -76,7 +76,7 @@
                                             <label for="land_area">坪数</label>
                                             <select name="land_area" class="form-control mr-3" required>
                                                 <option value="" disabled {{ old('land_area', $client->land_area) === null ? 'selected' : '' }}>選択してください</option>
-                                                @foreach(range(20, 100, 10) as $area)
+                                                @foreach(range(20, 90, 10) as $area)
                                                     <option value="{{ $area }}" {{ old('land_area', $client->land_area) == $area ? 'selected' : '' }}>{{ $area }}坪前後</option>
                                                 @endforeach
                                                 <option value="100" {{ old('land_area', $client->land_area) == 100 ? 'selected' : '' }}>100坪以上</option>
@@ -100,7 +100,7 @@
                                             <label for="building_area">坪数</label>
                                             <select name="building_area" class="form-control mr-3" required>
                                                 <option value="" disabled {{ old('building_area', $client->building_area) === null ? 'selected' : '' }}>選択してください</option>
-                                                @foreach(range(20, 100, 10) as $area)
+                                                @foreach(range(20, 90, 10) as $area)
                                                     <option value="{{ $area }}" {{ old('building_area', $client->building_area) == $area ? 'selected' : '' }}>{{ $area }}坪前後</option>
                                                 @endforeach
                                                 <option value="100" {{ old('building_area', $client->building_area) == 100 ? 'selected' : '' }}>100坪以上</option>
@@ -113,7 +113,7 @@
                                                 @foreach(range(1, 5) as $floor)
                                                     <option value="{{ $floor }}" {{ old('floors', $client->floors) == $floor ? 'selected' : '' }}>{{ $floor }}階建</option>
                                                 @endforeach
-                                                <option value="5" {{ old('floors', $client->floors) == 5 ? 'selected' : '' }}>5階建以上</option>
+                                                <option value="6" {{ old('floors', $client->floors) == 6 ? 'selected' : '' }}>6階建以上</option>
                                             </select>
                                         </div>
                                         <div class="client-form-inline justify-content-center mt-2">
@@ -123,7 +123,7 @@
                                                 @foreach(range(1, 5) as $layout)
                                                     <option value="{{ $layout }}" {{ old('layout', $client->layout) == $layout ? 'selected' : '' }}>{{ $layout }}LDK</option>
                                                 @endforeach
-                                                <option value="5" {{ old('layout', $client->layout) == 5 ? 'selected' : '' }}>5LDK以上</option>
+                                                <option value="6" {{ old('layout', $client->layout) == 6 ? 'selected' : '' }}>6LDK以上</option>
                                             </select>
                                         </div>
                                     </div>
@@ -143,7 +143,7 @@
                                                 @foreach(range(0, 3) as $i)
                                                     <option value="{{ $i }}" {{ old('regularCars', $client->regularCars) === (string)$i ? 'selected' : '' }}>{{ $i }}台</option>
                                                 @endforeach
-                                                <option value="3" {{ old('regularCars', $client->regularCars) == 3 ? 'selected' : '' }}>3台以上</option>
+                                                <option value="4" {{ old('regularCars', $client->regularCars) == 4 ? 'selected' : '' }}>4台以上</option>
                                             </select>
                                         </div>
                                         <div class="client-form-inline justify-content-center mt-2">
@@ -153,7 +153,7 @@
                                                 @foreach(range(0, 3) as $i)
                                                     <option value="{{ $i }}" {{ old('compactCars', $client->compactCars) === (string)$i ? 'selected' : '' }}>{{ $i }}台</option>
                                                 @endforeach
-                                                <option value="3" {{ old('compactCars', $client->compactCars) == 3 ? 'selected' : '' }}>3台以上</option>
+                                                <option value="4" {{ old('compactCars', $client->compactCars) == 4 ? 'selected' : '' }}>4台以上</option>
                                             </select>
                                         </div>
                                         <div class="client-form-inline justify-content-center mt-2">
@@ -163,7 +163,7 @@
                                                 @foreach(range(0, 3) as $i)
                                                     <option value="{{ $i }}" {{ old('motorcycles', $client->motorcycles) === (string)$i ? 'selected' : '' }}>{{ $i }}台</option>
                                                 @endforeach
-                                                <option value="3" {{ old('motorcycles', $client->motorcycles) == 3 ? 'selected' : '' }}>3台以上</option>
+                                                <option value="4" {{ old('motorcycles', $client->motorcycles) == 4 ? 'selected' : '' }}>4台以上</option>
                                             </select>
                                         </div>
                                         <div class="client-form-inline justify-content-center mt-2">
@@ -173,7 +173,7 @@
                                                 @foreach(range(0, 3) as $i)
                                                     <option value="{{ $i }}" {{ old('bicycles', $client->bicycles) === (string)$i ? 'selected' : '' }}>{{ $i }}台</option>
                                                 @endforeach
-                                                <option value="3" {{ old('bicycles', $client->bicycles) == 3 ? 'selected' : '' }}>3台以上</option>
+                                                <option value="4" {{ old('bicycles', $client->bicycles) == 4 ? 'selected' : '' }}>4台以上</option>
                                             </select>
                                         </div>
                                     </div>
