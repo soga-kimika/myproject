@@ -59,12 +59,12 @@
         .btn-update:hover{
             color: rgb(80, 183, 183);
         }
-        /* 画像投稿ボタン */
+        /*　ファイル投稿ボタン */
         .btn-select{
             color: orange;
             cursor: pointer;
         }
-        /* 選択したファイル名表示ボタン */
+        /* ファイル名表示ボタン */
         .file-name {
             font-weight: bold;
             color: #2ad8c6; 
@@ -303,6 +303,13 @@
             margin-top: -40px;
             margin-bottom: 30px;
         }
+        /* プルダウンメニュータイトル */
+        .form-title{
+            color: #2e1a5f; 
+            font-size: 23px;
+            text-align: center;
+            margin-bottom: 0;
+        }
 
 
 
@@ -460,13 +467,7 @@
         .form-control {
             width: 100%; 
         }
-        /* プルダウンメニュータイトル */
-        .form-title{
-            color: rgb(95, 37, 37);
-            font-size: 23px;
-            text-align: center;
-            margin-bottom: 0;
-        }
+
 
     /* gallery/ */
     .card-img-top{
@@ -486,7 +487,7 @@
     /* ファイル名表示ボタン */
        .gallery-file-name {
         font-weight: bold;
-        color: #2e1a5f; 
+        color:#2ad8c6; 
         background-color: #e9ecef; 
         padding: 3px 3px; 
         border-radius: 5px; 

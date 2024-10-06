@@ -13,13 +13,14 @@
         <div class="col-md-12 mx-auto"> 
             <form action="{{ route('galleries.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                {{-- 入力フォーム --}}
                 <div class="border-bottom pb-2 mb-3 mt-4">
                     <div class="col-md-12 d-flex mb-3 justify-content-center">
                         <div class="d-flex align-items-center pr-2">
+                            {{-- ファイル名表示 --}}
                             <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none" onchange="displayFileName()" required>
                             <span id="fileName" class="ms-2 gallery-file-name"></span>
                             <label for="imageUpload" class="btn me-2 form-check-label btn-select">
+                                {{-- ファイル投稿ボタン --}}
                                 画像を選択 <i class="fas fa-upload"></i> 
                             </label>
                             <button type="submit" class="btn btn-store ms-2">登録</button>
@@ -41,15 +42,39 @@
                         <div class="card">
                             <img src="{{ asset('storage/' . $gallery->image_url) }}" class="card-img-top" alt="{{ $gallery->image_name }}" onclick="showImage('{{ asset('storage/' . $gallery->image_url) }}')">
                             <div class="gallery-card-body text-center">
-                                <button class="btn btn-dangers gallery-card-icon" data-toggle="modal" data-target="#deleteGalleryModal{{ $gallery->id }}"><i class="fa fa-trash-alt "></i></button>
+                                {{-- 削除ボタン --}}
+                                <button class="btn btn-dangers gallery-card-icon" data-toggle="modal" data-target="#deleteGalleryModal{{ $gallery->id }}">
+                                    <i class="fa fa-trash-alt"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
-                    
+                
+                    {{-- 削除モーダル読み込み --}}
                     @include('gallery.delete', ['image_url' => $gallery->image_url])
 
                 @endforeach
             @endif
+        </div>
+    </div>
+
+    {{-- ギャラリー画像モーダル --}}
+    <div class="modal fade" id="GalleryImageModal" tabindex="-1" role="dialog" aria-labelledby="GalleryImageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="GalleryImageModalLabel">画像</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" class="img-fluid" alt="Image">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-defaults" data-dismiss="modal"><i class="fa fa-undo-alt"></i></button>
+                </div>
+            </div>
         </div>
     </div>
 @stop
@@ -65,11 +90,11 @@
         const fileName = document.getElementById('fileName');
         fileName.textContent = input.files[0] ? input.files[0].name : '';
     }
-    
+        
     function showImage(imageSrc) {
         const modalImage = document.getElementById('modalImage');
         modalImage.src = imageSrc;
-        const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+        const imageModal = new bootstrap.Modal(document.getElementById('GalleryImageModal'));
         imageModal.show();
     }
 </script>
