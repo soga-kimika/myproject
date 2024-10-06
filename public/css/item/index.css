@@ -468,4 +468,15 @@
             margin-bottom: 0;
         }
 
+    /* gallery/ */
+    .card-img-top{
+        cursor: pointer; 
+        height: 150px;
+    }
+.gallery-card-body{
+    padding: 0;
     
+}
+.gallery-card-icon{
+    width: 100%;
+}

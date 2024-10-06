@@ -18,10 +18,10 @@
                 <form action="{{ route('galleries.destroy', [$gallery->id]) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash-alt"></i> 削除</button>
+                    <button type="submit" class="btn btn-dangers"><i class="fa fa-trash-alt"></i></button>
                 </form>
                 {{-- 閉じるボタン --}}
-                <button type="button" class="btn btn-defaults" data-dismiss="modal"><i class="fa fa-undo-alt"></i> キャンセル</button>
+                <button type="button" class="btn btn-defaults" data-dismiss="modal"><i class="fa fa-undo-alt"></i> </button>
             </div>
         </div>
     </div>
