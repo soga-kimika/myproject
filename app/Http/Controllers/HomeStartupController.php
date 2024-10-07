@@ -10,8 +10,6 @@ class HomeStartupItemController extends Controller
 {
     public function index()
     {
-        // カードのカテゴリーを入力欄から取得
-        $cardTitlesAndCategories = $this->getCardTitlesAndCategoriesByType();
         // カテゴリー１から、カード1用のアイテムを取得
         $homeStartupItem1 = $this->getItemsByCategory($cardTitlesAndCategories[0]['category']);
         // カテゴリー２からカード2用のアイテムを取得
@@ -24,7 +22,6 @@ class HomeStartupItemController extends Controller
             'homeStartupItem1' => $homeStartupItem1,
             'homeStartupItem2' => $homeStartupItem2,
             'homeStartupItem3' => $homeStartupItem3,
-            'titles' => $cardTitlesAndCategories,
         ]);
     }
 
@@ -62,7 +59,7 @@ class HomeStartupItemController extends Controller
 
         $homeStartupItem->save();
 
-        return redirect()->route('homeStartupItem.index');
+        return redirect()->route('homeStartupItems.index');
     }
 
     public function update(Request $request,  $homeStartupItemId)
@@ -93,7 +90,7 @@ class HomeStartupItemController extends Controller
 
         $homeStartupItem->save();
 
-        return redirect()->route('homeStartupItem.index');
+        return redirect()->route('homeStartupItems.index');
     }
 
     public function destroy($homeStartupItem)
@@ -105,7 +102,7 @@ class HomeStartupItemController extends Controller
         }
         $homeStartupItem->delete();
 
-        return redirect()->route('homeStartupItem.index');
+        return redirect()->route('homeStartupItems.index');
     }
 
 
@@ -121,6 +118,6 @@ class HomeStartupItemController extends Controller
             $homeStartupItem->save();
         }
 
-        return redirect()->route('homeStartupItem.index');
+        return redirect()->route('homeStartupItems.index');
     }
 }

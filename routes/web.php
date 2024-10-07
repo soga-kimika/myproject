@@ -5,7 +5,7 @@
             use App\Http\Controllers\ClientController;
             use App\Http\Controllers\ItemController;
             use App\Http\Controllers\GalleryController;
-            use App\Http\Controllers\HomeStartupController;
+            use App\Http\Controllers\HomeStartupItemController;
 
             /*
 |--------------------------------------------------------------------------
@@ -34,6 +34,7 @@
                 Route::put('update', [ClientController::class, 'update'])->name('clients.update');
             });
 
+            Route::prefix('HomePlanning')->group(function () {  
             // アイテムの種類に基づいたルート設定
             Route::prefix('{type}')->group(function () {
                 Route::get('/', [ItemController::class, 'index'])->name('items.index');
@@ -43,15 +44,16 @@
                 Route::get('/{cardTitle}', [ItemController::class, 'showItemsByTitle'])->name('items.showByTitle');
                 Route::post('/{itemId}/image', [ItemController::class, 'deleteImage'])->name('items.deleteImage');
             });
+         });      
 
             // ホームスタートアップ関連のルート
-            Route::prefix('homestartup')->group(function () {
-                Route::get('/', [HomeStartupController::class, 'index'])->name('homeStartups.index');
-                Route::post('/', [HomeStartupController::class, 'store'])->name('homeStartups.store');
-                Route::put('/{homeStartupId}', [HomeStartupController::class, 'update'])->name('homeStartups.update');
-                Route::delete('/{homeStartupId}', [HomeStartupController::class, 'destroy'])->name('homeStartups.destroy');
-                Route::get('/{cardTitle}', [HomeStartupController::class, 'showItemsByTitle'])->name('homeStartups.showByTitle');
-                Route::post('/{homeStartupId}/image', [HomeStartupController::class, 'deleteImage'])->name('homeStartups.deleteImage');
+            Route::prefix('homeStartupItem')->group(function () {
+                Route::get('/', [HomeStartupItemController::class, 'index'])->name('homeStartups.index');
+                Route::post('/', [HomeStartupItemController::class, 'store'])->name('homeStartups.store');
+                Route::put('/{homeStartupId}', [HomeStartupItemController::class, 'update'])->name('homeStartups.update');
+                Route::delete('/{homeStartupId}', [HomeStartupItemController::class, 'destroy'])->name('homeStartups.destroy');
+                Route::get('/{cardTitle}', [HomeStartupItemController::class, 'showItemsByTitle'])->name('homeStartups.showByTitle');
+                Route::post('/{homeStartupId}/image', [HomeStartupItemController::class, 'deleteImage'])->name('homeStartups.deleteImage');
             });
 
             // ギャラリー関連のルート
