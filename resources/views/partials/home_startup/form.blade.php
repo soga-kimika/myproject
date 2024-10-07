@@ -1,7 +1,7 @@
-{{-- 入力フォーム --}}
+{{-- ホームスタートアップ入力フォーム --}}
 <div class="container">
     <div class="col-md-12 mx-auto"> 
-        <form action="{{ route('homeStartupItem.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('homeStartupItems.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             {{-- 入力フォーム --}}
             <div class="border-bottom pb-2 mb-3 mt-4">
@@ -21,7 +21,6 @@
                             <label class="form-check-label radio" for="priority-low">低 <i class="far fa-star"></i></label>
                         </div>
                     </div>
-
                     <div class="me-3"></div>
                     <label class="me-2 mb-0">カテゴリー：</label>
                     <div class="d-flex align-items-center">

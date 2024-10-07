@@ -1,4 +1,4 @@
-    {{-- 編集モーダル --}}
+    {{-- ホームスタートアップ編集モーダル --}}
     <div class="modal fade" id="homeStartupItem-editModal{{ $homeStartupItem->id }}" tabindex="-1" role="dialog" aria-labelledby="homeStartupItem-editModalLabel{{ $homeStartupItem->id }}" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -9,7 +9,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="{{ route('homeStartupItem.update', ['homeStartupItemId' => $homeStartupItem->id]) }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('homeStartupItems.update', ['homeStartupItemId' => $homeStartupItem->id]) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="modal-body">

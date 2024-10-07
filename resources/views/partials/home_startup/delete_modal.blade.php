@@ -1,4 +1,4 @@
-    {{-- レコードの削除モーダル --}}
+    {{-- ホームスタートアップレコードの削除モーダル --}}
     <div class="modal fade" id="homeStartupItem-deleteModal{{ $homeStartupItem->id }}" tabindex="-1" role="dialog" aria-labelledby="homeStartupItem-deleteModalLabel{{ $homeStartupItem->id }}" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -15,7 +15,7 @@
                 </div>
                 {{-- モーダルフッター --}}
                 <div class="modal-footer">
-                    <form method="POST" action="{{ route('homeStartupItem.destroy', ['homeStartupItemId' => $homeStartupItem->id]) }}">
+                    <form method="POST" action="{{ route('homeStartupItems.destroy', ['homeStartupItemId' => $homeStartupItem->id]) }}">
                         @csrf
                         @method('DELETE')
                         {{-- 削除ボタン --}}

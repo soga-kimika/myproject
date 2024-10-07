@@ -1,4 +1,4 @@
-{{-- カード --}}
+{{-- ホームスタートアップカード --}}
 <div class="container">
     <div class="row">
         <div class="col-md-4">
@@ -6,7 +6,7 @@
                 <div class="card-header">
                     <h3 class="card-title">ファニチャー</h3>
                 </div>
-                <div class="card-body table-responsive p-0">
+                <div class="card-body table-responsive p-0">    
                     <table class="table table-hover text-nowrap custom-table">
                         <tbody>
                             @foreach($homeStartupItems1 as $homeStartupItem1)

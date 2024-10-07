@@ -1,4 +1,4 @@
-{{-- 画像削除モーダル --}}
+{{-- ホームスタートアップ画像削除モーダル --}}
 <div class="modal fade" id="homeStartupItem_imagedelteModal{{ homeStartupItem->id }}" tabindex="-1" role="dialog" aria-labelledby="homeStartupItem_imagedelteModal{{ homeStartupItem->id }}" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -15,7 +15,7 @@
             </div>
             {{-- モーダルフッター --}}
             <div class="modal-footer">
-                <form method="POST" action="{{ route('homeStartupItem.deleteImage', [ 'itemId' => homeStartupItem->id]) }}">
+                <form method="POST" action="{{ route('homeStartupItems.deleteImage', [ 'itemId' => homeStartupItem->id]) }}">
                     @csrf
                     @method('DELETE')
                     {{-- 削除ボタン --}}

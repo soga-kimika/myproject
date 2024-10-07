@@ -1,3 +1,4 @@
+{{-- ホームスタートアップ一覧画面 --}}
 @extends('adminlte::page')
 
 @section('title', 'ホームスタートアップリスト')
