@@ -158,7 +158,7 @@ class ItemController extends Controller
             'request_message' => 'nullable|string|max:255',
         ]);
 
-        // アイテムの更新
+        // 優先度の更新
         if ($request->has('priority')) {
             $item->priority = $request->input('priority');
         }
@@ -202,7 +202,7 @@ class ItemController extends Controller
     {
         $item = Item::findOrFail($itemId);
 
-        // 画像の削除処理
+        // 画像の削除処理   
         if ($item->image_url && Storage::exists('public/' . $item->image_url)) {
             Storage::delete('public/' . $item->image_url);
         }

@@ -19,21 +19,6 @@
             'homeStartupItems2' => $homeStartupItems2,
             'homeStartupItems3' => $homeStartupItems3,
         ]) 
-@foreach($homeStartupItems1 as $homeStartupItem)
-    @include('partials.home_startup.edit_modal', ['homeStartupItem' => $homeStartupItem]) 
-    @include('partials.home_startup.delete_modal', ['homeStartupItem' => $homeStartupItem])
-@endforeach
-
-@foreach($homeStartupItems2 as $homeStartupItem)
-    @include('partials.home_startup.edit_modal', ['homeStartupItem' => $homeStartupItem]) 
-    @include('partials.home_startup.delete_modal', ['homeStartupItem' => $homeStartupItem]) 
-@endforeach
-
-@foreach($homeStartupItems3 as $homeStartupItem)
-    @include('partials.home_startup.edit_modal', ['homeStartupItem' => $homeStartupItem]) 
-    @include('partials.home_startup.delete_modal', ['homeStartupItem' => $homeStartupItem]) 
-@endforeach
-
 
     </div>
 @stop

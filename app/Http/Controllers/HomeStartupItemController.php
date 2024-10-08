@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\HomeStartupItem;
+use App\Models\HomeStartupItem; 
 use Illuminate\Support\Facades\Storage;
 
 // 画面表示
@@ -11,7 +11,9 @@ class HomeStartupItemController extends Controller
 {
     public function index()
     {
+        // タイトルから、カテゴリーを取得
         $cardTitlesAndCategories = $this->cardTitlesAndCategories();
+        // カテゴリーからアイテムを取得したものを格納
         $homeStartupItems1 = $this->getItemsByCategory($cardTitlesAndCategories[0]['category']);
         $homeStartupItems2 = $this->getItemsByCategory($cardTitlesAndCategories[1]['category']);
         $homeStartupItems3 = $this->getItemsByCategory($cardTitlesAndCategories[2]['category']);
@@ -29,7 +31,7 @@ class HomeStartupItemController extends Controller
             ['title' => 'アプライアンス', 'category' => 'appliances', 'card_id' => '2'],
             ['title' => 'アクセサリーズ', 'category' => 'accessories', 'card_id' => '3'],
         ];
-    }
+    }   
 
 // カテゴリーをもとに、アイテム（データ）を取得
     private function getItemsByCategory($category)
@@ -40,45 +42,50 @@ class HomeStartupItemController extends Controller
             return $homeStartupItems;
     }
 // 登録
-    public function store(Request $request)
-    
-    {
-        $request->validate([
-            'priority' => 'required|in:high,medium,low,remove',
-            'category' => 'required|in:furniture,appliances,accessories',
-            'item_name' => 'required|string|max:255',
-            'price' => 'nullable|integer',
-            'quantity' => 'nullable|integer',
-            'amount' => 'nullable|integer', 
-            'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
-        ]);
+public function store(Request $request)
+{
+    // バリデーションルール
+    $request->validate([
+        'priority' => 'required|in:high,medium,low,remove',
+        'category' => 'required|in:furniture,appliances,accessories',
+        'item_name' => 'required|string|max:255',
+        'price' => 'required|integer|min:1000',
+        'quantity' => 'required|integer|min:1',
+        'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
+    ]);
 
-        $homeStartupItem = new HomeStartupItem();
-        $homeStartupItem->fill($request->only(['priority', 'category', 'item_name', 'price', 'quantity', 'amount']));
+    $homeStartupItem = new HomeStartupItem();
+    $homeStartupItem->priority = $request->input('priority');
+    $homeStartupItem->category = $request->input('category');
+    $homeStartupItem->item_name = $request->input('item_name');
+    $homeStartupItem->price = $request->input('price');
+    $homeStartupItem->quantity = $request->input('quantity');
+    $homeStartupItem->amount = $homeStartupItem->price * $homeStartupItem->quantity; 
 
-        // カードIDから、カードナンバーを設定しカード１にはアイテム１のものが表示されるようにする
-        $titlesAndCategories = $this->cardTitlesAndCategories();
-        foreach ($titlesAndCategories as $titlesAndCategory) {
-            if ($titlesAndCategory['category'] === $request->input('category')) {
-                $homeStartupItem->card_number = $titlesAndCategory['card_id'];
-                break;
-            }
+    // カードIDの設定
+    $titlesAndCategories = $this->cardTitlesAndCategories();
+    foreach ($titlesAndCategories as $titlesAndCategory) {
+        if ($titlesAndCategory['category'] === $request->input('category')) {
+            $homeStartupItem->card_number = $titlesAndCategory['card_id'];
+            break;
         }
-        
-
-        if ($request->hasFile('imageUpload')) {
-            $image = $request->file('imageUpload');
-            $imagePath = $image->store('images', 'public');
-            $homeStartupItem->image_url = $imagePath;
-
-            $fileName = $image->getClientOriginalName() . '_' . time();
-            $homeStartupItem->image_name = $fileName;
-        }
-
-        $homeStartupItem->save();
-        return redirect()->route('homeStartupItems.index');
     }
 
+    // 画像の保存
+    if ($request->hasFile('imageUpload')) {
+        $image = $request->file('imageUpload');
+        $imagePath = $image->store('images', 'public');
+        $homeStartupItem->image_url = $imagePath;
+        $homeStartupItem->image_name = time() . '_' . $image->getClientOriginalName();  
+    }
+
+    // 保存
+    $homeStartupItem->save();
+    return redirect()->route('homeStartupItems.index');
+}
+
+
+        // 編集
     public function update(Request $request, $homeStartupItemId)
     {
         $homeStartupItem = HomeStartupItem::findOrFail($homeStartupItemId);
@@ -92,7 +99,7 @@ class HomeStartupItemController extends Controller
             'amount' => 'nullable|numeric',
             'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
         ]);
-    
+           // 優先度の更新
         if ($request->has('priority')) {
             $homeStartupItem->priority = $request->input('priority');
         }
@@ -107,22 +114,25 @@ class HomeStartupItemController extends Controller
             $homeStartupItem->image_url = $imagePath;
     
             // ユニークなファイル名の生成
-            $fileName = Str::random(10) . '_' . $image->getClientOriginalName();
+            $fileName =     HomeStartupItem::random(10) . '_' . $image->getClientOriginalName();
             $homeStartupItem->image_name = $fileName;
         }
     
         // fill()でプロパティを一括更新
         $homeStartupItem->fill($request->only(['category', 'item_name', 'price', 'quantity', 'amount']));
+
+        // 保存
         $homeStartupItem->save();
     
         return redirect()->route('homeStartupItems.index');
     }
     
-
+    // 削除 
     public function destroy($homeStartupItemId)
     {
         $homeStartupItem = HomeStartupItem::findOrFail($homeStartupItemId);
 
+        // 画像の削除処理
         if ($homeStartupItem->image_url && Storage::exists('public/' . $homeStartupItem->image_url)) {
             Storage::delete('public/' . $homeStartupItem->image_url);
         }
@@ -131,12 +141,14 @@ class HomeStartupItemController extends Controller
         return redirect()->route('homeStartupItems.index');
     }
 
+        // 画像のみ削除
     public function deleteImage($homeStartupItemId)
     {
         $homeStartupItem = HomeStartupItem::findOrFail($homeStartupItemId);
 
         if ($homeStartupItem->image_url && Storage::exists('public/' . $homeStartupItem->image_url)) {
             Storage::delete('public/' . $homeStartupItem->image_url);
+            // 画像のURLをリセット
             $homeStartupItem->image_url = null;
             $homeStartupItem->image_name = null;
             $homeStartupItem->save();
@@ -144,4 +156,14 @@ class HomeStartupItemController extends Controller
 
         return redirect()->route('homeStartupItems.index');
     }
+    // 編集画面表示
+public function edit($homeStartupItemId)
+{
+    $homeStartupItem = HomeStartupItem::findOrFail($homeStartupItemId);
+
+    return view('partials.home_startup.edit_modal', [
+        'homeStartupItem' => $homeStartupItem,
+    ]);
+}
+
 }

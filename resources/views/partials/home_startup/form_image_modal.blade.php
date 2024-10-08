@@ -18,7 +18,7 @@
                     {{-- 削除ボタン --}}
                     <button type="button" class="btn btn-dangers" data-toggle="modal" data-target="#deleteimageModal{{ $homeStartupItem->id }}"><i class="fa fa-trash-alt"></i></button>
                     {{-- 削除モーダルを読み込み --}}
-                    @include('partials.delete_image_modal', ['id' => $homeStartupItem->id])
+                    @include('partials..home_startup.delete_image_modal', ['id' => $homeStartupItem->id])
                     {{-- 閉じるボタン --}}
                     <button type="button" class="btn btn-defaults" data-dismiss="modal"><i class="fa fa-undo-alt"></i></button>
                 </div>

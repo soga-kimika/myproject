@@ -18,15 +18,8 @@
                     'items1' => $items1,
                     'items2' => $items2,
                 ]) 
-        @foreach($items1 as $item)
-            @include('partials.edit_modal', ['item' => $item, 'type' => $type]) 
-            @include('partials.delete_modal', ['item' => $item])
-        @endforeach
 
-        @foreach($items2 as $item)
-            @include('partials.edit_modal', ['item' => $item, 'type' => $type]) 
-            @include('partials.delete_modal', ['item' => $item]) 
-        @endforeach
+
 
 
         </div>

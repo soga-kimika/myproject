@@ -37,6 +37,7 @@
                             <label class="form-check-label" for="accessories">アクセサリーズ</label>
                         </div>
                     </div>
+                    {{-- ファイル名表示 --}}
                     <div class="d-flex align-items-center">
                         <div class="d-flex align-items-center">
                             <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none" onchange="displayFileName('imageUpload', 'fileName')">
