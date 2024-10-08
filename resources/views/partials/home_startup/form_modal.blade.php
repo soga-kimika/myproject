@@ -30,7 +30,7 @@
             </div>
             <div class="form-group d-flex align-items-center col-md-12">
                 {{-- 要望入力欄 --}}
-                <input type="text" name="request_message" id="edit_request_message" class="item-form-control form-control-lg me-2" placeholder="要望を記入してください" value="{{ old('request_message', $homeStartupItem->request_message) }}" required>
+                <input type="text" name="item_name" id="edit_item_name" class="item-form-control form-control-lg me-2" placeholder="要望を記入してください" value="{{ old('item_name', $homeStartupItem->item_name) }}" required>
                 {{-- ファイル選択ボタン --}}
                 <label for="edit_imageUpload{{ $homeStartupItem->id }}" class="btn me-2 form-check-label btn-select">
                     画像を選択 <i class="fas fa-upload"></i>

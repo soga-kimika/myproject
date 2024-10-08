@@ -45,6 +45,11 @@
             </a>
         </div>
         <div class="col-auto">
+            <a href="{{ route('homeStartupItems.index') }}" title="ウィッシュリスト">
+                <i class="fas fa-tasks home-icon"></i>
+            </a>
+        </div>
+        <div class="col-auto">
             <a href="{{ route('galleries.index') }}" title="フォトギャラリー">
                 <i class="far fas fa-image home-icon"></i>
             </a>

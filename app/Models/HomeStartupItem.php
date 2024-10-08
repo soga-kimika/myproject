@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
 
 class homeStartupItem extends Model
 {
-    use HasFactory;
+
     protected $fillable = [
         'priority',
         'category',
-        'request_message',
+        'item_name',
         'price',
         'quantity',
         'amount',

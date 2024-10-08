@@ -150,13 +150,17 @@
         }
         /* ギャラリーアイコン */
         .fa-image{
-            color: #09c7d9; 
+            color: #0b9eac; 
         }
         /* プロフィールアイコン */
         .fa-address-card{
             color:#dc3545;
         }
-
+        /* ウィッシュリストアイコン */
+        .fa-tasks{
+            color:#20b41b;
+        }
+        
         /* home */
         /* カウントダウン全体 */
         .countdown-container {

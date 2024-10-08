@@ -1,5 +1,5 @@
 
-    {{-- 画像モーダル --}}
+    {{-- ホームスタートアップ画像モーダル --}}
     <div class="modal fade" id="homeStartupItem-imageModal{{ $homeStartupItem->id }}" tabindex="-1" role="dialog" aria-labelledby="homeStartupItem-imageModal{{ $homeStartupItem->id }}" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
@@ -16,9 +16,9 @@
                 {{-- 画像モーダルフッター --}}
                 <div class="modal-footer">
                     {{-- 削除ボタン --}}
-                    <button type="button" class="btn btn-dangers" data-toggle="modal" data-target="#homeStartupItem-imageModal{{ $homeStartupItem->id }}"><i class="fa fa-trash-alt"></i></button>
+                    <button type="button" class="btn btn-dangers" data-toggle="modal" data-target="#homeStartupItem_imagedelteModal{{ $homeStartupItem->id }}"><i class="fa fa-trash-alt"></i></button>
                     {{-- 削除モーダルを読み込み --}}
-                    @include('partials.delete_image_modal', ['id' => $homeStartupItem->id])
+                    @include('partials.home_startup.delete_image_modal', ['id' => $homeStartupItem->id])
                     {{-- 閉じるボタン --}}
                     <button type="button" class="btn btn-defaults" data-dismiss="modal"><i class="fa fa-undo-alt"></i></button>
                 </div>

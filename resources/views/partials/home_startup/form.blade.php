@@ -25,7 +25,7 @@
                     <label class="me-2 mb-0">カテゴリー：</label>
                     <div class="d-flex align-items-center">
                         <div class="form-check me-3">
-                            <input type="radio" class="form-check-input" name="category" value="furniture" id="furniture">
+                            <input type="radio" class="form-check-input" name="category" value="furniture" id="furniture" checked>
                             <label class="form-check-label" for="furniture">ファニチャー</label>
                         </div>
                         <div class="form-check me-3">
@@ -37,23 +37,30 @@
                             <label class="form-check-label" for="accessories">アクセサリーズ</label>
                         </div>
                     </div>
-                </div>
-
-                <div class="d-flex align-items-center">
                     <div class="d-flex align-items-center">
-                        {{-- ファイル名表示 --}}
-                        <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none" onchange="displayFileName('imageUpload', 'fileName')">
-                        <span id="fileName" class="ms-2 file-name"></span>
+                        <div class="d-flex align-items-center">
+                            <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none" onchange="displayFileName('imageUpload', 'fileName')">
+                            <span id="fileName" class="ms-2 file-name"></span>
+                        </div>
                     </div>
                 </div>
-                
+
                 {{-- 要望欄 --}}
-                <div class="form-group d-flex align-items-center col-md-12">
-                    <input type="text" name="request_message" id="request_message" class="item-form-control form-control-lg me-2" placeholder="欲しいものを記入してください" required>
+                <div class="form-group d-flex align-items-center col-md-12 mb-3">
+                    <input type="text" name="item_name" id="item_name" class="item-form-control form-control-lg me-2" placeholder="欲しいものを記入してください" required style="height: 50px;">
+                    
+                    {{-- 金額、個数、合計 --}}
+                    <div class="d-flex">
+                        <input type="number" name="price" class="form-control me-2" placeholder="金額" step="1000" min="1000" style="width: 120px; height: 50px;" oninput="calculateTotal()">
+                        <input type="number" name="quantity" class="form-control me-2" placeholder="個数" min="1" style="width: 80px; height: 50px;" oninput="calculateTotal()">
+                        <input type="number" name="amount" id="amount" class="form-control" placeholder="合計" step="1000" min="0" style="width: 120px; height: 50px;" readonly>
+                    </div>
+
                     {{-- 画像選択ボタン --}}
                     <label for="imageUpload" class="btn me-2 form-check-label btn-select">
                         画像を選択 <i class="fas fa-upload"></i>
                     </label>
+
                     {{-- 登録ボタン --}}
                     <button type="submit" class="btn btn-store ms-2">登録</button>
                 </div>
@@ -61,3 +68,5 @@
         </form>
     </div>
 </div>
+
+

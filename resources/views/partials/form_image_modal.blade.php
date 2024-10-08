@@ -1,5 +1,5 @@
 
-    {{-- 画像モーダル --}}
+   {{-- 画像モーダル --}}
     <div class="modal fade" id="formImageModal{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="formImageModalLabel{{ $item->id }}" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">

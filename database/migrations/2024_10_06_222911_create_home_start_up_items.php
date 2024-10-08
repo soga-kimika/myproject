@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('priority'); 
             $table->string('category'); 
-            $table->string('request_message');
-            $table->decimal('price', 10, 2);
-            $table->integer('quantity');
-            $table->decimal('amount', 10, 2); 
+            $table->string('item_name');
+            $table->decimal('price', 10, 2)->nullable();
+            $table->integer('quantity')->nullable();
+            $table->decimal('amount', 10, 2)->nullable();
+            $table->integer('card_number')->nullable();
             $table->string('image_name')->nullable();
             $table->string('image_url')->nullable();
             $table->timestamps();
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('home_start_up');
+        Schema::dropIfExists('home_startup_items');
     }
 };
