@@ -494,9 +494,31 @@
         }
 
         /* 編集モーダル */
-        .homeStartupItem-editmodal-dialog{
-            max-width: 1200px;
+     
+          /*  */
+          td.col-request.homeStartupItem-col-request {
+            text-align: start;
+          }
+        /* テーブルのカラム */
+        .homeStartupItem-table td{
+            text-align: right;
         }
+        .homeStartupItem-col-request{
+            width: 320px;
+        }
+        .homeStartupItem-col-quantity{
+            width: 50px;
+        }
+        .homeStartupItem-col-price{
+            width: 95px;
+        }
+        .homeStartupItem-col-amount{
+            width: 95px;
+        }
+
+        
+
+
 
     /* gallery/ */
     .card-img-top{

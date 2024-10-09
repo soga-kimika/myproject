@@ -27,14 +27,13 @@
 
                         {{-- 品名欄 --}}
                         <div class="form-group d-flex align-items-center col-md-12 mb-3">
-                            <input type="text" name="item_name" id="item_name" class="item-form-control form-control-lg me-2" placeholder="品名" value="{{ old('item_name',$homeStartupItem->item_name) }}"  >
+                            <input type="text" name="item_name" id="item_name" class="item-form-control form-control-lg me-2 homeStartupItem-col-request" placeholder="品名" value="{{ old('item_name',$homeStartupItem->item_name) }}"  >
                          {{-- メーカー・型番記入欄 --}}
-                         <input type="text" name="manufacturer" id="manufacturer" class="item-form-control form-control-lg me-2" placeholder="メーカー・型番"value="{{ old('manufacturer',$homeStartupItem->manufacturer) }}" > 
+                         <input type="text" name="manufacturer" id="manufacturer" class="item-form-control form-control-lg me-2 homeStartupItem-col-request" placeholder="メーカー・型番"value="{{ old('manufacturer',$homeStartupItem->manufacturer) }}" > 
                             {{-- 金額、個数、合計 --}}
                             <div class="d-flex ">
-                                <input type="number" name="quantity" class="form-control quantity-form-control me-2" placeholder="個数" min="1"  value="{{ old('quantity',$homeStartupItem->quantity) }}" oninput="calculateTotal()">
-                                <input type="number" name="price" class="form-control price-form-control me-2" placeholder="金額" step="1000" min="1000" value="{{ old('price',$homeStartupItem->price) }}" oninput="calculateTotal()">
-                                      <input type="number" name="amount" id="amount" class="form-control amount-form-control" placeholder="合計" step="1000" min="0"  readonly>
+                                <input type="number" name="price" class="form-control price-form-control me-2 homeStartupItem-col-price" placeholder="金額" step="1000" min="1000" value="{{ old('price',$homeStartupItem->price) }}" oninput="calculateTotal()" step="1">
+                                <input type="number" name="quantity" class="form-control quantity-form-control me-2 quantity-form-control" placeholder="個数" min="1"  value="{{ old('quantity',$homeStartupItem->quantity) }}" oninput="calculateTotal()">
                             </div>
 
                             {{-- 画像選択ボタン --}}
