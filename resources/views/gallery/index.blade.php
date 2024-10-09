@@ -71,7 +71,7 @@
                 <div class="modal-body text-center">
                     <img id="modalImage" src="" class="img-fluid" alt="Image">
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer ">
                     <button type="button" class="btn btn-defaults" data-dismiss="modal"><i class="fa fa-undo-alt"></i></button>
                 </div>
             </div>

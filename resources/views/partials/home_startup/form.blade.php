@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 
-
+                
                 {{-- 品名記入欄--}}
                 <div class="form-group d-flex align-items-center col-md-12 mb-3">
                     <input type="text" name="item_name" id="item_name" class="item-form-control form-control-lg me-2" placeholder="品名" required >
@@ -55,7 +55,7 @@
                     {{-- 金額、個数、合計 --}}
                     <div class="d-flex">
                         <input type="number" name="quantity" class="form-control quantity-form-control me-2" placeholder="個数" min="1" style="width: 70px;"  required oninput="calculateTotal()" value="1">
-                        <input type="number" name="price" class="form-control  price-form-control me-2" placeholder="金額" step="1000" min="1000" style="width: 90px;" oninput="calculateTotal()">
+                        <input type="number" name="price" class="form-control  price-form-control me-2" placeholder="金額" step="1000" min="1000" style="width: 100px;" oninput="calculateTotal()">
                     </div>
                     {{-- 画像選択ボタン --}}
                     <label for="imageUpload" class="btn me-2 form-check-label btn-select">

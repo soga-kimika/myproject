@@ -37,9 +37,9 @@
                          <input type="text" name="manufacturer" id="manufacturer" class="item-form-control form-control-lg me-2 homeStartupItem-col-request" placeholder="メーカー・型番"value="{{ old('manufacturer',$homeStartupItem->manufacturer) }}" > 
                             {{-- 金額、個数、合計 --}}
                             <div class="d-flex ">
-                                <input type="number" name="price" class="form-control price-form-control me-2 homeStartupItem-col-price" placeholder="金額" step="1000" min="1000" value="{{ old('price',$homeStartupItem->price) }}" oninput="calculateTotal()" step="1">
-                                <input type="number" name="quantity" class="form-control quantity-form-control me-2 quantity-form-control" placeholder="個数" min="1"  value="{{ old('quantity',$homeStartupItem->quantity) }}" oninput="calculateTotal()">
-                            </div>
+                                <input type="number" name="quantity" class="form-control quantity-form-control me-2 homeStartupItem-form-control" placeholder="個数" min="1"  value="{{ old('quantity',$homeStartupItem->quantity) }}" oninput="calculateTotal()"style="width: 70px;" >
+                                <input type="number" name="price" class="form-control price-form-control me-2 homeStartupItem-col-price" placeholder="金額" step="1000" min="1000" value="{{ old('price',$homeStartupItem->price) }}" oninput="calculateTotal()" step="1"style="width: 100px;" >
+                             </div>
                             {{-- 登録ボタン --}}
                             <button type="submit" class="btn btn-store ms-2">登録</button>
                         </div>
