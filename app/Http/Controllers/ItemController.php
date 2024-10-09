@@ -62,7 +62,7 @@ class ItemController extends Controller
     {
         $titles = [
             'bathrooms' => [
-                ['id' => 1, 'title' => ' トイレ', 'category' => 'toilet', 'icon' => '<i class="fas fa-toilet"></i>'],
+                ['id' => 1, 'title' => ' トイレ', 'category' => 'toilet', 'icon' => '<i class="fas fa-restroom"></i>'],
                 ['id' => 2, 'title' => 'バスルーム', 'category' => 'bath', 'icon' => '<i class="fas fa-bath"></i>'],
             ],
             'ideas' => [

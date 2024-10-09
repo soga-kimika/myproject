@@ -437,16 +437,16 @@
             color: rgb(107, 211, 135); 
         }
         /* インテリアアイコン */
-        .fa-chair {
+        .fa-chair { 
             color: rgb(232, 62, 107); 
         }
         /* トイレアイコン */
-        .fa-toilet {
-            color: rgb(119, 115, 238); 
+        .fa-restroom {
+            color: rgb(98, 97, 118); 
         }
         /* バスルームアイコン */
         .fa-bath {
-            color: rgba(17, 128, 155, 0.896);
+            color: rgba(20, 45, 238, 0.896);
         }
         /* ベッドルームアイコン */
         .fa-user-friends{
