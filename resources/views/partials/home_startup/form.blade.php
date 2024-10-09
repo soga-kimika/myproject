@@ -56,12 +56,10 @@
                         <input type="number" name="quantity" class="form-control quantity-form-control me-2" placeholder="個数" min="1" style="width: 70px;"  required oninput="calculateTotal()" value="1">
                         <input type="number" name="price" class="form-control  price-form-control me-2" placeholder="金額" step="1000" min="1000" style="width: 90px;" oninput="calculateTotal()">
                     </div>
-
                     {{-- 画像選択ボタン --}}
                     <label for="imageUpload" class="btn me-2 form-check-label btn-select">
                         画像を選択 <i class="fas fa-upload"></i>
                     </label>
-
                     {{-- 登録ボタン --}}
                     <button type="submit" class="btn btn-store ms-2">登録</button>
                 </div>

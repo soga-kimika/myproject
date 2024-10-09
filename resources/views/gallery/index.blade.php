@@ -14,7 +14,7 @@
             <form action="{{ route('galleries.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="border-bottom pb-2 mb-3 mt-4">
-                    <div class="col-md-12 d-flex mb-3 justify-content-center">
+                    <div class="col-md-12 d-flex mb-3 justify-content-end">
                         <div class="d-flex align-items-center pr-2">
                             {{-- ファイル名表示 --}}
                             <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none" onchange="displayFileName()" required>

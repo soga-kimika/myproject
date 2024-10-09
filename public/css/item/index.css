@@ -54,15 +54,19 @@
         }
         /* 更新ボタン */
         .btn-update{
-            color: rgb(80, 183, 183);
+            color: rgb(86, 80, 80);
         }
         .btn-update:hover{
-            color: rgb(80, 183, 183);
+            color: rgb(86, 80, 80);
         }
         /*　ファイル投稿ボタン */
         .btn-select{
-            color: orange;
+            color:#2ad8c6; 
             cursor: pointer;
+        }
+        .btn-select:hover{
+            color: #2ad8c6; 
+        
         }
         /* ファイル名表示ボタン */
         .file-name {
@@ -72,23 +76,20 @@
             padding: 3px 3px; 
             border-radius: 5px; 
             margin-right: 0; 
-            width: 200px; 
+            width: 220px; 
             white-space: nowrap; 
             overflow: hidden; 
             text-overflow: ellipsis; 
             display: inline-block; 
-            margin-top: -7px;
+            text-align: center;
         }
-        .btn-select:hover{
-            color: orange;
-        
-        }
+       
         /* 登録ボタン */ 
         .btn-store{
-            color: rgb(16, 185, 117);
+            color:rgb(86, 80, 80);
         }
         .btn-store:hover    {
-            color: rgb(31, 222, 146);
+            color: rgb(86, 80, 80);
         }
         /* ファイル選択ボタン */
         .btn-select{
@@ -100,7 +101,7 @@
         appearance: none;
         width: 18px;
         height: 18px;
-        border: 2px solid#3b98bd;   
+        border: 2px solid rgb(86, 80, 80);
         border-radius: 4px; 
         outline: none;  
         cursor: pointer; 
@@ -246,6 +247,10 @@
             line-height: 110px; 
             font-size: 2.5rem; 
         }
+        .card.mb-3.client-mb-3{
+            align-items: normal;
+        }
+
         /* 入力欄 */
         .client-form{
             background-color: white;
@@ -314,16 +319,17 @@
             text-align: center;
             margin-bottom: 0;
         }
-
-
-
+    
         /* HomePlanning/{type}：入力フォーム */
+        .mb-3{
+            align-items: center;
+        }
         .pb-2{
             border-top: 1px solid #dee2e6;
-            padding-top: 15px;
+            padding-top: 25px;
         }
         .form-control-lg{
-            flex: 1;
+            flex:1;
         }
         /* ラジオボタン */
         .form-check {
@@ -404,15 +410,15 @@
         .btn-infos{
             border: 2px solid; 
             height: auto; 
-            border-color:#09a696; 
-            color:#09a696; 
+            border-color:rgb(86, 80, 80);
+            color:rgb(86, 80, 80);
         }
         .btn-infos:hover{
-            color:#09a696; 
-            border-color:#09a696; 
+            color:rgb(86, 80, 80);
+            border-color:rgb(86, 80, 80);
         }
         .col-image .btn-infos .item-fa-image{
-            color:#09a696; 
+            color:rgb(86, 80, 80);
         }
         
 
@@ -495,14 +501,15 @@
 
         /* 編集モーダル */
      
-          /*  */
+          /* テーブルカラム、リクエスト以外 */
           td.col-request.homeStartupItem-col-request {
             text-align: start;
           }
-        /* テーブルのカラム */
+        /* テーブルカラム、リクエスト */
         .homeStartupItem-table td{
             text-align: right;
         }
+        /* テーブルレコード */
         .homeStartupItem-col-request{
             width: 320px;
         }
@@ -516,7 +523,10 @@
             width: 95px;
         }
 
-        
+        .total-amount{
+            margin-left: 350px;
+            color: red;
+        }
 
 
 
@@ -543,11 +553,9 @@
         padding: 3px 3px; 
         border-radius: 5px; 
         margin-right: 0; 
-        width: 400px; 
         white-space: nowrap; 
         overflow: hidden; 
         text-overflow: ellipsis; 
         display: inline-block; 
-        margin-top: -7px;
        
     }
