@@ -45,6 +45,7 @@
                         </div>
                     </div>
                 </div>
+                
 
                 {{-- 品名記入欄--}}
                 <div class="form-group d-flex align-items-center col-md-12 mb-3">

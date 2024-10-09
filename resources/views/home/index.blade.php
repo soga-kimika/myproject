@@ -46,7 +46,7 @@
         </div>
         <div class="col-auto">
             <a href="{{ route('homeStartupItems.index') }}" title="ウィッシュリスト">
-                <i class="fas fa-tasks home-icon"></i>
+                <i class="fas fa-shopping-cart home-icon"></i>
             </a>
         </div>
         <div class="col-auto">

@@ -342,8 +342,8 @@ return [
         [
             'text' => 'ウィッシュリスト',
             'url'  => 'homeStartupItem',
-            'icon' => 'fas fa-tasks',
-            'icon_color' => '#a40505',
+            'icon' => 'fas fa-shopping-cart',
+            'icon_color' => '#007bff',
             'classes' => 'text-bold ',
         ],
         [

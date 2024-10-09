@@ -4,7 +4,7 @@
 @section('title', 'ホームスタートアップリスト')
 
 @section('content_header')
-<h1><i class="fas fa-tasks"></i>ホームスタートアップリスト</h1>
+<h1><i class="fas fa-shopping-cart   "></i>ホームスタートアップリスト</h1>
 
 @stop
 
@@ -35,24 +35,34 @@
         const output = document.getElementById(outputId);
         output.textContent = input.files[0] ? input.files[0].name : '';
     }
+    function calculateTotalChecked() {
+    let total = 0;
+    document.querySelectorAll('.check-consulted:checked').forEach(checkbox => {
+        const amount = parseInt(checkbox.closest('tr').querySelector('.col-amount').innerText.replace(/[^0-9]/g, '')); // 金額を取得
+        total += amount;
+    });
+    document.querySelectorAll('.total-amount').forEach(el => el.innerText = '合計金額: ￥' + total.toLocaleString());
+}
 
-  // チェックボックスの状態を保持
 document.addEventListener('DOMContentLoaded', () => {
+    // 既存のチェックボックス初期化
     const checkboxes = document.querySelectorAll('.check-consulted');
     checkboxes.forEach(checkbox => {
         const id = checkbox.dataset.id;
         const checked = localStorage.getItem(`checkbox-${id}`) === 'true';
         checkbox.checked = checked;
-
-        // チェックボックスの状態が変わったときに保存
-        checkbox.addEventListener('change', () => {
-            localStorage.setItem(`checkbox-${id}`, checkbox.checked);
-            calculateTotalChecked(); // 合計の計算をここで呼び出す
-        });
+        if (checkbox.checked) {
+            calculateTotalChecked(); // 初回計算
+        }
     });
 
-    // 初回計算
-    calculateTotalChecked();
+    // チェックボックスの状態が変わったときの処理
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            localStorage.setItem(`checkbox-${checkbox.dataset.id}`, checkbox.checked);
+            calculateTotalChecked(); // 合計の計算を呼び出す
+        });
+    });
 });
 
 

@@ -114,6 +114,7 @@
         top: -3px; 
         font-size: 16px; 
     }
+    
 
 
         /* アイコン共通 */
@@ -158,8 +159,8 @@
             color:#dc3545;
         }
         /* ウィッシュリストアイコン */
-        .fa-tasks{
-            color:#20b41b;
+        .fa-shopping-cart{
+            color:#007bff;
         }
         
         /* home */
@@ -482,7 +483,6 @@
         }
 
         /* homeStartupItem */
-
         .quantity-form-control {
             margin-right: 1px;
             height: 40px;
@@ -500,7 +500,6 @@
         }
 
         /* 編集モーダル */
-     
           /* テーブルカラム、リクエスト以外 */
           td.col-request.homeStartupItem-col-request {
             text-align: start;
@@ -508,19 +507,17 @@
         /* テーブルカラム、リクエスト */
         .homeStartupItem-table td{
             text-align: right;
+            padding-right: 30px;
         }
         /* テーブルレコード */
         .homeStartupItem-col-request{
             width: 320px;
         }
         .homeStartupItem-col-quantity{
-            width: 50px;
-        }
-        .homeStartupItem-col-price{
-            width: 95px;
+            width: 80px;
         }
         .homeStartupItem-col-amount{
-            width: 95px;
+            width: 120px;
         }
 
         .total-amount{
