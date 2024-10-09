@@ -4,7 +4,7 @@
             {{-- 1つ目のカード --}}
             <div class="card ">
                 <div class="card-header d-flex justify-content-between">
-                    <h3 class="card-title">ファニチャー</h3>
+                    <h3 class="homeStartupItem-card-title card-title"><i class="fas fa-shopping-basket"></i>ファニチャー</h3>
                     @php $totalPrice1 = 0; @endphp
                     <strong class="total-amount">合計金額: ￥{{ number_format($totalPrice1) }}</strong>
                 </div>                   
@@ -56,7 +56,7 @@
             {{-- アプライアンスのカード --}}
             <div class="card">
                 <div class="card-header  d-flex justify-content-between">
-                    <h3 class="card-title">アプライアンス</h3>
+                    <h3 class="card-title"><i class="fas fa-shopping-basket"></i>アプライアンス</h3>
                     @php $totalPrice2 = 0; @endphp
                     <strong class="total-amount">合計金額: ￥{{ number_format($totalPrice2) }}</strong>
                 </div>
@@ -107,7 +107,7 @@
         <div class="col-md-12"> 
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                    <h3 class="card-title">アクセサリーズ</h3>
+                    <h3 class="card-title"><i class="fas fa-shopping-basket"></i>アクセサリーズ</h3>
                     @php $totalPrice3 = 0; @endphp
                     <strong class="total-amount">合計金額: ￥{{ number_format($totalPrice3) }}</strong>
                 </div>

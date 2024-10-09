@@ -4,7 +4,7 @@
 @section('title', 'ホームスタートアップリスト')
 
 @section('content_header')
-<h1><i class="fas fa-shopping-cart   "></i>ホームスタートアップリスト</h1>
+<h1><i class="fas fa-shopping-cart"></i>ホームスタートアップリスト</h1>
 
 @stop
 

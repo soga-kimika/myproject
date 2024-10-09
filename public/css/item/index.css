@@ -160,7 +160,7 @@
         }
         /* ウィッシュリストアイコン */
         .fa-shopping-cart{
-            color:#007bff;
+            color:#0d66c6;
         }
         
         /* home */
@@ -513,16 +513,25 @@
         .homeStartupItem-col-request{
             width: 320px;
         }
+        /* 個数のカラム */
         .homeStartupItem-col-quantity{
             width: 80px;
         }
+        /* 合計金額のカラム */
         .homeStartupItem-col-amount{
             width: 120px;
         }
-
+        /* カードごとの総合計金額 */
         .total-amount{
-            margin-left: 350px;
-            color: red;
+            margin-left: 450px;
+            color: rgb(227, 77, 77);
+        }
+        .homeStartupItem-card-title{
+            color: rgb(61, 57, 57);
+        }
+        /* アイコン */
+        .fa-shopping-basket{
+            color: rgb(97, 12, 47);
         }
 
 
