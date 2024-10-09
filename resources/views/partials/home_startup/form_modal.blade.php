@@ -1,3 +1,4 @@
+{{-- ホームスタートアップ編集モーダル中身--}}
 <div class="container">
     <div class="col-md-12 mx-auto"> 
                     <div class="border-bottom pb-2 mb-3 mt-4">
@@ -45,6 +46,6 @@
                             <button type="submit" class="btn btn-store ms-2">登録</button>
                         </div>
                     </div>
-                </form>
-            </div>
+    </div>
+</div>
 
