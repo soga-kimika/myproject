@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('priority'); 
             $table->string('category'); 
             $table->string('item_name');
+            $table->string('manufacturer')->nullable();
             $table->decimal('price', 10, 2)->nullable();
             $table->integer('quantity')->nullable();
             $table->decimal('amount', 10, 2)->nullable();

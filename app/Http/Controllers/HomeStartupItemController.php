@@ -28,7 +28,7 @@ class HomeStartupItemController extends Controller
     private function cardTitlesAndCategories() {
         return [
             ['title' => 'ファニチャー', 'category' => 'furniture', 'card_id' => '1'],
-            ['title' => 'アプライアンス', 'category' => 'appliances', 'card_id' => '2'],
+            ['title' => 'アプライアンス', 'category' => 'appliance', 'card_id' => '2'],
             ['title' => 'アクセサリーズ', 'category' => 'accessories', 'card_id' => '3'],
         ];
     }   
@@ -47,17 +47,20 @@ public function store(Request $request)
     // バリデーションルール
     $request->validate([
         'priority' => 'required|in:high,medium,low,remove',
-        'category' => 'required|in:furniture,appliances,accessories',
+        'category' => 'nullable|in:furniture,appliance,accessories',
         'item_name' => 'required|string|max:255',
+        'manufacturer' => 'nullable|string|max:255',
         'price' => 'nullable|integer|min:1000',
         'quantity' => 'nullable|integer|min:1',
         'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
+       
     ]);
 
     $homeStartupItem = new HomeStartupItem();
     $homeStartupItem->priority = $request->input('priority');
     $homeStartupItem->category = $request->input('category');
     $homeStartupItem->item_name = $request->input('item_name');
+    $homeStartupItem->manufacturer = $request->input('manufacturer');
     $homeStartupItem->price = $request->input('price');
     $homeStartupItem->quantity = $request->input('quantity');
     $homeStartupItem->amount = $homeStartupItem->price * $homeStartupItem->quantity; 
@@ -92,8 +95,9 @@ public function store(Request $request)
     
         $request->validate([
             'priority' => 'nullable|in:high,medium,low,remove',
-            'category' => 'nullable|in:furniture,appliances,accessories',
+            'category' => 'nullable|in:furniture,appliance,accessories',
             'item_name' => 'nullable|string|max:255',
+            'manufacturer' => 'nullable|string|max:255',
             'price' => 'nullable|integer',
             'quantity' => 'nullable|integer',
             'amount' => 'nullable|numeric',
@@ -119,7 +123,7 @@ public function store(Request $request)
         }
     
         // fill()でプロパティを一括更新
-        $homeStartupItem->fill($request->only(['category', 'item_name', 'price', 'quantity', 'amount']));
+        $homeStartupItem->fill($request->only(['category', 'item_name', 'price', 'quantity', 'amount','manufacturer']));
 
         // 保存
         $homeStartupItem->save();

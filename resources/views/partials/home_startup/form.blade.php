@@ -46,10 +46,11 @@
                     </div>
                 </div>
 
-                {{-- 要望欄 --}}
+                {{-- 品名記入欄--}}
                 <div class="form-group d-flex align-items-center col-md-12 mb-3">
-                    <input type="text" name="item_name" id="item_name" class="item-form-control form-control-lg me-2" placeholder="欲しいものを記入してください" required style="height: 50px;">
-                    
+                    <input type="text" name="item_name" id="item_name" class="item-form-control form-control-lg me-2" placeholder="品名" required style="height: 50px;">
+                    {{-- メーカー・型番記入欄 --}}
+                    <input type="text" name="manufacturer" id="manufacturer" class="item-form-control form-control-lg me-2" placeholder="メーカー・型番" style="height: 50px;">
                     {{-- 金額、個数、合計 --}}
                     <div class="d-flex">
                         <input type="number" name="price" class="form-control me-2" placeholder="金額" step="1000" min="1000" style="width: 120px; height: 50px;" oninput="calculateTotal()">

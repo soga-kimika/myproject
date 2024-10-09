@@ -17,5 +17,6 @@ class homeStartupItem extends Model
         'amount',
         'image_name',
         'image_url',
+        'manufacturer',
     ];
 }
