@@ -50,15 +50,16 @@
                             </div>
                         </div>
 
-                        {{-- 要望欄 --}}
+                        {{-- 品名欄 --}}
                         <div class="form-group d-flex align-items-center col-md-12 mb-3">
-                            <input type="text" name="item_name" id="item_name" class="item-form-control form-control-lg me-2" placeholder="欲しいものを記入してください" value="{{ old('item_name') }}" required style="height: 50px;">
-                            
+                            <input type="text" name="item_name" id="item_name" class="item-form-control form-control-lg me-2" placeholder="欲しいものを記入してください" value="{{ old('item_name') }}" required >
+                         {{-- メーカー・型番記入欄 --}}
+                         <input type="text" name="manufacturer" id="manufacturer" class="item-form-control form-control-lg me-2" placeholder="メーカー・型番" > 
                             {{-- 金額、個数、合計 --}}
-                            <div class="d-flex">
-                                <input type="number" name="price" class="form-control me-2" placeholder="金額" step="1000" min="1000" style="width: 120px; height: 50px;" value="{{ old('price') }}" oninput="calculateTotal()">
-                                <input type="number" name="quantity" class="form-control me-2" placeholder="個数" min="1" style="width: 80px; height: 50px;" value="{{ old('quantity') }}" oninput="calculateTotal()">
-                                <input type="number" name="amount" id="amount" class="form-control" placeholder="合計" step="1000" min="0" style="width: 120px; height: 50px;" readonly>
+                            <div class="d-flex ">
+                                <input type="number" name="quantity" class="form-control quantity-form-control me-2" placeholder="個数" min="1" style="width: 80px;" value="{{ old('quantity') }}" oninput="calculateTotal()">
+                                <input type="number" name="price" class="form-control price-form-control me-2" placeholder="金額" step="1000" min="1000" style="width: 120px;" value="{{ old('price') }}" oninput="calculateTotal()">
+                                      <input type="number" name="amount" id="amount" class="form-control amount-form-control" placeholder="合計" step="1000" min="0" style="width: 120px;" readonly>
                             </div>
 
                             {{-- 画像選択ボタン --}}

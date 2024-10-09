@@ -459,19 +459,37 @@
         .fa-utensils {
             color:  #2e1a5f; 
         }
-    
-        /* 入力フォーム全体 */
-        .form-inline{
-            font-size: 14px;
-        }
         .item-form-control{
             border: 1px solid #ced4da;
+            font-size: 16px;
+            margin-right: 1px;
+            height: 40px;
+             padding-top: 0;
+             padding-bottom: 0;
         }
+        
         /* プルダウンメニュー */
         .form-control {
             width: 100%; 
         }
 
+        /* homeStartupItem */
+
+        .quantity-form-control {
+            margin-right: 1px;
+            height: 40px;
+            margin-top: 2px;
+        }
+        .price-form-control {
+            margin-right: 1px;
+            height: 40px;
+            margin-top: 2px;
+        }
+        .amount-form-control {
+            margin-right: 1px;
+            height: 40px;
+            margin-top: 2px;
+        }
 
     /* gallery/ */
     .card-img-top{

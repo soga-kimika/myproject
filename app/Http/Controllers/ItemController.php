@@ -109,7 +109,7 @@ class ItemController extends Controller
         // バリデーション
         $request->validate([
             'priority' => 'required|in:high,medium,low,remove',
-            'category' => 'required|in:toilet,bath,idea,nothing,outside,interior,bedroom,kidsroom,storages,other,living,dining',
+            'category' => 'required|in:toilet,bath,idea,nothing,outside,interior,bedroom,kidsroom,storage,other,living,dining',
             'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
             'request_message' => 'required|string|max:255',
 
