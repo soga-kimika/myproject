@@ -25,7 +25,7 @@
                         <div class="col-md-6">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <h5 class="form-title p-2">住む予定の人数</h5>
+                                    <h5 class="form-title index-form-title p-2">住む予定の人数</h5>
                                     <div class="row">
                                         <div class="col-6">
                                             <p><i class="fas fa-user"></i> 大人： <strong>{{ $client->adult_count }}人</strong></p>
@@ -45,7 +45,7 @@
                         <div class="col-md-6">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <h5 class="form-title p-2">土地</h5>
+                                    <h5 class="form-title index-form-title p-2">土地</h5>
                                     <div class="row">
                                         <div class="col-6">
                                             <p><i class="fas fa-map"></i> 所有地： <strong>{{ $client->land_budget_exists == 'yes' ? '所有地あり' : '所有地なし' }}</strong></p>
@@ -68,7 +68,7 @@
                         <div class="col-md-6">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <h5 class="form-title p-2">建物</h5>
+                                    <h5 class="form-title index-form-title p-2">建物</h5>
                                     <div class="row">
                                         <div class="col-6">
                                             <p><i class="fas fa-yen-sign"></i> 建物予算： <strong>{{ $client->building_budget }}</strong></p>
@@ -92,7 +92,7 @@
                         <div class="col-md-6">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <h5 class="form-title p-2">駐車場</h5>
+                                    <h5 class="form-title index-form-title p-2">駐車場</h5>
                                     <div class="row">
                                         <div class="col-6">
                                             <p><i class="fas fa-car"></i> 普通車： <strong>{{ $client->regularCars }}台</strong></p>
@@ -118,7 +118,7 @@
                         <div class="col-md-6">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <h5 class="form-title p-2">建築希望地</h5>
+                                    <h5 class="form-title index-form-title p-2">建築希望地</h5>
                                     <p><strong>{{ $client->construction_area }}</strong></p>
                                 </div>
                             </div>
@@ -127,7 +127,7 @@
                         <div class="col-md-6">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <h5 class="form-title p-2">完成希望日</h5>
+                                    <h5 class="form-title index-form-title p-2">完成希望日</h5>
                                     <p><strong>{{ $client->date }}</strong></p>
                                 </div>
                             </div>
@@ -138,7 +138,7 @@
                         <div class="col-md-12">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <h5 class="form-title p-2">今の家で不満に思っていること</h5>
+                                    <h5 class="form-title index-form-title p-2">今の家で不満に思っていること</h5>
                                     <p><strong>{{ $client->current_home_issues }}</strong></p>
                                 </div>
                             </div>
