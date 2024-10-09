@@ -20,7 +20,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <div class="card mb-3">
+                <div class="card mb-3 client-mb-3">
                     <div class="card-header">
                         <h5 class="form-title">住む予定の人数</h5>
                     </div>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-3">
+                <div class="card mb-3  client-mb-3">
                     <div class="card-header">
                         <h5 class="form-title">土地</h5>
                     </div>
@@ -90,7 +90,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-3">
+                <div class="card mb-3  client-mb-3">
                     <div class="card-header">
                         <h5 class="form-title">建物</h5>
                     </div>
@@ -134,7 +134,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-3">
+                <div class="card mb-3  client-mb-3">
                     <div class="card-header">
                         <h5 class="form-title">駐車場</h5>
                     </div>
@@ -184,7 +184,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-3">
+                <div class="card mb-3  client-mb-3">
                     <div class="card-header">
                         <h5 class="form-title">建築希望地</h5>
                     </div>
@@ -195,7 +195,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-3">
+                <div class="card mb-3  client-mb-3">
                     <div class="card-header">
                         <h5 class="form-title">完成希望日</h5>
                     </div>
@@ -206,7 +206,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-3">
+                <div class="card mb-3  client-mb-3">
                     <div class="card-header">
                         <h5 class="form-title">今の家で不満に思っていること</h5>
                     </div>

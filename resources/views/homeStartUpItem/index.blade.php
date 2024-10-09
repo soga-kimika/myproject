@@ -36,31 +36,26 @@
         output.textContent = input.files[0] ? input.files[0].name : '';
     }
 
-    // チェックボックスの状態を保持
-    document.addEventListener('DOMContentLoaded', () => {
-        const checkboxes = document.querySelectorAll('.check-consulted');
-        checkboxes.forEach(checkbox => {
-            const id = checkbox.dataset.id;
-            const checked = localStorage.getItem(`checkbox-${id}`) === 'true';
-            checkbox.checked = checked;
-        });
+  // チェックボックスの状態を保持
+document.addEventListener('DOMContentLoaded', () => {
+    const checkboxes = document.querySelectorAll('.check-consulted');
+    checkboxes.forEach(checkbox => {
+        const id = checkbox.dataset.id;
+        const checked = localStorage.getItem(`checkbox-${id}`) === 'true';
+        checkbox.checked = checked;
 
         // チェックボックスの状態が変わったときに保存
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                const id = checkbox.dataset.id;
-                localStorage.setItem(`checkbox-${id}`, checkbox.checked);
-            });
+        checkbox.addEventListener('change', () => {
+            localStorage.setItem(`checkbox-${id}`, checkbox.checked);
+            calculateTotalChecked(); // 合計の計算をここで呼び出す
         });
     });
 
-// 合計の計算
-function calculateTotal() {
-    const price = parseFloat(document.querySelector('input[name="price"]').value) || 0;
-    const quantity = parseInt(document.querySelector('input[name="quantity"]').value) || 0;
-    const total = price * quantity;
-    document.getElementById('amount').value = total;
-}
+    // 初回計算
+    calculateTotalChecked();
+});
+
+
 
 </script>
 @stop

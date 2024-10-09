@@ -18,13 +18,12 @@
 
 @section('content')
 @include('partials.errors') 
-
         <section class="content">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="row mb-3">
+                    <div class="row mb-2 client-mb-2">
                         <div class="col-md-6">
-                            <div class="card mb-3">
+                            <div class="card mb-2">
                                 <div class="card-body">
                                     <h5 class="form-title p-2">住む予定の人数</h5>
                                     <div class="row">
@@ -44,7 +43,7 @@
                     </div>
                 </div>
                         <div class="col-md-6">
-                            <div class="card mb-3">
+                            <div class="card mb-2">
                                 <div class="card-body">
                                     <h5 class="form-title p-2">土地</h5>
                                     <div class="row">
@@ -65,9 +64,9 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-6">
-                            <div class="card mb-3">
+                            <div class="card mb-2">
                                 <div class="card-body">
                                     <h5 class="form-title p-2">建物</h5>
                                     <div class="row">
@@ -91,7 +90,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <div class="card mb-3">
+                            <div class="card mb-2">
                                 <div class="card-body">
                                     <h5 class="form-title p-2">駐車場</h5>
                                     <div class="row">
@@ -115,9 +114,9 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-6">
-                            <div class="card mb-3">
+                            <div class="card mb-2">
                                 <div class="card-body">
                                     <h5 class="form-title p-2">建築希望地</h5>
                                     <p><strong>{{ $client->construction_area }}</strong></p>
@@ -126,7 +125,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <div class="card mb-3">
+                            <div class="card mb-2">
                                 <div class="card-body">
                                     <h5 class="form-title p-2">完成希望日</h5>
                                     <p><strong>{{ $client->date }}</strong></p>
@@ -135,9 +134,9 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-md-12">
-                            <div class="card mb-3">
+                            <div class="card mb-2">
                                 <div class="card-body">
                                     <h5 class="form-title p-2">今の家で不満に思っていること</h5>
                                     <p><strong>{{ $client->current_home_issues }}</strong></p>

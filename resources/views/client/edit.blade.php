@@ -16,7 +16,7 @@
                         <section class="content client-content">
                             <div class="row">
                                 <div class="col-md-12">
-                            <div class="card mb-3">
+                            <div class="card mb-3 client-mb-3">
                                 <div class="card-header">
                                     <h5 class="form-title">住む予定の人数</h5>
                                 </div>
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
 
-                            <div class="card mb-3">
+                            <div class="card mb-3 client-mb-3">
                                 <div class="card-header">
                                     <h5 class="form-title">土地</h5>
                                 </div>
@@ -86,7 +86,7 @@
                                 </div>
                             </div>
 
-                            <div class="card mb-3">
+                            <div class="card mb-3 client-mb-3">
                                 <div class="card-header">
                                     <h5 class="form-title">建物</h5>
                                 </div>
@@ -130,7 +130,7 @@
                                 </div>
                             </div>
 
-                            <div class="card mb-3">
+                            <div class="card mb-3 client-mb-3">
                                 <div class="card-header">
                                     <h5 class="form-title">駐車場</h5>
                                 </div>
@@ -180,7 +180,7 @@
                                 </div>
                             </div>
 
-                            <div class="card mb-3">
+                            <div class="card mb-3 client-mb-3">
                                 <div class="card-header">
                                     <h5 class="form-title">建築希望地</h5>
                                 </div>
@@ -191,24 +191,24 @@
                                 </div>
                             </div>
 
-                            <div class="card mb-3">
+                            <div class="card mb-3 client-mb-3">
                                 <div class="card-header">
                                     <h5 class="form-title">完成希望日</h5>
                                 </div>
                                 <div class="client-card-body">
                                     <div class="form-group">
-                                        <input type="date" name="date" class="form-control" value="{{ old('date', $client->date) }}" required>
+                                        <input type="date" name="date" class="form-control" value="{{ old('date', $client->date) }}" >
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="card mb-3">
+                            <div class="card mb-3 client-mb-3">
                                 <div class="card-header">
                                     <h5 class="form-title">今の家で不満に思っていること</h5>
                                 </div>
                                 <div class="client-card-body text-center">
                                     <div class="form-group">
-                                        <textarea name="current_home_issues" class="form-control" rows="6" placeholder="不満に思っていることを入力" required>{{ old('current_home_issues', $client->current_home_issues) }}</textarea>
+                                        <textarea name="current_home_issues" class="form-control" rows="6" placeholder="不満に思っていることを入力" >{{ old('current_home_issues', $client->current_home_issues) }}</textarea>
                                     </div>
                                 </div>
                             </div>
