@@ -1,6 +1,6 @@
         {{-- ホームスタートアップ編集モーダル --}}
         <div class="modal fade" id="homeStartupItem-editModal{{ $homeStartupItem->id }}" tabindex="-1" role="dialog" aria-labelledby="homeStartupItem-editModalLabel{{ $homeStartupItem->id }}" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog  homeStartupItem-editmodal-dialog">
                 <div class="modal-content">
                     {{-- モーダルヘッダー --}}
                     <div class="modal-header">

@@ -10,7 +10,7 @@
                     </button>
                 </div>
                 {{-- 画像モーダルの中身 --}}
-                <div class="modal-body">
+                <div class="modal-body text-center">
                         <img src="{{ asset('storage/' . $homeStartupItem->image_url) }}" class="img-fluid" alt="Image">
                 </div>
                 {{-- 画像モーダルフッター --}}

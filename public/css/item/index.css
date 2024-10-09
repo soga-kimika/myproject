@@ -491,6 +491,11 @@
             margin-top: 2px;
         }
 
+        /* 編集モーダル */
+        .homeStartupItem-editmodal-dialog{
+            max-width: 1000px;
+        }
+
     /* gallery/ */
     .card-img-top{
         cursor: pointer; 
