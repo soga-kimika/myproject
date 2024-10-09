@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('item_name');
             $table->string('manufacturer')->nullable();
             $table->decimal('price', 10, 2)->nullable();
-            $table->integer('quantity')->nullable();
+            $table->integer('quantity');
             $table->decimal('amount', 10, 2)->nullable();
             $table->integer('card_number')->nullable();
             $table->string('image_name')->nullable();

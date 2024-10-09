@@ -53,8 +53,8 @@
                     <input type="text" name="manufacturer" id="manufacturer" class="item-form-control form-control-lg me-2" placeholder="メーカー・型番" style="height: 50px;">
                     {{-- 金額、個数、合計 --}}
                     <div class="d-flex">
+                        <input type="number" name="quantity" class="form-control me-2" placeholder="個数" min="1" style="width: 80px; height: 50px;"  required oninput="calculateTotal()">
                         <input type="number" name="price" class="form-control me-2" placeholder="金額" step="1000" min="1000" style="width: 120px; height: 50px;" oninput="calculateTotal()">
-                        <input type="number" name="quantity" class="form-control me-2" placeholder="個数" min="1" style="width: 80px; height: 50px;" oninput="calculateTotal()">
                         <input type="number" name="amount" id="amount" class="form-control" placeholder="合計" step="1000" min="0" style="width: 120px; height: 50px;" readonly>
                     </div>
 

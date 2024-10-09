@@ -51,7 +51,7 @@ public function store(Request $request)
         'item_name' => 'required|string|max:255',
         'manufacturer' => 'nullable|string|max:255',
         'price' => 'nullable|integer|min:1000',
-        'quantity' => 'nullable|integer|min:1',
+        'quantity' => 'required|integer|min:1',
         'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
        
     ]);
