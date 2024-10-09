@@ -23,7 +23,8 @@ return [
         'construction_area' =>'「建築エリア」',
         'date' =>'「建築希望日」',
         'current_home_issues' =>'「不満に思っていること」',
-        'imageUpload' => '画像',
+        'imageUpload' => '「画像」',
+        'item_name' => '「品名」'
     ],
     'email' => ':attribute は有効なメールアドレスでなければなりません。',
     'min' => [

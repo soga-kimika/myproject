@@ -49,8 +49,8 @@ public function store(Request $request)
         'priority' => 'required|in:high,medium,low,remove',
         'category' => 'required|in:furniture,appliances,accessories',
         'item_name' => 'required|string|max:255',
-        'price' => 'required|integer|min:1000',
-        'quantity' => 'required|integer|min:1',
+        'price' => 'nullable|integer|min:1000',
+        'quantity' => 'nullable|integer|min:1',
         'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
     ]);
 
