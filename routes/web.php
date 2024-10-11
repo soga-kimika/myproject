@@ -19,7 +19,7 @@
 */
 
             // マイホームNOTEの表示
-            Route::prefix('/home')->group(function () {
+            Route::prefix('/home')->middleware('auth')->group(function () {
                 Route::get('', [HomeController::class, 'index'])->name('home.index');
             });
 
@@ -27,14 +27,14 @@
             Auth::routes();
 
             // クライアント関連のルート
-            Route::prefix('client')->group(function () {
+            Route::prefix('client')->middleware('auth')->group(function () {
                 Route::get('index', [ClientController::class, 'index'])->name('clients.index');
                 Route::get('create', [ClientController::class, 'create'])->name('clients.create');
                 Route::post('store', [ClientController::class, 'store'])->name('clients.store');
                 Route::put('update', [ClientController::class, 'update'])->name('clients.update');
             });
 
-            Route::prefix('HomePlanning')->group(function () {  
+            Route::prefix('HomePlanning')->middleware('auth')->group(function () {  
             // アイテムの種類に基づいたルート設定
             Route::prefix('{type}')->group(function () {
                 Route::get('/', [ItemController::class, 'index'])->name('items.index');
@@ -47,7 +47,7 @@
          });      
 
             // ホームスタートアップ関連のルート
-            Route::prefix('homeStartupItem')->group(function () {
+            Route::prefix('homeStartupItem')->middleware('auth')->group(function () {
                 Route::get('/', [HomeStartupItemController::class, 'index'])->name('homeStartupItems.index');
                 Route::post('/', [HomeStartupItemController::class, 'store'])->name('homeStartupItems.store');
                 Route::put('/{homeStartupItemId}', [HomeStartupItemController::class, 'update'])->name('homeStartupItems.update');
@@ -58,7 +58,7 @@
             });
 
             // ギャラリー関連のルート
-            Route::prefix('gallery')->group(function () {
+            Route::prefix('gallery')->middleware('auth')->group(function () {
                 Route::get('/', [GalleryController::class, 'index'])->name('galleries.index');
                 Route::post('/upload', [GalleryController::class, 'store'])->name('galleries.store');
                 Route::delete('/{galleryId}', [GalleryController::class, 'destroy'])->name('galleries.destroy');
