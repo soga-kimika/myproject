@@ -53,7 +53,7 @@
             // カードごとの合計を表示
             const cardTotalElement = card.querySelector('.total-amount');
             if (cardTotalElement) {
-                cardTotalElement.innerText = '合計: ' + formatCurrency(cardTotal);
+                cardTotalElement.innerText = '' + formatCurrency(cardTotal);
             }
 
             overallTotal += cardTotal;

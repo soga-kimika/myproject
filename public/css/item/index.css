@@ -578,7 +578,7 @@
         }
         /* 全体の合計ラベル */
         .overall-total-lavel{
-            color: rgb(125, 39, 39);
+            color:rgb(71, 70, 70);
             font-weight: bold;
         }
         /* 全体の合計金額 */
@@ -590,8 +590,8 @@
 
         /* カードごとの総合計金額 */
         .total-amount{
-            margin-left: 280px;
-            color: rgb(125, 39, 39);
+            margin-left: 310px;
+            color:  red;
             text-align: right;
             width: 300px;
         }

@@ -8,9 +8,9 @@
             </div>
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                    <h3 class="homeStartupItem-card-title card-title"><i class="fas fa-shopping-basket"></i>ファニチャー</h3>
+                    <h3 class="homeStartupItem-card-title card-title"><i class="fas fa-shopping-basket"></i>ファニチャー　</h3>
                     @php $totalPrice1 = 0; @endphp
-                    <strong class="total-amount">計: ￥{{ number_format($totalPrice1) }}</strong>
+                    <strong class="total-amount">￥{{ number_format($totalPrice1) }}</strong>
                 </div>                   
                 <div class="card-body table-responsive p-0">
                     <table class="table table-hover text-nowrap custom-table homeStartupItem-table">
