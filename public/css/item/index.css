@@ -2,7 +2,10 @@
 
         /* パスワードリセット画面があっているかがわかりません */
         /*  */
-        
+        /* ラベル */
+        label{
+            cursor: pointer; 
+        }
          /* ヘッダー共通 */
         .content-header h1{
             text-align: center;
@@ -62,15 +65,15 @@
         }
         /*　ファイル投稿ボタン */
         .btn-select{
-            color:#2ad8c6; 
+            color:rgb(86, 80, 80);
             cursor: pointer;
         }
         .btn-select:hover{
-            color: #2ad8c6; 
+            color:rgb(86, 80, 80);
         
         }
-        /* ファイル名表示ボタン */
-        .file-name {
+        /* ファイル名表示ボタン */  
+        .file-name {    
             font-weight: bold;
             color: #2ad8c6; 
             background-color: #e9ecef; 
@@ -115,7 +118,37 @@
         top: -3px; 
         font-size: 16px; 
     }
-    
+    /* ラジオボタンの基本スタイル */
+.form-check-input {
+    appearance: none; 
+    width: 13px; 
+    height: 13px; 
+    border: 1px solid  rgb(71, 70, 70); 
+    border-radius: 50%; 
+    cursor: pointer; 
+    background-color: white; 
+}
+
+/* チェックされたときのスタイル */
+.form-check-input:checked {
+    background-color: rgb(240, 237, 245); 
+    border: 1px solid  rgb(71, 70, 70);  
+}
+
+/* チェックされたときの中の丸 */
+.form-check-input:checked::after {
+    content: '';
+    display: block;
+    width: 7px; 
+    height: 7px; 
+    background-color:  rgb(71, 70, 70); 
+  
+    border-radius: 50%;
+    position: absolute; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
 
 
         /* アイコン共通 */
@@ -261,6 +294,7 @@
             text-align: center;
             font-weight: bold;
             color: rgb(71, 70, 70);
+            
         }
         .col-md-6{
             text-align: center;
@@ -290,6 +324,7 @@
         .client-form-inline select {
             flex-grow: 1; 
             min-width: 0;
+            cursor: pointer; 
         }
         /* テキスト欄 */
         .client-form-inline input {
@@ -306,7 +341,7 @@
         
         .client-card-body{
             padding: 2.5rem;
-            border: 2px solid orange;
+            border: 2px solid  burlywood;
         }
 
         /* client/index */
@@ -317,16 +352,16 @@
         }
         /* プルダウンメニュータイトル */
         .form-title{
-            color: rgb(179, 27, 27); 
+            color: rgb(71, 70, 70);
             font-size: 23px;
-            text-align: center;
+            text-align: center; 
+            background-color: burlywood;
             
         }
-        /*indexだけ  */
-        .index-form-title{
-            border-bottom: 2px solid orange; 
-        }
-    
+     
+
+
+        
         /* HomePlanning/{type}：入力フォーム */
         .mb-3{
             align-items: center;
@@ -356,9 +391,8 @@
         }
         /* カードタイトル */
         .card-header:first-child{
-            background-color:#f8f9fa;
-            height: 55px;
-            border: 2px solid orange;
+            background-color: burlywood;
+            height: 45px;
             }
         .card-title{
             font-weight: bold;
