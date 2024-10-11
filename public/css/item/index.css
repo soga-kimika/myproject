@@ -414,6 +414,11 @@
             padding-left: 5px;
             padding-right: 9px;
         }
+        /* 合計金額 */
+        .overall-total{
+            text-align: end;
+            font-size: 18px;
+        }
         /* 各カラムの幅を指定 */
         .col-priority {
         width: 50px; 
@@ -549,25 +554,49 @@
         /* テーブルカラム、リクエスト */
         .homeStartupItem-table td{
             text-align: right;
-            padding-right: 30px;
         }
         /* テーブルレコード */
         .homeStartupItem-col-request{
-            width: 320px;
+            width: 300px;
+        }
+
+        /* 単価のカラム */
+        .homeStartupItem-col-price{
+            width: 70px;
         }
         /* 個数のカラム */
         .homeStartupItem-col-quantity{
-            width: 80px;
-        }
+            width: 35px;
+        }   
         /* 合計金額のカラム */
         .homeStartupItem-col-amount{
-            width: 120px;
+            width: 70px;
         }
+        /* 演算記号 */
+        .homeStartupItem-col-symbols{
+            width: 20px;
+        }
+        /* 全体の合計ラベル */
+        .overall-total-lavel{
+            color: rgb(125, 39, 39);
+            font-weight: bold;
+        }
+        /* 全体の合計金額 */
+        .overall-totals{
+            color: red;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
         /* カードごとの総合計金額 */
         .total-amount{
-            margin-left: 450px;
-            color: rgb(227, 77, 77);
+            margin-left: 280px;
+            color: rgb(125, 39, 39);
+            text-align: right;
+            width: 300px;
         }
+        
+        
         .homeStartupItem-card-title{
             color: rgb(61, 57, 57);
         }

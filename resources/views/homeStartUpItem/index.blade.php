@@ -33,6 +33,10 @@
         output.textContent = input.files[0] ? input.files[0].name : '';
     }
 
+    function formatCurrency(value) {
+        return '￥' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
     function calculateTotalChecked() {
         let overallTotal = 0;
         const cards = document.querySelectorAll('.card');
@@ -49,14 +53,14 @@
             // カードごとの合計を表示
             const cardTotalElement = card.querySelector('.total-amount');
             if (cardTotalElement) {
-                cardTotalElement.innerText = '合計: ￥' + cardTotal.toLocaleString();
+                cardTotalElement.innerText = '合計: ' + formatCurrency(cardTotal);
             }
 
             overallTotal += cardTotal;
         });
 
         // 全体の合計を表示
-        document.getElementById('overall-total').innerText = '全体の合計: ￥' + overallTotal.toLocaleString();
+        document.getElementById('overall-total').innerText = '全体の合計: ' + formatCurrency(overallTotal);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -82,3 +86,5 @@
     });
 </script>
 @stop
+
+
