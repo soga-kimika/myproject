@@ -62,28 +62,40 @@
         // 全体の合計を表示
         document.getElementById('overall-total').innerText = '' + formatCurrency(overallTotal);
     }
-
     document.addEventListener('DOMContentLoaded', () => {
-        const checkboxes = document.querySelectorAll('.check-consulted');
-        checkboxes.forEach(checkbox => {
-            // チェックボックスを初期状態でチェック
-            checkbox.checked = true;  // ここでチェックされた状態にする
+    const checkboxes = document.querySelectorAll('.check-consulted');
 
-            const id = checkbox.dataset.id;
-            localStorage.setItem(`checkbox-${id}`, true); // localStorageにも保存
+    checkboxes.forEach(checkbox => {
+        const id = checkbox.dataset.id;
+
+        // localStorageからチェックボックスの状態を取得
+        const checkedState = localStorage.getItem(`checkbox-${id}`);
+
+        // 新規追加の場合、チェックボックスをチェック状態にする
+        if (checkbox.classList.contains('new-record') || !checkedState) { 
+            checkbox.checked = true;
+        } else {
+            // それ以外はlocalStorageから復元
+            checkbox.checked = (checkedState === 'true');
+        }
+
+        // チェックボックスの状態をlocalStorageに保存
+        localStorage.setItem(`checkbox-${id}`, checkbox.checked);
+
+        checkbox.addEventListener('change', () => {
+            localStorage.setItem(`checkbox-${id}`, checkbox.checked);
+            // 合計の計算を呼び出す
+            calculateTotalChecked(); 
         });
-
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                const id = checkbox.dataset.id;
-                localStorage.setItem(`checkbox-${id}`, checkbox.checked);
-                calculateTotalChecked(); // 合計の計算を呼び出す
-            });
-        });
-
-        // 初回計算
-        calculateTotalChecked();
     });
+
+    // 初回計算
+    calculateTotalChecked();
+});
+
+
+
+
 </script>
 @stop
 

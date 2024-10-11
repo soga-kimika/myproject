@@ -45,7 +45,8 @@
                         </div>
                     </div>
                 </div>
-                
+                <input type="checkbox" class="check-consulted new-record" style="display: none;" data-id="new" checked>
+
                 
                 {{-- 品名記入欄--}}
                 <div class="form-group d-flex align-items-center col-md-12 mb-3">

@@ -158,7 +158,7 @@
                                         @endif
                                     </td>
                                     <td class="col-checkbox">
-                                        <input type="checkbox" class="check-consulted" data-id="{{ $homeStartupItem->id }}" checked > 
+                                        <input type="checkbox" class="check-consulted" data-id="{{ $homeStartupItem->id }}" checked >                                        
                                     </td>
                                     @include('partials.home_startup.image_modal', ['id' => $homeStartupItem->id, 'homeStartupItem' => $homeStartupItem, 'imageUrl' => $homeStartupItem->image_url])
                                     @include('partials.home_startup.edit_modal', ['homeStartupItem' => $homeStartupItem])
