@@ -60,7 +60,7 @@
         });
 
         // 全体の合計を表示
-        document.getElementById('overall-total').innerText = '全体の合計: ' + formatCurrency(overallTotal);
+        document.getElementById('overall-total').innerText = '' + formatCurrency(overallTotal);
     }
 
     document.addEventListener('DOMContentLoaded', () => {

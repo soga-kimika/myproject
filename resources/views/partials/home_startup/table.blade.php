@@ -140,7 +140,7 @@
                                     <td class="col-request homeStartupItem-col-request">{{ $homeStartupItem->item_name }}</td>
                                     <td class="col-request homeStartupItem-col-request">{{ $homeStartupItem->manufacturer }}</td>
                                     <td class="col-quantity homeStartupItem-col-price">
-                                        {{ $homeStartupItem->price ? number_format((int)$homeStartupItem->price) : '-' }}  </td>
+                                        {{ $homeStartupItem->price > 0 ? number_format((int)$homeStartupItem->price) : '-' }}  </td>    
                                     <td  class="homeStartupItem-col-symbols">×</td>
                                     <td class="col-quantity homeStartupItem-col-quantity">{{ $homeStartupItem->quantity }}</td>
                                     <td class="homeStartupItem-col-symbols">=</td>
