@@ -611,6 +611,7 @@
     .card-img-top{
         cursor: pointer; 
         height: 150px;
+        border: 5px solid burlywood;
     }
     /* 削除ボタン */
     .gallery-card-body{
@@ -621,6 +622,7 @@
     .gallery-card-icon{
     width: 100%;
     border: none;
+    background-color: burlywood;
     } 
     /* ファイル名表示ボタン */
        .gallery-file-name {
@@ -636,3 +638,4 @@
         display: inline-block; 
        
     }
+
