@@ -102,7 +102,7 @@ public function store(Request $request)
             'quantity' => 'nullable|integer',
             'amount' => 'nullable|numeric',
             'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
-        ]);
+        ]); 
            // 優先度の更新
         if ($request->has('priority')) {
             $homeStartupItem->priority = $request->input('priority');
@@ -124,6 +124,10 @@ public function store(Request $request)
     
         // fill()でプロパティを一括更新
         $homeStartupItem->fill($request->only(['category', 'item_name', 'price', 'quantity', 'amount','manufacturer']));
+
+        // amountの再計算
+    $homeStartupItem->amount = $homeStartupItem->price * $homeStartupItem->quantity;
+
 
         // 保存
         $homeStartupItem->save();
