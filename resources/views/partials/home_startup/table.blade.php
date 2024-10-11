@@ -1,4 +1,3 @@
-
 <div class="container">
     <div class="row">
         <div class="col-md-12"> 
@@ -26,7 +25,11 @@
                                     </td>
                                     <td class="col-request homeStartupItem-col-request">{{ $homeStartupItem->item_name }}</td>
                                     <td class="col-request homeStartupItem-col-request">{{ $homeStartupItem->manufacturer }}</td>
-                                    <td class="col-quantity homeStartupItem-col-quantity">×{{ $homeStartupItem->quantity }} </td>
+                                    <td class="col-quantity homeStartupItem-col-quantity">
+                                    {{ $homeStartupItem->price ? number_format((int)$homeStartupItem->price) : 'ー' }}  </td>
+                                    <td >×</td>
+                                    <td class="col-quantity homeStartupItem-col-quantity">{{ $homeStartupItem->quantity }} </td>
+                                     <td >=</td>
                                     <td class="col-amount homeStartupItem-col-amount">￥{{ number_format($homeStartupItem->amount) }}</td>                                    
                                     <td class="col-edit">
                                         <a href="#" class="btn btn-edit" data-toggle="modal" data-target="#homeStartupItem-editModal{{ $homeStartupItem->id }}">
@@ -41,7 +44,7 @@
                                         @endif
                                     </td>
                                     <td class="col-checkbox">
-                                        <input type="checkbox" class="check-consulted" data-id="{{ $homeStartupItem->id }}">
+                                        <input type="checkbox" class="check-consulted" data-id="{{ $homeStartupItem->id }}" checked> 
                                     </td>
                                     @include('partials.home_startup.image_modal', ['id' => $homeStartupItem->id, 'homeStartupItem' => $homeStartupItem, 'imageUrl' => $homeStartupItem->image_url])
                                     @include('partials.home_startup.edit_modal', ['homeStartupItem' => $homeStartupItem])
@@ -78,7 +81,11 @@
                                     </td>
                                     <td class="col-request homeStartupItem-col-request">{{ $homeStartupItem->item_name }}</td>
                                     <td class="col-request homeStartupItem-col-request">{{ $homeStartupItem->manufacturer }}</td>
-                                    <td class="col-quantity homeStartupItem-col-quantity">×{{ $homeStartupItem->quantity }} </td>
+                                    <td class="col-quantity homeStartupItem-col-quantity">
+                                        {{ $homeStartupItem->price ? number_format((int)$homeStartupItem->price) : 'ー' }}  </td>
+                                        <td >×</td>
+                                    <td class="col-quantity homeStartupItem-col-quantity">{{ $homeStartupItem->quantity }} </td>
+                                    <td >=</td>
                                     <td class="col-amount homeStartupItem-col-amount">￥{{ number_format($homeStartupItem->amount) }}</td>                                    
                                     <td class="col-edit">
                                         <a href="#" class="btn btn-edit" data-toggle="modal" data-target="#homeStartupItem-editModal{{ $homeStartupItem->id }}">
@@ -93,7 +100,7 @@
                                         @endif
                                     </td>
                                     <td class="col-checkbox">
-                                        <input type="checkbox" class="check-consulted" data-id="{{ $homeStartupItem->id }}" style="margin-left: 8px;">
+                                        <input type="checkbox" class="check-consulted" data-id="{{ $homeStartupItem->id }}" checked > 
                                     </td>
                                     @include('partials.home_startup.image_modal', ['id' => $homeStartupItem->id, 'homeStartupItem' => $homeStartupItem, 'imageUrl' => $homeStartupItem->image_url])
                                     @include('partials.home_startup.edit_modal', ['homeStartupItem' => $homeStartupItem])
@@ -129,7 +136,11 @@
                                     </td>
                                     <td class="col-request homeStartupItem-col-request">{{ $homeStartupItem->item_name }}</td>
                                     <td class="col-request homeStartupItem-col-request">{{ $homeStartupItem->manufacturer }}</td>
-                                    <td class="col-quantity homeStartupItem-col-quantity">×{{ $homeStartupItem->quantity }}</td>
+                                    <td class="col-quantity homeStartupItem-col-quantity">
+                                        {{ $homeStartupItem->price ? number_format((int)$homeStartupItem->price) : 'ー' }}  </td>
+                                    <td >×</td>
+                                    <td class="col-quantity homeStartupItem-col-quantity">{{ $homeStartupItem->quantity }}</td>
+                                    <td >=</td>
                                     <td class="col-amount homeStartupItem-col-amount">￥{{ number_format($homeStartupItem->amount) }}</td>                                    
                                     <td class="col-edit">
                                         <a href="#" class="btn btn-edit" data-toggle="modal" data-target="#homeStartupItem-editModal{{ $homeStartupItem->id }}">
@@ -144,7 +155,7 @@
                                         @endif
                                     </td>
                                     <td class="col-checkbox">
-                                        <input type="checkbox" class="check-consulted" data-id="{{ $homeStartupItem->id }}" style="margin-left: 8px;">
+                                        <input type="checkbox" class="check-consulted" data-id="{{ $homeStartupItem->id }}" checked > 
                                     </td>
                                     @include('partials.home_startup.image_modal', ['id' => $homeStartupItem->id, 'homeStartupItem' => $homeStartupItem, 'imageUrl' => $homeStartupItem->image_url])
                                     @include('partials.home_startup.edit_modal', ['homeStartupItem' => $homeStartupItem])

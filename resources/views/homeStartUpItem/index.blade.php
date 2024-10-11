@@ -18,8 +18,6 @@
             'homeStartupItems2' => $homeStartupItems2,
             'homeStartupItems3' => $homeStartupItems3,
         ]) 
-
-      
     </div>
 @stop
 
@@ -64,20 +62,23 @@
     document.addEventListener('DOMContentLoaded', () => {
         const checkboxes = document.querySelectorAll('.check-consulted');
         checkboxes.forEach(checkbox => {
+            // チェックボックスを初期状態でチェック
+            checkbox.checked = true;  // ここでチェックされた状態にする
+
             const id = checkbox.dataset.id;
-            const checked = localStorage.getItem(`checkbox-${id}`) === 'true';
-            checkbox.checked = checked;
-            if (checkbox.checked) {
-                calculateTotalChecked(); // 初回計算
-            }
+            localStorage.setItem(`checkbox-${id}`, true); // localStorageにも保存
         });
 
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', () => {
-                localStorage.setItem(`checkbox-${checkbox.dataset.id}`, checkbox.checked);
+                const id = checkbox.dataset.id;
+                localStorage.setItem(`checkbox-${id}`, checkbox.checked);
                 calculateTotalChecked(); // 合計の計算を呼び出す
             });
         });
+
+        // 初回計算
+        calculateTotalChecked();
     });
 </script>
 @stop
