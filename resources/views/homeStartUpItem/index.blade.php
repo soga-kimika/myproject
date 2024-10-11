@@ -5,7 +5,6 @@
 
 @section('content_header')
 <h1><i class="fas fa-shopping-cart"></i>ホームスタートアップリスト</h1>
-
 @stop
 
 @section('content')
@@ -20,6 +19,7 @@
             'homeStartupItems3' => $homeStartupItems3,
         ]) 
 
+      
     </div>
 @stop
 
@@ -29,43 +29,55 @@
 
 @section('js')
 <script>
-    // ファイル名の表示（ファイル名カスタムのため設定が必要）
     function displayFileName(inputId, outputId) {
         const input = document.getElementById(inputId);
         const output = document.getElementById(outputId);
         output.textContent = input.files[0] ? input.files[0].name : '';
     }
+
     function calculateTotalChecked() {
-    let total = 0;
-    document.querySelectorAll('.check-consulted:checked').forEach(checkbox => {
-        const amount = parseInt(checkbox.closest('tr').querySelector('.col-amount').innerText.replace(/[^0-9]/g, '')); // 金額を取得
-        total += amount;
-    });
-    document.querySelectorAll('.total-amount').forEach(el => el.innerText = '合計金額: ￥' + total.toLocaleString());
-}
+        let overallTotal = 0;
+        const cards = document.querySelectorAll('.card');
 
-document.addEventListener('DOMContentLoaded', () => {
-    // 既存のチェックボックス初期化
-    const checkboxes = document.querySelectorAll('.check-consulted');
-    checkboxes.forEach(checkbox => {
-        const id = checkbox.dataset.id;
-        const checked = localStorage.getItem(`checkbox-${id}`) === 'true';
-        checkbox.checked = checked;
-        if (checkbox.checked) {
-            calculateTotalChecked(); // 初回計算
-        }
-    });
+        cards.forEach(card => {
+            let cardTotal = 0;
+            const checkboxes = card.querySelectorAll('.check-consulted:checked');
 
-    // チェックボックスの状態が変わったときの処理
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-            localStorage.setItem(`checkbox-${checkbox.dataset.id}`, checkbox.checked);
-            calculateTotalChecked(); // 合計の計算を呼び出す
+            checkboxes.forEach(checkbox => {
+                const amount = parseInt(checkbox.closest('tr').querySelector('.col-amount').innerText.replace(/[^0-9]/g, ''));
+                cardTotal += amount;
+            });
+
+            // カードごとの合計を表示
+            const cardTotalElement = card.querySelector('.total-amount');
+            if (cardTotalElement) {
+                cardTotalElement.innerText = '合計: ￥' + cardTotal.toLocaleString();
+            }
+
+            overallTotal += cardTotal;
+        });
+
+        // 全体の合計を表示
+        document.getElementById('overall-total').innerText = '全体の合計: ￥' + overallTotal.toLocaleString();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const checkboxes = document.querySelectorAll('.check-consulted');
+        checkboxes.forEach(checkbox => {
+            const id = checkbox.dataset.id;
+            const checked = localStorage.getItem(`checkbox-${id}`) === 'true';
+            checkbox.checked = checked;
+            if (checkbox.checked) {
+                calculateTotalChecked(); // 初回計算
+            }
+        });
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                localStorage.setItem(`checkbox-${checkbox.dataset.id}`, checkbox.checked);
+                calculateTotalChecked(); // 合計の計算を呼び出す
+            });
         });
     });
-});
-
-
-
 </script>
 @stop
