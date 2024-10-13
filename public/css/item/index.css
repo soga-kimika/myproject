@@ -553,7 +553,7 @@
         }
         /* テーブルの品名・メーカー型番 */
         .homeStartupItem-col-request{
-            width: 300px;
+            width: calc(100% - 195px);
         }   
         /* テーブルの単価表示 */
         .homeStartupItem-col-price{
@@ -604,7 +604,6 @@
     /* 削除ボタン */
     .gallery-card-body{
     padding: 0;
-    
     }
     /* 削除ボタン */
     .gallery-card-icon{
