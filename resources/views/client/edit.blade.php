@@ -186,7 +186,7 @@
                                 </div>
                                 <div class="client-card-body text-center">
                                     <div class="form-group">
-                                        <input type="text" name="construction_area" class="form-control" placeholder="家を建てる希望の場所・エリアを入力" value="{{ old('construction_area', $client->construction_area) }}" required>
+                                        <input type="text" name="construction_area" class="form-control" placeholder="家を建てる希望の場所・エリアを入力" value="{{ old('construction_area', $client->construction_area) }}" >
                                     </div>
                                 </div>
                             </div>

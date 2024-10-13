@@ -213,7 +213,7 @@
                     </div>
                     <div class="client-card-body text-center">
                         <div class="form-group">
-                            <textarea name="current_home_issues" class="form-control" rows="6" placeholder="不満に思っていることを入力" ></textarea>
+                            <textarea name="current_home_issues" class="form-control" rows="6" placeholder="不満点を記入してください" ></textarea>
                         </div>
                     </div>
                 </div>
@@ -260,8 +260,8 @@
                 landBudgetInput.removeAttribute('disabled'); 
                 // 'landBudgetInput'の背景色を元に戻す
                 landBudgetInput.style.backgroundColor = ''; 
-                // プレースホルダーを'5000万円'に設定
-                landBudgetInput.placeholder = '5000万円';
+                // プレースホルダーを'◯◯◯◯万円と入力してください'に設定
+                landBudgetInput.placeholder = '◯◯◯◯万円と入力してください';
             }
         }
     
