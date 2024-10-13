@@ -4,14 +4,14 @@
         <div class="modal-content">
             {{-- モーダルヘッダー --}}
             <div class="modal-header">
-                <h5 class="modal-title" id="deleteGalleryModalLabel{{ $gallery->id }}">削除確認</h5>
+                <h5 class="modal-title" id="deleteGalleryModalLabel{{ $gallery->id }}">削除</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             {{-- モーダルの中身 --}}
             <div class="modal-body">
-                <p>この画像を削除しますか？</p>
+                <p>画像を削除しますか？</p>
             </div>
             {{-- モーダルフッター --}}
             <div class="modal-footer">

@@ -1,7 +1,7 @@
 {{-- ホームスタートアップ編集モーダル中身--}}
 <div class="container">
     <div class="col-md-12 mx-auto"> 
-                    <div class="border-bottom pb-2 mb-3 mt-4">
+                    <div class="mb-3">
                         <div class="col-md-12 d-flex mb-3">
                             <label class="mb-0">優先度：</label>
                             <div class="d-flex">

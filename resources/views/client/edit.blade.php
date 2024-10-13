@@ -214,7 +214,7 @@
                             </div>
 
                             <div class="text-center">
-                                <button type="submit" class="btn btn-update">保存</i></button>
+                                <button type="submit" class="btn btn-update">更新</i></button>
                             </div>
                         </section>
                     </div>

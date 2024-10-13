@@ -1,10 +1,10 @@
 {{-- ホームスタートアップ一覧画面 --}}
 @extends('adminlte::page')
 
-@section('title', 'ホームスタートアップリスト')
+@section('title', 'ウィッシュリスト')
 
 @section('content_header')
-<h1><i class="fas fa-shopping-cart"></i>ホームスタートアップリスト</h1>
+<h1><i class="fas fa-shopping-cart"></i>ウィッシュリスト</h1>
 @stop
 
 @section('content')
