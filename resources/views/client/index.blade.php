@@ -17,6 +17,7 @@
 @stop
 
 @section('content')
+{{-- エラー読み込み --}}
 @include('partials.errors') 
         <section class="content">
             <div class="row">
@@ -24,6 +25,7 @@
                     <div class="row mb-2 client-mb-2">
                         <div class="col-md-6">
                             <div class="card mb-2">
+                                {{-- 編集モーダル中身 --}}
                                 <div class="card-body">
                                     <h5 class="form-title index-form-title p-2">住む予定の人数</h5>
                                     <div class="row">
@@ -155,29 +157,45 @@
 @stop
 @section('js')
 <script>
- document.addEventListener('DOMContentLoaded', function () {
+    // DOMの内容がすべて読み込まれた後に実行されるイベントリスナーを追加
+    document.addEventListener('DOMContentLoaded', function () {
+        // IDが'land_budget_exists'の要素を取得
         const landBudgetExists = document.getElementById('land_budget_exists');
+        // IDが'land_budget_input'の要素を取得
         const landBudgetInput = document.getElementById('land_budget_input');
+        // IDが'land_budget_placeholder'の要素を取得（この変数は使用されていないため、削除してもよい）
         const landBudgetPlaceholder = document.getElementById('land_budget_placeholder');
 
+        // ランドバジェット入力の表示・非表示を切り替える関数を定義
         function toggleLandBudgetInput() {
+            // 'landBudgetExists'の値が'yes'の場合
             if (landBudgetExists.value === 'yes') {
+                // 'landBudgetInput'の値を空に設定
                 landBudgetInput.value = ''; 
+                // 'landBudgetInput'を無効にする
                 landBudgetInput.setAttribute('disabled', true); 
+                // 'landBudgetInput'の背景色を薄いグレーに設定
                 landBudgetInput.style.backgroundColor = '#e9ecef'; 
-                 landBudgetInput.placeholder = ''; 
+                // プレースホルダーを空に設定
+                landBudgetInput.placeholder = ''; 
             } else {
+                // 'landBudgetExists'の値が'yes'でない場合
+                // 'landBudgetInput'の無効属性を削除
                 landBudgetInput.removeAttribute('disabled'); 
+                // 'landBudgetInput'の背景色を元に戻す
                 landBudgetInput.style.backgroundColor = ''; 
+                // プレースホルダーを'5000万円'に設定
                 landBudgetInput.placeholder = '5000万円';
             }
         }
 
+        // 'landBudgetExists'の変更イベントにtoggleLandBudgetInput関数を登録
         landBudgetExists.addEventListener('change', toggleLandBudgetInput);
+        // 初回実行：ページ読み込み時にinputの状態を確認
         toggleLandBudgetInput(); 
     });
-
 </script>
+
 
 
 @stop

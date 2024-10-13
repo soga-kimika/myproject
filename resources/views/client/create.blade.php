@@ -21,6 +21,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-3 client-mb-3">
+                    {{-- 入力フォーム --}}
                     <div class="card-header">
                         <h5 class="form-title">住む予定の人数</h5>
                     </div>
@@ -234,36 +235,55 @@
 @stop
 @section('js')
 <script>
+    // DOMの内容がすべて読み込まれた後に実行されるイベントリスナーを追加
     document.addEventListener('DOMContentLoaded', function () {
+        // IDが'land_budget_exists'の要素を取得
         const landBudgetExists = document.getElementById('land_budget_exists');
+        // IDが'land_budget_input'の要素を取得
         const landBudgetInput = document.getElementById('land_budget_input');
     
+        // 「土地の予算」入力の表示・非表示を切り替える関数を定義
         function toggleLandBudgetInput() {
+            // 'landBudgetExists'の値が'yes'の場合
             if (landBudgetExists.value === 'yes') {
+                // 'landBudgetInput'の値を空に設定
                 landBudgetInput.value = ''; 
+                // 'landBudgetInput'を無効にする
                 landBudgetInput.setAttribute('disabled', true); 
+                // 'landBudgetInput'の背景色を薄いグレーに設定
                 landBudgetInput.style.backgroundColor = '#e9ecef'; 
+                // プレースホルダーを空に設定
                 landBudgetInput.placeholder = ''; 
             } else {
+                // 'landBudgetExists'の値が'yes'でない場合
+                // 'landBudgetInput'の無効属性を削除
                 landBudgetInput.removeAttribute('disabled'); 
+                // 'landBudgetInput'の背景色を元に戻す
                 landBudgetInput.style.backgroundColor = ''; 
+                // プレースホルダーを'5000万円'に設定
                 landBudgetInput.placeholder = '5000万円';
             }
         }
     
+        // 'landBudgetExists'の変更イベントにtoggleLandBudgetInput関数を登録
         landBudgetExists.addEventListener('change', toggleLandBudgetInput);
+        // 初回実行：ページ読み込み時にinputの状態を確認
         toggleLandBudgetInput(); 
     
-        // モーダル表示時にリセット
+        // モーダル表示時にフィールドをリセットするイベント
         $('#profileModal').on('show.bs.modal', function () {
-            // ここでフィールドを初期化またはリセットすることができます
+            // 'landBudgetInput'の値を空に設定
             landBudgetInput.value = ''; 
+            // 'landBudgetInput'を有効にする
             landBudgetInput.removeAttribute('disabled'); 
+            // 'landBudgetInput'の背景色を元に戻す
             landBudgetInput.style.backgroundColor = ''; 
+            // プレースホルダーを'5000万円'に設定
             landBudgetInput.placeholder = '5000万円';
         });
     });
-    </script>
+</script>
+
     
 
 @stop

@@ -25,13 +25,14 @@ class ClientController extends Controller
         }
 
 
-        //プロフィールページを表示
+     //プロフィールページの表示
     }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
+        // ビューを返す
         return view('client.create');
     }
 
@@ -71,7 +72,6 @@ class ClientController extends Controller
             // 土地の所有が「ある：ｙｅｓ」の場合は、土地の予算項目は入力不要とする
             $request['land_budget'] = 'nullable|string';
         }
-
         // データの保存
         $clients = $request->all();
 
@@ -79,14 +79,14 @@ class ClientController extends Controller
         if ($clients['land_budget_exists'] === 'yes') {
             $clients['land_budget'] = '-';
         }
-
+        // 登録
         Client::create($clients);
-
+        // 保存
         return redirect()->route('clients.index');
     }
 
 
-    // 編集
+    // 編集ページ表示
     /**
      * Show the form for editing the specified resource.
      */
@@ -94,9 +94,9 @@ class ClientController extends Controller
     {
         //一番最初のレコードを取得
         $client = Client::first();
+        // ビューを返す
         return view('client.edit', compact('client'));
     }
-
     // 更新
     /**
      * Update the specified resource in storage.
@@ -123,11 +123,11 @@ class ClientController extends Controller
             'date' => 'nullable|date',
             'current_home_issues' => 'nullable|string',
         ]);
-
+        // 最初の行を取得
         $client = Client::first();
-
+        // 更新
         $client->update($request->all());
-
+        // ビューを返す
         return redirect()->route('clients.index');
     }
 }

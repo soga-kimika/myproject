@@ -14,6 +14,7 @@ class HomeController extends Controller
     {
         // クライアント情報を取得
         $client = Client::first();
+        // ビューを返す
         return view('home.index', compact('client'));
     }
 

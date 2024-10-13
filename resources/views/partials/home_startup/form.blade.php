@@ -45,9 +45,8 @@
                         </div>
                     </div>
                 </div>
+                 {{-- チェックボックス、新規追加時はチェックされた状態で表示 --}}
                 <input type="checkbox" class="check-consulted new-record" style="display: none;" data-id="new" checked>
-
-                
                 {{-- 品名記入欄--}}
                 <div class="form-group d-flex align-items-center col-md-12 mb-3">
                     <input type="text" name="item_name" id="item_name" class="item-form-control form-control-lg me-2" placeholder="品名" required >
@@ -55,12 +54,11 @@
                     <input type="text" name="manufacturer" id="manufacturer" class="item-form-control form-control-lg me-2" placeholder="メーカー・型番" >
                     {{-- 金額、個数 --}}
                     <div class="d-flex">
-                        <input type="number" name="price" class="form-control  price-form-control me-2" placeholder="単価" step="1000" min="1000" style="width: 100px;" oninput="calculateTotal()">
-                        <input type="number" name="quantity" class="form-control quantity-form-control me-2" placeholder="個数" min="1" style="width: 70px;"  required oninput="calculateTotal()" value="1">
+                        <input type="number" name="price" class="form-control  price-form-control me-2" placeholder="単価" step="1000" min="1000"  oninput="calculateTotal()">
+                        <input type="number" name="quantity" class="form-control quantity-form-control me-2" placeholder="個数" min="1" required oninput="calculateTotal()" value="1">
                     </div>
                     {{-- 画像選択ボタン --}}
-                    <label for="imageUpload" class="btn me-2 form-check-label btn-select">
-                        画像を選択 <i class="fas fa-upload"></i>
+                    <label for="imageUpload" class="btn me-2 form-check-label btn-select"> 画像を選択 <i class="fas fa-upload"></i>
                     </label>
                     {{-- 登録ボタン --}}
                     <button type="submit" class="btn btn-store ms-2">登録</button>

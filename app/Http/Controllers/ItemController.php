@@ -137,7 +137,7 @@ class ItemController extends Controller
             $imagePath = $image->store('images', 'public');
             $item->image_url = $imagePath;
             // ファイル名を取得し、ファイル名を重複しないように、日付をファイル名に入れてファイル名を保存
-            $fileName =   $image->getClientOriginalName() . '_' . time();
+            $fileName = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME) . '_' . date('Ymd_His') . '.' . $image->getClientOriginalExtension();
             $item->image_name = $fileName;
         }
         $item->type = $type;
@@ -185,7 +185,7 @@ class ItemController extends Controller
             $item->image_url = $imagePath;
 
             // ファイル名を取得し、ファイル名を重複しないように、日付をファイル名に入れてファイル名を保存
-            $fileName = $image->getClientOriginalName() . '_' . time();
+            $fileName = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME) . '_' . date('Ymd_His') . '.' . $image->getClientOriginalExtension();
             $item->image_name = $fileName; // 新しい画像名を設定
         }
 

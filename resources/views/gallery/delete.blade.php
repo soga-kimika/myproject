@@ -17,6 +17,7 @@
             <div class="modal-footer">
                 <form action="{{ route('galleries.destroy', [$gallery->id]) }}" method="POST">
                     @csrf
+                    {{-- 削除ボタン --}}
                     @method('DELETE')
                     <button type="submit" class="btn btn-dangers"><i class="fa fa-trash-alt"></i></button>
                 </form>
