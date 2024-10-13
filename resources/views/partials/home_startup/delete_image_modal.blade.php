@@ -4,14 +4,14 @@
         <div class="modal-content">
             {{-- モーダルヘッダー --}}
             <div class="modal-header">
-                <h4 class="modal-title" id="homeStartupItem_imagedelteModalLabel{{ $homeStartupItem->id }}">画像削除</h4>
+                <h4 class="modal-title" id="homeStartupItem_imagedelteModalLabel{{ $homeStartupItem->id }}">削除</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             {{-- モーダル中身 --}}
             <div class="modal-body">
-                <label>この画像を削除しますか？</label>
+                <label>画像を削除しますか？</label>
             </div>
             {{-- モーダルフッター --}}
             <div class="modal-footer">
