@@ -252,8 +252,8 @@ return [
 
     'use_route_url' => false,
     'dashboard_url' => 'home',
-    'logout_url' => 'logout',
-    'login_url' => 'login',
+    'logout_url' => '/logout',
+    'login_url' => '/login',
     'register_url' => 'register',
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
@@ -367,23 +367,23 @@ return [
         //     'topnav_right' => true,
         // ],
 
-        [
-            'text'    => 'account_settings',
-            'icon' => 'fas fa-fw fa-user-cog',
-            'topnav_right' => true,
-            'submenu' => [
-                [
-                    'text' => 'Change Password',
-                    'url'  => 'password/reset',
-                    'icon' => 'fas fa-fw fa-lock',
-                ],
-                [
-                    'text' => 'Logout',
-                    'url'  => '/login',
-                    'icon' => 'fas fa-sign-out-alt',
-                ],
-            ],
-        ],
+        // [
+        //     'text'    => 'account_settings',
+        //     'icon' => 'fas fa-fw fa-user-cog',
+        //     'topnav_right' => true,
+        //     'submenu' => [
+        //         [
+        //             'text' => 'Change Password',
+        //             'url'  => 'password/reset',
+        //             'icon' => 'fas fa-fw fa-lock',
+        //         ],
+        //         [
+        //             'text' => 'Logout',
+        //             'url'  => 'logout',
+        //             'icon' => 'fas fa-sign-out-alt',
+        //         ],
+        //     ],
+        // ],
 
     ],
 
