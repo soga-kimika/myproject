@@ -54,7 +54,7 @@
                     </div>
                     {{-- 要望欄 --}}
                     <div class="form-group d-flex align-items-center col-md-12">
-                        <input type="text" name="request_message" id="request_message" class="item-form-control form-control-lg me-4" placeholder="要望を記入してください" required >
+                        <input type="text" name="request_message" id="request_message" class="item-form-control form-control-lg me-4" placeholder="要望を入力してください" required >
                        
                         {{-- 登録ボタン  --}}
                         <button type="submit" class="btn btn-store ms-2">登録</button>
