@@ -29,7 +29,7 @@ class HomeStartupItemController extends Controller
         return [
             ['title' => 'ファニチャー', 'category' => 'furniture', 'card_id' => '1'],
             ['title' => 'アプライアンス', 'category' => 'appliance', 'card_id' => '2'],
-            ['title' => 'アクセサリーズ', 'category' => 'accessories', 'card_id' => '3'],
+            ['title' => 'アクセサリー', 'category' => 'accessories', 'card_id' => '3'],
         ];
     }   
 

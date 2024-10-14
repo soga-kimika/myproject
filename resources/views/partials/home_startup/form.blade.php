@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-check me-3">
                             <input type="radio" class="form-check-input" name="category" value="accessories" id="accessories">
-                            <label class="form-check-label" for="accessories">アクセサリーズ</label>
+                            <label class="form-check-label" for="accessories">アクセサリー</label>
                         </div>
                     </div>
                     {{-- ファイル名表示 --}}
