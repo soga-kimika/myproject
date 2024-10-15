@@ -129,7 +129,7 @@
             {{-- アクセサリーのカード --}}
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                    <h3 class="card-title"><i class="fas fa-shopping-basket"></i>アクセサリー</h3>
+                    <h3 class="card-title homeStartupItem-card-title"><i class="fas fa-shopping-basket"></i>アクセサリー　</h3>
                     {{-- アクセサリーの合計金額 --}}
                     @php $totalPrice3 = 0; @endphp
                     <strong class="total-amount">計: ￥{{ number_format($totalPrice3) }}</strong>

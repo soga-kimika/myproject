@@ -140,6 +140,7 @@ class ItemController extends Controller
             $fileName = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME) . '_' . date('Ymd_His') . '.' . $image->getClientOriginalExtension();
             $item->image_name = $fileName;
         }
+        
         $item->type = $type;
         // 保存
         $item->save();

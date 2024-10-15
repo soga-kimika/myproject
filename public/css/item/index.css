@@ -225,7 +225,7 @@
         span.title-span {
             font-size: 2rem;
         }
-        /* 建築希望日 */
+        /* 完成望日 */
         h3{
             text-align: right;
         }  
@@ -544,6 +544,7 @@
         /* カードタイトル */
         .homeStartupItem-card-title{
             color: rgb(61, 57, 57);
+            text-align: left;
         }
           /* テーブルの品名・メーカー型番以外の幅 */
           td.col-request.homeStartupItem-col-request {
@@ -627,4 +628,3 @@
         display: inline-block; 
        
     }
-

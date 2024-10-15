@@ -37,7 +37,7 @@ class GalleryController extends Controller
         //imageUploadファイルに登録したものをimageに格納
         $image = $request->file('imageUpload');
         // イメージパスを作成
-        $imagePath = $image->store('image', 'public');
+        $imagePath = $image->store('images', 'public');
         // 画像urlをイメージパスに格納
         $gallery->image_url = $imagePath;
         // ファイル名を取得し、ファイル名を重複しないように、日付をファイル名に入れてファイル名を保存
