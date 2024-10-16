@@ -18,7 +18,7 @@ class HomeStartupItemController extends Controller
         $homeStartupItems2 = $this->getItemsByCategory($cardTitlesAndCategories[1]['category']);
         $homeStartupItems3 = $this->getItemsByCategory($cardTitlesAndCategories[2]['category']);
         // ビューを返す
-        return view('HomeStartUpItem.index', [
+        return view('HomeStartupItem.index', [
             'homeStartupItems1' => $homeStartupItems1,
             'homeStartupItems2' => $homeStartupItems2,
             'homeStartupItems3' => $homeStartupItems3,
