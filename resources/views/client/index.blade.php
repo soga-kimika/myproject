@@ -38,7 +38,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                    <p><i class="fas fa-paw"></i> ペット： <strong>{{ $client->pet == 'yes' ? '飼っている' : '飼っていない' }}</strong></p>
+                                    <p><i class="fas fa-paw"></i> ペット： <strong>{{ $client->pet == 'yes' ? 'いる' : 'いない' }}</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                                     <h5 class="form-title index-form-title p-2">土地</h5>
                                     <div class="row">
                                         <div class="col-6">
-                                            <p><i class="fas fa-map"></i> 所有地： <strong>{{ $client->land_budget_exists == 'yes' ? '所有地あり' : '所有地なし' }}</strong></p>
+                                            <p><i class="fas fa-map"></i> 所有地： <strong>{{ $client->land_budget_exists == 'yes' ? 'あり' : 'なし' }}</strong></p>
                                         </div>
                                         <div class="col-6">
                                             <p><i class="fas fa-yen-sign"></i> 予算： <strong>{{ $client->land_budget }}</strong></p>

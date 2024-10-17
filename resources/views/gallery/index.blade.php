@@ -20,7 +20,7 @@
                             <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none" onchange="displayFileName()" required>
                             <span id="fileName" class="ms-2 gallery-file-name"></span>
                             {{-- ファイル投稿ボタン --}}
-                            <label for="imageUpload" class="btn me-2 form-check-label btn-select">
+                            <label for="imageUpload" class="btn me-2 form-check-label btn-select images-btn-selec">
                                 画像を選択 <i class="fas fa-upload"></i> 
                             </label>
                             <button type="submit" class="btn btn-store ms-2">登録</button>

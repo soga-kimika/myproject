@@ -92,7 +92,7 @@
             color: rgb(86, 80, 80);
         }
         /* ファイル選択ボタン */
-        .btn-select{
+        .images-btn-select{
             margin-left: 10px;
             margin-right: 10px;
         }
@@ -335,24 +335,53 @@
         }
 
         /* client/createレスポンシブ */
+
         @media (max-width: 768px) {
             .small-select {
                 font-size: 0.6rem;  
             }
             .small-select::placeholder {
-                color: transparent; /* プレースホルダーのテキストを透明に */
+                color: transparent; 
             }
             .btn-edit{
                 height: 10px;
             }
-            
-        }
-        @media (max-width: 768px) { /* 画面幅768px以下の場合 */
-            .form-check {
-                flex: 1 1 50%; /* 各ラジオボタンを50%幅に設定 */
+            .item-form{
+                width: 100%;
+            }
+            .btn-select{
+                margin-left: 0;
+                margin-right: 0;
+                height: 30px;
+                font-size: 0.7rem;  
+
+            }
+            .file-name{
+                width: 10rem;
+            }
+            .btn-edit-client{
+                margin-left: 0;
+                margin-right: 0;
+                height: 30px;
+                font-size: 0.7rem;  
+                margin-bottom: 10px;
+            }
+            .item-form-group{
+                height: 30px;   
+                font-size: 0.5rem;  
+                margin-bottom: 10px;
             }
         }
+        @media (max-width: 480px) {
         
+            .item-form{
+                font-size: 0.7rem;  
+            }
+            .form-check-input {
+              margin-top: 0;  
+            }
+        }
+    
         
         
 
@@ -650,3 +679,14 @@
         display: inline-block; 
        
     }
+
+
+    @media (max-width: 768px) {
+        .gallery-file-name{
+            width: 7.5rem;
+        }
+       
+      
+    }
+
+ 
