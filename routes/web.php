@@ -18,6 +18,11 @@
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
             // マイホームNOTEの表示
             Route::prefix('/home')->middleware('auth')->group(function () {
                 Route::get('', [HomeController::class, 'index'])->name('home.index');

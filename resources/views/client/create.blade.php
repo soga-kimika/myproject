@@ -18,7 +18,7 @@
     <form method="post" action="{{ route('clients.store') }}">
         @csrf 
 
-        <div class="row">
+        <div class="row ">
             <div class="col-md-12">
                 <div class="card mb-3 client-mb-3">
                     {{-- 入力フォーム --}}
@@ -29,7 +29,7 @@
                         <div class="form-group">
                             <div class="client-form-inline ">
                                 <label for="adult_count" class="mr-2">大人</label>
-                                <select name="adult_count" id="adult_count" class="form-control mr-3" required>
+                                <select name="adult_count" id="adult_count" class="form-control mr-3 small-select" required>
                                     <option value="" disabled selected>選択してください</option>
                                     @foreach(range(1, 5) as $i)
                                         <option value="{{ $i }}" {{ old('adult_count') == $i ? 'selected' : '' }}>{{ $i }}人</option>
@@ -39,7 +39,7 @@
                             </div>
                             <div class="client-form-inline mt-2">
                                 <label for="child_count" class="mr-2">子供</label>
-                                <select name="child_count" id="child_count" class="form-control mr-3" required>
+                                <select name="child_count" id="child_count" class="form-control mr-3 small-select" required>
                                     <option value="" disabled selected>選択してください</option>
                                     @foreach(range(0, 5) as $i)
                                         <option value="{{ $i }}" {{ old('child_count') === (string)$i ? 'selected' : '' }}>{{ $i }}人</option>
@@ -49,7 +49,7 @@
                             </div>
                             <div class="client-form-inline  mt-2">  
                                 <label for="pet" class="mr-2">ペット</label>
-                                <select name="pet" id="pet" class="form-control  mr-3" required>
+                                <select name="pet" id="pet" class="form-control  mr-3 small-select" required>
                                     <option value="" disabled selected>選択してください</option>
                                     <option value="yes" {{ old('pet') == 'yes' ? 'selected' : '' }}>飼っている</option>
                                     <option value="no" {{ old('pet') == 'no' ? 'selected' : '' }}>飼っていない</option>
@@ -67,7 +67,7 @@
                         <div class="form-group">
                             <div class="client-form-inline justify-content-center">
                                 <label for="land_budget_exists">所有地</label>
-                                <select name="land_budget_exists" id="land_budget_exists" class="form-control mr-3" required>
+                                <select name="land_budget_exists" id="land_budget_exists" class="form-control mr-3 small-select" required>
                                     <option value="" disabled selected>選択してください</option>
                                     <option value="yes" {{ old('land_budget_exists') == 'yes' ? 'selected' : '' }}>所有地あり</option>
                                     <option value="no" {{ old('land_budget_exists') == 'no' ? 'selected' : '' }}>所有地なし</option>
@@ -75,11 +75,11 @@
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
                                 <label>予算</label>
-                                <input type="text" name="land_budget" class="form-control mr-3" placeholder="◯◯◯◯万円と入力してください" id="land_budget_input">
+                                <input type="text" name="land_budget" class="form-control mr-3 small-select" placeholder="◯◯◯◯万円と入力してください" id="land_budget_input">
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
                                 <label for="land_area">坪数</label>
-                                <select name="land_area" class="form-control  mr-3" required>
+                                <select name="land_area" class="form-control  mr-3 small-select" required>
                                     <option value="" disabled selected>選択してください</option>
                                     @foreach(range(20, 90, 10) as $area)
                                         <option value="{{ $area }}" {{ old('land_area') == $area ? 'selected' : '' }}>{{ $area }}坪前後</option>
@@ -99,11 +99,11 @@
                         <div class="form-group">
                             <div class="client-form-inline justify-content-center">
                                 <label>予算</label>
-                                <input type="text" name="building_budget" class="form-control mr-3" placeholder="◯◯◯◯万円と入力してください" required>
+                                <input type="text" name="building_budget" class="form-control mr-3 small-select " placeholder="◯◯◯◯万円と入力してください" required>
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
                                 <label for="building_area">坪数</label>
-                                <select name="building_area" class="form-control mr-3" required>
+                                <select name="building_area" class="form-control mr-3 small-select" required>
                                     <option value="" disabled selected>選択してください</option>
                                     @foreach(range(20, 90, 10) as $area)
                                         <option value="{{ $area }}" {{ old('building_area') == $area ? 'selected' : '' }}>{{ $area }}坪前後</option>
@@ -113,7 +113,7 @@
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
                                 <label for="floors">階数</label>
-                                <select name="floors" class="form-control  mr-3" required>
+                                <select name="floors" class="form-control  mr-3 small-select" required>
                                     <option value="" disabled selected>選択してください</option>
                                     @foreach(range(1, 5) as $floor)
                                         <option value="{{ $floor }}" {{ old('floors') == $floor ? 'selected' : '' }}>{{ $floor }}階建</option>
@@ -123,7 +123,7 @@
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
                                 <label for="layout">間取り</label>
-                                <select name="layout" class="form-control  mr-3" required>
+                                <select name="layout" class="form-control  mr-3 small-select" required>
                                     <option value="" disabled selected>選択してください</option>
                                     @foreach(range(1, 5) as $layout)
                                         <option value="{{ $layout }}" {{ old('layout') == $layout ? 'selected' : '' }}>{{ $layout }}LDK</option>
@@ -143,7 +143,7 @@
                         <div class="form-group">
                             <div class="client-form-inline justify-content-center mt-2">
                                 <label for="regularCars">普通車</label>
-                                <select id="regularCars" name="regularCars" class="form-control mr-3" required>
+                                <select id="regularCars" name="regularCars" class="form-control mr-3 small-select" required>
                                     <option value="" disabled selected>選択してください</option>
                                     @foreach(range(0, 3) as $i)
                                         <option value="{{ $i }}" {{ old('regularCars') === (string)$i ? 'selected' : '' }}>{{ $i }}台</option>
@@ -153,7 +153,7 @@
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
                                 <label for="compactCars">軽自動車</label>
-                                <select id="compactCars" name="compactCars" class="form-control mr-3" required>
+                                <select id="compactCars" name="compactCars" class="form-control mr-3 small-select" required>
                                     <option value="" disabled selected>選択してください</option>
                                     @foreach(range(0, 3) as $i)
                                         <option value="{{ $i }}" {{ old('compactCars') === (string)$i ? 'selected' : '' }}>{{ $i }}台</option>
@@ -163,7 +163,7 @@
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
                                 <label for="motorcycles">バイク</label>
-                                <select id="motorcycles" name="motorcycles" class="form-control mr-3" required>
+                                <select id="motorcycles" name="motorcycles" class="form-control mr-3 small-select" required>
                                     <option value="" disabled selected>選択してください</option>
                                     @foreach(range(0, 3) as $i)
                                         <option value="{{ $i }}" {{ old('motorcycles') === (string)$i ? 'selected' : '' }}>{{ $i }}台</option>
@@ -173,7 +173,7 @@
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
                                 <label for="bicycles">自転車</label>
-                                <select id="bicycles" name="bicycles" class="form-control  mr-3" required>
+                                <select id="bicycles" name="bicycles" class="form-control  mr-3 small-select" required>
                                     <option value="" disabled selected>選択してください</option>
                                     @foreach(range(0, 3) as $i)
                                         <option value="{{ $i }}" {{ old('bicycles') === (string)$i ? 'selected' : '' }}>{{ $i }}台</option>
@@ -191,7 +191,7 @@
                     </div>
                     <div class="client-card-body text-center">
                         <div class="form-group">
-                            <input type="text" name="construction_area" class="form-control " placeholder="例）城北エリア　北久米方面" >
+                            <input type="text" name="construction_area" class="form-control small-select" placeholder="例）城北エリア　北久米方面" >
                         </div>
                     </div>
                 </div>
@@ -202,18 +202,18 @@
                     </div>
                     <div class="client-card-body">
                         <div class="form-group">
-                            <input type="date" name="date" class="form-control">
+                            <input type="date" name="date" class="form-control small-select">
                         </div>
                     </div>
                 </div>
 
                 <div class="card mb-3  client-mb-3">
                     <div class="card-header">
-                        <h5 class="form-title">今の家で不満に思っていること</h5>
+                        <h5 class="form-title">今の家の不満点</h5>
                     </div>
                     <div class="client-card-body text-center">
                         <div class="form-group">
-                            <textarea name="current_home_issues" class="form-control" rows="6" placeholder="不満点を記入してください" ></textarea>
+                            <textarea name="current_home_issues" class="form-control small-select" rows="6" placeholder="不満点を入力してください   " ></textarea>
                         </div>
                     </div>
                 </div>

@@ -186,7 +186,7 @@
                                 </div>
                                 <div class="client-card-body text-center">
                                     <div class="form-group">
-                                        <input type="text" name="construction_area" class="form-control" placeholder="家を建てる希望の場所・エリアを入力" value="{{ old('construction_area', $client->construction_area) }}" >
+                                        <input type="text" name="construction_area" class="form-control" placeholder="例）城北エリア　北久米方面" value="{{ old('construction_area', $client->construction_area) }}" >
                                     </div>
                                 </div>
                             </div>
@@ -204,11 +204,11 @@
 
                             <div class="card mb-3 client-mb-3">
                                 <div class="card-header">
-                                    <h5 class="form-title">今の家で不満に思っていること</h5>
+                                    <h5 class="form-title">今の家の不満点</h5>
                                 </div>
                                 <div class="client-card-body text-center">
                                     <div class="form-group">
-                                        <textarea name="current_home_issues" class="form-control" rows="6" placeholder="不満に思っていることを入力" >{{ old('current_home_issues', $client->current_home_issues) }}</textarea>
+                                        <textarea name="current_home_issues" class="form-control" rows="6" placeholder="不満点を入力してください" >{{ old('current_home_issues', $client->current_home_issues) }}</textarea>
                                     </div>
                                 </div>
                             </div>

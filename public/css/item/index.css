@@ -334,6 +334,28 @@
             border: 2px solid  burlywood;
         }
 
+        /* client/createレスポンシブ */
+        @media (max-width: 768px) {
+            .small-select {
+                font-size: 0.6rem;  
+            }
+            .small-select::placeholder {
+                color: transparent; /* プレースホルダーのテキストを透明に */
+            }
+            .btn-edit{
+                height: 10px;
+            }
+            
+        }
+        @media (max-width: 768px) { /* 画面幅768px以下の場合 */
+            .form-check {
+                flex: 1 1 50%; /* 各ラジオボタンを50%幅に設定 */
+            }
+        }
+        
+        
+        
+
         /* client/index */
         /* ヘッダータイトル */
         .content-header .content-header-client{

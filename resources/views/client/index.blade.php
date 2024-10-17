@@ -140,7 +140,7 @@
                         <div class="col-md-12">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <h5 class="form-title index-form-title p-2">今の家で不満に思っていること</h5>
+                                    <h5 class="form-title index-form-title p-2">今の家の不満点</h5>
                                     <p><strong>{{ $client->current_home_issues }}</strong></p>
                                 </div>
                             </div>
