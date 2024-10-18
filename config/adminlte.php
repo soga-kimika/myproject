@@ -63,12 +63,12 @@ return [
     |
     */
 
-    'logo' => '<b>マイホームNOTE</b>',
-    'logo_img' => 'vendor/adminlte/dist/img/house-solid.svg',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo' => '<b><i class="fas fa-house-user"></i>マイホームNOTE</b>',
+    'logo_img' => null,
+    'logo_img_class' => null,
     'logo_img_xl' => null,
-    'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'マイホーム',
+    'logo_img_xl_class' => null,
+    'logo_img_alt' => null,
 
     /*
     |--------------------------------------------------------------------------
