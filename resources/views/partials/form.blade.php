@@ -38,7 +38,7 @@
                         </div>
                         <div class="d-flex align-items-center ">
                             <label for="imageUpload" class="btn form-check-label btn-select item-btn-select">
-                                画像を選択 <i class="far fa-upload"></i> 
+                                画像を選択 <i class="fas fa-upload"></i> 
                             </label>
                             <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none" onchange="displayFileName('imageUpload', 'fileName')">
                             <span id="fileName" class="ms-2 file-name"></span>

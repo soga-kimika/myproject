@@ -20,7 +20,7 @@
                             </div>
                             <div class="d-flex align-items-center">
                             {{-- ファイル選択ボタン --}}
-                            <label for="imageUpload{{ $homeStartupItem->id }}" class="btn me-2 form-check-label btn-select ">画像を選択 <i class="fas fa-upload"></i>
+                            <label for="imageUpload{{ $homeStartupItem->id }}" class="btn me-2 form-check-label btn-select ">画像を選択<i class="fas fa-upload"></i>
                             </label>
                          {{-- ファイル名表示 --}}
                                 <input type="file" name="imageUpload" id="imageUpload{{ $homeStartupItem->id }}" accept="image/*" class="d-none" onchange="displayFileName('imageUpload{{ $homeStartupItem->id }}', 'fileName{{ $homeStartupItem->id }}')"value="{{ old('image_url',$homeStartupItem->image_url) }}">

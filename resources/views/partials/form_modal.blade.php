@@ -33,7 +33,7 @@
                         </span>
                     </div>
             </div>
-            <div class="form-group d-flex align-items-center col-md-12">
+            <div class="form-group d-flex align-items-center col-md-12 flex-wrap">
                 {{-- 要望入力欄 --}}
                 <input type="text" name="request_message" id="edit_request_message" class="item-form-control form-control-lg me-2" placeholder="要望を記入してください" 
                 value="{{ old('request_message', $item->request_message) }}" required >
