@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\HomeStartupItem; 
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 // 画面表示
 class HomeStartupItemController extends Controller
@@ -13,10 +14,12 @@ class HomeStartupItemController extends Controller
     {
         // タイトルから、カテゴリーを取得
         $cardTitlesAndCategories = $this->cardTitlesAndCategories();
+        // ユーザーIDを取得
+        $userId = Auth::id();
         // カテゴリーからアイテムを取得それぞれに格納
-        $homeStartupItems1 = $this->getItemsByCategory($cardTitlesAndCategories[0]['category']);
-        $homeStartupItems2 = $this->getItemsByCategory($cardTitlesAndCategories[1]['category']);
-        $homeStartupItems3 = $this->getItemsByCategory($cardTitlesAndCategories[2]['category']);
+        $homeStartupItems1 = $this->getItemsByCategory($cardTitlesAndCategories[0]['category'],$userId);
+        $homeStartupItems2 = $this->getItemsByCategory($cardTitlesAndCategories[1]['category'],$userId);
+        $homeStartupItems3 = $this->getItemsByCategory($cardTitlesAndCategories[2]['category'],$userId);
         // ビューを返す　
         return view('homeStartupItem.index', [
             'homeStartupItems1' => $homeStartupItems1,
@@ -34,9 +37,10 @@ class HomeStartupItemController extends Controller
     }   
 
 // カテゴリーをもとに、アイテム（データ）を取得
-    private function getItemsByCategory($category)
+    private function getItemsByCategory($category,$userId)
     {   
         $homeStartupItems = HomeStartupItem::where('category', $category)
+        ->where('user_id',$userId)
         // 優先度の高い順に表示
             ->orderByRaw("FIELD(priority, 'high', 'medium', 'low', 'remove') asc")
             ->get();
@@ -54,6 +58,7 @@ public function store(Request $request)
         'manufacturer' => 'nullable|string|max:255',
         'price' => 'nullable|integer|min:1000',
         'quantity' => 'nullable|integer|min:1',
+        'amount' => 'nullable|numeric',
         'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
        
     ]);
@@ -73,6 +78,8 @@ public function store(Request $request)
     $homeStartupItem->quantity = $request->input('quantity');
     // 合計
     $homeStartupItem->amount = $homeStartupItem->price * $homeStartupItem->quantity; 
+    // ユーザーID
+    $homeStartupItem->user_id = Auth::id();
 
     // カードIDの設定
     $titlesAndCategories = $this->cardTitlesAndCategories();

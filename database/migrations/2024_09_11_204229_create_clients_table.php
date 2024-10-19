@@ -14,6 +14,7 @@ return new class extends Migration
         // 施主情報登録
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->integer('adult_count');
             $table->integer('child_count');

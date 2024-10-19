@@ -168,7 +168,7 @@
 
         // ランドバジェット入力の表示・非表示を切り替える関数を定義
         function toggleLandBudgetInput() {
-            // 'landBudgetExists'の値が'yes'の場合
+            // 'landBudgetExists'の値が'yes'所有地ありの場合
             if (landBudgetExists.value === 'yes') {
                 // 'landBudgetInput'の値を空に設定
                 landBudgetInput.value = ''; 
@@ -176,16 +176,16 @@
                 landBudgetInput.setAttribute('disabled', true); 
                 // 'landBudgetInput'の背景色を薄いグレーに設定
                 landBudgetInput.style.backgroundColor = '#e9ecef'; 
-                // プレースホルダーを空に設定
+                // プレースホルダーをからに設定
                 landBudgetInput.placeholder = ''; 
             } else {
-                // 'landBudgetExists'の値が'yes'でない場合
+                // 'landBudgetExists'の値が'yes'所有地がない場合
                 // 'landBudgetInput'の無効属性を削除
                 landBudgetInput.removeAttribute('disabled'); 
                 // 'landBudgetInput'の背景色を元に戻す
                 landBudgetInput.style.backgroundColor = ''; 
-                // プレースホルダーを'5000万円'に設定
-                landBudgetInput.placeholder = '5000万円';
+                // プレースホルダーを'例）3000万円'に設定
+                landBudgetInput.placeholder = '例）3000万円';
             }
         }
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Client;
+use Illuminate\Support\Facades\Auth;
+
 
 
 //プロフィール情報をデータベースから取って表示    
@@ -14,8 +16,9 @@ class ClientController extends Controller
      */
     public function index()
     {
-        // 一番最初のレコードを取得
-        $client = Client::first();
+         //ログインしているユーザーのIDを探して、そのIDの一番最初のレコードを取得
+         $userId = Auth::id();
+         $client = Client::where('user_id', $userId)->first();
         // レコードがあったら、プロフィール情報を表示
         if ($client !== null) {
             return view('client.index', compact('client'));
@@ -23,7 +26,7 @@ class ClientController extends Controller
             // レコードかった場合、登録画面に遷移
             return redirect()->route('clients.create');
         }
-
+        
 
      //プロフィールページの表示
     }
@@ -80,6 +83,8 @@ class ClientController extends Controller
             $clients['land_budget'] = '-';
         }
         // 登録
+        $clients['user_id'] = Auth::id();
+
         Client::create($clients);
         // 保存
         return redirect()->route('clients.index');
@@ -92,8 +97,10 @@ class ClientController extends Controller
      */
     public function edit()
     {
-        //一番最初のレコードを取得
-        $client = Client::first();
+        //ログインしているユーザーのIDを探して、そのIDの一番最初のレコードを取得
+        $userId = Auth::id();
+        $client = Client::where('user_id', $userId)->first();
+
         // ビューを返す
         return view('client.edit', compact('client'));
     }
@@ -123,8 +130,9 @@ class ClientController extends Controller
             'date' => 'nullable|date',
             'current_home_issues' => 'nullable|string',
         ]);
-        // 最初の行を取得
-        $client = Client::first();
+         //ログインしているユーザーのIDを探して、そのIDの一番最初のレコードを取得
+        $userId = Auth::id();
+        $client = Client::where('user_id', $userId)->first();
         // 更新
         $client->update($request->all());
         // ビューを返す

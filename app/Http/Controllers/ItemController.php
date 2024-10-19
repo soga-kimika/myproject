@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 // $type（bathroom-areasなど）を引数で渡して、$type（bathroom-areasなど）ごとに、
 // ページ内容を表示
@@ -14,6 +15,8 @@ class ItemController extends Controller
 {
     public function index($type)
     {
+        // ログインID取得
+        $userId = Auth::id();
         // ページタイトル・アイコンを、タイプごとに取得し、$pageInfoにまとめて格納
         $pageInfo = $this->getPageTitleByType($type);
         // タイトルを取得
@@ -23,9 +26,9 @@ class ItemController extends Controller
         // カードのタイトルとカテゴリーをタイプから取得
         $cardTitlesAndCategories = $this->getCardTitlesAndCategoriesByType($type);
         // カテゴリー１から、カード1用のアイテムを取得
-        $items1 = $this->getItemsByCategory($type, $cardTitlesAndCategories[0]['category']);
+        $items1 = $this->getItemsByCategory($type, $cardTitlesAndCategories[0]['category'],$userId);
         // カテゴリー２からカード2用のアイテムを取得
-        $items2 = $this->getItemsByCategory($type, $cardTitlesAndCategories[1]['category']);
+        $items2 = $this->getItemsByCategory($type, $cardTitlesAndCategories[1]['category'],$userId);
 
         return view('item.index', [
             'pageTitle' => $pageTitle,
@@ -91,10 +94,11 @@ class ItemController extends Controller
 
 
     // タイプと、カテゴリーに基づいてアイテムを取得
-    private function getItemsByCategory($type, $category)
+    private function getItemsByCategory($type, $category,$userId)
     {
         $items = Item::where('type', $type)
             ->where('category', $category)
+            ->where('user_id',$userId)
             // 優先度の高い順番に表示
             ->orderByRaw("FIELD(priority, 'high', 'medium', 'low', 'remove') asc")
             ->get();
@@ -116,10 +120,11 @@ class ItemController extends Controller
         ]);
 
         // アイテム（優先度、カテゴリー名、要望）の作成
-        $item = new Item();
+        $item= new Item();
         $item->priority = $request->input('priority');
         $item->category = $request->input('category');
         $item->request_message = $request->input('request_message');
+        $item->user_id = Auth::id();
 
         // getCardTitlesAndCategoriesByTypeこれで取得した、IDをもとに、
         // カードナンバーを設定し、カード１には、ID１を、カード２にはID２のものが表示されるように振り分け

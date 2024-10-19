@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id')->unsigned()->nullable()->index();
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade')->index(); 
             $table->string('name', 100)->nullable()->index();
             $table->string('type', 100)->nullable();
             $table->string('detail', 500)->nullable();

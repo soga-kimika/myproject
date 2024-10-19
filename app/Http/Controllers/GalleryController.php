@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Gallery;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 
 //画面表示
@@ -16,8 +17,10 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        // 全てのギャラリーの情報を取得
-        $galleries = Gallery::all();
+        // ログインしているユーザーのIDを取得
+        $userId = Auth::id();
+        // ログインユーザーのギャラリー情報を取得
+        $galleries = Gallery::where('user_id',$userId)->get();
         // ビューを返す
         return view('gallery.index', compact('galleries'));
     }
@@ -34,6 +37,8 @@ class GalleryController extends Controller
 
         // 画像を登録
         $gallery = new Gallery();
+        // ログインしているユーザーのIDからそのユーザーのIDの画像のみ取得
+        $gallery -> user_id = Auth::id();
         //imageUploadファイルに登録したものをimageに格納
         $image = $request->file('imageUpload');
         // イメージパスを作成

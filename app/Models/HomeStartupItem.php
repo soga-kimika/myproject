@@ -9,6 +9,7 @@ class homeStartupItem extends Model
 {
 
     protected $fillable = [
+        'user_id',
         'priority',
         'category',
         'item_name',
