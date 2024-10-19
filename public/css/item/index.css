@@ -400,9 +400,9 @@
         }
         @media (max-width: 480px) {
         
-            .item-form{
+            /* .item-form{
                 font-size: 0.6rem;  
-            }
+            } */
             .form-check-input {
               margin-top: 3px;  
             }

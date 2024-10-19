@@ -7,7 +7,7 @@
                 <div class="border-bottom pb-2 mb-3 mt-4">
                     <div class="col-md-12 d-flex flex-wrap mb-3 ">
                         <div class="d-flex item-form">
-                            <label class="mb-1 me-2">優先度：</label>
+                            <label class="mb-1">優先度：</label>
                             <div class="form-check me-1">
                                 <input type="radio" class="form-check-input" name="priority" value="high" id="priority-high" checked>
                                 <label class="form-check-label radio" for="priority-high">高 <i class="fas fa-star"></i></label>
