@@ -5,40 +5,39 @@
             @csrf
             {{-- 入力フォーム --}}
             <div class="border-bottom pb-2 mb-3 mt-4">
-                <div class="col-md-12 d-flex mb-3">
-                    <label class="mb-0">優先度：</label>
-                    <div class="d-flex">
-                        <div class="form-check me-3">
+                <div class="col-md-12 d-flex flex-wrap mb-3">
+                    <div class="d-flex item-form">
+                        <label class="mb-0">優先度：</label>
+                        <div class="form-check me-2">
                             <input type="radio" class="form-check-input" name="priority" value="high" id="priority-high" checked>
                             <label class="form-check-label radio" for="priority-high">高 <i class="fa fa-star"></i></label>
                         </div>
-                        <div class="form-check me-3">
+                        <div class="form-check me-2">
                             <input type="radio" class="form-check-input" name="priority" value="medium" id="priority-medium">
                             <label class="form-check-label radio" for="priority-medium">中 <i class="fa fa-star-half-alt"></i></label>
                         </div>
-                        <div class="form-check me-3">
+                        <div class="form-check me-2">
                             <input type="radio" class="form-check-input" name="priority" value="low" id="priority-low">
                             <label class="form-check-label radio" for="priority-low">低 <i class="far fa-star"></i></label>
                         </div>
                     </div>
-                    <div class="me-3"></div>
+                    <div class="d-flex flex-wrap item-form">
                     <label class="me-2 mb-0">カテゴリー：</label>
-                    <div class="d-flex align-items-center">
-                        <div class="form-check me-3">
+                        <div class="form-check me-2">
                             <input type="radio" class="form-check-input" name="category" value="furniture" id="furniture" checked>
                             <label class="form-check-label" for="furniture">ファニチャー</label>
                         </div>
-                        <div class="form-check me-3">
+                        <div class="form-check me-2">
                             <input type="radio" class="form-check-input" name="category" value="appliance" id="appliance">
                             <label class="form-check-label" for="appliance">アプライアンス</label>
                         </div>
-                        <div class="form-check me-3">
+                        <div class="form-check me-2">
                             <input type="radio" class="form-check-input" name="category" value="accessories" id="accessories">
                             <label class="form-check-label" for="accessories">アクセサリー</label>
                         </div>
                     </div>
                     {{-- ファイル名表示 --}}
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center ">
                         <div class="d-flex align-items-center">
                             <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none" onchange="displayFileName('imageUpload', 'fileName')">
                             <span id="fileName" class="ms-2 file-name"></span>
@@ -48,7 +47,7 @@
                  {{-- チェックボックス、新規追加時はチェックされた状態で表示 --}}
                 <input type="checkbox" class="check-consulted new-record" style="display: none;" data-id="new" checked>
                 {{-- 品名記入欄--}}
-                <div class="form-group d-flex align-items-center col-md-12 mb-3">
+                <div class="form-group d-flex align-items-center col-md-12 mb-3 flex-wrap">
                     <input type="text" name="item_name" id="item_name" class="item-form-control form-control-lg me-2" placeholder="品名" required >
                     {{-- メーカー・型番記入欄 --}}
                     <input type="text" name="manufacturer" id="manufacturer" class="item-form-control form-control-lg me-2" placeholder="メーカー・型番" >

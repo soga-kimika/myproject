@@ -18,7 +18,7 @@
                                 <div class="col-md-12">
                             <div class="card mb-3 client-mb-3">
                                 <div class="card-header">
-                                    <h5 class="form-title">住む予定の人数</h5>
+                                    <h5 class="form-title"><i class="far fa-user"></i>住む予定の人数</h5>
                                 </div>
                                 <div class="client-card-body">
                                     <div class="form-group">
@@ -56,7 +56,7 @@
 
                             <div class="card mb-3 client-mb-3">
                                 <div class="card-header">
-                                    <h5 class="form-title">土地</h5>
+                                    <h5 class="form-title"><i class="far fa-map"></i>土地</h5>
                                 </div>
                                 <div class="client-card-body">
                                     <div class="form-group">
@@ -88,7 +88,7 @@
 
                             <div class="card mb-3 client-mb-3">
                                 <div class="card-header">
-                                    <h5 class="form-title">建物</h5>
+                                    <h5 class="form-title"><i class="fas fa-home"></i>建物</h5>
                                 </div>
                                 <div class="client-card-body">
                                     <div class="form-group">
@@ -132,7 +132,7 @@
 
                             <div class="card mb-3 client-mb-3">
                                 <div class="card-header">
-                                    <h5 class="form-title">駐車場</h5>
+                                    <h5 class="form-title"><i class="fas fa-car"></i>駐車場</h5>
                                 </div>
                                 <div class="client-card-body">
                                     <div class="form-group">
@@ -182,7 +182,7 @@
 
                             <div class="card mb-3 client-mb-3">
                                 <div class="card-header">
-                                    <h5 class="form-title">建築希望地</h5>
+                                    <h5 class="form-title"><i class="fas fa-map-marked-alt"></i>建築希望地</h5>
                                 </div>
                                 <div class="client-card-body text-center">
                                     <div class="form-group">
@@ -193,7 +193,7 @@
 
                             <div class="card mb-3 client-mb-3">
                                 <div class="card-header">
-                                    <h5 class="form-title">完成希望日</h5>
+                                    <h5 class="form-title"><i class="far fa-calendar-check"></i>完成希望日</h5>
                                 </div>
                                 <div class="client-card-body">
                                     <div class="form-group">
@@ -204,7 +204,7 @@
 
                             <div class="card mb-3 client-mb-3">
                                 <div class="card-header">
-                                    <h5 class="form-title">今の家の不満点</h5>
+                                    <h5 class="form-title"><i class="far fa-thumbs-down"></i>今の家の不満点</h5>
                                 </div>
                                 <div class="client-card-body text-center">
                                     <div class="form-group">

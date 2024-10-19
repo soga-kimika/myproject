@@ -6,7 +6,7 @@
 <div class="btn-edit-client">
     {{-- 編集モーダルトリガー --}}
 <a href="#" class="btn btn-edit btn-edit-client" data-toggle="modal" data-target="#client-editModal">
-    プロフィール編集 <i class="fas fa-edit"></i>
+    プロフィール編集 <i class="far fa-edit"></i>
 </a>
 </div>
         
@@ -27,18 +27,18 @@
                             <div class="card mb-2">
                                 {{-- 編集モーダル中身 --}}
                                 <div class="card-body">
-                                    <h5 class="form-title index-form-title p-2">住む予定の人数</h5>
+                                    <h5 class="form-title index-form-title p-2"><i class="far fa-user"></i> 住む予定の人数 </h5>
                                     <div class="row">
                                         <div class="col-6">
-                                            <p><i class="fas fa-user"></i> 大人： <strong>{{ $client->adult_count }}人</strong></p>
+                                            <p>大人： <strong>{{ $client->adult_count }}人</strong></p>
                                         </div>
                                         <div class="col-6">
-                                            <p><i class="fas fa-child client-icon"></i> 子供： <strong>{{ $client->child_count }}人</strong></p>
+                                            <p>子供： <strong>{{ $client->child_count }}人</strong></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                    <p><i class="fas fa-paw"></i> ペット： <strong>{{ $client->pet == 'yes' ? 'いる' : 'いない' }}</strong></p>
+                                    <p></i> ペット： <strong>{{ $client->pet == 'yes' ? 'いる' : 'いない' }}</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -47,68 +47,18 @@
                         <div class="col-md-6">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <h5 class="form-title index-form-title p-2">土地</h5>
+                                    <h5 class="form-title index-form-title p-2"><i class="far fa-map"></i> 土地</h5>
                                     <div class="row">
                                         <div class="col-6">
-                                            <p><i class="fas fa-map"></i> 所有地： <strong>{{ $client->land_budget_exists == 'yes' ? 'あり' : 'なし' }}</strong></p>
+                                            <p>所有地： <strong>{{ $client->land_budget_exists == 'yes' ? 'あり' : 'なし' }}</strong></p>
                                         </div>
                                         <div class="col-6">
-                                            <p><i class="fas fa-yen-sign"></i> 予算： <strong>{{ $client->land_budget }}</strong></p>
+                                            <p>予算： <strong>{{ $client->land_budget }}</strong></p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                            <p><i class="fas fa-home"></i> 坪数： <strong>{{ $client->land_area }}坪前後</strong></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mb-2">
-                        <div class="col-md-6">
-                            <div class="card mb-2">
-                                <div class="card-body">
-                                    <h5 class="form-title index-form-title p-2">建物</h5>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <p><i class="fas fa-yen-sign"></i> 予算： <strong>{{ $client->building_budget }}</strong></p>
-                                        </div>
-                                        <div class="col-6">
-                                            <p><i class="fas fa-home"></i> 坪数： <strong>{{ $client->building_area }}坪前後</strong></p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <p><i class="fas fa-layer-group"></i> 階数： <strong>{{ $client->floors }}階建</strong></p>
-                                        </div>
-                                        <div class="col-6">
-                                            <p><i class="fas fa-th"></i> 間取り： <strong>{{ $client->layout }}LDK</strong></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="card mb-2">
-                                <div class="card-body">
-                                    <h5 class="form-title index-form-title p-2">駐車場</h5>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <p><i class="fas fa-car"></i> 普通車： <strong>{{ $client->regularCars }}台</strong></p>
-                                        </div>
-                                        <div class="col-6">
-                                            <p><i class="fas fa-car-side"></i> 軽自動車： <strong>{{ $client->compactCars }}台</strong></p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <p><i class="fas fa-motorcycle"></i> バイク： <strong>{{ $client->motorcycles }}台</strong></p>
-                                        </div>
-                                        <div class="col-6">
-                                            <p><i class="fas fa-bicycle"></i> 自転車： <strong>{{ $client->bicycles }}台</strong></p>
+                                            <p> 坪数： <strong>{{ $client->land_area }}坪前後</strong></p>
                                         </div>
                                     </div>
                                 </div>
@@ -120,7 +70,57 @@
                         <div class="col-md-6">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <h5 class="form-title index-form-title p-2">建築希望地</h5>
+                                    <h5 class="form-title index-form-title p-2"><i class="fas fa-home"></i> 建物</h5>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p>予算： <strong>{{ $client->building_budget }}</strong></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p>坪数： <strong>{{ $client->building_area }}坪前後</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p>階数： <strong>{{ $client->floors }}階建</strong></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p> 間取り： <strong>{{ $client->layout }}LDK</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card mb-2">
+                                <div class="card-body">
+                                    <h5 class="form-title index-form-title p-2"><i class="fas fa-car"></i>駐車場</h5>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p> 普通車： <strong>{{ $client->regularCars }}台</strong></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p> 軽自動車： <strong>{{ $client->compactCars }}台</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p>バイク： <strong>{{ $client->motorcycles }}台</strong></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p>自転車： <strong>{{ $client->bicycles }}台</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <div class="card mb-2">
+                                <div class="card-body">
+                                    <h5 class="form-title index-form-title p-2"><i class="fas fa-map-marked-alt"></i>建築希望地</h5>
                                     <p><strong>{{ $client->construction_area }}</strong></p>
                                 </div>
                             </div>
@@ -129,7 +129,7 @@
                         <div class="col-md-6">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <h5 class="form-title index-form-title p-2">完成希望日</h5>
+                                    <h5 class="form-title index-form-title p-2"><i class="far fa-calendar-check"></i>完成希望日</h5>
                                     <p><strong>{{ $client->date }}</strong></p>
                                 </div>
                             </div>
@@ -140,7 +140,7 @@
                         <div class="col-md-12">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <h5 class="form-title index-form-title p-2">今の家の不満点</h5>
+                                    <h5 class="form-title index-form-title p-2"><i class="far fa-thumbs-down"></i>今の家の不満点</h5>
                                     <p><strong>{{ $client->current_home_issues }}</strong></p>
                                 </div>
                             </div>

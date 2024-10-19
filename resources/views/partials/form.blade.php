@@ -6,7 +6,7 @@
                 {{-- 入力フォーム --}}
                 <div class="border-bottom pb-2 mb-3 mt-4">
                     <div class="col-md-12 d-flex flex-wrap mb-3 ">
-                        <div class="d-flex me-3 item-form">
+                        <div class="d-flex item-form">
                             <label class="mb-1 me-2">優先度：</label>
                             <div class="form-check me-2">
                                 <input type="radio" class="form-check-input" name="priority" value="high" id="priority-high" checked>
@@ -36,7 +36,7 @@
                                 </div>
                             @endforeach
                         </div>
-                        <div class="d-flex align-items-center item-image">
+                        <div class="d-flex align-items-center ">
                             <label for="imageUpload" class="btn form-check-label btn-select item-btn-select">
                                 画像を選択 <i class="fas fa-upload"></i> 
                             </label>

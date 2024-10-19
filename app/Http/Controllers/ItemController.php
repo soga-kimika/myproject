@@ -50,7 +50,7 @@ class ItemController extends Controller
     {
         $titles = [
             'bathrooms' => ['title' => 'バスルーム', 'icon' => '<i class="fas fa-sink"></i>'],
-            'ideas' => ['title' => 'アイディア', 'icon' => '<i class="fas fa-lightbulb"></i>'],
+            'ideas' => ['title' => 'アイディア', 'icon' => '<i class="far fa-lightbulb"></i>'],
             'designs' => ['title' => 'デザイン', 'icon' => '<i class="fas fa-palette"></i>'],
             'rooms' => ['title' => 'プラベートルーム', 'icon' => '<i class="fas fa-bed"></i>'],
             'storages' => ['title' => 'ストレージ', 'icon' => '<i class="fas fa-box"></i>'],

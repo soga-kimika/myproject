@@ -38,14 +38,14 @@
                                             {{-- 編集ボタン　モーダルトリガー　--}}
                                             <td class="col-edit">
                                                 <a href="#" class="btn btn-edit" data-toggle="modal" data-target="#item-editModal{{ $item1->id }}" data-request="{{ $item1->request_message }}" data-priority="{{ $item1->priority }}"data-image-name="{{ $item1->image_name }}" 
-                                                    data-image-url="{{ $item1->image_url }}"><i class="fas fa-edit"></i></a>
+                                                    data-image-url="{{ $item1->image_url }}"><i class="far fa-edit"></i></a>
                                                 </a>
                                             </td>
                                             <td class="col-image">
                                                 {{-- フォームで画像を投稿していれば、画像のアイコンを表示 トリガー--}}
                                                 @if($item1->image_url)
                                                     <a href="#" class="btn btn-infos" data-toggle="modal" data-target="#imageModal{{ $item1->id }}">
-                                                        <i class="fas fa-image item-fa-image"></i>
+                                                        <i class="far fa-image item-fa-image"></i>
                                                     </a>
                                                 @endif
                                             </td>
@@ -99,13 +99,13 @@
                                                 {{-- 編集ボタン モーダルトリガー--}}
                                                 <td class="col-edit">
                                                 <a href="#" class="btn btn-edit" data-toggle="modal" data-target="#item-editModal{{ $item2->id }}" data-request="{{ $item2->request_message }}" data-priority="{{ $item2->priority }}"data-image-name="{{ $item2->image_name }}" 
-                                                    data-image-url="{{ $item2->image_url }}"><i class="fas fa-edit"></i></a>
+                                                    data-image-url="{{ $item2->image_url }}"><i class="far fa-edit"></i></a>
                                                 </td>   
                                                 <td class="col-image">
                                                     {{-- フォームで画像を投稿していれば、画像のアイコンを表示　画像モーダルトリガー --}}
                                                     @if($item2->image_url)
                                                         <a href="#" class="btn btn-infos" data-toggle="modal" data-target="#imageModal{{ $item2->id }}">
-                                                            <i class="fas fa-image item-fa-image"></i>
+                                                            <i class="far fa-image item-fa-image"></i>
                                                         </a>
                                                     @endif
                                             </td>

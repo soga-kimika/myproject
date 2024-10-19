@@ -38,14 +38,14 @@
                                     <td class="col-amount homeStartupItem-col-amount">{{ number_format($homeStartupItem->amount) }}</td>                                    
                                     <td class="col-edit">
                                         <a href="#" class="btn btn-edit" data-toggle="modal" data-target="#homeStartupItem-editModal{{ $homeStartupItem->id }}">
-                                            <i class="fas fa-edit"></i>
+                                            <i class="far fa-edit"></i>
                                         </a>
                                     </td>
                                     {{-- 画像 --}}
                                     <td class="col-image">
                                         @if($homeStartupItem->image_url) 
                                             <a href="#" class="btn btn-infos" data-toggle="modal" data-target="#homeStartupItem-imageModal{{ $homeStartupItem->id }}">
-                                                <i class="fas fa-image item-fa-image"></i>
+                                                <i class="far fa-image item-fa-image"></i>
                                             </a>
                                         @endif
                                     </td>
@@ -98,7 +98,7 @@
                                     <td class="col-amount homeStartupItem-col-amount">{{ number_format($homeStartupItem->amount) }}</td>                                    
                                     <td class="col-edit">
                                         <a href="#" class="btn btn-edit" data-toggle="modal" data-target="#homeStartupItem-editModal{{ $homeStartupItem->id }}">
-                                            <i class="fas fa-edit"></i>
+                                            <i class="far fa-edit"></i>
                                         </a>
                                     </td>
                                     {{-- 画像 --}}

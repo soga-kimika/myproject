@@ -15,7 +15,7 @@
         }
         /* ボタン共通*/
         .btn {
-            border: 2px solid ;
+            border: 1px solid ;
         }
         .btn:hover{
             background-color: rgb(255, 255, 255); 
@@ -27,11 +27,11 @@
         }
         .btn:focus {
             outline: none;
-            border: 2px solid blue; 
+            border: 1px solid blue; 
         }
         .check-consulted:focus{
             outline: none;
-            border: 2px solid blue;   
+            border: 1px solid blue;   
         }
         .btn-select:focus {
         outline: none; 
@@ -101,7 +101,7 @@
         appearance: none;
         width: 18px;
         height: 18px;
-        border: 2px solid rgb(86, 80, 80);
+        border: 1px solid rgb(86, 80, 80);
         border-radius: 4px; 
         outline: none;  
         cursor: pointer; 
@@ -144,6 +144,9 @@
     }
         /* アイコン共通 */
         .fas{
+            padding-right: 5px;
+        }
+        .far{
             padding-right: 5px;
         }
         /* アイディアアイコン */
@@ -332,6 +335,34 @@
         .client-card-body{
             padding: 2.5rem;
         }
+        /* 住む予定の人数アイコン */
+        .fa-user{
+            color:#ffc107;
+        }
+        /* 土地アイコン */
+        .fa-map{
+            color:  rgb(8, 86, 175) ;
+        }
+        /* 家アイコン */
+        .fa-home{
+            color: rgb(92, 56, 9);
+        }
+        /* 車アイコン */
+        .fa-car{
+            color:orangered ;
+        }
+        /* 建築希望地 */
+        .fa-map-marked-alt{
+            color:#13b0a0;
+        }
+        /* 完成希望日アイコン */
+        .fa-calendar-check{
+            color:rgb(231, 79, 104);
+        }
+        /* バッドアイコン */
+        .fa-thumbs-down{
+            color:darkblue; 
+        }
 
         /* client/createレスポンシブ */
 
@@ -392,7 +423,7 @@
         }
         /* プルダウンメニュータイトル */
         .form-title{
-            color:rgb(35, 189, 203);
+            color:rgb(71, 70, 70);
             font-size: 23px;
             text-align: center; 
         }
@@ -483,7 +514,7 @@
         text-align: right;
         } /* カード編集アイコン */
         .btn-edit{
-            border: 2px solid rgb(86, 80, 80);
+            border: 1px solid rgb(86, 80, 80);
             color: rgb(86, 80, 80);
             height: auto; 
         }
@@ -492,7 +523,7 @@
         }
         /*カード画像アイコン */
         .btn-infos{
-            border: 2px solid; 
+            border: 1px solid; 
             height: auto; 
             border-color:rgb(86, 80, 80);
             color:rgb(86, 80, 80);
