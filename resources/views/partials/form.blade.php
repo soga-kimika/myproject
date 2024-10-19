@@ -6,7 +6,7 @@
                 {{-- 入力フォーム --}}
                 <div class="border-bottom pb-2 mb-3 mt-4">
                     <div class="col-md-12 d-flex flex-wrap mb-3 ">
-                        <div class="d-flex item-form">
+                        <div class="d-flex item-form item-formーindex ">
                             <label class="mb-1">優先度：</label>
                             <div class="form-check me-1">
                                 <input type="radio" class="form-check-input" name="priority" value="high" id="priority-high" checked>
@@ -27,7 +27,7 @@
                                 </div>
                             @endif
                         </div>
-                        <div class="d-flex flex-wrap item-form">
+                        <div class="d-flex flex-wrap item-form item-formーindex ">
                         <label class="me-1 mb-1">カテゴリー：</label>
                             @foreach ($titles as $title)
                                 <div class="form-check me-1">
