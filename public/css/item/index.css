@@ -633,6 +633,11 @@
           /* テーブルの品名・メーカー型番以外の幅 */
           td.col-request.homeStartupItem-col-request {
             text-align: start;
+            width: 200px;
+            word-wrap: break-word; 
+             white-space: normal; 
+            overflow: hidden; 
+            
           }
           /* テーブルレコード */
         .homeStartupItem-table td{
