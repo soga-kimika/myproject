@@ -10,11 +10,11 @@
                             <label class="mb-1 me-2">優先度：</label>
                             <div class="form-check me-2">
                                 <input type="radio" class="form-check-input" name="priority" value="high" id="priority-high" checked>
-                                <label class="form-check-label radio" for="priority-high">高 <i class="fa fa-star"></i></label>
+                                <label class="form-check-label radio" for="priority-high">高 <i class="fas fa-star"></i></label>
                             </div>
                             <div class="form-check me-2">
                                 <input type="radio" class="form-check-input" name="priority" value="medium" id="priority-medium">
-                                <label class="form-check-label radio" for="priority-medium">中 <i class="fa fa-star-half-alt"></i></label>
+                                <label class="form-check-label radio" for="priority-medium">中 <i class="fas fa-star-half-alt"></i></label>
                             </div>
                             <div class="form-check me-2">
                                 <input type="radio" class="form-check-input" name="priority" value="low" id="priority-low">
@@ -23,7 +23,7 @@
                             @if($type === 'ideas')   
                                 <div class="form-check me-2">
                                     <input type="radio" class="form-check-input" name="priority" value="remove" id="priority-remove">
-                                    <label class="form-check-label" for="priority-remove">不要 <i class="fa fa-times"></i></label>
+                                    <label class="form-check-label" for="priority-remove">不要 <i class="fas fa-times"></i></label>
                                 </div>
                             @endif
                         </div>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="d-flex align-items-center ">
                             <label for="imageUpload" class="btn form-check-label btn-select item-btn-select">
-                                画像を選択 <i class="fas fa-upload"></i> 
+                                画像を選択 <i class="far fa-upload"></i> 
                             </label>
                             <input type="file" name="imageUpload" id="imageUpload" accept="image/*" class="d-none" onchange="displayFileName('imageUpload', 'fileName')">
                             <span id="fileName" class="ms-2 file-name"></span>

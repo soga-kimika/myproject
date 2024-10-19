@@ -1,14 +1,15 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12"> 
-            {{-- ファニチャーのカード --}}
+
+            {{-- 全てのカードの合計金額 --}}
             <div class="overall-total">
-                {{-- 全てのカードの合計金額 --}}
                 <span class="overall-total-lavel"> 全体の合計：</span>
             <span id="overall-total" class="overall-totals">￥0</span>
             </div>
+            <div class="col-md-12"> 
+                 {{-- ファニチャーのカード --}}
             <div class="card">
-                <div class="card-header d-flex justify-content-between">
+                <div class="card-header d-flex justify-content-between home-card-title">
                     <h3 class="homeStartupItem-card-title card-title"><i class="fas fa-shopping-basket"></i>ファニチャー　</h3>
                     {{-- ファニチャーのカードの合計表示 --}}
                     @php $totalPrice1 = 0; @endphp
@@ -68,7 +69,7 @@
         <div class="col-md-12"> 
             {{-- アプライアンスのカード --}}
             <div class="card">
-                <div class="card-header d-flex justify-content-between">
+                <div class="card-header d-flex justify-content-between home-card-title">
                     <h3 class="card-title"><i class="fas fa-shopping-basket"></i>アプライアンス</h3>
                     {{-- アプライアンスの合計金額 --}}
                     @php $totalPrice2 = 0; @endphp
@@ -105,7 +106,7 @@
                                     <td class="col-image">
                                         @if($homeStartupItem->image_url) 
                                             <a href="#" class="btn btn-infos" data-toggle="modal" data-target="#homeStartupItem-imageModal{{ $homeStartupItem->id }}">
-                                                <i class="fas fa-image item-fa-image"></i>
+                                                <i class="far fa-image item-fa-image"></i>
                                             </a>
                                         @endif
                                     </td>
@@ -128,7 +129,7 @@
         <div class="col-md-12"> 
             {{-- アクセサリーのカード --}}
             <div class="card">
-                <div class="card-header d-flex justify-content-between">
+                <div class="card-header d-flex justify-content-between home-card-title">
                     <h3 class="card-title homeStartupItem-card-title"><i class="fas fa-shopping-basket"></i>アクセサリー　</h3>
                     {{-- アクセサリーの合計金額 --}}
                     @php $totalPrice3 = 0; @endphp
@@ -158,13 +159,13 @@
                                     <td class="col-amount homeStartupItem-col-amount">{{ number_format($homeStartupItem->amount) }}</td>                                    
                                     <td class="col-edit">
                                         <a href="#" class="btn btn-edit" data-toggle="modal" data-target="#homeStartupItem-editModal{{ $homeStartupItem->id }}">
-                                            <i class="fas fa-edit"></i>
+                                            <i class="far fa-edit"></i>
                                         </a>
                                     </td>
                                     <td class="col-image">
                                         @if($homeStartupItem->image_url) 
                                             <a href="#" class="btn btn-infos" data-toggle="modal" data-target="#homeStartupItem-imageModal{{ $homeStartupItem->id }}">
-                                                <i class="fas fa-image item-fa-image"></i>
+                                                <i class="far fa-image item-fa-image"></i>
                                             </a>
                                         @endif
                                     </td>

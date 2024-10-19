@@ -7,7 +7,7 @@
             <div class="border-bottom pb-2 mb-3 mt-4">
                 <div class="col-md-12 d-flex flex-wrap mb-3">
                     <div class="d-flex item-form">
-                        <label class="mb-0">優先度：</label>
+                        <label class="mb-1">優先度：</label>
                         <div class="form-check me-2">
                             <input type="radio" class="form-check-input" name="priority" value="high" id="priority-high" checked>
                             <label class="form-check-label radio" for="priority-high">高 <i class="fa fa-star"></i></label>
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="d-flex flex-wrap item-form">
-                    <label class="me-2 mb-0">カテゴリー：</label>
+                    <label class="me-2 mb-1">カテゴリー：</label>
                         <div class="form-check me-2">
                             <input type="radio" class="form-check-input" name="category" value="furniture" id="furniture" checked>
                             <label class="form-check-label" for="furniture">ファニチャー</label>
