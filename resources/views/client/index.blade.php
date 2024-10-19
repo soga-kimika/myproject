@@ -163,12 +163,10 @@
         const landBudgetExists = document.getElementById('land_budget_exists');
         // IDが'land_budget_input'の要素を取得
         const landBudgetInput = document.getElementById('land_budget_input');
-        // IDが'land_budget_placeholder'の要素を取得（この変数は使用されていないため、削除してもよい）
-        const landBudgetPlaceholder = document.getElementById('land_budget_placeholder');
-
-        // ランドバジェット入力の表示・非表示を切り替える関数を定義
+    
+        // 「土地の予算」入力の表示・非表示を切り替える関数を定義
         function toggleLandBudgetInput() {
-            // 'landBudgetExists'の値が'yes'所有地ありの場合
+            // 'landBudgetExists'の値が'yes'の場合
             if (landBudgetExists.value === 'yes') {
                 // 'landBudgetInput'の値を空に設定
                 landBudgetInput.value = ''; 
@@ -176,10 +174,10 @@
                 landBudgetInput.setAttribute('disabled', true); 
                 // 'landBudgetInput'の背景色を薄いグレーに設定
                 landBudgetInput.style.backgroundColor = '#e9ecef'; 
-                // プレースホルダーをからに設定
+                // プレースホルダーを空に設定
                 landBudgetInput.placeholder = ''; 
             } else {
-                // 'landBudgetExists'の値が'yes'所有地がない場合
+                // 'landBudgetExists'の値が'yes'でない場合
                 // 'landBudgetInput'の無効属性を削除
                 landBudgetInput.removeAttribute('disabled'); 
                 // 'landBudgetInput'の背景色を元に戻す
@@ -188,11 +186,23 @@
                 landBudgetInput.placeholder = '例）3000万円';
             }
         }
-
+    
         // 'landBudgetExists'の変更イベントにtoggleLandBudgetInput関数を登録
         landBudgetExists.addEventListener('change', toggleLandBudgetInput);
         // 初回実行：ページ読み込み時にinputの状態を確認
         toggleLandBudgetInput(); 
+    
+        // モーダル表示時にフィールドをリセットするイベント
+        $('#profileModal').on('show.bs.modal', function () {
+            // 'landBudgetInput'の値を空に設定
+            landBudgetInput.value = ''; 
+            // 'landBudgetInput'を有効にする
+            landBudgetInput.removeAttribute('disabled'); 
+            // 'landBudgetInput'の背景色を元に戻す
+            landBudgetInput.style.backgroundColor = ''; 
+            // プレースホルダーを'例）3000万円'に設定
+            landBudgetInput.placeholder = '例）3000万円';
+        });
     });
 </script>
 

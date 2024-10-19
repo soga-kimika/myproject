@@ -16,9 +16,9 @@ class ClientController extends Controller
      */
     public function index()
     {
-         //ログインしているユーザーのIDを探して、そのIDの一番最初のレコードを取得
-         $userId = Auth::id();
-         $client = Client::where('user_id', $userId)->first();
+        //ログインしているユーザーのIDを探して、そのIDの一番最初のレコードを取得
+        $userId = Auth::id();
+        $client = Client::where('user_id', $userId)->first();
         // レコードがあったら、プロフィール情報を表示
         if ($client !== null) {
             return view('client.index', compact('client'));
@@ -26,9 +26,9 @@ class ClientController extends Controller
             // レコードかった場合、登録画面に遷移
             return redirect()->route('clients.create');
         }
-        
 
-     //プロフィールページの表示
+
+        //プロフィールページの表示
     }
     /**
      * Show the form for creating a new resource.
@@ -53,7 +53,7 @@ class ClientController extends Controller
             'child_count' => 'required|integer',
             'pet' => 'required|string',
             'land_budget_exists' => 'required|string',
-            'land_budget' => 'nullable|string',
+            'land_budget' => $request->land_budget_exists === 'no' ? 'required|string' : 'nullable|string',
             'building_budget' => 'required|string',
             'land_area' => 'required|string',
             'building_area' => 'required|string',
@@ -68,24 +68,17 @@ class ClientController extends Controller
             'current_home_issues' => 'nullable|string',
         ]);
 
-        // 土地の所有が「なし：no」の場合は、土地予算項目欄を必須とする
-        if ($request->land_budget_exists === 'no') {
-            $request['land_budget'] = 'required|string';
-        } else {
-            // 土地の所有が「ある：ｙｅｓ」の場合は、土地の予算項目は入力不要とする
-            $request['land_budget'] = 'nullable|string';
-        }
         // データの保存
-        $clients = $request->all();
+        $client = $request->all();
 
         // 土地の所有が「あり」の場合は、land_budgetに「-」を設定
-        if ($clients['land_budget_exists'] === 'yes') {
-            $clients['land_budget'] = '-';
+        if ($client['land_budget_exists'] === 'yes') {
+            $client['land_budget'] = '-';
         }
         // 登録
-        $clients['user_id'] = Auth::id();
+        $client['user_id'] = Auth::id();
 
-        Client::create($clients);
+        Client::create($client);
         // 保存
         return redirect()->route('clients.index');
     }
@@ -110,13 +103,13 @@ class ClientController extends Controller
      */
     public function update(Request $request)
     {
-        //バリデーション
+        // バリデーション
         $request->validate([
             'adult_count' => 'nullable|integer',
             'child_count' => 'nullable|integer',
             'pet' => 'nullable|string',
             'land_budget_exists' => 'nullable|string',
-            'land_budget' => 'nullable|string',
+            'land_budget' => $request->land_budget_exists === 'no' ? 'required|string' : 'nullable|string',
             'building_budget' => 'nullable|string',
             'land_area' => 'nullable|string',
             'building_area' => 'nullable|string',
@@ -130,12 +123,30 @@ class ClientController extends Controller
             'date' => 'nullable|date',
             'current_home_issues' => 'nullable|string',
         ]);
-         //ログインしているユーザーのIDを探して、そのIDの一番最初のレコードを取得
+    
+        // ログインしているユーザーのIDを探して、そのIDの一番最初のレコードを取得
         $userId = Auth::id();
         $client = Client::where('user_id', $userId)->first();
+    
+        // データの準備
+        $data = $request->all();
+    
+        // 土地の所有状態に基づく予算の設定
+        if ($data['land_budget_exists'] === 'yes') {
+            // 所有地ありの場合、元のland_budgetをクリアして「-」を設定
+            $data['land_budget'] = '-';
+        } elseif ($data['land_budget_exists'] === 'no') {
+            // 所有地なしの場合は、land_budgetを必須とする
+            if (empty($data['land_budget'])) {
+                return redirect()->back();
+            }
+        }
+    
         // 更新
-        $client->update($request->all());
+        $client->update($data);
+    
         // ビューを返す
         return redirect()->route('clients.index');
     }
+    
 }

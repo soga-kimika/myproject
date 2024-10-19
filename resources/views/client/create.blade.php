@@ -75,7 +75,7 @@
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
                                 <label>予算</label>
-                                <input type="text" name="land_budget" class="form-control mr-3 small-select" placeholder="例）1500万円" id="land_budget_input">
+                                <input type="text" name="land_budget" class="form-control mr-3 small-select" placeholder="例）1500万円" id="land_budget_input" required>
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
                                 <label for="land_area">坪数</label>
@@ -278,7 +278,7 @@
             landBudgetInput.removeAttribute('disabled'); 
             // 'landBudgetInput'の背景色を元に戻す
             landBudgetInput.style.backgroundColor = ''; 
-            // プレースホルダーを'5000万円'に設定
+            // プレースホルダーを'例）3000万円'に設定
             landBudgetInput.placeholder = '5000万円';
         });
     });

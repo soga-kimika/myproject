@@ -70,7 +70,7 @@
                                         </div>
                                         <div class="client-form-inline justify-content-center mt-2">
                                             <label>予算</label>
-                                            <input type="text" name="land_budget" class="form-control mr-3" placeholder="◯◯◯◯万円と入力してください" value="{{ old('land_budget', $client->land_budget) }}" id="land_budget_input">
+                                            <input type="text" name="land_budget" class="form-control mr-3" placeholder="例）1500万円" value="{{ old('land_budget', $client->land_budget) }}" id="land_budget_input" required>
                                         </div>
                                         <div class="client-form-inline justify-content-center mt-2">
                                             <label for="land_area">坪数</label>
@@ -94,7 +94,7 @@
                                     <div class="form-group">
                                         <div class="client-form-inline justify-content-center">
                                             <label>予算</label>
-                                            <input type="text" name="building_budget" class="form-control mr-3" placeholder="◯◯◯◯万円と入力してください" value="{{ old('building_budget', $client->building_budget) }}" required>
+                                            <input type="text" name="building_budget" class="form-control mr-3" placeholder="例）4000万" value="{{ old('building_budget', $client->building_budget) }}" required>
                                         </div>
                                         <div class="client-form-inline justify-content-center mt-2">
                                             <label for="building_area">坪数</label>
