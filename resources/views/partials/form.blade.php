@@ -8,29 +8,29 @@
                     <div class="col-md-12 d-flex flex-wrap mb-3 ">
                         <div class="d-flex item-form">
                             <label class="mb-1 me-2">優先度：</label>
-                            <div class="form-check me-2">
+                            <div class="form-check me-1">
                                 <input type="radio" class="form-check-input" name="priority" value="high" id="priority-high" checked>
                                 <label class="form-check-label radio" for="priority-high">高 <i class="fas fa-star"></i></label>
                             </div>
-                            <div class="form-check me-2">
+                            <div class="form-check me-1">
                                 <input type="radio" class="form-check-input" name="priority" value="medium" id="priority-medium">
                                 <label class="form-check-label radio" for="priority-medium">中 <i class="fas fa-star-half-alt"></i></label>
                             </div>
-                            <div class="form-check me-2">
+                            <div class="form-check me-1">
                                 <input type="radio" class="form-check-input" name="priority" value="low" id="priority-low">
                                 <label class="form-check-label radio" for="priority-low">低 <i class="far fa-star"></i></label>
                             </div>
                             @if($type === 'ideas')   
-                                <div class="form-check me-2">
+                                <div class="form-check me-1">
                                     <input type="radio" class="form-check-input" name="priority" value="remove" id="priority-remove">
                                     <label class="form-check-label" for="priority-remove">不要 <i class="fas fa-times"></i></label>
                                 </div>
                             @endif
                         </div>
                         <div class="d-flex flex-wrap item-form">
-                        <label class="me-2 mb-1">カテゴリー：</label>
+                        <label class="me-1 mb-1">カテゴリー：</label>
                             @foreach ($titles as $title)
-                                <div class="form-check me-2">
+                                <div class="form-check me-1">
                                     <input type="radio" class="form-check-input" name="category" value="{{ $title['category'] }}" id="category-{{ $title['id'] }}" {{ $title['id'] == 1 ? 'checked' : '' }}>
                                     <label class="form-check-label" for="category-{{ $title['id'] }}">{{ $title['title'] }}</label>
                                 </div>
