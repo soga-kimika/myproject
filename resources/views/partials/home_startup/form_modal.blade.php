@@ -3,7 +3,7 @@
     <div class="col-md-12 mx-auto"> 
                     <div class="mb-3">
                         <div class="col-md-12 d-flex flex-wrap mb-3">
-                            <div class="d-flex item-form">
+                            <div class="d-flex item-form item-formーindex">
                                 <label class="mb-0">優先度：</label>
                                 <div class="form-check me-2">
                                     <input type="radio" class="form-check-input" name="priority" value="high" id="priority-high{{ $homeStartupItem->id }}" {{ old('priority', $homeStartupItem->priority) == 'high' ? 'checked' : '' }}>

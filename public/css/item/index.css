@@ -366,15 +366,55 @@
 
         /* client/createレスポンシブ */
 
-        @media (max-width: 768px) { /* 768px 以下の画面サイズに対して */
-            .item-formーindex {
-                flex-direction: column; /* 縦並びにする */
-                align-items: flex-start; /* 左寄せにする */
+        @media (max-width: 768px) {
+            .small-select {
+                font-size: 0.8rem;  
             }
-    
-        
+            .small-select::placeholder {
+                color: transparent; 
+            }
+            .btn-edit{
+                height: 10px;
+            }
+            .item-form{
+                width: 100%;
+            }
+            .file-name{
+                width: 10rem;
+            }
+            .btn-edit-client{
+                margin-left: 0;
+                margin-right: 0;
+                height: 30px;
+                font-size: 0.7rem;  
+                margin-bottom: 10px;
+            }
+            .item-form-group{
+                height: 30px;   
+                font-size: 0.5rem;  
+                margin-bottom: 10px;
+            }
+            .home-card-title{
+                white-space: nowrap;
+            }
         }
+        @media (max-width: 480px) {
         
+            
+            .form-check-input {
+              margin-top: 3px;  
+            }
+            .content-header h1 {
+                font-size: 1.9rem;
+            }
+            .time-text{
+                font-size: 6rem;
+            }
+            .item-formーindex {
+                flex-direction: column;
+                align-items: flex-start; 
+            }
+        }
     
         
         
