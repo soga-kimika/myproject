@@ -6,6 +6,7 @@
             use App\Http\Controllers\ItemController;
             use App\Http\Controllers\GalleryController;
             use App\Http\Controllers\HomeStartupItemController;
+            use App\Http\Controllers\AdminController;
 
             /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+            Route::get('/', function () {
+                return view('welcome');
+            });
 
 
             // マイホームNOTEの表示
@@ -39,17 +40,17 @@ Route::get('/', function () {
                 Route::put('update', [ClientController::class, 'update'])->name('clients.update');
             });
 
-            Route::prefix('HomePlanning')->middleware('auth')->group(function () {  
-            // アイテムの種類に基づいたルート設定
-            Route::prefix('{type}')->group(function () {
-                Route::get('/', [ItemController::class, 'index'])->name('items.index');
-                Route::post('/', [ItemController::class, 'store'])->name('items.store');
-                Route::put('/{itemId}', [ItemController::class, 'update'])->name('items.update');
-                Route::delete('/{itemId}', [ItemController::class, 'destroy'])->name('items.destroy');
-                Route::get('/{cardTitle}', [ItemController::class, 'showItemsByTitle'])->name('items.showByTitle');
-                Route::delete('/{itemId}/image', [ItemController::class, 'deleteImage'])->name('items.deleteImage');
-            }); 
-         });      
+            Route::prefix('HomePlanning')->middleware('auth')->group(function () {
+                // アイテムの種類に基づいたルート設定
+                Route::prefix('{type}')->group(function () {
+                    Route::get('/', [ItemController::class, 'index'])->name('items.index');
+                    Route::post('/', [ItemController::class, 'store'])->name('items.store');
+                    Route::put('/{itemId}', [ItemController::class, 'update'])->name('items.update');
+                    Route::delete('/{itemId}', [ItemController::class, 'destroy'])->name('items.destroy');
+                    Route::get('/{cardTitle}', [ItemController::class, 'showItemsByTitle'])->name('items.showByTitle');
+                    Route::delete('/{itemId}/image', [ItemController::class, 'deleteImage'])->name('items.deleteImage');
+                });
+            });
 
             // ホームスタートアップ関連のルート
             Route::prefix('homeStartupItem')->middleware('auth')->group(function () {
@@ -59,7 +60,6 @@ Route::get('/', function () {
                 Route::get('/{homeStartupItemId}/edit', [HomeStartupItemController::class, 'edit'])->name('homeStartupItems.edit');
                 Route::delete('/{homeStartupItemId}', [HomeStartupItemController::class, 'destroy'])->name('homeStartupItems.destroy');
                 Route::delete('/{homeStartupItemId}/image', [HomeStartupItemController::class, 'deleteImage'])->name('homeStartupItems.deleteImage');
-
             });
 
             // ギャラリー関連のルート
@@ -67,4 +67,24 @@ Route::get('/', function () {
                 Route::get('/', [GalleryController::class, 'index'])->name('galleries.index');
                 Route::post('/upload', [GalleryController::class, 'store'])->name('galleries.store');
                 Route::delete('/{galleryId}', [GalleryController::class, 'destroy'])->name('galleries.destroy');
+            });
+            // 管理者用のルート
+            Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
+                // ホーム
+                Route::get('/', [AdminController::class, 'home'])->name('admin.home'); 
+                // ユーザー関連
+                Route::get('/users', [AdminController::class, 'indexUsers'])->name('admin.users.index');
+                Route::delete('/users/{userId}', [AdminController::class, 'destroyUser'])->name('admin.users.destroy');
+                // クライアント関連
+                Route::get('/clients', [AdminController::class, 'indexClients'])->name('admin.clients.index');
+                Route::delete('/clients/{clientId}', [AdminController::class, 'destroyClient'])->name('admin.clients.destroy');
+                // アイテム関連
+                Route::get('/items', [AdminController::class, 'indexItems'])->name('admin.items.index');
+                Route::delete('/items/{itemId}', [AdminController::class, 'destroyItem'])->name('admin.items.destroy');
+                // ホームスタートアップアイテム関連
+                Route::get('/homeStartupItems', [AdminController::class, 'indexHomeStartupItems'])->name('admin.homeStartupItems.index');
+                Route::delete('/homeStartupItems/{homeStartupItemId}', [AdminController::class, 'destroyHomeStartupItem'])->name('admin.homeStartupItems.destroy');
+                // ギャラリー関連
+                Route::get('/galleries', [AdminController::class, 'indexGalleries'])->name('admin.galleries.index');
+                Route::delete('/galleries/{gallery}', [AdminController::class, 'destroyGallery'])->name('admin.galleries.destroy');
             });

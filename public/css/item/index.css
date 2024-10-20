@@ -723,4 +723,22 @@
       
     }
 
- 
+    /* 管理者用ページ*/
+
+    /* クライアント管理 */
+    /* 要望欄 */
+    .wide-column {
+        width: 40%; 
+    }
+    
+    /* クライアント、ウィッシュリストのレコード */
+    .clickable {
+        cursor: pointer; 
+    }
+
+ .home-icon{
+    color: rgb(106, 102, 102);
+ }
+ .btn-link{
+    color: rgb(71, 70, 70);
+ }

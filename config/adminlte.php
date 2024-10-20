@@ -353,6 +353,41 @@ return [
             'icon_color' => '#a04d69',
             'classes' => 'text-bold ',
         ],
+        [
+            'header' => '管理者メニュー',
+            'can' => 'admin', 
+        ],
+        [
+        'text' => 'ユーザー管理',
+        'url' => 'admin/users',
+        'icon' => 'fas fa-users',
+        'classes' => 'text-bold',
+        ],
+        [
+            'text' => 'クライアント管理',
+            'url' => 'admin/clients',
+            'icon' => 'fas fa-address-book',
+            'classes' => 'text-bold',
+        ],
+        [
+            'text' => 'アイテム管理',
+            'url' => 'admin/items',
+            'icon' => 'fas fa-clipboard-list',
+            'classes' => 'text-bold',
+        ],
+        [
+            'text' => 'ウィッシュリスト管理',
+            'url' => 'admin/homeStartupItems',
+            'icon' => 'fas fa-list',
+            'classes' => 'text-bold',
+        ],
+        [
+            'text' => 'ギャラリー管理',
+            'url' => 'admin/galleries',
+            'icon' => 'fas fa-images',
+            'classes' => 'text-bold',
+        ],
+        
 
 
 
