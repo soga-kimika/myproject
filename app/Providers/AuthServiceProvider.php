@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        //
+        'App\Models\User' => 'App\Policies\AdminPolicy',
     ];
 
     /**
@@ -21,9 +21,15 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // isAdmin() メソッドをユーザーモデルに追加
+        // 管理者であるかをチェック
         Gate::define('admin', function ($user) {
-            return $user->isAdmin(); 
+            return $user->isAdmin();
+        });
+    
+        // 管理者でないかをチェック
+        Gate::define('not_admin', function ($user) {
+            return !$user->isAdmin(); 
         });
     }
+    
 }

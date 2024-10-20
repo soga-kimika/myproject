@@ -296,6 +296,7 @@ return [
             'icon' => 'far fa-address-card',
             'classes' => 'text-bold',
             'icon_color' => 'red',
+            'can' => 'not_admin'
         ],
         [
             'text' => 'アイディア',
@@ -303,6 +304,7 @@ return [
             'icon' => 'fas fa-lightbulb',
             'icon_color' => 'yellow',
             'classes' => 'text-bold',
+            'can' => 'not_admin',
         ],
         [
             'text' => 'デザイン',
@@ -310,6 +312,7 @@ return [
             'icon' => 'fas fa-palette',
             'icon_color' => 'lightblue',
             'classes' => 'text-bold ',
+            'can' => 'not_admin',
         ],
         [
             'text' => 'LDK',
@@ -317,6 +320,7 @@ return [
             'icon' => 'fas fa-couch',
             'icon_color' => 'olive',
             'classes' => 'text-bold',
+            'can' => 'not_admin',
         ],
         [
             'text' => 'バスルーム',
@@ -324,6 +328,7 @@ return [
             'icon' => 'fas fa-sink',
             'icon_color' => 'blue',
             'classes' => 'text-bold',
+            'can' => 'not_admin',
         ],
         [
             'text' => 'プライベートルーム',
@@ -331,6 +336,7 @@ return [
             'icon' => 'fas fa-bed',
             'icon_color' => 'purple',
             'classes' => 'text-bold ',
+            'can' => 'not_admin',
         ],
         [
             'text' => 'ストレージ',
@@ -338,6 +344,7 @@ return [
             'icon' => 'fas fa-box',
             'icon_color' => 'orange',
             'classes' => 'text-bold ',
+            'can' => 'not_admin',
         ],
         [
             'text' => 'ウィッシュリスト',
@@ -345,6 +352,7 @@ return [
             'icon' => 'fas fa-shopping-cart',
             'icon_color' => '#007bff',
             'classes' => 'text-bold ',
+            'can' => 'not_admin',
         ],
         [
             'text' => 'フォトギャラリー',
@@ -352,9 +360,10 @@ return [
             'icon' => 'fas fa-image',
             'icon_color' => '#a04d69',
             'classes' => 'text-bold ',
+            'can' => 'not_admin',
         ],
+        
         [
-            'header' => '管理者メニュー',
             'can' => 'admin', 
         ],
         [
@@ -362,30 +371,35 @@ return [
         'url' => 'admin/users',
         'icon' => 'fas fa-users',
         'classes' => 'text-bold',
+        'can' => 'admin', 
         ],
         [
             'text' => 'クライアント管理',
             'url' => 'admin/clients',
             'icon' => 'fas fa-address-book',
             'classes' => 'text-bold',
+            'can' => 'admin', 
         ],
         [
             'text' => 'アイテム管理',
             'url' => 'admin/items',
             'icon' => 'fas fa-clipboard-list',
             'classes' => 'text-bold',
+            'can' => 'admin', 
         ],
         [
             'text' => 'ウィッシュリスト管理',
             'url' => 'admin/homeStartupItems',
             'icon' => 'fas fa-list',
             'classes' => 'text-bold',
+            'can' => 'admin', 
         ],
         [
             'text' => 'ギャラリー管理',
             'url' => 'admin/galleries',
             'icon' => 'fas fa-images',
             'classes' => 'text-bold',
+            'can' => 'admin', 
         ],
         
 

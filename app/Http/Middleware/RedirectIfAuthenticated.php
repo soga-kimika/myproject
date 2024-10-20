@@ -18,13 +18,22 @@ class RedirectIfAuthenticated
     public function handle(Request $request, Closure $next, string ...$guards): Response
     {
         $guards = empty($guards) ? [null] : $guards;
-
+    
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                // ユーザーの役割を確認
+                $user = Auth::guard($guard)->user();
+                if ($user->is_admin) {
+                    // 管理者用ホーム
+                    return redirect('/admin'); 
+                } else {
+                    // 一般ユーザー用ホーム
+                    return redirect('/home'); 
+                }
             }
         }
-
+    
         return $next($request);
     }
+    
 }

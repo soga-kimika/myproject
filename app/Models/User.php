@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin', 
     ];
 
     /**
@@ -46,6 +47,7 @@ class User extends Authenticatable
       // isAdminメソッドを追加
       public function isAdmin()
       {
-          return $this->is_admin;
+          return $this->is_admin === 1; 
       }
+      
 }
