@@ -7,6 +7,9 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeStartupItemController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\LoginController;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +33,7 @@ Route::prefix('/home')->middleware('auth')->group(function () {
 
 // 認証ルート
 Auth::routes();
+Route::get('logout', [loginController::class, 'logout'])->name('logout');
 
 // クライアント関連のルート
 Route::prefix('client')->middleware('auth')->group(function () {
@@ -81,4 +85,16 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::delete('/homeStartupItems/{homeStartupItemId}', [AdminController::class, 'destroyHomeStartupItem'])->name('admin.homeStartupItems.destroy');
     Route::get('/galleries', [AdminController::class, 'indexGalleries'])->name('admin.galleries.index');
     Route::delete('/galleries/{gallery}', [AdminController::class, 'destroyGallery'])->name('admin.galleries.destroy');
+});
+
+Route::get('/dynamic-dashboard', function () {
+    $user = Auth::user();
+
+    if ($user->hasRole('admin')) {
+        return redirect()->route('admin.home');  
+    } elseif ($user->hasRole('user')) {
+        return redirect()->route('home.index');  
+    } else {
+        return redirect()->route('home.index');  
+    }
 });

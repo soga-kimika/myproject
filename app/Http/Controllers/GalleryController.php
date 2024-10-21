@@ -30,30 +30,31 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //バリデーションルール
+        // バリデーションルール
         $request->validate([
             'imageUpload' => 'required|image|mimes:jpeg,png,jpg|max:4096',
         ]);
-
+    
         // 画像を登録
         $gallery = new Gallery();
         // ログインしているユーザーのIDからそのユーザーのIDの画像のみ取得
-        $gallery -> user_id = Auth::id();
-        //imageUploadファイルに登録したものをimageに格納
-        $image = $request->file('imageUpload');
-        // イメージパスを作成
-        $imagePath = $image->store('images', 'public');
-        // 画像urlをイメージパスに格納
-        $gallery->image_url = $imagePath;
-        // ファイル名を取得し、ファイル名を重複しないように、日付をファイル名に入れてファイル名を保存
-        $fileName = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME) . '_' . date('Ymd_His') . '.' . $image->getClientOriginalExtension();
-        // ファイルネームをイメージネームに格納
-        $gallery->image_name = $fileName;
+        $gallery->user_id = Auth::id();
+    
+        // 画像の取得とエンコード
+        $image = file_get_contents($request->file('imageUpload')->getRealPath());
+        $binary_image = base64_encode($image);
+        
+        // base64 エンコードされた画像データを保存
+        $gallery->image_url = 'data:image/jpeg;base64,' . $binary_image; // 
+        $gallery->image_name = $request->file('imageUpload')->getClientOriginalName(); 
+    
         // 保存
         $gallery->save();
+        
         // ビューを返す
         return redirect()->route('galleries.index');
     }
+    
 
     /**
      * Remove the specified resource from storage.

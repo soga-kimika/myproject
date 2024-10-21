@@ -250,8 +250,8 @@ return [
     |
     */
 
-    'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'use_route_url' => false,    
+    'dashboard_url' => 'dynamic-dashboard',
     'logout_url' => '/logout',
     'login_url' => '/login',
     'register_url' => 'register',
@@ -289,7 +289,6 @@ return [
 
     'menu' =>
     [
-
         [
             'text' => 'プロフィール',
             'url'  => 'client/index',

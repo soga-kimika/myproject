@@ -32,11 +32,11 @@
                                     </td>
                                     <td class="col-request homeStartupItem-col-request">{{ $homeStartupItem->item_name }}</td>
                                     <td class="col-request homeStartupItem-col-request">{{ $homeStartupItem->manufacturer }}</td>
-                                    <td class="col-quantity homeStartupItem-col-price">{{  number_format((int)$homeStartupItem->price) }}  </td>
+                                    <td class="col-quantity homeStartupItem-col-price">￥{{  number_format((int)$homeStartupItem->price) }}  </td>
                                     <td class="homeStartupItem-col-symbols">×</td>
                                     <td class="col-quantity homeStartupItem-col-quantity">{{ $homeStartupItem->quantity }} </td>
                                      <td class="homeStartupItem-col-symbols" >=</td>
-                                    <td class="col-amount homeStartupItem-col-amount">{{ number_format($homeStartupItem->amount) }}</td>                                    
+                                    <td class="col-amount homeStartupItem-col-amount">￥{{ number_format($homeStartupItem->amount) }}</td>                                    
                                     <td class="col-edit">
                                         <a href="#" class="btn btn-edit" data-toggle="modal" data-target="#homeStartupItem-editModal{{ $homeStartupItem->id }}">
                                             <i class="far fa-edit"></i>
@@ -73,7 +73,7 @@
                     <h3 class="card-title"><i class="fas fa-shopping-basket"></i>アプライアンス</h3>
                     {{-- アプライアンスの合計金額 --}}
                     @php $totalPrice2 = 0; @endphp
-                    <strong class="total-amount">軽: ￥{{ number_format($totalPrice2) }}</strong>
+                    <strong class="total-amount">{{ number_format($totalPrice2) }}</strong>
                 </div>
                  {{-- アプライアンスの中身 --}}
                 <div class="card-body table-responsive p-0">
@@ -152,11 +152,11 @@
                                     </td>
                                     <td class="col-request homeStartupItem-col-request">{{ $homeStartupItem->item_name }}</td>
                                     <td class="col-request homeStartupItem-col-request">{{ $homeStartupItem->manufacturer }}</td>
-                                    <td class="col-quantity homeStartupItem-col-price">{{ $homeStartupItem->price > 0 ? number_format((int)$homeStartupItem->price) : '-' }}  </td>    
+                                    <td class="col-quantity homeStartupItem-col-price">￥{{ $homeStartupItem->price > 0 ? number_format((int)$homeStartupItem->price) : '-' }}  </td>    
                                     <td  class="homeStartupItem-col-symbols">×</td>
                                     <td class="col-quantity homeStartupItem-col-quantity">{{ $homeStartupItem->quantity }}</td>
                                     <td class="homeStartupItem-col-symbols">=</td>
-                                    <td class="col-amount homeStartupItem-col-amount">{{ number_format($homeStartupItem->amount) }}</td>                                    
+                                    <td class="col-amount homeStartupItem-col-amount">￥{{ number_format($homeStartupItem->amount) }}</td>                                    
                                     <td class="col-edit">
                                         <a href="#" class="btn btn-edit" data-toggle="modal" data-target="#homeStartupItem-editModal{{ $homeStartupItem->id }}">
                                             <i class="far fa-edit"></i>
