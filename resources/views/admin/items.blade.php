@@ -18,7 +18,7 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>user_id</th>
+                <th>ユーザーID</th>
                 <th>カテゴリー</th>
                 <th class="wide-column">要望</th>
                 <th>優先度</th>
@@ -51,8 +51,7 @@
             @endforeach
         </tbody>
     </table>
-    {{-- ページネーションリンク --}}
-    {{ $items->links() }}
+
 </div>
 @endsection
 

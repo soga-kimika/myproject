@@ -26,7 +26,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>ユーザーID</th>
                     <th>ユーザー名</th>
                     <th>メール</th>
                     <th>操作</th>
@@ -49,8 +49,13 @@
                 @endforeach 
             </tbody>
         </table>
-        {{-- ページネーションリンク --}}
-        {{-- {{ $users->links() }} --}}
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+              {{ $users->links() }}
+            </ul>
+          </nav>
+          
+
     </div>
     @endsection
     @section('css')

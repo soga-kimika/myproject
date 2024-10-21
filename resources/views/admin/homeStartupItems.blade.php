@@ -16,11 +16,10 @@
         </form>
     </div>
 
-    <table class="table">
+    <table class="table  table-hover">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>ユーザー</th>
+                <th>ユーザーID</th>
                 <th>カテゴリー</th>
                 <th>品名</th>
                 <th>合計(円)</th>
@@ -31,9 +30,8 @@
             @foreach ($homeStartupItems as $item)
                 <tr data-toggle="collapse" data-target="#details-{{ $item->id }}" class="clickable">
                     <td>{{ $item->id }}</td>
-                    <td>{{ $item->user }}</td>
-                    <td>{{ $item->category }}</td>
-                    <td>{{ $item->item_name }}</td>
+                    <td >{{ $item->category }}</td>
+                    <td >{{ $item->item_name }}</td>
                     <td>{{ number_format($item->amount) }}</td>
                     <td>
                         <form action="{{ route('admin.homeStartupItems.destroy', $item->id) }}" method="POST" style="display:inline;">
@@ -61,8 +59,7 @@
             @endforeach
         </tbody>
     </table>
-    {{-- ページネーションリンク --}}
-    {{ $homeStartupItems->links() }}
+
 </div>
 @endsection
 

@@ -16,10 +16,10 @@
         </form>
     </div>
 
-    <table class="table">
+    <table class="table  table-striped">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>ユーザーID</th>
                 <th>ファイル名</th>
                 <th>画像</th>
                 <th>操作</th>
@@ -28,7 +28,7 @@
         <tbody>
             @foreach ($galleries as $gallery)
                 <tr>
-                    <td>{{ $gallery->id }}</td>
+                    <td>{{ $gallery->user_id }}</td>
                     <td>{{ $gallery->image_name }}</td>
                     <td>
                         <img src="{{ asset('storage/' . $gallery->image_url) }}" alt="{{ $gallery->image_name }}" style="width: 100px;">
@@ -45,8 +45,7 @@
         </tbody>
     </table>
 </div>
-{{-- ページネーションリンク --}}
-{{ $galleries->links() }}
+
 @endsection
 @section('css')
 <link rel="stylesheet" href="{{ asset('/css/item/index.css') }}">

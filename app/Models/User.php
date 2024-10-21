@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -21,7 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'is_admin', 
+        'is_admin',
     ];
 
     /**
@@ -44,10 +43,21 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-      // isAdminメソッドを追加
-      public function isAdmin()
-      {
-          return $this->is_admin === 1; 
-      }
-      
+    // isAdminメソッドを追加
+    public function isAdmin()
+    {
+        return $this->is_admin === 1;
+    }
+    
+    // リレーションを定義
+    public function homeStartupItems()
+    {
+        return $this->hasMany(HomeStartupItem::class);
+        
+    }
+    // ユーザーとのリレーション
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

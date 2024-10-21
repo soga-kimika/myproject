@@ -17,12 +17,12 @@
     </div>
 
     <div style="overflow-x:auto;">
-        <table class="table">
+        <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>ユーザーID</th>
                     <th>ユーザー名</th>
-                    <th>操作</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
