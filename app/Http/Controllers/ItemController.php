@@ -69,7 +69,7 @@ class ItemController extends Controller
                 ['id' => 2, 'title' => 'バスルーム', 'category' => 'bath', 'icon' => '<i class="fas fa-bath"></i>'],
             ],
             'ideas' => [
-                ['id' => 1, 'title' => 'アイディア', 'category' => 'idea', 'icon' => '<i class="fas fa-check fa-check-title"></i>'],
+                ['id' => 1, 'title' => 'アイディア', 'category' => 'idea', 'icon' => '<i class="far fa-thumbs-up fa-check-title"></i>'],
                 ['id' => 2, 'title' => 'ナッシング', 'category' => 'nothing', 'icon' => '<i class="fas fa-trash"></i>'],
             ],
             'designs' => [
