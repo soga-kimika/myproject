@@ -93,7 +93,7 @@
 
                 <div class="card mb-3  client-mb-3">
                     <div class="card-header">
-                        <h5 class="form-title"><i class="fas fa-home"></i>建物</h5>
+                        <h5 class="form-title"><i class="fas fa-home client-fa-home"></i>建物</h5>
                     </div>
                     <div class="client-card-body">
                         <div class="form-group">

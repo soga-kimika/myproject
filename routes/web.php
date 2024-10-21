@@ -87,14 +87,3 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::delete('/galleries/{gallery}', [AdminController::class, 'destroyGallery'])->name('admin.galleries.destroy');
 });
 
-Route::get('/dynamic-dashboard', function () {
-    $user = Auth::user();
-
-    if ($user->hasRole('admin')) {
-        return redirect()->route('admin.home');  
-    } elseif ($user->hasRole('user')) {
-        return redirect()->route('home.index');  
-    } else {
-        return redirect()->route('home.index');  
-    }
-});

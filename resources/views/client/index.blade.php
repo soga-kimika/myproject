@@ -70,7 +70,7 @@
                         <div class="col-md-6">
                             <div class="card mb-2">
                                 <div class="card-body">
-                                    <h5 class="form-title index-form-title p-2"><i class="fas fa-home"></i> 建物</h5>
+                                    <h5 class="form-title index-form-title p-2"><i class="fas fa-home client-fa-home"></i> 建物</h5>
                                     <div class="row">
                                         <div class="col-6">
                                             <p>予算： <strong>{{ $client->building_budget }}</strong></p>

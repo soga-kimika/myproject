@@ -251,7 +251,7 @@ return [
     */
 
     'use_route_url' => false,    
-    'dashboard_url' => 'dynamic-dashboard',
+    'dashboard_url' => 'home',
     'logout_url' => '/logout',
     'login_url' => '/login',
     'register_url' => 'register',
@@ -364,6 +364,13 @@ return [
         
         [
             'can' => 'admin', 
+        ],
+                [
+        'text' => '管理者ホーム画面',
+        'url' => 'admin',
+        'icon' => 'fas fa-home',
+        'classes' => 'text-bold',
+        'can' => 'admin', 
         ],
         [
         'text' => 'ユーザー管理',
