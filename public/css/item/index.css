@@ -4,7 +4,7 @@
         label{
             cursor: pointer; 
         }
-         /* ヘッダー共通 */
+         /* ヘッダー共通 */d
         .content-header h1{
             text-align: center;
             color:  rgb(71, 70, 70);    
@@ -718,8 +718,6 @@
         .gallery-file-name{
             width: 7.5rem;
         }
-       
-      
     }
 
     /* 管理者用ページ*/
@@ -735,10 +733,18 @@
         cursor: pointer; 
     }
 
- .management-home-icon{
-    color: rgb(106, 102, 102);
- }
- .btn-link{
-    color: rgb(71, 70, 70);
- }
+    .management-home-icon{
+        color: rgb(106, 102, 102);
+    }
+    /* ホーム画面アイコン */
+    .btn-link{
+        color: rgb(71, 70, 70);
+    }
+    /* ユーザー管理のテーブル*/
+    .management-user-text{
+        word-wrap: break-word; 
+        white-space: normal; 
+        overflow: hidden;   
+    }
+
 

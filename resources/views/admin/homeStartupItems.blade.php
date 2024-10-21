@@ -2,12 +2,13 @@
 
 @section('title', 'マイホームNOTE')
 
-@section('content_header')                                                              
+@section('content_header')   
+<h1>Wishlist Management</h1>                                                           
 @stop   
 
 @section('content')
 <div class="container">
-    <h1>HomeStartupItem Management</h1>
+
     <div class="mb-3">
         <form method="GET" action="{{ route('admin.homeStartupItems.index') }}">
             <input type="text" name="search" placeholder="検索" value="{{ request('search') }}">

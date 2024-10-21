@@ -3,12 +3,12 @@
 @section('title', 'マイホームNOTE')
 
 @section('content_header')                                                              
-
+<h1>Gallery Management</h1> 
 @stop   
 
 @section('content')
 <div class="container">
-    <h1>Gallery Management</h1>
+
     <div class="mb-3">
         <form method="GET" action="{{ route('admin.galleries.index') }}">
             <input type="text" name="search" placeholder="検索" value="{{ request('search') }}">

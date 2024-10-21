@@ -2,19 +2,20 @@
 
 @section('title', 'マイホームNOTE')
 
-@section('content_header')                                                              
+@section('content_header')   
+<h1>Item Management</h1>                                                           
 @stop   
 
 @section('content')
 <div class="container">
-    <h1>Item Management</h1>
+
     <div class="mb-3">
         <form method="GET" action="{{ route('admin.items.index') }}">
             <input type="text" name="search" placeholder="検索" value="{{ request('search') }}">
             <button type="submit">検索</button>
         </form>
     </div>
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>user_id</th>
