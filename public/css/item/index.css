@@ -723,6 +723,15 @@
     /* 管理者用ページ*/
 
     /* クライアント管理 */
+    /* ページリンク */
+    .page-item .page-link{
+        color:rgb(71, 70, 70);
+    }
+    .page-item.active .page-link{
+        color:rgb(71, 70, 70);
+        background-color: #ced4da;
+        border:#ced4da;;
+    }
     /* 要望欄 */
     .wide-column {
         width: 40%; 
