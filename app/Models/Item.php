@@ -22,6 +22,11 @@ class Item extends Model
         'image_name',
 
     ];
+        // ユーザーとのリレーション
+        public function user()
+        {
+            return $this->belongsTo(User::class, 'user_id');
+        }
 
     /**
      * The attributes that should be hidden for serialization.

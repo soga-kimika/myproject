@@ -18,7 +18,7 @@ class ClientController extends Controller
     {
         //ログインしているユーザーのIDを探して、そのIDの一番最初のレコードを取得
         $userId = Auth::id();
-        $client = Client::where('user_id', $userId)->first();
+        $client = Client::with('user')->where('user_id', $userId)->first();
         // レコードがあったら、プロフィール情報を表示
         if ($client !== null) {
             return view('client.index', compact('client'));

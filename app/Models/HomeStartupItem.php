@@ -19,9 +19,9 @@ class HomeStartupItem extends Model
         'manufacturer',
     ];
 
+    // ユーザーとのリレーション
     public function user()
     {
-        // Userモデルとのリレーションを定義
-        return $this->belongsTo(User::class); 
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

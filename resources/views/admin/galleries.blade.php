@@ -20,6 +20,7 @@
         <thead>
             <tr>
                 <th>ユーザーID</th>
+                <th>ユーザー名</th>
                 <th>ファイル名</th>
                 <th>画像</th>
                 <th>操作</th>
@@ -29,6 +30,7 @@
             @foreach ($galleries as $gallery)
                 <tr>
                     <td>{{ $gallery->user_id }}</td>
+                    <td>{{ $gallery->user->user_id }}</td>
                     <td>{{ $gallery->image_name }}</td>
                     <td>
                         <img src="{{ asset('storage/' . $gallery->image_url) }}" alt="{{ $gallery->image_name }}" style="width: 100px;">

@@ -20,6 +20,7 @@
         <thead>
             <tr>
                 <th>ユーザーID</th>
+                <th>ユーザー名</th>
                 <th>カテゴリー</th>
                 <th>品名</th>
                 <th>合計(円)</th>
@@ -30,6 +31,7 @@
             @foreach ($homeStartupItems as $item)
                 <tr data-toggle="collapse" data-target="#details-{{ $item->id }}" class="clickable">
                     <td>{{ $item->id }}</td>
+                    <td>{{ $item->user->name }}</td>
                     <td >{{ $item->category }}</td>
                     <td >{{ $item->item_name }}</td>
                     <td>{{ number_format($item->amount) }}</td>

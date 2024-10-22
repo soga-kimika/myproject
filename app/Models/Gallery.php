@@ -11,6 +11,11 @@ class Gallery extends Model
         'image_url',
         'image_name',
     ];
+        // ユーザーとのリレーション
+        public function user()
+        {
+            return $this->belongsTo(User::class, 'user_id');
+        }
 }
 
 

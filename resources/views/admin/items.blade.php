@@ -19,6 +19,7 @@
         <thead>
             <tr>
                 <th>ユーザーID</th>
+                <th>ユーザー名</th>
                 <th>カテゴリー</th>
                 <th class="wide-column">要望</th>
                 <th>優先度</th>
@@ -30,6 +31,7 @@
             @foreach($items as $item)
                 <tr>
                     <td>{{ $item->user_id }}</td>
+                    <td>{{ $item->user->name }}</td>
                     <td>{{ $item->category }}</td>
                     <td class="wide-column">{{ $item->request_message }}</td>
                     <td>{{ $item->priority }}</td>

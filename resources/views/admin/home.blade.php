@@ -19,7 +19,7 @@
             <a href="{{ route('admin.clients.index') }}" title="クライアント管理" class="btn btn-link">
                 <i class="fas fa-address-book home-icon fa-2x management-home-ico"></i>
                 <p>Client</p>
-            </a>
+            </a>    
         </div>
         <div class="col-auto">
             <a href="{{ route('admin.items.index') }}" title="アイテム管理" class="btn btn-link">

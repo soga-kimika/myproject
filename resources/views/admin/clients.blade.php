@@ -29,7 +29,7 @@
                 @foreach ($clients as $client)
                     <tr data-toggle="collapse" data-target="#details-{{ $client->id }}" class="clickable">
                         <td>{{ $client->user_id }}</td>
-                        <td>{{ $client->name }}</td>
+                        <td>{{ $client->user->name }}</td>
                         <td>
                             <button class="btn" onclick="event.stopPropagation(); return confirm('本当に削除しますか？');">
                                 削除
