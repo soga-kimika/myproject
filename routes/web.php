@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\GalleryController;
@@ -75,15 +76,15 @@ Route::prefix('gallery')->middleware('auth')->group(function () {
 // 管理者用のルート
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/', [AdminController::class, 'home'])->name('admin.home'); 
-    Route::get('/users', [AdminController::class, 'indexUsers'])->name('admin.users.index');
-    Route::delete('/users/{userId}', [AdminController::class, 'destroyUser'])->name('admin.users.destroy');
-    Route::get('/clients', [AdminController::class, 'indexClients'])->name('admin.clients.index');
-    Route::delete('/clients/{clientId}', [AdminController::class, 'destroyClient'])->name('admin.clients.destroy');
-    Route::get('/items', [AdminController::class, 'indexItems'])->name('admin.items.index');
-    Route::delete('/items/{itemId}', [AdminController::class, 'destroyItem'])->name('admin.items.destroy');
-    Route::get('/homeStartupItems', [AdminController::class, 'indexHomeStartupItems'])->name('admin.homeStartupItems.index');
-    Route::delete('/homeStartupItems/{homeStartupItemId}', [AdminController::class, 'destroyHomeStartupItem'])->name('admin.homeStartupItems.destroy');
-    Route::get('/galleries', [AdminController::class, 'indexGalleries'])->name('admin.galleries.index');
-    Route::delete('/galleries/{gallery}', [AdminController::class, 'destroyGallery'])->name('admin.galleries.destroy');
+    Route::get('/users', [UserController::class, 'indexUsers'])->name('admin.users.index');
+    Route::delete('/users/{userId}', [UserController::class, 'destroyUser'])->name('admin.users.destroy');
+    Route::get('/clients', [ClientController::class, 'indexClients'])->name('admin.clients.index');
+    Route::delete('/clients/{clientId}', [ClientController::class, 'destroyClient'])->name('admin.clients.destroy');
+    Route::get('/items', [ItemController::class, 'indexItems'])->name('admin.items.index');
+    Route::delete('/items/{itemId}', [ItemController::class, 'destroyItem'])->name('admin.items.destroy');
+    Route::get('/homeStartupItems', [HomeStartupItemController::class, 'indexHomeStartupItems'])->name('admin.homeStartupItems.index');
+    Route::delete('/homeStartupItems/{homeStartupItemId}', [HomeStartupItemController::class, 'destroyHomeStartupItem'])->name('admin.homeStartupItems.destroy');
+    Route::get('/galleries', [GalleryController::class, 'indexGalleries'])->name('admin.galleries.index');
+    Route::delete('/galleries/{gallery}', [GalleryController::class, 'destroyGallery'])->name('admin.galleries.destroy');
 });
 

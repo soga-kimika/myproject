@@ -477,7 +477,6 @@
         }   
         .table {
             width: 100%;
-            table-layout: fixed; 
         }
         .table td {
             text-align: start;
@@ -485,7 +484,7 @@
             padding-right: 9px;
         }
         /* 合計金額 */
-        .overall-total{ 
+        .overall-total{     
             font-size: 18px;
             margin-left: auto;
         }
@@ -754,6 +753,12 @@
         word-wrap: break-word; 
         white-space: normal; 
         overflow: hidden;   
+    }
+
+    /* ウィッシュリスト、隠れてるカラム */
+    .admin-table-space{
+        margin-left: 1rem;
+        color:rgb(71, 70, 70); 
     }
 
 

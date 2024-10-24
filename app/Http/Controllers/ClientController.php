@@ -27,9 +27,8 @@ class ClientController extends Controller
             return redirect()->route('clients.create');
         }
 
-
-        //プロフィールページの表示
     }
+        //プロフィールページの表示
     /**
      * Show the form for creating a new resource.
      */
@@ -148,5 +147,38 @@ class ClientController extends Controller
         // ビューを返す
         return redirect()->route('clients.index');
     }
+
+    // 管理者用ページでのクライアント一覧表示
+public function indexClients(Request $request)
+{
+    // クライアントのクエリを準備
+    $query = Client::with('user');
+
+    // 検索条件がある場合
+    if ($request->filled('search')) {
+        $search = $request->input('search');
+        $query->where(function ($q) use ($search) {
+            // ユーザーIDは完全一致
+            $q->where('user_id', $search)
+              ->orWhereHas('user', function($q) use ($search) {
+                  $q->where('name', 'LIKE', "%{$search}%")
+                    ->orWhere('email', 'LIKE', "%{$search}%");
+              });
+        });
+    }
+
+    // クライアントを取得し、ページネーション
+    $clients = $query->paginate(10);
+
+    // 管理者用のビューを返す
+    return view('admin.clients', compact('clients'));
+}
+ // クライアント一覧削除
+ public function destroyClient($id)
+ {
+     Client::destroy($id);
+     return redirect()->route('admin.clients.index');
+ }
+
     
 }

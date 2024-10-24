@@ -15,6 +15,11 @@
             <button type="submit">検索</button>
         </form>
     </div>
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
     <table class="table table-striped">
         <thead>
             <tr>
@@ -28,6 +33,11 @@
             </tr>
         </thead>
         <tbody>
+            @if ($items->isEmpty())
+            <tr>
+                <td colspan="8" class="text-center">要望が見つかりませんでした。</td>
+            </tr>
+        @else
             @foreach($items as $item)
                 <tr>
                     <td>{{ $item->user_id }}</td>
@@ -51,6 +61,7 @@
                     </td>
                 </tr>
             @endforeach
+            @endif
         </tbody>
     </table>
 {{-- ページネーションリンク --}}

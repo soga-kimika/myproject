@@ -1,9 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\User;
-use App\Models\Client;
 use App\Models\Item;
 use App\Models\HomeStartupItem;
 use App\Models\Gallery;
@@ -22,67 +19,4 @@ class AdminController extends Controller
         }
     }
 
-    public function indexUsers()
-    {
-        // ユーザー情報を取得
-        $users = User::paginate(10);
-        // ホームスタートアップアイテムも必要な場合は取得
-        $homeStartupItems = HomeStartupItem::with('user')->get();
-        return view('admin.users', compact('users', 'homeStartupItems'));
-    }
-    
-    // ユーザー削除
-    public function destroyUser($id)
-    {
-        User::destroy($id);
-        return redirect()->route('admin.users.index');
-    }
-    // クライアント一覧表示
-    public function indexClients()
-    {
-        $clients = Client::paginate(10);
-        return view('admin.clients', compact('clients'));
-    }
-    // クライアント一覧削除
-    public function destroyClient($id)
-    {
-        Client::destroy($id);
-        return redirect()->route('admin.clients.index');
-    }
-    // アイテム一覧表示
-    public function indexItems()
-    {
-        $items = Item::paginate(10);
-        return view('admin.items', compact('items'));
-    }
-    // アイテム一覧削除
-    public function destroyItem($id)
-    {
-        Item::destroy($id);
-        return redirect()->route('admin.items.index');
-    }
-    // ホームスタートアップアイテム一覧表示
-    public function indexHomeStartupItems()
-    {
-        $homeStartupItems = HomeStartupItem::paginate(10);
-        return view('admin.homeStartupItems', compact('homeStartupItems'));
-    }
-    // ホームスタートアップアイテム一覧削除
-    public function destroyHomeStartupItem($id)
-    {
-        HomeStartupItem::destroy($id);
-        return redirect()->route('admin.homeStartupItems.index');
-    }
-    // ギャラリー一覧表示
-    public function indexGalleries()
-    {
-        $galleries = Gallery::paginate(10);
-        return view('admin.galleries', compact('galleries'));
-    }
-    // ギャラリー一覧削除
-    public function destroyGallery($id)
-    {
-        Gallery::destroy($id);
-        return redirect()->route('admin.galleries.index');
-    }
 }

@@ -27,6 +27,11 @@
             </tr>
         </thead>
         <tbody>
+            @if ($galleries->isEmpty())
+            <tr>
+                <td colspan="8" class="text-center">ギャラリーが見つかりませんでした。</td>
+            </tr>
+        @else
             @foreach ($galleries as $gallery)
                 <tr>
                     <td>{{ $gallery->user_id }}</td>
@@ -44,6 +49,7 @@
                     </td>
                 </tr>
             @endforeach
+            @endif
         </tbody>
     </table>
 </div>

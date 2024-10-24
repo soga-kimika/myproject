@@ -48,16 +48,26 @@ class User extends Authenticatable
     {
         return $this->is_admin === 1;
     }
-    
-    // リレーションを定義
+    // クライアントとのリレーション
+    public function clients()
+    {
+        return $this->belongsTo(Client::class);
+    }
+    // アイテムとのリレーション
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
+
+    // ウィッシュリストとのリレーションを定義
     public function homeStartupItems()
     {
         return $this->hasMany(HomeStartupItem::class);
-        
     }
-    // ユーザーとのリレーション
-    public function user()
+
+        // ギャラリーとのリレーションを定義
+    public function galleries()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->hasMany(Gallery::class);
     }
 }

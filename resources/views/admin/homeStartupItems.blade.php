@@ -28,9 +28,14 @@
             </tr>
         </thead>
         <tbody>
+            @if ($homeStartupItems->isEmpty())
+            <tr>
+                <td colspan="8" class="text-center">ウィッシュリストが見つかりませんでした。</td>
+            </tr>
+        @else
             @foreach ($homeStartupItems as $item)
                 <tr data-toggle="collapse" data-target="#details-{{ $item->id }}" class="clickable">
-                    <td>{{ $item->id }}</td>
+                    <td>{{ $item->user_id }}</td>
                     <td>{{ $item->user->name }}</td>
                     <td >{{ $item->category }}</td>
                     <td >{{ $item->item_name }}</td>
@@ -42,23 +47,24 @@
                             <button type="submit"  class="btn" onclick="return confirm('本当に削除しますか？');">削除</button>
                         </form>
                     </td>
-                </tr>
-                <tr id="details-{{ $item->id }}" class="collapse">
-                    <td colspan="5">
-                        <div>
-                            <strong>メーカー・型番:</strong> {{ $item->manufacturer }}<br>
-                            <strong>単価(円):</strong> {{ number_format($item->price) }}<br>
-                            <strong>数量:</strong> {{ number_format($item->quantity) }}<br>
-                            <strong>画像:</strong> 
-                            @if ($item->image_url)
-                                <img src="{{ asset('storage/' . $item->image_url) }}" alt="{{ $item->item_name }}" style="width: 100px;">
-                            @else
-                                画像なし
-                            @endif
-                        </div>
-                    </td>
-                </tr>
+                    <tr id="details-{{ $item->id }}" class="collapse">
+                        <td colspan="5">
+                            <div class="low d-flex">
+                                
+                                    <strong class="admin-table-space">メーカー・型番:</strong> {{ $item->manufacturer }}<br>
+                                    <strong class="admin-table-space">単価(円):</strong> {{ number_format($item->price) }}<br>
+                                    <strong class="admin-table-space">数量:</strong> {{ number_format($item->quantity) }}
+                                    <strong class="admin-table-space">画像:</strong> 
+                                    @if ($item->image_url)
+                                        <img src="{{ asset('storage/' . $item->image_url) }}" alt="{{ $item->item_name }}" style="width: 100px;">
+                                    @else
+                                        画像なし
+                                    @endif
+                            </div>
+                        </td>
+                    </tr>
             @endforeach
+            @endif
         </tbody>
     </table>
 {{-- ページネーションリンク --}}

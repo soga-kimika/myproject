@@ -229,4 +229,36 @@ class ItemController extends Controller
         }
         return redirect()->route('items.index', ['type' => $type]);
     }
+        // 管理者用ページでのアイテム一覧表示
+public function indexItems(Request $request)
+{
+    // アイテムのクエリを準備
+    $query = Item::with('user');
+
+    // 検索条件がある場合
+    if ($request->filled('search')) {
+        $search = $request->input('search');
+        $query->where(function ($q) use ($search) {
+            // ユーザーIDは完全一致
+            $q->where('user_id', $search)
+              ->orWhereHas('user', function($q) use ($search) {
+                  $q->where('name', 'LIKE', "%{$search}%")
+                    ->orWhere('email', 'LIKE', "{$search}%")
+                    ->orWhere('category', 'LIKE', "{$search}%");
+              });
+        });
+    }
+
+    // アイテムを取得し、ページネーション
+    $items = $query->paginate(10);
+
+    // 管理者用のビューを返す
+    return view('admin.items', compact('items'));
+}
+ // アイテム一覧削除
+ public function destroyItem($id)
+ {
+    Item::destroy($id);
+     return redirect()->route('admin.items.index');
+ }
 }

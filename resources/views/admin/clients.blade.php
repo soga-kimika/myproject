@@ -21,7 +21,7 @@
             <thead>
                 <tr>
                     <th>ユーザーID</th>
-                    <th>ユーザー名</th>
+                    <th>ユーザー名</th> 
                     <th>土地予算(￥)</th>
                     <th>土地坪数</th> 
                     <th>建物予算(￥)</th> 
@@ -31,14 +31,19 @@
                 </tr>
             </thead>
             <tbody>
+                @if ($clients->isEmpty())
+                <tr>
+                    <td colspan="8" class="text-center">クライアントが見つかりませんでした。</td>
+                </tr>
+            @else
                 @foreach ($clients as $client)
                     <tr data-toggle="collapse" data-target="#details-{{ $client->id }}" class="clickable">
                         <td>{{ $client->user_id }}</td>
                         <td>{{ $client->user->name }}</td>
                         <td>{{ $client->land_budget }}</td>
-                        <td>{{ $client->land_area }}</td>
+                        <td>{{ $client->land_area }}坪前後</td>
                         <td>{{ $client->building_budget }}</td>
-                        <td>{{ $client->building_area }}</td>
+                        <td>{{ $client->building_area }}坪前後</td>
                         <td>{{ $client->construction_area }}</td>
                         <td>
                             <button class="btn" onclick="event.stopPropagation(); return confirm('本当に削除しますか？');">
@@ -65,6 +70,7 @@
                         </td>
                     </tr>
                 @endforeach
+                @endif
             </tbody>
         </table>
     </div>

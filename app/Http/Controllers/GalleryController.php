@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Gallery;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Client;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -71,4 +72,37 @@ class GalleryController extends Controller
         // ビューを返す
         return redirect()->route('galleries.index');
     }
+
+
+    // 管理者用ページでのギャラリー一覧表示
+    public function indexGalleries(Request $request)
+    {
+        // ギャラリーのクエリを準備
+        $query = Gallery::with('user');
+    
+        // 検索条件がある場合
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $query->where(function ($q) use ($search) {
+                // ユーザーIDは完全一致
+                $q->where('user_id', $search)
+                  ->orWhereHas('user', function($q) use ($search) {
+                      $q->where('name', 'LIKE', "%{$search}%");
+                  });
+            });
+        }
+    
+        // ギャラリーを取得し、ページネーション
+        $galleries = $query->paginate(10);
+    
+        // 管理者用のビューを返す
+        return view('admin.galleries', compact('galleries'));
+    }
+     // ギャラリー一覧削除
+     public function destroyGallery($id)
+     {
+         Gallery::destroy($id);
+         return redirect()->route('admin.galleries.index');
+     }
+
 }

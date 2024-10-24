@@ -195,5 +195,38 @@ public function edit($homeStartupItemId)
         'homeStartupItem' => $homeStartupItem,
     ]);
 }
-
+   // 管理者用ページでのホームスタートアップアイテム一覧表示
+   public function indexHomeStartupItems(Request $request)
+   {
+       // ログインユーザーのクエリを準備
+       $query = HomeStartupItem::with('user');
+   
+       // 検索条件がある場合
+       if ($request->filled('search')) {
+           $search = $request->input('search');
+           $query->where(function ($q) use ($search) {
+               // ユーザーIDは完全一致
+               $q->where('user_id', $search)
+                 ->orWhereHas('user', function($q) use ($search) {
+                     $q->where('name', 'LIKE', "%{$search}%")
+                     ->orWhere('category', 'LIKE', "{$search}%");
+                 });
+           });
+       }
+   
+       // ホームスタートアップアイテムを取得し、ページネーション
+       $homeStartupItems = $query->paginate(10);
+   
+       // 管理者用のビューを返す
+       return view('admin.homeStartupItems', compact('homeStartupItems'));
+   }
+    // アイテム一覧削除
+ public function destroyHomeStartupItem($id)
+ {
+    HomeStartupItem::destroy($id);
+     return redirect()->route('admin.homeStartupItems.index');
+ }
 }
+
+
+
