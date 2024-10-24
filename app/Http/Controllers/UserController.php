@@ -41,7 +41,7 @@ class UserController extends Controller
         // ウィッシュリストに関連するレコードを削除
         $user->homeStartupItems()->delete();
         // 要望に関連するレコードを削除
-        $user->Items()->delete();
+        $user->items()->delete();
         // ユーザーに関連するレコードを削除
         $user->galleries()->delete();
         // ユーザーに関連するレコードを削除

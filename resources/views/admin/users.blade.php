@@ -16,12 +16,6 @@
         </form>
     </div>
 
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
-
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -43,12 +37,18 @@
                         <td class="management-user-text">{{ $user->name }}</td>
                         <td class="management-user-text">{{ $user->email }}</td>
                         <td class="align-items-center">
+                            {{-- 管理者でない場合 --}}
+                            @if(!$user->isAdmin())
                             <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn" onclick="return confirm('本当に削除しますか？');">削除</button>
                             </form>
+                            @else
+                            {{-- 管理者の場合 --}}
+                            <span class="text-muted">管理者</span>
                         </td>
+                        @endif
                     </tr>
                 @endforeach 
                 @endif
