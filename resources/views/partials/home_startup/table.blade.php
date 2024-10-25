@@ -56,7 +56,7 @@
                                     </td>
                                     {{-- 画像モーダル・編集モーダル読み込み --}}
                                     @include('partials.home_startup.image_modal', ['id' => $homeStartupItem->id, 'homeStartupItem' => $homeStartupItem, 'imageUrl' => $homeStartupItem->image_url])
-                                    @include('partials.home_startup.edit_modal', ['homeStartupItem' => $homeStartupItem])
+                                    @include('partials.home_startup.edit_modal')
                                 </tr>
                                 @php $totalPrice1 += $homeStartupItem->amount; @endphp
                             @endforeach
@@ -73,7 +73,7 @@
                     <h3 class="card-title"><i class="fas fa-shopping-basket"></i>アプライアンス</h3>
                     {{-- アプライアンスの合計金額 --}}
                     @php $totalPrice2 = 0; @endphp
-                    <strong class="total-amount">{{ number_format($totalPrice2) }}</strong>
+                    <strong class="total-amount">￥{{ number_format($totalPrice2) }}</strong>
                 </div>
                  {{-- アプライアンスの中身 --}}
                 <div class="card-body table-responsive p-0">

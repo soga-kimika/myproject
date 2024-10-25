@@ -14,7 +14,7 @@
                         @method('PUT')
                         <div class="modal-body">
                             {{-- モーダルの中身は、form.modalであり、中身を読み込み --}}
-                            @include('partials.home_startup.form_modal')
+                            @include('partials.home_startup.form_modal', ['homeStartupItem' => $homeStartupItem])
                         </div>
                     </form>  
                         {{-- フッター --}}

@@ -1,4 +1,4 @@
-{{-- ホームスタートアップ編集モーダル中身--}}
+{{-- ホームスタートアップ編集モーダル中身--}}   
 <div class="container">
     <div class="col-md-12 mx-auto"> 
                     <div class="mb-3">
@@ -36,9 +36,9 @@
                          <input type="text" name="manufacturer" id="manufacturer" class="item-form-control form-control-lg me-2 homeStartupItem-col-request" placeholder="メーカー・型番"value="{{ old('manufacturer',$homeStartupItem->manufacturer) }}" > 
                             {{-- 金額、個数 --}}
                             <div class="d-flex ">
-                                 <input type="number" name="price" class="form-control price-form-control me-2 homeStartupItem-col-price" placeholder="金額" step="1000" min ="0"value="{{ old('price',(int)$homeStartupItem->price) }}" oninput="calculateTotal()" step="1"style="width: 100px;" >
-                                 <input type="number" name="quantity" class="form-control quantity-form-control me-2 homeStartupItem-form-control" placeholder="個数" min="1"  value="{{ old('quantity',$homeStartupItem->quantity) }}" oninput="calculateTotal()"style="width: 70px;"  required>
-                            
+                                 <input type="text" name="price" class="form-control price-form-control me-2 homeStartupItem-col-price" placeholder="金額" step="1000" min ="0" value="{{ old('price',(int)$homeStartupItem->price) }}" step="1"style="width: 100px;" oninput="convertToHalfWidth(event, this),calculateTotal()" >
+                                 <input type="text" name="quantity" class="form-control quantity-form-control me-2 homeStartupItem-form-control" placeholder="個数" min="1"  value="{{ old('quantity',$homeStartupItem->quantity) }}" style="width: 70px;"  required oninput="convertToHalfWidth(event, this),calculateTotal()">
+                                
                              </div>
                             {{-- 登録ボタン --}}
                             <button type="submit" class="btn btn-store ms-2 ">更新</button>

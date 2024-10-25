@@ -56,7 +56,7 @@ public function store(Request $request)
         'category' => 'nullable|in:furniture,appliance,accessories',
         'item_name' => 'required|string|max:255',
         'manufacturer' => 'nullable|string|max:255',
-        'price' => 'nullable|integer|min:1000',
+        'price' => 'nullable|integer',
         'quantity' => 'nullable|integer|min:1',
         'amount' => 'nullable|numeric',
         'imageUpload' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
@@ -148,7 +148,7 @@ public function store(Request $request)
         // 保存
         $homeStartupItem->save();
         //ビューを返す
-        return redirect()->route('homeStartupItems.index');
+        return redirect()->route('homeStartupItems.index'); 
     }
     
     // 削除 
