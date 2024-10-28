@@ -75,7 +75,7 @@
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
                                 <label>予算</label>
-                                <input type="text" name="land_budget" class="form-control mr-3 small-select" placeholder="例）1500万円" id="land_budget_input" required>
+                                <input type="text" name="land_budget" class="form-control mr-3 small-select" placeholder="例）1,500万円" id="land_budget_input" required>
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
                                 <label for="land_area">坪数</label>
@@ -99,7 +99,7 @@
                         <div class="form-group">
                             <div class="client-form-inline justify-content-center">
                                 <label>予算</label>
-                                <input type="text" name="building_budget" class="form-control mr-3 small-select " placeholder="例）3000万円" required>
+                                <input type="text" name="building_budget" class="form-control mr-3 small-select " placeholder="例）3,000万円" required>
                             </div>
                             <div class="client-form-inline justify-content-center mt-2">
                                 <label for="building_area">坪数</label>

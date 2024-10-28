@@ -26,9 +26,9 @@ class ItemController extends Controller
         // カードのタイトルとカテゴリーをタイプから取得
         $cardTitlesAndCategories = $this->getCardTitlesAndCategoriesByType($type);
         // カテゴリー１から、カード1用のアイテムを取得
-        $items1 = $this->getItemsByCategory($type, $cardTitlesAndCategories[0]['category'],$userId);
+        $items1 = $this->getItemsByCategory($type, $cardTitlesAndCategories[0]['category'], $userId);
         // カテゴリー２からカード2用のアイテムを取得
-        $items2 = $this->getItemsByCategory($type, $cardTitlesAndCategories[1]['category'],$userId);
+        $items2 = $this->getItemsByCategory($type, $cardTitlesAndCategories[1]['category'], $userId);
 
         return view('item.index', [
             'pageTitle' => $pageTitle,
@@ -94,18 +94,18 @@ class ItemController extends Controller
 
 
     // タイプと、カテゴリーに基づいてアイテムを取得
-    private function getItemsByCategory($type, $category,$userId)
+    private function getItemsByCategory($type, $category, $userId)
     {
         $items = Item::where('type', $type)
             ->where('category', $category)
-            ->where('user_id',$userId)
+            ->where('user_id', $userId)
             // 優先度の高い順番に表示
             ->orderByRaw("FIELD(priority, 'high', 'medium', 'low', 'remove') asc")
             ->get();
-    
+
         return $items;
     }
-    
+
 
     // フォームに入力された内容を登録
     public function store(Request $request, $type)
@@ -120,7 +120,7 @@ class ItemController extends Controller
         ]);
 
         // アイテム（優先度、カテゴリー名、要望）の作成
-        $item= new Item();
+        $item = new Item();
         $item->priority = $request->input('priority');
         $item->category = $request->input('category');
         $item->request_message = $request->input('request_message');
@@ -137,15 +137,12 @@ class ItemController extends Controller
         }
         // 画像の保存処理
         if ($request->hasFile('imageUpload')) {
-            // 画像のパスを生成し、パスを保存
-            $image = $request->file('imageUpload');
-            $imagePath = $image->store('images', 'public');
-            $item->image_url = $imagePath;
-            // ファイル名を取得し、ファイル名を重複しないように、日付をファイル名に入れてファイル名を保存
-            $fileName = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME) . '_' . date('Ymd_His') . '.' . $image->getClientOriginalExtension();
-            $item->image_name = $fileName;
+            $image = file_get_contents($request->file('imageUpload')->getRealPath());
+            $binary_image = base64_encode($image);
+            $item->image_url = 'data:image/jpeg;base64,' . $binary_image;
+            $item->image_name = pathinfo($request->file('imageUpload')->getClientOriginalName(), PATHINFO_FILENAME) . '_' . date('Ymd_His') . '.' . $request->file('imageUpload')->getClientOriginalExtension();
         }
-        
+
         $item->type = $type;
         // 保存
         $item->save();
@@ -175,25 +172,19 @@ class ItemController extends Controller
 
         // 画像の処理
         if ($request->hasFile('imageUpload')) {
-            // 古い画像がある場合
+            // 古い画像の削除
             if ($item->image_url) {
-                // 古い画像の削除
-                if (Storage::exists('public/' . $item->image_url)) {
-                    Storage::delete('public/' . $item->image_url);
-                }
-                // 古い画像の名前を削除
+                // 画像のURLをリセット
+                $item->image_url = null;
                 $item->image_name = null;
             }
-
-            // 新しい画像のパスを生成し、パスを保存
-            $image = $request->file('imageUpload');
-            $imagePath = $image->store('images', 'public');
-            $item->image_url = $imagePath;
-
-            // ファイル名を取得し、ファイル名を重複しないように、日付をファイル名に入れてファイル名を保存
-            $fileName = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME) . '_' . date('Ymd_His') . '.' . $image->getClientOriginalExtension();
-            $item->image_name = $fileName; // 新しい画像名を設定
+            // 新しい画像の登録
+            $image = file_get_contents($request->file('imageUpload')->getRealPath());
+            $binary_image = base64_encode($image);
+            $item->image_url = 'data:image/jpeg;base64,' . $binary_image;
+            $item->image_name = pathinfo($request->file('imageUpload')->getClientOriginalName(), PATHINFO_FILENAME) . '_' . date('Ymd_His') . '.' . $request->file('imageUpload')->getClientOriginalExtension();
         }
+
 
         // アイテムを保存
         $item->save();
@@ -209,8 +200,11 @@ class ItemController extends Controller
         $item = Item::findOrFail($itemId);
 
         // 画像の削除処理   
-        if ($item->image_url && Storage::exists('public/' . $item->image_url)) {
-            Storage::delete('public/' . $item->image_url);
+        $item = Item::findOrFail($itemId);
+        if ($item->image_url) {
+            $item->image_url = null;
+            $item->image_name = null;
+            $item->save();
         }
         $item->delete();
         return redirect()->route('items.index', ['type' => $type])->with('success', 'アイテムが削除されました。');
@@ -218,47 +212,45 @@ class ItemController extends Controller
 
     // 画像のみ削除
     public function deleteImage($type, $itemId)
-    {
-        $item = Item::findOrFail($itemId);
-        if ($item->image_url && Storage::exists('public/' . $item->image_url)) {
-            Storage::delete('public/' . $item->image_url);
-            // 画像URLをリセット
-            $item->image_url = null;
-            $item->image_name = null;
-            $item->save();
-        }
-        return redirect()->route('items.index', ['type' => $type]);
-    }
-        // 管理者用ページでのアイテム一覧表示
-public function indexItems(Request $request)
 {
-    // アイテムのクエリを準備
-    $query = Item::with('user');
-
-    // 検索条件がある場合
-    if ($request->filled('search')) {
-        $search = $request->input('search');
-        $query->where(function ($q) use ($search) {
-            // ユーザーIDは完全一致
-            $q->where('user_id', $search)
-              ->orWhereHas('user', function($q) use ($search) {
-                  $q->where('name', 'LIKE', "%{$search}%")
-                    ->orWhere('email', 'LIKE', "{$search}%")
-                    ->orWhere('category', 'LIKE', "{$search}%");
-              });
-        });
+    $item = Item::findOrFail($itemId);
+    if ($item->image_url) {
+        $item->image_url = null;
+        $item->image_name = null;
+        $item->save();
     }
-
-    // アイテムを取得し、ページネーション
-    $items = $query->paginate(10);
-
-    // 管理者用のビューを返す
-    return view('admin.items', compact('items'));
+    return redirect()->route('items.index', ['type' => $type]);
 }
- // アイテム一覧削除
- public function destroyItem($id)
- {
-    Item::destroy($id);
-     return redirect()->route('admin.items.index');
- }
+    // 管理者用ページでのアイテム一覧表示
+    public function indexItems(Request $request)
+    {
+        // アイテムのクエリを準備
+        $query = Item::with('user');
+
+        // 検索条件がある場合
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $query->where(function ($q) use ($search) {
+                // ユーザーIDは完全一致
+                $q->where('user_id', $search)
+                    ->orWhereHas('user', function ($q) use ($search) {
+                        $q->where('name', 'LIKE', "%{$search}%")
+                            ->orWhere('email', 'LIKE', "{$search}%")
+                            ->orWhere('category', 'LIKE', "{$search}%");
+                    });
+            });
+        }
+
+        // アイテムを取得し、ページネーション
+        $items = $query->paginate(10);
+
+        // 管理者用のビューを返す
+        return view('admin.items', compact('items'));
+    }
+    // アイテム一覧削除
+    public function destroyItem($id)
+    {
+        Item::destroy($id);
+        return redirect()->route('admin.items.index');
+    }
 }

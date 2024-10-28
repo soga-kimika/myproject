@@ -56,7 +56,7 @@
                                     <strong class="admin-table-space">数量:</strong> {{ number_format($item->quantity) }}
                                     <strong class="admin-table-space">画像:</strong> 
                                     @if ($item->image_url)
-                                        <img src="{{ asset('storage/' . $item->image_url) }}" alt="{{ $item->item_name }}" style="width: 100px;">
+                                        <img src="{{  $item->image_url }}" alt="{{ $item->item_name }}" style="width: 100px;">
                                     @else
                                         画像なし
                                     @endif

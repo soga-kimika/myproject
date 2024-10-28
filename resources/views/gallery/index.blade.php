@@ -41,7 +41,7 @@
                     <div class="col-lg-2 ">
                         <div class="card">
                             {{-- 登録した画像 --}}
-                            <img src="{{ asset('storage/' . $gallery->image_url) }}" class="card-img-top" alt="{{ $gallery->image_name }}" onclick="showImage('{{ asset('storage/' . $gallery->image_url) }}')">
+                            <img src="{{ $gallery->image_url }}" class="card-img-top" alt="{{ $gallery->image_name }}" onclick="showImage('{{ $gallery->image_url }}')">
                             <div class="gallery-card-body text-center">
                                 {{-- 削除ボタン --}}
                                 <button class="btn btn-dangers gallery-card-icon" data-toggle="modal" data-target="#deleteGalleryModal{{ $gallery->id }}">

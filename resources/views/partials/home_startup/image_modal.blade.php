@@ -11,7 +11,7 @@
                 </div>
                 {{-- 画像モーダルの中身 --}}
                 <div class="modal-body text-center">
-                        <img src="{{ asset('storage/' . $homeStartupItem->image_url) }}" class="img-fluid" alt="Image">
+                        <img src="{{ $homeStartupItem->image_url }}" class="img-fluid" alt="Image">
                 </div>
                 {{-- 画像モーダルフッター --}}
                 <div class="modal-footer">

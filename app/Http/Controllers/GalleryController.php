@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Gallery;
 use Illuminate\Support\Facades\Storage;
-use App\Models\Client;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -46,7 +45,7 @@ class GalleryController extends Controller
         $binary_image = base64_encode($image);
         
         // base64 エンコードされた画像データを保存
-        $gallery->image_url = 'data:image/jpeg;base64,' . $binary_image; // 
+        $gallery->image_url = 'data:image/jpeg;base64,' . $binary_image; 
         $gallery->image_name = $request->file('imageUpload')->getClientOriginalName(); 
     
         // 保存
@@ -65,8 +64,6 @@ class GalleryController extends Controller
     {
         // IDから、画像を取得
         $gallery = Gallery::findOrFail($galleryId);
-        // パブリックフォルダのイメージURLを削除
-        Storage::disk('public')->delete($gallery->image_url);
         // 削除
         $gallery->delete();
         // ビューを返す

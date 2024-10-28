@@ -47,7 +47,7 @@
                     <td>{{ $item->priority }}</td>
                     <td>
                         @if ($item->image_url)
-                            <img src="{{ asset('storage/' . $item->image_url) }}" alt="{{ $item->request_message }}" class="img-thumbnail" width="100">
+                            <img src="{{  $item->image_url }}" alt="{{ $item->request_message }}" class="img-thumbnail" width="100">
                         @else
                             画像なし
                         @endif

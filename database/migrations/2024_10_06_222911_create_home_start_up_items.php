@@ -23,7 +23,7 @@ return new class extends Migration
             $table->decimal('amount', 10, 2)->nullable();
             $table->integer('card_number')->nullable();
             $table->string('image_name')->nullable();
-            $table->string('image_url')->nullable();
+            $table->longText('image_url')->nullable();
             $table->timestamps();
         });
     }

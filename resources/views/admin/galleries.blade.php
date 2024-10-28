@@ -38,7 +38,7 @@
                     <td>{{ $gallery->user->user_id }}</td>
                     <td>{{ $gallery->image_name }}</td>
                     <td>
-                        <img src="{{ asset('storage/' . $gallery->image_url) }}" alt="{{ $gallery->image_name }}" style="width: 100px;">
+                        <img src="{{ $gallery->image_url }}" alt="{{ $gallery->image_name }}" style="width: 100px;">
                     </td>
                     <td>
                         <form action="{{ route('galleries.destroy', $gallery->id) }}" method="POST" style="display:inline;">

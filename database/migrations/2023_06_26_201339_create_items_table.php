@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamps();
             $table->enum('priority',['high','medium','low','remove']);
             $table->enum('category',['toilet', 'bath', 'idea', 'nothing', 'outside', 'interior','bedroom','kidsroom','storage','other','living','dining']);
-            $table->string('image_url')->nullable();
+            $table->longText('image_url')->nullable();
             $table->string('request_message',255)->nullable();
             $table->integer('card_number')->nullable();
             $table->string('image_name')->nullable();
