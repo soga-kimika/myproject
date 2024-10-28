@@ -168,7 +168,7 @@ class HomeStartupItemController extends Controller
         // ビューを返す
         return redirect()->route('homeStartupItems.index');
     }
-    
+
     // 画像のみ削除
     public function deleteImage($homeStartupItemId)
     {
@@ -208,6 +208,8 @@ class HomeStartupItemController extends Controller
                     ->orWhereHas('user', function ($q) use ($search) {
                         $q->where('name', 'LIKE', "%{$search}%")
                             ->orWhere('category', 'LIKE', "{$search}%");
+                        $q->where('name', 'LIKE', "%{$search}%")
+                            ->orWhere('item_name', 'LIKE', "%{$search}%");
                     });
             });
         }
