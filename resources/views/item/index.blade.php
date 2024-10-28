@@ -40,23 +40,26 @@
 
             
 
-              // チェックボックスの状態を保持
-        document.addEventListener('DOMContentLoaded', () => {
-        const checkboxes = document.querySelectorAll('.check-consulted');
-        checkboxes.forEach(checkbox => {
-            const id = checkbox.dataset.id;
+document.addEventListener('DOMContentLoaded', () => {
+    const checkboxes = document.querySelectorAll('.check-consulted');
+    checkboxes.forEach(checkbox => {
+        const id = checkbox.dataset.id;
+
+        // アイテムのビューの場合、チェックボックスの初期状態を未チェックに設定
+        if (!document.body.classList.contains('home-startup-view')) {
+            checkbox.checked = false; // 他のビューでは未チェック
+        } else {
+            // ホームスタートアップビューの場合はlocalStorageから復元
             const checked = localStorage.getItem(`checkbox-${id}`) === 'true';
             checkbox.checked = checked;
-        });
+        }
 
         // チェックボックスの状態が変わったときに保存
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                const id = checkbox.dataset.id;
-                localStorage.setItem(`checkbox-${id}`, checkbox.checked);
-            });
+        checkbox.addEventListener('change', () => {
+            localStorage.setItem(`checkbox-${id}`, checkbox.checked);
         });
     });
+});
 
 
         </script>
