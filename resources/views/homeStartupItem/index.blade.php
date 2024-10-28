@@ -126,7 +126,6 @@
     if (document.body.classList.contains('home-startup-view')) {
         calculateTotalChecked();
     }
-});
 
         // 全角で入力した数字を強制的に半角に変換
         function convertToHalfWidth(event, input) {
