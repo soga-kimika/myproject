@@ -63,24 +63,20 @@
     document.addEventListener('DOMContentLoaded', () => {
         const checkboxes = document.querySelectorAll('.check-consulted');
 
-        // 初期状態を未チェックにする
-        checkboxes.forEach(checkbox => {
-            checkbox.checked = false; // すべて未チェック
-        });
-
+        // チェックボックスの状態をセッションストレージから取得し、反映
         checkboxes.forEach(checkbox => {
             const id = checkbox.dataset.id;
-            // localStorageから状態を取得
-            const savedState = localStorage.getItem(`checkbox-${id}`);
-            
-            // localStorageの値がある場合、その状態を反映
-            if (savedState !== null) {
-                checkbox.checked = savedState === 'true'; // trueならチェック、falseなら未チェック
-            }
+            const savedState = sessionStorage.getItem(`checkbox-${id}`);
 
-            // チェックボックスの状態が変わったときに保存
+            // 初期は未チェックにし、セッションストレージがあればその状態を反映
+            checkbox.checked = savedState === 'true'; 
+        });
+
+        // チェックボックスの状態が変わったときに保存
+        checkboxes.forEach(checkbox => {
+            const id = checkbox.dataset.id;
             checkbox.addEventListener('change', () => {
-                localStorage.setItem(`checkbox-${id}`, checkbox.checked);
+                sessionStorage.setItem(`checkbox-${id}`, checkbox.checked);
                 // 合計計算の呼び出し
                 calculateTotalChecked(); 
             });

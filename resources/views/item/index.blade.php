@@ -42,7 +42,7 @@
         checkboxes.forEach(checkbox => {
             const id = checkbox.dataset.id;
             const savedState = sessionStorage.getItem(`checkbox-${id}`);
-            checkbox.checked = savedState === 'true'; // trueならチェック、falseなら未チェック
+            checkbox.checked = savedState === 'true'; 
 
             // チェックボックスの状態が変わったときに保存
             checkbox.addEventListener('change', () => {
