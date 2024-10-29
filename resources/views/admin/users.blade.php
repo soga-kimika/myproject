@@ -21,7 +21,7 @@
                 <tr>
                     <th>ユーザーID</th>
                     <th>ユーザー名</th>
-                    <th>メール</th>
+                    <th>メールアドレス</th>
                     <th>操作</th>
                 </tr>
             </thead>
