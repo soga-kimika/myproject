@@ -380,7 +380,7 @@ return [
         'can' => 'admin', 
         ],
         [
-            'text' => 'Client Management',
+            'text' => 'Profile Management',
             'url' => 'admin/clients',
             'icon' => 'fas fa-address-book',
             'classes' => 'text-bold',

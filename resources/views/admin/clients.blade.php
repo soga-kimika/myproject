@@ -3,7 +3,7 @@
 @section('title', 'マイホームNOTE')
 
 @section('content_header')  
-<h1>Client Management</h1>                                                            
+<h1>Profile Management</h1>                                                            
 @stop   
 
 @section('content')
