@@ -1,10 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Item;
-use App\Models\HomeStartupItem;
-use App\Models\Gallery;
-
 // ホーム画面表示
 class AdminController extends Controller
 {

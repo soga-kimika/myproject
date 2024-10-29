@@ -1,11 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
-
 use Illuminate\Http\Request;
 use App\Models\Item;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
 // $type（bathroom-areasなど）を引数で渡して、$type（bathroom-areasなど）ごとに、
@@ -236,7 +233,8 @@ class ItemController extends Controller
                     ->orWhereHas('user', function ($q) use ($search) {
                         $q->where('name', 'LIKE', "%{$search}%")
                             ->orWhere('email', 'LIKE', "{$search}%")
-                            ->orWhere('category', 'LIKE', "{$search}%");
+                            ->orWhere('category', 'LIKE', "{$search}%")
+                            ->orWhere('request_message', 'LIKE', "%{$search}%");
                     });
             });
         }

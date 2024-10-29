@@ -35,7 +35,7 @@
             @foreach ($galleries as $gallery)
                 <tr>
                     <td>{{ $gallery->user_id }}</td>
-                    <td>{{ $gallery->user->user_id }}</td>
+                    <td>{{ $gallery->user->name  }}</td>
                     <td>{{ $gallery->image_name }}</td>
                     <td>
                         <img src="{{ $gallery->image_url }}" alt="{{ $gallery->image_name }}" style="width: 100px;">
