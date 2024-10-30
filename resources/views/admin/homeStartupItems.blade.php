@@ -57,8 +57,6 @@
                                     <strong class="admin-table-space">画像:</strong> 
                                     @if ($item->image_url)
                                         <img src="{{  $item->image_url }}" alt="{{ $item->item_name }}" style="width: 100px;">
-                                    @else
-                                        画像なし
                                     @endif
                             </div>
                         </td>
