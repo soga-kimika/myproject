@@ -62,7 +62,7 @@ class ClientController extends Controller
             'compactCars' => 'required|string',
             'motorcycles' => 'required|string',
             'bicycles' => 'required|string',
-            'construction_area' => 'nullable|string',
+            'construction_area' => 'nullable|string|max:255',
             'date' => 'nullable|date',
             'current_home_issues' => 'nullable|string',
         ]);
@@ -118,7 +118,7 @@ class ClientController extends Controller
             'miniCars' => 'nullable|string',
             'motorcycles' => 'nullable|string',
             'bicycles' => 'nullable|string',
-            'construction_area' => 'nullable|string',
+            'construction_area' => 'nullable|string|max:255',
             'date' => 'nullable|date',
             'current_home_issues' => 'nullable|string',
         ]);

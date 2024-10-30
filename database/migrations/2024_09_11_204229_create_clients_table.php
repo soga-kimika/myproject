@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // 施主情報登録
+        // プロフィール情報
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
