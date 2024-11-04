@@ -1,43 +1,41 @@
-## 商品管理システム
+# マイホームNOTE   
 
-### 環境構築手順
+## 概要
+    このシステムでは、注文住宅を作る際の要望をリスト化し、一覧で表示する事ができます。家のエリア別に要望の登録・編集・削除をすることができ、要望には優先度を設定し、関連画像を投稿することもできます。また、プロフィール情報の登録や、欲しい家具や家電を管理するリスト、理想のイメージ画像を保存するページを用意もしました。このシステムにより、施工担当との打ち合わせを円滑にし、明確な要望をもとに理想の家を実現することができます。
 
-* Gitクローン
-* .env.example をコピーして .env を作成
-* MySQLのデータベース作成（名前：item_management）
-* Macの場合 .env の DB_PASSWORD を root に修正（Windowsは修正不要）
+## 主な機能
+    ・ログイン・ログアウト機能
+    ・ホーム画面
+    ・プロフィール画面
+    ・プロフィール登録、編集機能
+    ・要望表示画面
+    ・要望登録、削除、編集機能
+    ・ほしい物リスト表示画面
+    ・ほしい物リスト登録、編集、削除機能
+    ・画像表示画面
+    ・画像登録・削除機能
+    【管理者のみ】
+    ・ユーザー・プロフィール・要望・ほしい物リスト検索機能
+    ・ユーザー・プロフィール削除機能
 
-    ```INI
-    DB_PASSWORD=root
-    ```
+## 開発環境
+```
+PHP  8.3.8
+MySQL  9.0.1 
+Laravel　10.48.22
+```
 
-* APP_KEY生成
+## 設計書
+[設計書ページへ](https://drive.google.com/drive/folders/1u7yn70h8W9NxO6BOXb-3TVXSTQjCWYmt)
 
-    ```console
-    php artisan key:generate
-    ```
 
-* Composerインストール
-
-    ```console
-    composer install
-    ```
-
-* フロント環境構築
-
-    ```console
-    npm ci
-    npm run build
-    ```
-
-* マイグレーション
-
-    ```console
-    php artisan migrate
-    ```
-
-* 起動
-
-    ```console
-    php artisan serve
-    ```
+ ## システム閲覧
+ [アプリケーションページへ](https://myhome-app-cf0d6e53ae3d.herokuapp.com/)
+### テストアカウント情報
+    管理者アカウント
+    メールアドレス：soga@com
+    パスワード：sogasogasoga
+    一般ユーザー
+    メールアドレス：kimika@com
+    パスワード：kimikakimika		
+	
